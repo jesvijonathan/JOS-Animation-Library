@@ -9,10 +9,10 @@
 ## Installation -
 
 - Include style sheet in <code>\<head></code> :
-  <code>\<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/jos.css" /></code>
+  <code>\<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.css" /></code>
 
 - Add script before or after the <code>\</body></code> tag :
-  <code>\<script src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/jos.js" ></script></code>
+  <code>\<script src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.js" ></script></code>
 
 - Configue the script by setting default values if required :
   <code>will update...</code>
