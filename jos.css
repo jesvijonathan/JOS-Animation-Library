@@ -56,10 +56,10 @@ footer {
 .jos {
   transition: 0.7s ease-in-out;
 }
-.jos-fade-default {
+.jos-fade {
   opacity: 0;
 }
 
-.jos-fade {
+.jos-fade-active {
   opacity: 1;
 }

@@ -41,25 +41,27 @@ function opa_rev(target, state) {
   }
 }
 
-function fade(target, state) {
-  alert("fade animation triggered");
-  if (state) {
-    target.classList.add("jos-fade");
-  } else {
-    target.classList.remove("jos-fade");
-  }
-}
-
 function splash_pop(target, state) {
   if (state) {
     target.classList.add("splash_slide");
   }
 }
+
+function fade(target, state) {
+  if (state) {
+    console.log("fade animation triggered");
+    target.classList.add("jos-fade-active");
+  } else {
+    console.log("fade animation reverting");
+    target.classList.remove("jos-fade-active");
+  }
+}
+
 function callbackRouter(entries, observer) {
   let entry = entries[0];
   let target = entry.target;
 
-  console.log(target.dataset.jos_animation, entry.intersectionRatio);
+  //   console.log(target.dataset.jos_animation, entry.intersectionRatio);
 
   if (entry.intersectionRatio > 0) {
     if (target.dataset.jos_animation) {
@@ -80,16 +82,27 @@ const observer = new IntersectionObserver(callbackRouter);
 const boxes = document.querySelectorAll(".jos");
 
 boxes.forEach((box) => {
-  observer.observe(box);
   // observer.observe(box);
 
   object_class = box.classList;
+
   object_default_animation = box.dataset.jos_animation;
+
+  if (object_default_animation == undefined) {
+    // alert("JOS: No animation specified for this object");
+    object_default_animation = "fade";
+    box.setAttribute("data-jos_animation", object_default_animation);
+  }
   // console.log(object_class + "\n" + object_default_animation);
 
   switch (object_default_animation) {
     case "fade":
-      box.classList.add("jos-fade-default");
+      box.classList.add("jos-fade");
+      break;
+    default:
+      box.classList.add("jos-fade");
   }
+
+  observer.observe(box);
 });
 // alert("JOS Loaded !");
