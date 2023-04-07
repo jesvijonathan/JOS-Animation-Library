@@ -13,6 +13,9 @@
   <code>\<script src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS/jos.js"></script></code>
 
 - Configue the script by setting default values if required :
-  <code>let jos_default_once = false;
-  let jos_default_animation = "fade"; // fade, slide, zoom, rotate
-  let jos_default_threshold = 0.4;</code>
+  <code>will update...</code>
+- Fuck it, im feelin sleepy... bye
+
+## Credits :
+
+- The one and only Jesvi Jonathan
