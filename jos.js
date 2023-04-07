@@ -49,10 +49,8 @@ function splash_pop(target, state) {
 
 function fade(target, state) {
   if (state) {
-    console.log("fade animation triggered");
     target.classList.add("jos-fade-active");
   } else {
-    console.log("fade animation reverting");
     target.classList.remove("jos-fade-active");
   }
 }
@@ -63,22 +61,35 @@ function callbackRouter(entries, observer) {
 
   //   console.log(target.dataset.jos_animation, entry.intersectionRatio);
 
-  if (entry.intersectionRatio > 0) {
+  if (entry.intersectionRatio > jos_default_intersectionRatio) {
     if (target.dataset.jos_animation) {
+      console.log("Animation-Triggered");
       window[target.dataset.jos_animation](target, true);
       if (target.dataset.jos_once == "true") {
         target.classList.remove("jos");
+        console.log("Removed-Observer");
         observer.unobserve(target);
       }
     }
   } else {
     if (target.dataset.jos_animation) {
+      console.log("Animation-Reverting");
       window[target.dataset.jos_animation](target, false);
     }
   }
 }
 
-const observer = new IntersectionObserver(callbackRouter);
+var options = {
+  root: null,
+  rootMargin: "100px",
+  threshold: jos_default_threshold,
+};
+
+// There is another way to implement this,
+// by creating an instance of the IntersectionObserver class and create a unique object for every element.
+// but this fucks your cpu and performace at the same time, but offers customizability
+
+const observer = new IntersectionObserver(callbackRouter, options);
 const boxes = document.querySelectorAll(".jos");
 
 boxes.forEach((box) => {
@@ -86,21 +97,26 @@ boxes.forEach((box) => {
 
   object_class = box.classList;
 
+  object_default_once = box.dataset.jos_once;
   object_default_animation = box.dataset.jos_animation;
 
+  if (object_default_once == undefined) {
+    // alert("JOS: No once specified for this object");
+    object_default_once = jos_default_once;
+    box.setAttribute("data-jos_once", object_default_once);
+  }
   if (object_default_animation == undefined) {
     // alert("JOS: No animation specified for this object");
-    object_default_animation = "fade";
+    object_default_animation = jos_default_animation;
     box.setAttribute("data-jos_animation", object_default_animation);
   }
+
   // console.log(object_class + "\n" + object_default_animation);
 
   switch (object_default_animation) {
     case "fade":
       box.classList.add("jos-fade");
       break;
-    default:
-      box.classList.add("jos-fade");
   }
 
   observer.observe(box);
