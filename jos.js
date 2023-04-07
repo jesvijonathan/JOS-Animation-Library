@@ -1,3 +1,26 @@
+function intersectionRatio_set() {
+  if (jos_default_threshold == 1) return 0.99;
+
+  return jos_default_threshold;
+}
+
+let jos_default_once = false; // true or false
+let jos_default_animation = "fade"; // fade, slide, zoom, rotate
+let jos_default_threshold = 0.4; // 0-1
+let jos_default_intersectionRatio = intersectionRatio_set(); //0-0.99
+let jos_default_duration = 0.7;
+let jos_default_type = "ease-in-out";
+
+onload = () => {
+  const jos_stylesheet = document.getElementById("jos-stylesheet").sheet;
+  //   jos_css = document.getElementsByClassName("jos");
+  let transition_temp = jos_default_duration + "s " + jos_default_type;
+  //   console.log(transition_temp);
+  jos_stylesheet.insertRule(
+    ".jos { transition: " + transition_temp + " !important; }"
+  );
+};
+
 function fly_in(target, state) {
   if (state) {
     target.classList.add("fly_in");
