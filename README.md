@@ -21,3 +21,9 @@
 ## Credits :
 
 - The one and only Jesvi Jonathan
+
+## Some Info :
+
+- This project is currentlyl under undevelopment thus
+- All debug & logging features are enabled by default
+- This prpject is going to be lit :)
