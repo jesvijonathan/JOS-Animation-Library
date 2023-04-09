@@ -12,6 +12,11 @@
   left: 0;
 }
 
+html,
+body {
+  overflow-x: hidden;
+  width: 100vw;
+}
 body {
   background-color: var(--color-bg);
   color: var(--color-text);

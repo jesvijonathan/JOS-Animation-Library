@@ -1,10 +1,111 @@
 .jos {
-  transition: 0.7s ease-in-out;
+  opacity: 1;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
 }
+.jos-fade-default {
+  opacity: 0;
+  transform: (0);
+}
+
 .jos-fade {
   opacity: 0;
 }
+.jos-fade-right {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+.jos-fade-left {
+  opacity: 0;
+  transform: translateX(100px);
+}
+.jos-fade-up {
+  opacity: 0;
+  transform: translateY(50px);
+}
+.jos-fade-down {
+  opacity: 0;
+  transform: translateY(-50px);
+}
+[data-jos_timing_function="ease"] {
+  transition-timing-function: ease !important;
+}
+[data-jos_timing_function="ease-in"] {
+  transition-timing-function: ease-in !important;
+}
+[data-jos_timing_function="ease-out"] {
+  transition-timing-function: ease-out !important;
+}
+[data-jos_timing_function="ease-in-out"] {
+  transition-timing-function: ease-in-out !important;
+}
+[data-jos_timing_function="linear"] {
+  transition-timing-function: linear !important;
+}
+[data-jos_timing_function="cubic-bezier"] {
+  transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1) !important;
+}
+[data-jos_timing_function="step-start"] {
+  transition-timing-function: step-start !important;
+}
+[data-jos_timing_function="step-end"] {
+  transition-timing-function: step-end !important;
+}
+[data-jos_timing_function="steps"] {
+  transition-timing-function: steps(5, end) !important;
+}
+[data-jos_timing_function="frames"] {
+  transition-timing-function: frames(5) !important;
+}
+[data-jos_timing_function="initial"] {
+  transition-timing-function: initial !important;
+}
+[data-jos_timing_function="inherit"] {
+  transition-timing-function: inherit !important;
+}
+[data-jos_timing_function="unset"] {
+  transition-timing-function: unset !important;
+}
 
-.jos-fade-active {
-  opacity: 1;
+[data-jos_duration="0.1"] {
+  transition-duration: 0.1s !important;
+}
+[data-jos_duration="0.2"] {
+  transition-duration: 0.2s !important;
+}
+[data-jos_duration="0.3"] {
+  transition-duration: 0.3s !important;
+}
+[data-jos_duration="0.4"] {
+  transition-duration: 0.4s !important;
+}
+[data-jos_duration="0.5"] {
+  transition-duration: 0.5s !important;
+}
+[data-jos_duration="0.6"] {
+  transition-duration: 0.6s !important;
+}
+[data-jos_duration="0.7"] {
+  transition-duration: 0.7s !important;
+}
+[data-jos_duration="0.8"] {
+  transition-duration: 0.8s !important;
+}
+[data-jos_duration="0.9"] {
+  transition-duration: 0.9s !important;
+}
+[data-jos_duration="1"] {
+  transition-duration: 1s !important;
+}
+[data-jos_duration="2"] {
+  transition-duration: 2s !important;
+}
+[data-jos_duration="3"] {
+  transition-duration: 3s !important;
+}
+[data-jos_duration="4"] {
+  transition-duration: 4s !important;
+}
+[data-jos_duration="5"] {
+  transition: 5s !important;
 }

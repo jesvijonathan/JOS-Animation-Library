@@ -1,16 +1,3 @@
-function intersectionRatio_set() {
-  if (jos_default_threshold == 1) return 0.99;
-
-  return jos_default_threshold;
-}
-
-let jos_default_once = false; // true or false
-let jos_default_animation = "fade"; // fade, slide, zoom, rotate
-let jos_default_threshold = 0.4; // 0-1
-let jos_default_intersectionRatio = intersectionRatio_set(); //0-0.99
-let jos_default_duration = 0.7;
-let jos_default_type = "ease-in-out";
-
 onload = () => {
   const jos_stylesheet = document.getElementById("jos-stylesheet").sheet;
   //   jos_css = document.getElementsByClassName("jos");
@@ -29,52 +16,25 @@ function fly_in(target, state) {
   }
 }
 
-function lin() {
-  let op = $(".card_l");
-  let oop = $(".day_l");
-
-  oop.addClass("l_in");
-  op.addClass("l_in");
-  return;
+function example() {
+  console.log("You Have Invoked Custom Scroll Function !");
 }
 
-function l_in(target, state) {
-  lin();
-}
-
-function r_in(target, state) {
-  let op = $(".card_r");
-  let oop = $(".day_r");
+function animation_invoker(target, state) {
+  let target_jos_animation = target.dataset.jos_animation;
 
   if (state) {
-    oop.addClass("l_in");
-    op.addClass("l_in");
-  }
-  // else {
-  //   $(".card_l").removeClass("l_in");
-  // }
-  lin();
-}
+    target.classList.remove("jos-" + target_jos_animation);
+    console.log("jos-" + target_jos_animation);
 
-function opa_rev(target, state) {
-  if (state) {
-    target.classList.add("fade_rot");
+    if (target.dataset.jos_invoke != undefined) {
+      window[target.dataset.jos_invoke](target);
+    }
   } else {
-    target.classList.remove("fade_rot");
-  }
-}
-
-function splash_pop(target, state) {
-  if (state) {
-    target.classList.add("splash_slide");
-  }
-}
-
-function fade(target, state) {
-  if (state) {
-    target.classList.add("jos-fade-active");
-  } else {
-    target.classList.remove("jos-fade-active");
+    target.classList.add("jos-" + target_jos_animation);
+    if (target.dataset.jos_invoke_out != undefined) {
+      window[target.dataset.jos_invoke_out](target);
+    }
   }
 }
 
@@ -87,9 +47,9 @@ function callbackRouter(entries, observer) {
   if (entry.intersectionRatio > jos_default_intersectionRatio) {
     if (target.dataset.jos_animation) {
       console.log("Animation-Triggered");
-      window[target.dataset.jos_animation](target, true);
+      animation_invoker(target, true);
       if (target.dataset.jos_once == "true") {
-        target.classList.remove("jos");
+        // target.classList.remove("jos");
         console.log("Removed-Observer");
         observer.unobserve(target);
       }
@@ -97,7 +57,7 @@ function callbackRouter(entries, observer) {
   } else {
     if (target.dataset.jos_animation) {
       console.log("Animation-Reverting");
-      window[target.dataset.jos_animation](target, false);
+      animation_invoker(target, false);
     }
   }
 }
@@ -136,11 +96,7 @@ boxes.forEach((box) => {
 
   // console.log(object_class + "\n" + object_default_animation);
 
-  switch (object_default_animation) {
-    case "fade":
-      box.classList.add("jos-fade");
-      break;
-  }
+  box.classList.add("jos-" + object_default_animation);
 
   observer.observe(box);
 });

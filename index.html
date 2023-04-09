@@ -20,20 +20,57 @@
     </section>
 
     <section>
-      <div class="demo-section jos">Demo 1</div>
-      <div class="demo-section jos">Demo 2</div>
-      <div class="demo-section jos">Demo 3</div>
-      <div class="demo-section jos">Demo 4</div>
+      <div class="demo-section jos">Fade</div>
+      <div
+        class="demo-section jos"
+        data-jos_animation="fade-right"
+        data-jos-once="false"
+        data-jos_duration="0.3"
+        data-jos_timing-function="ease-in-out"
+        data-jos_invoke="example"
+        data-jos_invoke_out="example"
+      >
+        Fade [Right]
+      </div>
+      <div
+        class="demo-section jos"
+        data-jos_animation="fade-left"
+        data-jos-once="false"
+        data-jos_duration="1"
+        data-jos_timing-function="linear"
+      >
+        Fade [Left]
+      </div>
+      <div class="demo-section jos" data-jos_animation="fade-up">Fade [Up]</div>
+      <div class="demo-section jos" data-jos_animation="fade-down">
+        Fade [Down]
+      </div>
     </section>
     <footer>JOS | 2023 | By Jesvi Jonathan</footer>
   </body>
 </html>
 
 <script>
-  JOS = {
-    jos_default_once: false, // true or false
-    jos_default_animation: "fade", // fade, slide, zoom, rotate
-    jos_default_threshold: 0.4, // 0-1
-    jos_default_duration: 0.5, // seconds
-  };
+  // JOS = {
+  //   jos_default_once: false, // true or false
+  //   jos_default_animation: "fade", // fade, slide, zoom, rotate
+  //   jos_default_threshold: 0.4, // 0-1
+  //   jos_default_duration: 0.5, // seconds
+  // };
+
+  // for debugging ----
+
+  let jos_default_once = false; // true or false
+  let jos_default_animation = "fade"; // fade, slide, zoom, rotate
+  let jos_default_timingFunction = "ease-in-out"; // ease-in-out, ease-in, ease-out, linear
+  let jos_default_threshold = 0.4; // 0-1  | higher value for mobile and lower for desktop
+  let jos_default_intersectionRatio = intersectionRatio_set(); //0-0.99
+  let jos_default_duration = 0.7;
+  let jos_default_type = "ease-in-out";
+
+  function intersectionRatio_set() {
+    if (jos_default_threshold == 1) return 0.99;
+
+    return jos_default_threshold;
+  }
 </script>
