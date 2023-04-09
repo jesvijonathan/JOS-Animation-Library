@@ -101,3 +101,33 @@ boxes.forEach((box) => {
   observer.observe(box);
 });
 // alert("JOS Loaded !");
+
+console.log(
+  "JOS: Javascript Object Scroll Animation Library\n" +
+    "Version: 1.0.0\n" +
+    "Author: Jesvi Jonathan\n" +
+    "Github: https://github.com/jesvijonathan/JOS-Animation-Library\n\n"
+);
+console.log(
+  "JOS Params:\n" +
+    "Default Animation: " +
+    jos_default_animation +
+    "\n" +
+    "Default Once: " +
+    jos_default_once +
+    "\n" +
+    "Default Intersection Ratio: " +
+    jos_default_intersectionRatio +
+    "\n" +
+    "Default Threshold: " +
+    jos_default_threshold +
+    "\n" +
+    "Default Duration: " +
+    jos_default_duration +
+    "\n" +
+    "Default Type: " +
+    jos_default_type +
+    "\n"
+);
+
+console.log("\nDebug :\n");
