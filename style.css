@@ -51,15 +51,59 @@ footer {
   min-height: 50vh;
   display: flex;
   align-items: center;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-evenly;
   border: 0.1vw solid var(--color-border);
   border-radius: 4px;
   background: white;
   color: black;
   font-size: 2em;
   font-weight: bold;
+  align-content: center;
 }
 /* .demo-section:hover {
     background-color: var(--color-bg-hover);
   } */
+
+.demo-name {
+  min-width: 20vw;
+  min-height: 30vw;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 4px;
+  background: white;
+  color: black;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.demo-code {
+  min-height: 30vh;
+  font-size: 0.8em;
+
+  background-color: #2d2d2d;
+  display: none;
+  transition: 0.2s ease-in-out;
+}
+
+.code {
+  background: #242424;
+  color: white;
+  overflow: auto;
+  width: auto;
+  border: solid #3e3e3e;
+  padding: 0;
+  border-width: 0;
+  width: 0;
+  transition: 0.2s ease-in-out;
+}
+.demo-section:hover .code {
+  border-width: 0.1em 0.1em 0.1em 0.8em;
+  padding: 0.2em 0.6em;
+  width: auto;
+}
+.demo-section:hover .demo-code {
+  display: block;
+}
