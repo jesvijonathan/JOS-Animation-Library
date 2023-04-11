@@ -46,7 +46,7 @@ footer {
   padding: 2vw;
 }
 
-.demo-section {
+.demo-container {
   margin: 8vw;
   min-height: 50vh;
   display: flex;
@@ -57,11 +57,13 @@ footer {
   border-radius: 4px;
   background: white;
   color: black;
+  transition: 0.2s ease;
   font-size: 2em;
   font-weight: bold;
   align-content: center;
+  overflow: hidden;
 }
-/* .demo-section:hover {
+/* .demo-container:hover {
     background-color: var(--color-bg-hover);
   } */
 
@@ -75,35 +77,40 @@ footer {
   border-radius: 4px;
   background: white;
   color: black;
-  font-size: 2em;
+  transition: 0.2s ease-in-out;
   font-weight: bold;
+}
+.demo-text {
+  margin-left: 10vw;
+  margin-left: 18vw;
+  transition: 0.2s ease-in-out;
 }
 
 .demo-code {
-  min-height: 30vh;
   font-size: 0.8em;
-
   background-color: #2d2d2d;
-  display: none;
+  width: min-content;
+  height: min-content;
+  font-size: 0.4em;
+  margin-left: 18vw;
+  border-radius: 4px;
   transition: 0.2s ease-in-out;
+  font-size: 0.8em;
+  cursor: none;
+  width: 0;
+  opacity: 0;
 }
 
-.code {
-  background: #242424;
+.demo-container:hover .demo-text {
+  margin-left: 10vw;
+}
+.demo-container:hover .demo-code {
+  opacity: 1;
+  width: 28vw;
+  cursor: text;
+}
+pre {
   color: white;
-  overflow: auto;
-  width: auto;
-  border: solid #3e3e3e;
-  padding: 0;
-  border-width: 0;
-  width: 0;
-  transition: 0.2s ease-in-out;
-}
-.demo-section:hover .code {
-  border-width: 0.1em 0.1em 0.1em 0.8em;
-  padding: 0.2em 0.6em;
-  width: auto;
-}
-.demo-section:hover .demo-code {
-  display: block;
+  font-size: 0.9em;
+  padding: 2em 1em;
 }
