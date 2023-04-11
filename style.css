@@ -24,12 +24,14 @@ body {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 2.3em;
   font-weight: 400;
   position: absolute;
   transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
+  width: 88%;
+  text-align: center;
 }
 
 section {
@@ -45,7 +47,7 @@ footer {
 }
 
 .demo-section {
-  margin: 2vw;
+  margin: 8vw;
   min-height: 50vh;
   display: flex;
   align-items: center;
@@ -53,6 +55,10 @@ footer {
   justify-content: center;
   border: 0.1vw solid var(--color-border);
   border-radius: 4px;
+  background: white;
+  color: black;
+  font-size: 2em;
+  font-weight: bold;
 }
 /* .demo-section:hover {
     background-color: var(--color-bg-hover);

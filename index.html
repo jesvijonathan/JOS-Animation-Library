@@ -21,9 +21,10 @@
 
     <section>
       <div class="demo-section jos">Fade</div>
+
       <div
         class="demo-section jos"
-        data-jos_animation="slide"
+        data-jos_animation="fade-right"
         data-jos-once="false"
         data-jos_duration="0.3"
         data-jos_timing-function="ease-in-out"
@@ -52,8 +53,73 @@
       </div>
 
       <div class="demo-section jos" data-jos_animation="zoom">Zoom</div>
+      <div
+        class="demo-section jos"
+        data-jos_duration="1"
+        data-jos_animation="zoom-out-right"
+      >
+        Zoom Out [Right]
+      </div>
+      <div
+        class="demo-section jos"
+        data-jos_duration="1"
+        data-jos_animation="zoom-out-left"
+      >
+        Zoom Out [Left]
+      </div>
+      <div
+        class="demo-section jos"
+        data-jos_duration="1"
+        data-jos_animation="zoom-out-down"
+      >
+        Zoom Out [Down]
+      </div>
+      <div
+        class="demo-section jos"
+        data-jos_duration="1"
+        data-jos_animation="zoom-out-up"
+      >
+        Zoom Out [Up]
+      </div>
       <div class="demo-section jos" data-jos_animation="zoom-in">Zoom [In]</div>
+
+      <div class="demo-section jos" data-jos_animation="zoom-in-right">
+        Zoom In [Right]
+      </div>
+
+      <div class="demo-section jos" data-jos_animation="zoom-in-left">
+        Zoom In [Left]
+      </div>
+
+      <div class="demo-section jos" data-jos_animation="zoom-in-down">
+        Zoom In [Down]
+      </div>
+
+      <div class="demo-section jos" data-jos_animation="zoom-in-up">
+        Zoom In [Up]
+      </div>
+
+      <div class="demo-section jos" data-jos_animation="flip">Flip [Right]</div>
+      <div class="demo-section jos" data-jos_animation="flip-left">
+        Flip [Left]
+      </div>
+
+      <div
+        class="demo-section jos"
+        data-jos_animation="flip-up"
+        data-jos_duration="1"
+      >
+        Flip [Up]
+      </div>
+      <div
+        class="demo-section jos"
+        data-jos_animation="flip-down"
+        data-jos_duration="3"
+      >
+        Flip [Down]
+      </div>
     </section>
+
     <footer>JOS | 2023 | By Jesvi Jonathan</footer>
   </body>
 </html>
@@ -67,18 +133,4 @@
   // };
 
   // for debugging ----
-
-  let jos_default_once = false; // true or false
-  let jos_default_animation = "fade"; // fade, slide, zoom, rotate
-  let jos_default_timingFunction = "ease-in-out"; // ease-in-out, ease-in, ease-out, linear
-  let jos_default_threshold = 0.8; // 0-1  | higher value for mobile and lower for desktop
-  let jos_default_intersectionRatio = intersectionRatio_set(); //0-0.99
-  let jos_default_duration = 0.5;
-  let jos_default_type = "ease-in-out";
-
-  function intersectionRatio_set() {
-    if (jos_default_threshold == 1) return 0.99;
-
-    return jos_default_threshold;
-  }
 </script>

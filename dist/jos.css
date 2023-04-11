@@ -1,6 +1,10 @@
+/* :root{
+  
+} */
+
 .jos {
   opacity: 1;
-  transition-duration: 0.5s;
+  transition: 0.5s;
   transition-timing-function: ease-in-out;
 }
 .jos-fade-default {
@@ -35,9 +39,41 @@
   opacity: 0;
   transform: scale(0.8);
 }
+.jos-zoom-out-left {
+  opacity: 0;
+  transform: scale(0.8) translate3d(100px, 0px, -100px);
+}
+.jos-zoom-out-down {
+  opacity: 0;
+  transform: scale(0.8) translate3d(0px, -100px, 0px);
+}
+.jos-zoom-out-up {
+  opacity: 0;
+  transform: scale(0.8) translate3d(0px, 100px, 0px);
+}
+.jos-zoom-out-right {
+  opacity: 0;
+  transform: scale(0.8) translate3d(-100px, 0px, -100px);
+}
 .jos-zoom-in {
   opacity: 0;
   transform: scale(1.1);
+}
+.jos-zoom-in-down {
+  opacity: 0;
+  transform: scale(1.1) translate3d(0px, -100px, 0px);
+}
+.jos-zoom-in-up {
+  opacity: 0;
+  transform: scale(1.1) translate3d(0px, 100px, 0px);
+}
+.jos-zoom-in-right {
+  opacity: 0;
+  transform: scale(1.1) translate3d(-100px, 0px, -100px);
+}
+.jos-zoom-in-left {
+  opacity: 0;
+  transform: scale(1.1) translate3d(100px, 0px, -100px);
 }
 /* .jos-zoom-right {
   opacity: 0;
@@ -56,6 +92,55 @@
   opacity: 0;
   transform: translateY(-50px) scale(0);
 }
+
+.jos-flip {
+  transform: perspective(2500px) rotateY(-100deg);
+  opacity: 0;
+}
+.jos-flip-left {
+  transform: perspective(2500px) rotateY(100deg);
+  opacity: 0;
+}
+
+.jos-flip-up {
+  opacity: 0;
+  transform: perspective(2500px) rotateX(-100deg);
+}
+.jos-flip-down {
+  opacity: 0;
+  transform: perspective(2500px) rotateX(100deg);
+}
+[data-jos_pow="0.1"] {
+  transform: rotateY(calc(0.1 * 360deg));
+}
+[data-jos_pow="0.2"] {
+  transform: rotateY(calc(0.2 * 360deg));
+}
+[data-jos_pow="0.3"] {
+  transform: rotateY(calc(0.3 * 360deg));
+}
+[data-jos_pow="0.4"] {
+  transform: rotateY(calc(0.4 * 360deg));
+}
+[data-jos_pow="0.5"] {
+  transform: rotateY(calc(0.5 * 360deg));
+}
+[data-jos_pow="0.6"] {
+  transform: rotateY(calc(0.6 * 360deg));
+}
+[data-jos_pow="0.7"] {
+  transform: rotateY(calc(0.7 * 360deg));
+}
+[data-jos_pow="0.8"] {
+  transform: rotateY(calc(0.8 * 360deg));
+}
+[data-jos_pow="0.9"] {
+  transform: rotateY(calc(0.9 * 360deg));
+}
+[data-jos_pow="1"] {
+  transform: rotateY(calc(1 * 360deg));
+}
+
 [data-jos_timing_function="ease"] {
   transition-timing-function: ease !important;
 }

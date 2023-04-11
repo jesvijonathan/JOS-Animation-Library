@@ -7,6 +7,19 @@ onload = () => {
     ".jos { transition: " + transition_temp + " !important; }"
   );
 };
+let jos_default_once = false; // true or false
+let jos_default_animation = "fade"; // fade, slide, zoom, rotate
+let jos_default_timingFunction = "ease-in-out"; // ease-in-out, ease-in, ease-out, linear
+let jos_default_threshold = 0.9; // 0-1  | higher value for mobile and lower for desktop
+let jos_default_intersectionRatio = intersectionRatio_set(); //0-0.99
+let jos_default_duration = 0.4;
+let jos_default_type = "linear";
+
+function intersectionRatio_set() {
+  if (jos_default_threshold == 1) return 0.99;
+
+  return jos_default_threshold;
+}
 
 function fly_in(target, state) {
   if (state) {
@@ -17,9 +30,13 @@ function fly_in(target, state) {
 }
 
 function example() {
-  console.log("You Have Invoked Custom Scroll Function !");
+  //  alert("You have invoked custom Scroll-In function !");
+  console.log("You have invoked custom Scroll-In function");
 }
-
+function example2() {
+  //  alert("You have invoked custom scroll-Out function !");
+  console.log("You have invoked custom scroll-Out function !");
+}
 function animation_invoker(target, state) {
   let target_jos_animation = target.dataset.jos_animation;
 
