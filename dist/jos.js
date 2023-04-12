@@ -15,8 +15,8 @@ let jos_default_animation = "fade"; // fade, slide, zoom, rotate
 let jos_default_timingFunction = "ease-in-out"; // ease-in-out, ease-in, ease-out, linear
 let jos_default_threshold = 0; // 0-1  | higher value for mobile and lower for desktop
 let jos_default_duration = 0.4;
-let jos_rootMargin_top = "-10%";
-let jos_rootMargin_bottom = "-50%";
+let jos_rootMargin_top = "-10%"; //recommended value 10% to -30%
+let jos_rootMargin_bottom = "-40%"; //recommended value -10% to -60%
 let jos_default_type = "linear";
 
 let jos_default_intersectionRatio = intersectionRatio_set(); //0-0.99

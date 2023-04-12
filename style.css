@@ -43,7 +43,8 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2vw;
+  margin-top: 8vw;
+  padding: 6vw;
 }
 
 .demo-container {
@@ -100,7 +101,7 @@ footer {
   width: 0;
   opacity: 0;
   display: flex;
-  width: fit-content;
+  width: 0;
   flex-direction: column;
   align-content: center;
   justify-content: center;
@@ -124,13 +125,14 @@ pre {
 @media screen and (max-width: 1000px) {
   .demo-container {
     flex-direction: column;
-    margin: 4vw;
+    margin: 2em;
   }
   .demo-name {
     flex-direction: column;
   }
   .demo-text {
     margin-left: 0;
+    /* font-size: 1.5em; */
   }
   .demo-code {
     margin-left: 0;
@@ -151,5 +153,8 @@ pre {
     margin-top: 0;
     overflow-y: scroll;
     width: auto;
+  }
+  .demo-code::-webkit-scrollbar {
+    width: 0.5em;
   }
 }
