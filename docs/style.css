@@ -83,7 +83,9 @@ footer {
 }
 .demo-text {
   margin-left: 10vw;
-  margin-left: 18vw;
+  margin-right: 10vw;
+  /* border: 2px solid black; */
+  width: fit-content;
   transition: 0.2s ease-in-out;
 }
 
@@ -93,7 +95,6 @@ footer {
   width: min-content;
   height: min-content;
   font-size: 0.4em;
-  margin-left: 18vw;
   border-radius: 4px;
   transition: 0.2s ease-in-out;
   font-size: 0.8em;
@@ -110,11 +111,15 @@ footer {
 
 .demo-container:hover .demo-text {
   margin-left: 10vw;
+  width: 25vw;
 }
 .demo-container:hover .demo-code {
   opacity: 1;
-  width: 28vw;
+  width: 33vw;
   cursor: text;
+  margin-left: 10%;
+
+  margin-right: 10%;
 }
 pre {
   color: white;
