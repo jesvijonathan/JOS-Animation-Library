@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/jesvijonathan/JOS-Animation-Library">
-    <img src="/res/images/7ygwKRQc_2x.jpg" alt="Logo" height="200">
+    <img src="https://jesvijonathan.github.io/JOS-Animation-Library/res/images/7ygwKRQc_2x.jpg" alt="Logo" height="200">
   </a>
 
   <h3 align="center">JOS : Animation Library</h3>
@@ -64,7 +64,7 @@ Feel free to report an issue or request a feature in this repository :)
 - [JavaScript](https://www.w3schools.com/js/)
 - [CSS](https://www.w3schools.com/css/)
 
-<!-- GETTING STARTED -->
+---
 
 ## Installation
 
@@ -76,6 +76,8 @@ Feel free to report an issue or request a feature in this repository :)
   src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.js"
 ></script>
 ```
+
+---
 
 ## Setup :
 
@@ -137,6 +139,8 @@ Feel free to report an issue or request a feature in this repository :)
 
 See [JOS Props](#jos-attributes) for full information regarding the animation, attributes, and options.
 
+---
+
 ## Custom Animation
 
 1. Create a custom animation by adding the following code to your stylesheet :
@@ -155,6 +159,8 @@ See [JOS Props](#jos-attributes) for full information regarding the animation, a
 ```
 
 Example : [Custom Animation]()
+
+---
 
 ## Custom Timing Function
 
@@ -175,6 +181,8 @@ Example : [Custom Animation]()
 ```
 
 Example : [Custom Timing Function]()
+
+---
 
 ## Create Custom Function
 
@@ -200,8 +208,6 @@ You can use <code>data-jos_invoke_out</code> attribute to trigger the function w
 Example : [Custom Function]()
 
 ---
-
-The below is auto generated, I cannot imagine myself documenting function tables :D
 
 ## JOS Attributes
 
@@ -257,16 +263,70 @@ The below is auto generated, I cannot imagine myself documenting function tables
 | revert | Revert the element to its original state.                                                   |
 | reset  | Reset the element to its original state and remove all the JOS attributes from the element. | -->
 
+## Bugs and Issues
+
+```
+- JOS Methods do not work as of now.
+- attribute names are not consistent.
+- attribute <code>delay</code> is not working as of now.
+- init method is not working as of now. (need to be set manually as var in html inline script)
+- debounce is not working as of now.
+- Requires both js & css cdn links for JOS v0.3 & below
+- JOS disable attribute is not working as of now.
+- should move from function workaround to class based approach
+- **Bug** where the element is not animating when the page is loaded and the element is already in view.
+```
+
+<!-- status
+critical
+major
+minor
+ -->
+
+<!--
+priority
+high
+medium
+low
+ -->
+
+<!--
+type
+bug
+enhancement
+update
+workaround
+temporary
+ -->
+
+<!-- | Issue | Description                                                                                        | Status   | Priority | Type        |
+| ----- | -------------------------------------------------------------------------------------------------- | -------- | -------- | ----------- |
+| 1     | Jos Methods do not work as of now.                                                                 | critical | high     | bug         |
+| 2     | attribute names are not consistent.                                                                | minor    | medium   | temporary   |
+| 3     | attribute delay is not working as of now.                                                          | minor    | low      | temporary   |
+| 4     | init method is not working as of now. (need to be set manually as var in html inline script)       | critical | high     | workaround  |
+| 5     | debounce is not working as of now.                                                                 | major    | high     | enhancement |
+| 6     | Requires both js & css cdn links for JOS v0.3 & below                                              | major    | high     | update      |
+| 7     | JOS disable attribute is not working as of now.                                                    | major    | high     | temporary   |
+| 8     | Best practices Reu should move from function workaround to class based approach                    | major    | medium   | enhancement |
+| 9     | Bug where the element is not animating when the page is loaded and the element is already in view. | critical | high     | bug         | -->
+
+---
+
 ## Contributing
 
 - Fork it from main branch
 - Add your useful feature
 - Create a pull request
 
+---
+
 ## License
 
 - [JOS]() is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
+---
+
 ## Credits
 
-- Jesvi Jonathan
+- ###### [Jesvi Jonathan](https://jesvi.pythonanywhere.com)
