@@ -136,6 +136,7 @@ pre {
     flex-direction: column;
   }
   .demo-text {
+    margin-right: 0vw;
     margin-left: 0;
     /* font-size: 1.5em; */
   }
@@ -150,6 +151,9 @@ pre {
   .demo-container:hover .demo-text {
     margin-left: 0vw;
     margin-bottom: 1em;
+
+    margin-left: 0vw;
+    width: fit-content;
   }
   .demo-container:hover .demo-code {
     opacity: 1;
