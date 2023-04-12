@@ -57,14 +57,10 @@ This project is currently being developed by me & the dev community, So you can 
 Feel free to report an issue or request a feature in this repository :)
 & for more information, Check out the [JOS Webpage](https://jesvijonathan.github.io/JOS-Animation-Library).
 
----
-
 ### Built With
 
 - [JavaScript](https://www.w3schools.com/js/)
 - [CSS](https://www.w3schools.com/css/)
-
----
 
 ## Installation
 
@@ -77,8 +73,6 @@ Feel free to report an issue or request a feature in this repository :)
 ></script>
 ```
 
----
-
 ## Setup :
 
 1. Use <code>JOS.init();</code> to initialize the library with default settings.
@@ -88,7 +82,7 @@ Feel free to report an issue or request a feature in this repository :)
 <script>JOS.init();</script>
 ```
 
-1. Use <code>JOS.init({\<options>});</code> to overide the default settings with your custom settings.
+2. Use <code>JOS.init({\<options>});</code> to overide the default settings with your custom settings.
 
 ```js
 // Initialize JOS with custom settings
@@ -139,8 +133,6 @@ Feel free to report an issue or request a feature in this repository :)
 
 See [JOS Props](#jos-attributes) for full information regarding the animation, attributes, and options.
 
----
-
 ## Custom Animation
 
 1. Create a custom animation by adding the following code to your stylesheet :
@@ -159,8 +151,6 @@ See [JOS Props](#jos-attributes) for full information regarding the animation, a
 ```
 
 Example : [Custom Animation]()
-
----
 
 ## Custom Timing Function
 
@@ -181,8 +171,6 @@ Example : [Custom Animation]()
 ```
 
 Example : [Custom Timing Function]()
-
----
 
 ## Create Custom Function
 
@@ -206,8 +194,6 @@ This triggers the myCustomFunction() function when the element is scrolled into 
 You can use <code>data-jos_invoke_out</code> attribute to trigger the function when the element is scrolled out of view.
 
 Example : [Custom Function]()
-
----
 
 ## JOS Attributes
 
@@ -311,21 +297,15 @@ temporary
 | 8     | Best practices Reu should move from function workaround to class based approach                    | major    | medium   | enhancement |
 | 9     | Bug where the element is not animating when the page is loaded and the element is already in view. | critical | high     | bug         | -->
 
----
-
 ## Contributing
 
 - Fork it from main branch
 - Add your useful feature
 - Create a pull request
 
----
-
 ## License
 
 - [JOS]() is licensed under the [MIT License](https://opensource.org/licenses/MIT).
-
----
 
 ## Credits
 
