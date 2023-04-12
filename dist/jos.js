@@ -1,7 +1,8 @@
 onload = () => {
   const jos_stylesheet = document.getElementById("jos-stylesheet").sheet;
   //   jos_css = document.getElementsByClassName("jos");
-  let transition_temp = jos_default_duration + "s " + jos_default_type;
+  let transition_temp =
+    jos_default_duration + "s " + jos_default_timingFunction;
   //   console.log(transition_temp);
   jos_stylesheet.insertRule(
     ".jos { transition: " + transition_temp + " !important; }"
@@ -151,8 +152,8 @@ console.log(
     "Default Duration: " +
     jos_default_duration +
     "\n" +
-    "Default Type: " +
-    jos_default_type +
+    "Default Timing Function: " +
+    jos_default_timingFunction +
     "\n" +
     "Default Root Margin: " +
     jos_default_rootMargin
