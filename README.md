@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/jesvijonathan/JOS-Animation-Library">
-    <img src="/res/images/OFRJa1eN_2x.jpg" alt="Logo" height="200">
+    <img src="../res/images/OFRJa1eN_2x.jpg" alt="Logo" height="200">
   </a>
 
   <h3 align="center">JOS : Animation Library</h3>
