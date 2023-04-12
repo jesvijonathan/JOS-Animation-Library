@@ -7,13 +7,21 @@ onload = () => {
     ".jos { transition: " + transition_temp + " !important; }"
   );
 };
+
+let centerWindow = window.innerHeight / 2;
+
 let jos_default_once = false; // true or false
 let jos_default_animation = "fade"; // fade, slide, zoom, rotate
 let jos_default_timingFunction = "ease-in-out"; // ease-in-out, ease-in, ease-out, linear
-let jos_default_threshold = 0.9; // 0-1  | higher value for mobile and lower for desktop
-let jos_default_intersectionRatio = intersectionRatio_set(); //0-0.99
+let jos_default_threshold = 0; // 0-1  | higher value for mobile and lower for desktop
 let jos_default_duration = 0.4;
+let jos_rootMargin_top = "-10%";
+let jos_rootMargin_bottom = "-50%";
 let jos_default_type = "linear";
+
+let jos_default_intersectionRatio = intersectionRatio_set(); //0-0.99
+let jos_default_rootMargin =
+  jos_rootMargin_top + " 0% " + jos_rootMargin_bottom + " 0%";
 
 function intersectionRatio_set() {
   if (jos_default_threshold == 1) return 0.99;
@@ -42,7 +50,7 @@ function animation_invoker(target, state) {
 
   if (state) {
     target.classList.remove("jos-" + target_jos_animation);
-    console.log("jos-" + target_jos_animation);
+    // console.log("jos-" + target_jos_animation);
 
     if (target.dataset.jos_invoke != undefined) {
       window[target.dataset.jos_invoke](target);
@@ -63,17 +71,17 @@ function callbackRouter(entries, observer) {
 
   if (entry.intersectionRatio > jos_default_intersectionRatio) {
     if (target.dataset.jos_animation) {
-      console.log("Animation-Triggered");
+      // console.log("Animation-Triggered");
       animation_invoker(target, true);
       if (target.dataset.jos_once == "true") {
         // target.classList.remove("jos");
-        console.log("Removed-Observer");
+        // console.log("Removed-Observer");
         observer.unobserve(target);
       }
     }
   } else {
     if (target.dataset.jos_animation) {
-      console.log("Animation-Reverting");
+      // console.log("Animation-Reverting");
       animation_invoker(target, false);
     }
   }
@@ -81,8 +89,9 @@ function callbackRouter(entries, observer) {
 
 var options = {
   root: null,
-  rootMargin: "100px",
+  rootMargin: jos_default_rootMargin,
   threshold: jos_default_threshold,
+  passive: true,
 };
 
 // There is another way to implement this,
@@ -144,7 +153,9 @@ console.log(
     "\n" +
     "Default Type: " +
     jos_default_type +
-    "\n"
+    "\n" +
+    "Default Root Margin: " +
+    jos_default_rootMargin
 );
 
 console.log("\nDebug :\n");
