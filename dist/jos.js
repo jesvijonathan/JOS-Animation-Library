@@ -7,7 +7,7 @@ class jos {
   default_intersectionRatio = 0;
   default_rootMargin = "-10% 0% -40% 0%";
   default_passive = !0;
-  version = "0.3 (Beta)";
+  version = "0.5 (Beta)";
   author = "Jesvi Jonathan";
   github = "https://github.com/jesvijonathan/JOS-Animation-Library";
   debug = !1;
