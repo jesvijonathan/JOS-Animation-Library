@@ -1,3 +1,7 @@
+/* :root{
+  
+} */
+
 .jos {
   opacity: 1;
   transition: 0.5s;
@@ -7,6 +11,7 @@
   opacity: 0;
   transform: (0);
 }
+
 .jos-fade {
   opacity: 0;
 }
@@ -28,6 +33,7 @@
   opacity: 0;
   transform: translateY(-50px);
 }
+
 .jos-zoom,
 .jos-zoom-out {
   opacity: 0;
@@ -35,19 +41,19 @@
 }
 .jos-zoom-out-left {
   opacity: 0;
-  transform: scale(0.8) translate3d(100px, 0, -100px);
+  transform: scale(0.8) translate3d(100px, 0px, -100px);
 }
 .jos-zoom-out-down {
   opacity: 0;
-  transform: scale(0.8) translate3d(0, -100px, 0);
+  transform: scale(0.8) translate3d(0px, -100px, 0px);
 }
 .jos-zoom-out-up {
   opacity: 0;
-  transform: scale(0.8) translate3d(0, 100px, 0);
+  transform: scale(0.8) translate3d(0px, 100px, 0px);
 }
 .jos-zoom-out-right {
   opacity: 0;
-  transform: scale(0.8) translate3d(-100px, 0, -100px);
+  transform: scale(0.8) translate3d(-100px, 0px, -100px);
 }
 .jos-zoom-in {
   opacity: 0;
@@ -55,20 +61,29 @@
 }
 .jos-zoom-in-down {
   opacity: 0;
-  transform: scale(1.1) translate3d(0, -100px, 0);
+  transform: scale(1.1) translate3d(0px, -100px, 0px);
 }
 .jos-zoom-in-up {
   opacity: 0;
-  transform: scale(1.1) translate3d(0, 100px, 0);
+  transform: scale(1.1) translate3d(0px, 100px, 0px);
 }
 .jos-zoom-in-right {
   opacity: 0;
-  transform: scale(1.1) translate3d(-100px, 0, -100px);
+  transform: scale(1.1) translate3d(-100px, 0px, -100px);
 }
 .jos-zoom-in-left {
   opacity: 0;
-  transform: scale(1.1) translate3d(100px, 0, -100px);
+  transform: scale(1.1) translate3d(100px, 0px, -100px);
 }
+/* .jos-zoom-right {
+  opacity: 0;
+  transform: translateX(-100px) scale(0);
+}
+.jos-zoom-left {
+  opacity: 0;
+  transform: translateX(100px) scale(0);
+} */
+
 .jos-zoom-up {
   opacity: 0;
   transform: translateY(50px) scale(0);
@@ -77,6 +92,7 @@
   opacity: 0;
   transform: translateY(-50px) scale(0);
 }
+
 .jos-flip {
   transform: perspective(2500px) rotateY(-100deg);
   opacity: 0;
@@ -85,6 +101,7 @@
   transform: perspective(2500px) rotateY(100deg);
   opacity: 0;
 }
+
 .jos-flip-up {
   opacity: 0;
   transform: perspective(2500px) rotateX(-100deg);
@@ -123,6 +140,7 @@
 [data-jos_pow="1"] {
   transform: rotateY(calc(1 * 360deg));
 }
+
 [data-jos_timing_function="ease"] {
   transition-timing-function: ease !important;
 }
@@ -162,6 +180,7 @@
 [data-jos_timing_function="unset"] {
   transition-timing-function: unset !important;
 }
+
 [data-jos_duration="0.1"] {
   transition-duration: 0.1s !important;
 }

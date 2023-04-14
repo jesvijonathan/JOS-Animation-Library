@@ -1,19 +1,26 @@
 class jos {
-  default_once = !1;
+  default_once = false;
   default_animation = "fade";
   default_timingFunction = "ease-in-out";
   default_threshold = 0;
   default_duration = 0.4;
   default_intersectionRatio = 0;
   default_rootMargin = "-10% 0% -40% 0%";
-  default_passive = !0;
+  default_passive = true;
+
   version = "0.3 (Beta)";
   author = "Jesvi Jonathan";
   github = "https://github.com/jesvijonathan/JOS-Animation-Library";
-  debug = !1;
+  debug = false;
+
   jos_stylesheet = document.getElementById("jos-stylesheet").sheet;
+
   boxes = document.querySelectorAll(".jos");
+
   constructor() {}
+
+  // refer tmp.js
+
   debugLogger() {
     console.log(
       "JOS: Javascript Object Scroll Animation Library\n" +
@@ -21,6 +28,7 @@ class jos {
         ("Author: " + this.author + "\n") +
         ("Github: " + this.github + "\n\n")
     );
+
     console.log(
       "JOS Params:\n" +
         ("Global Animation: " + this.default_animation + "\n") +
@@ -35,60 +43,94 @@ class jos {
         ("Passive: " + this.default_passive + "\n") +
         ("Debug Mode: " + this.debug + "\n")
     );
+
     console.log("\nDebug :\n");
   }
+
+  // animationInvoker(target, state) {
+  //   let target_jos_animation = target.dataset.jos_animation;
+  //   console.log("jos-" + target_jos_animation);
+
+  //   if (state) {
+  //   } else {
+  //   }
+  // }
+
   callbackRouter = (entries, observer) => {
     let entry = entries[0];
     let target = entry.target;
+
     let target_jos_animation = target.dataset.jos_animation;
     console.log(
       entry.intersectionRatio + " | " + this.default_intersectionRatio
     );
     if (entry.intersectionRatio > this.default_intersectionRatio) {
+      // console.log("jos-" + target_jos_animation);
+
       if (target_jos_animation) {
+        // console.log("Animation-Triggered");
         target.classList.remove("jos-" + target_jos_animation);
+
         if (target.dataset.jos_invoke != undefined) {
           window[target.dataset.jos_invoke](target);
         }
         if (target.dataset.jos_once == "true") {
+          // target.classList.remove("jos");
+          // console.log("Removed-Observer");
           observer.unobserve(target);
         }
       }
     } else {
+      // console.log("Animation-Removed");
       target.classList.add("jos-" + target_jos_animation);
+      // console.log("jos-" + target_jos_animation);
     }
   };
+
   animationInit() {
     this.boxes.forEach((box) => {
+      // observer.observe(box);
+
       let object_default_once = box.dataset.jos_once;
       let object_default_animation = box.dataset.jos_animation;
       let object_default_timingFunction = box.dataset.jos_timingFunction;
       let object_default_duration = box.dataset.jos_duration;
+
       if (object_default_once != undefined) {
+        //object_default_once = this.default_once;
         box.setAttribute("data-jos_once", object_default_once);
       }
       if (object_default_animation != undefined) {
+        //object_default_animation = this.default_animation;
         box.setAttribute("data-jos_animation", object_default_animation);
       }
       if (object_default_timingFunction != undefined) {
+        //object_default_timingFunction = this.default_timingFunction;
         box.setAttribute(
           "data-jos_timingFunction",
           object_default_timingFunction
         );
       }
       if (object_default_duration != undefined) {
+        //object_default_duration = this.default_duration;
         box.setAttribute("data-jos_duration", object_default_duration);
       }
+
       box.classList.add("jos-" + object_default_animation);
+
       this.observer = new IntersectionObserver(this.callbackRouter, {
         rootMargin: this.default_rootMargin,
         threshold: this.default_threshold,
         passive: this.default_passive,
       });
+
       this.observer.observe(box);
     });
   }
+
   init(options) {
+    // apply options if value is not undefined
+
     if (options) {
       if (options.once != undefined) {
         this.default_once = options.once;
@@ -131,8 +173,8 @@ class jos {
             " 0%";
         }
       }
-      if (options.debugMode == !0) {
-        this.debug = !0;
+      if (options.debugMode == true) {
+        this.debug = true;
         this.debugLogger();
       }
     }
@@ -145,7 +187,7 @@ class jos {
           ";") +
         "}"
     );
-    if (options.disable == !0) {
+    if (options.disable == true) {
       this.rst();
       console.log("JOS Disabled");
     } else {
@@ -153,10 +195,12 @@ class jos {
       this.animationInit();
     }
   }
+
   rst = () => {
     this.boxes.forEach((box) => {
       box.classList.remove("jos-" + box.dataset.jos_animation);
     });
+
     this.jos_stylesheet.insertRule(
       ".jos {" +
         ("transition: " +
@@ -166,19 +210,37 @@ class jos {
           ";") +
         "}"
     );
+
     this.observer.disconnect();
   };
+
   reset() {
     this.rst();
+
     this.animationInit();
+
+    // console.log("JOS Reset");
     return "JOS Reset";
+
+    // return this;
   }
   reset2() {
     this.rst();
+    // this.animationInit();
+
+    // console.log("JOS Reset Retaining Final State ");
     return "JOS Reset Retaining Final State";
+
+    // return this;
   }
   disable() {
     this.rst();
+
+    // console.log("JOS Disabled");
     return "JOS Disabled";
+
+    // return this;
   }
 }
+
+// Create an JOS object
