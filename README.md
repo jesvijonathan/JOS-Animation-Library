@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/jesvijonathan/JOS-Animation-Library">
-    <img src="../res/images/OFRJa1eN_2x.jpg" alt="Logo" height="200">
+    <img src="https://jesvijonathan.github.io/JOS-Animation-Library/res/images/OFRJa1eN_2x.jpg" alt="Logo" height="200">
   </a>
 
   <h3 align="center">JOS : Animation Library</h3>
@@ -82,7 +82,7 @@ Feel free to report an issue or request a feature in this repository :)
 <script>JOS.init();</script>
 ```
 
-2. Use <code>JOS.init({\<options>});</code> to overide the default settings with your custom settings.
+2. (<b>Or</b>) Use <code>JOS.init({\<options>});</code> to overide the default settings with your custom settings.
 
 ```js
 // Initialize JOS with custom settings
@@ -90,20 +90,21 @@ Feel free to report an issue or request a feature in this repository :)
   JOS.init(
   {
     // Global Options
-    jos_default_disable : false; // Disable JOS gloabaly | Values :  'true', 'false'
-    jos_default_once : false; // Disable JOS after first animation | Values :  'true', 'false'
-    jos_default_animation : "fade"; // JOS global animation type | Values :  'fade', 'slide', 'zoom', 'flip', 'fade-right', 'fade-left', 'fade-up', 'fade-down', 'zoom-in-right', 'zoom-in-left', 'zoom-in-up', 'zoom-in-down', 'zoom-out-right', 'zoom-out-left', 'zoom-out-up', 'zoom-out-down', 'flip-right', 'flip-left', 'flip-up', 'flip-down, "my-custom-animation"
-    jos_default_timingFunction : "ease-in-out"; // JOS global timing function | Values :  'ease', 'ease-in', 'ease-out', 'ease-in-out', 'linear', 'step-start', 'step-end', 'steps()', 'cubic-bezier()', 'my-custom-timing-function'
-    jos_default_threshold : 0; // Set gloabal the threshold for the element to be visible | Values :  0-1
-    jos_default_debounce : 0; // Set global the debounce time/rate for listening to scroll events | Values :  0-1000
-    jos_default_delay : 0; // Set global the delay for the animation to start | Values :  0,1,2,3,4,5
-    jos_default_duration : 0.4; // Set global the duration for the animation playback | Values :  flota : 0-1 & int : 0,1,2,3,4,5
-    jos_default_animate_out : false; // Set whether elements should animate out while scrolling past them | Values :  'true', 'false'
-    jos_rootMargin_top : "-10%"; // Set by which percent the element should animate out (Recommended value between 10% to -30%)
-    jos_rootMargin_bottom : "-40%"; // Set by which percent the element should animate out (Recommended value between -10% to -60%)
+    disable : false, // Disable JOS gloabaly | Values :  'true', 'false'
+    once : false, // Disable JOS after first animation | Values :  'true', 'false', n (n = number of itterations)
+    animation : "fade", // JOS global animation type | Values :  'fade', 'slide', 'zoom', 'flip', 'fade-right', 'fade-left', 'fade-up', 'fade-down', 'zoom-in-right', 'zoom-in-left', 'zoom-in-up', 'zoom-in-down', 'zoom-out-right', 'zoom-out-left', 'zoom-out-up', 'zoom-out-down', 'flip-right', 'flip-left', 'flip-up', 'flip-down, "my-custom-animation"
+    timingFunction : "ease-in-out", // JOS global timing function | Values :  'ease', 'ease-in', 'ease-out', 'ease-in-out', 'linear', 'step-start', 'step-end', 'steps()', 'cubic-bezier()', 'my-custom-timing-function'
+    threshold : 0, // Set gloabal the threshold for the element to be visible | Values :  0-1
+    jos_default_debounce : 0, // Set global the debounce time/rate for listening to scroll events | Values :  0-1000
+    delay : 0, // Set global the delay for the animation to start | Values :  0,1,2,3,4,5
+    duration : 0.4, // Set global the duration for the animation playback | Values :  flota : 0-1 & int : 0,1,2,3,4,5
+    jos_default_animate_out : false, // Set whether elements should animate out while scrolling past them | Values :  'true', 'false'
+    jos_rootMargin_top : "-10%", // Set by which percent the element should animate out (Recommended value between 10% to -30%)
+    jos_rootMargin_bottom : "-40%", // Set by which percent the element should animate out (Recommended value between -10% to -60%)
 
-    jos_default_intersectionRatio : intersectionRatio_set(); // Set the intersection ratio between which the element should be visible | Values :  0-1 (automaticaly set)
-    jos_default_rootMargin : jos_rootMargin_top + " 0% " + jos_rootMargin_bottom + " 0%"; // Set the root margin for the element to be visible | Values :  _% _% _% _%  (automaticaly set)
+    jos_default_intersectionRatio : intersectionRatio_set(), // Set the intersection ratio between which the element should be visible | Values :  0-1 (automaticaly set)
+    jos_default_rootMargin :  "-10% 0% -40% 0%", // Set the root margin for the element to be visible | Values :  _% _% _% _%  (automaticaly set)
+    passive: true, // Set the passive option for the scroll event listener | Values :  'true', 'false'
   }
   );
 </script>
@@ -124,7 +125,8 @@ Feel free to report an issue or request a feature in this repository :)
   class="jos"
   data-jos_animation="zoom"
   data-jos-once="true"
-  data-jos_duration="0.3"
+  data-jos_duration="0.5"
+  data-jos_delay="0.2"
   data-jos_timing-function="ease-in-out"
   data-jos_invoke="myCustomFunction"
   data-jos_invoke_out="myCustomFunction_onExit"
