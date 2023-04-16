@@ -13,7 +13,7 @@ class jos {
   author = "Jesvi Jonathan";
   github = "https://github.com/jesvijonathan/JOS-Animation-Library";
   debug = false;
-
+  disable = false;
   jos_stylesheet = document.getElementById("jos-stylesheet").sheet;
 
   boxes = document.querySelectorAll(".jos");
@@ -76,6 +76,9 @@ class jos {
   // }
 
   callbackRouter = (entries, observer) => {
+    if (this.disable == true) {
+      return;
+    }
     let entry = entries[0];
     let target = entry.target;
     // debug info
@@ -185,6 +188,7 @@ class jos {
   };
 
   animationInit() {
+    let log_text = "";
     this.boxes.forEach((box) => {
       // observer.observe(box);;
 
@@ -195,7 +199,7 @@ class jos {
       let object_default_duration = box.dataset.jos_duration;
       let object_default_delay = box.dataset.jos_delay;
 
-      if (object_default_once != undefined) {
+      if (object_default_once != undefined && object_default_once != "false") {
         //object_default_once = this.default_once;
         if (object_default_once == "true") {
           box.setAttribute("data-jos_once", "1");
@@ -203,6 +207,8 @@ class jos {
         // checl and apply condition only if the value is a number
         else if (object_default_once.match(/^[0-9]+$/)) {
           box.setAttribute("data-jos_once", object_default_once);
+        } else {
+          box.setAttribute("data-jos_once", "false");
         }
       }
       // if (
@@ -243,19 +249,7 @@ class jos {
       box.setAttribute("data-jos_counter", "0");
       box.classList.add("jos-" + object_default_animation);
 
-      if (this.debug == true) {
-        console.log(
-          "JOS : Init\n" +
-            box.id +
-            "    | " +
-            box.className +
-            " | " +
-            box.tagName +
-            "\n" +
-            "    | " +
-            object_default_animation
-        );
-      }
+      //refresh the dom to apply the re insert the elements in the body
 
       this.observer = new IntersectionObserver(this.callbackRouter, {
         rootMargin: this.default_rootMargin,
@@ -265,6 +259,28 @@ class jos {
 
       this.observer.observe(box);
     });
+    if (this.debug == true) {
+      console.log(
+        "JOS " +
+          ("[" + Date.now() + "] [DEBUG]\n") +
+          "    : Initialized\n    |",
+        {
+          log_element_object: this.boxes,
+        }
+      );
+
+      // console.log(
+      //   "JOS : Init\n" +
+      //     box.id +
+      //     "    | " +
+      //     box.className +
+      //     " | " +
+      //     box.tagName +
+      //     "\n" +
+      //     "    | " +
+      //     object_default_animation
+      // );
+    }
   }
 
   init(options) {
@@ -283,8 +299,14 @@ class jos {
       if (options.threshold != undefined) {
         this.default_threshold = options.threshold;
       }
+
       if (options.intersectionRatio != undefined) {
-        console.log("intersectionRatio is deprecated");
+        console.warn(
+          "JOS [" +
+            Date.now() +
+            "] [WARN] \n    : IntersectionRatio is deprecated\n" +
+            "    | Use threshold instead."
+        );
         this.default_intersectionRatio =
           options.intersectionRatio == 1 ? 0.99 : options.intersectionRatio;
       } else {
@@ -340,19 +362,24 @@ class jos {
     if (options.disable == true) {
       this.rst();
       if (this.debug == true) {
-        console.log("JOS Disabled");
+        console.info("JOS [" + Date.now() + "] [DEBUG]\n    : Disbaled");
       }
     } else {
       if (this.debug == true) {
-        console.log("JOS Enabled");
+        console.info("JOS [" + Date.now() + "] [DEBUG]\n    : Started");
       }
       this.animationInit();
     }
   }
 
-  rst = () => {
+  rst = (type = 0) => {
     this.boxes.forEach((box) => {
-      box.classList.remove("jos-" + box.dataset.jos_animation);
+      if (type == 0) {
+        box.classList.remove("jos-" + box.dataset.jos_animation);
+      } else {
+        box.classList.add("jos-" + box.dataset.jos_animation);
+      }
+      this.observer.unobserve(box);
     });
 
     this.jos_stylesheet.insertRule(
@@ -364,50 +391,79 @@ class jos {
           ";") +
         "}"
     );
-
-    this.observer.disconnect();
   };
 
+  start() {
+    this.disable = false;
+  }
   reset(type = 0) {
-    this.rst();
+    // 0 resets to initial state (opacity 0 all elements)
+    // 1 resets to final state (opacity 1 all elements)
+    // -1 re initialize variables (opacity 1 for elements that are in view only)
+
     let returnString = "";
-    if (type == -1) {
-      returnString = "JOS Disabled";
-    } else if (type == 1) {
+
+    if (type == 0) {
+      this.disable = false;
+      this.rst(1);
+
+      returnString = "Reset | In initial state (ie: Opacity 0 all elements)";
+    } else if (type == -1) {
+      this.rst(0);
       this.animationInit();
-      returnString = "JOS Reset";
+      returnString =
+        "Reset | Re-initialize variables (opacity 1 for elements that are in view only)";
     }
     // console.log("JOS Reset");
     else {
-      returnString = "JOS Reset Retaining Final State";
+      this.rst(0);
+      returnString = "Reset | In final state (ie: Opacity 1 all elements)";
     }
+
+    this.disable = false;
     // return this;
     if (this.debug == true) {
-      return returnString;
-    } else {
-      return null;
+      console.info("JOS [" + Date.now() + "] [STATUS]\n    : " + returnString);
     }
+    return true;
   }
-  disable() {
-    this.rst();
+  stop(type = 0) {
+    // -1 = disable and reset to initial state (opacity 0)
+    // 0  or any = disable and reset to final state (opacity 1)
+    // 1 = disable in place
+    var returnString = "";
+    if (type == -1) {
+      this.disable = true;
+      this.rst(1);
+      returnString = "Disabled | Reset to initial state (ie: Opacity 0)";
+    } else if (type == 1) {
+      this.disable = true;
+      returnString = "Disabled | Elements in place";
+    } else {
+      this.disable = true;
+      this.rst(0);
+      returnString = "Disabled | Reset to final state (ie: Opacity 1)";
+    }
 
-    // console.log("JOS Disabled");
-    return "JOS Disabled";
-
+    if (this.debug == true) {
+      console.info("JOS [" + Date.now() + "] [STATUS]\n    : " + returnString);
+    }
+    this.observer.disconnect();
+    return true;
     // return this;
   }
   destroy() {
     this.rst();
     this.boxes.forEach((box) => {
       box.classList.remove("jos");
+      box.classList.remove("jos-" + box.dataset.jos_animation);
     });
     // console.log("JOS Destroyed");
 
     if (this.debug == true) {
-      return "JOS Destroyed";
-    } else {
-      return null;
+      console.info("JOS [" + Date.now() + "] [DEBUG]\n    : Destroyed");
     }
+    return null;
     // return this;
   }
 }
