@@ -63,7 +63,7 @@ About Jesvi Jonathan: https://jesvi.pythonanywhere.com
     </section>
 
     <section>
-      <div class="demo-container jos">
+      <div class="demo-container jos" data-jos_once="4">
         <div class="demo-name">
           <div class="demo-text">Fade</div>
 
@@ -81,7 +81,12 @@ About Jesvi Jonathan: https://jesvi.pythonanywhere.com
         </div>
       </div>
 
-      <div class="demo-container jos" data-jos_animation="fade-right">
+      <div
+        class="demo-container jos"
+        data-jos_duration="0.3"
+        data-jos_timing-function="ease-in-out"
+        data-jos_animation="fade-right"
+      >
         <div class="demo-name">
           <div class="demo-text">Fade [Right]</div>
 
@@ -170,7 +175,11 @@ About Jesvi Jonathan: https://jesvi.pythonanywhere.com
         </div>
       </div>
 
-      <div class="demo-container jos" data-jos_animation="zoom">
+      <div
+        class="demo-container jos"
+        data-jos_duration="2"
+        data-jos_animation="zoom"
+      >
         <div class="demo-name">
           <div class="demo-text">Zoom</div>
 
@@ -206,7 +215,11 @@ About Jesvi Jonathan: https://jesvi.pythonanywhere.com
         </div>
       </div>
 
-      <div class="demo-container jos" data-jos_animation="zoom-out-left">
+      <div
+        id="test_id "
+        class="demo-container jos"
+        data-jos_animation="zoom-out-left"
+      >
         <div class="demo-name">
           <div class="demo-text">Zoom Out [Left]</div>
 
@@ -260,7 +273,11 @@ About Jesvi Jonathan: https://jesvi.pythonanywhere.com
         </div>
       </div>
 
-      <div class="demo-container jos" data-jos_animation="zoom-in">
+      <div
+        class="demo-container jos"
+        data-jos_once="true"
+        data-jos_animation="zoom-in"
+      >
         <div class="demo-name">
           <div class="demo-text">Zoom In</div>
 
@@ -403,7 +420,11 @@ About Jesvi Jonathan: https://jesvi.pythonanywhere.com
           </div>
         </div>
       </div>
-      <div class="demo-container jos" data-jos_animation="flip-down">
+      <div
+        class="demo-container jos"
+        data-jos_delay="0.5"
+        data-jos_animation="flip-down"
+      >
         <div class="demo-name">
           <div class="demo-text">Flip [Down]</div>
 
@@ -440,7 +461,7 @@ About Jesvi Jonathan: https://jesvi.pythonanywhere.com
     timingFunction: "ease-in-out", // JOS global timing function | Values :  'ease', 'ease-in', 'ease-out', 'ease-in-out', 'linear', 'step-start', 'step-end', 'steps()', 'cubic-bezier()', 'my-custom-timing-function'
     threshold: 0, // Set gloabal the threshold for the element to be visible | Values :  0-1
     // debounce: 0, // Set global the debounce time/rate for listening to scroll events | Values :  0-1000
-    // delay: 0, // Set global the delay for the animation to start | Values :  0,1,2,3,4,5
+    delay: 0.2, // Set global the delay for the animation to start | Values :  0,1,2,3,4,5
     duration: 0.8, // Set global the duration for the animation playback | Values :  flota : 0-1 & int : 0,1,2,3,4,5
     // animate_out: false, // Set whether elements should animate out while scrolling past them | Values :  'true', 'false'
     //rootMargin_top: "0%", // Set by which percent the element should animate out (Recommended value between 10% to -30%)
@@ -453,6 +474,15 @@ About Jesvi Jonathan: https://jesvi.pythonanywhere.com
 
   // JOS.init(options);
   JOS.init(options);
+  // JOS.Logger("JOS Initialized", 0);
+  // JOS.Logger("JOS Initialized", 1);
+  // JOS.Logger("JOS Initialized", 2);
+  // JOS.Logger("JOS Initialized", 3);
+  // JOS.Logger("JOS Initialized", 4);
+  // JOS.Logger("JOS Initialized", 5);
+  // JOS.Logger("JOS Initialized", 6);
+  //JOS.Logger("JOS Initialized", 7);
+
   //inititalize JOS class
 
   // Initialize JOS with default settings
