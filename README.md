@@ -251,17 +251,15 @@ Example : [Custom Function]()
 
 ## Bugs and Issues
 
-```
 - ~~JOS Methods do not work as of now.~~
 - attribute names are not consistent.
-- attribute <code>delay</code> is not working as of now.
+- .~~attribute <code>delay</code> is not working as of now..~~
 - ~~init method is not working as of now. (need to be set manually as var in html inline script)~~
 - debounce is not working as of now.
 - ~~Requires both js & css cdn links for JOS v0.3 & below.~~
-- JOS disable attribute is not working as of now.
+- .~~JOS disable attribute is not working as of now..~~
 - ~~should move from function workaround to class based approach~~
 - **Bug** where the element is not animating when the page is loaded and the element is already in view.
-```
 
 <!-- status
 critical
