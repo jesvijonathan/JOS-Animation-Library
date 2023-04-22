@@ -64,7 +64,17 @@ Feel free to report an issue or request a feature in this repository :)
 
 ## Installation
 
-1. Add the <code>[\<script>](https://github.com/jesvijonathan/Jesvi-Bot/releases)</code> right after the closing <code>\<body></code> tag :
+1. Add the <code>[\<link>](https://github.com/jesvijonathan/Jesvi-Bot/releases)</code> inside the closing <code>\<head></code> tag :
+
+```html
+<link
+  id="jos-stylesheet"
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.css"
+/>
+```
+
+2. Add the <code>[\<script>](https://github.com/jesvijonathan/Jesvi-Bot/releases)</code> right after the <code>\<body></code> tag :
 
 ```html
 <script
@@ -73,54 +83,59 @@ Feel free to report an issue or request a feature in this repository :)
 ></script>
 ```
 
+You can add minified version of the script by replacing <code>jos.js</code> with <code>jos.min.js</code> in the above script tag.
+
 ## Setup :
 
 1. Use <code>JOS.init();</code> to initialize the library with default settings.
 
-```js
-// Initialize JOS with default settings
-<script>JOS.init();</script>
+```html
+<!-- Initialize JOS with default settings -->
+<script>
+  JOS.init();
+</script>
 ```
 
 2. (<b>Or</b>) Use <code>JOS.init({\<options>});</code> to overide the default settings with your custom settings.
 
-```js
-// Initialize JOS with custom settings
+```html
+<!-- Global Parameters -->
 <script>
-  JOS.init(
-  {
-    // Global Options
-    disable : false, // Disable JOS gloabaly | Values :  'true', 'false'
-    once : false, // Disable JOS after first animation | Values :  'true', 'false', n (n = number of itterations)
-    animation : "fade", // JOS global animation type | Values :  'fade', 'slide', 'zoom', 'flip', 'fade-right', 'fade-left', 'fade-up', 'fade-down', 'zoom-in-right', 'zoom-in-left', 'zoom-in-up', 'zoom-in-down', 'zoom-out-right', 'zoom-out-left', 'zoom-out-up', 'zoom-out-down', 'flip-right', 'flip-left', 'flip-up', 'flip-down, "my-custom-animation"
-    timingFunction : "ease-in-out", // JOS global timing function | Values :  'ease', 'ease-in', 'ease-out', 'ease-in-out', 'linear', 'step-start', 'step-end', 'steps()', 'cubic-bezier()', 'my-custom-timing-function'
-    threshold : 0, // Set gloabal the threshold for the element to be visible | Values :  0-1
-    jos_default_debounce : 0, // Set global the debounce time/rate for listening to scroll events | Values :  0-1000
-    delay : 0, // Set global the delay for the animation to start | Values :  0,1,2,3,4,5
-    duration : 0.4, // Set global the duration for the animation playback | Values :  flota : 0-1 & int : 0,1,2,3,4,5
-    jos_default_animate_out : false, // Set whether elements should animate out while scrolling past them | Values :  'true', 'false'
-    jos_rootMargin_top : "-10%", // Set by which percent the element should animate out (Recommended value between 10% to -30%)
-    jos_rootMargin_bottom : "-40%", // Set by which percent the element should animate out (Recommended value between -10% to -60%)
+  JOS.init({
+    // disable: false, // Disable JOS gloabaly | Values :  'true', 'false'
+    debugMode: true, // Enable JOS debug mode | Values :  'true', 'false'
+    passive: false, // Set the passive option for the scroll event listener | Values :  'true', 'false'
 
-    jos_default_intersectionRatio : intersectionRatio_set(), // Set the intersection ratio between which the element should be visible | Values :  0-1 (automaticaly set)
-    jos_default_rootMargin :  "-10% 0% -40% 0%", // Set the root margin for the element to be visible | Values :  _% _% _% _%  (automaticaly set)
-    passive: true, // Set the passive option for the scroll event listener | Values :  'true', 'false'
-  }
-  );
+    once: false, // Disable JOS after first animation | Values :  'true', 'false'
+    animation: "fade", // JOS global animation type | Values :  'fade', 'slide', 'zoom', 'flip', 'fade-right', 'fade-left', 'fade-up', 'fade-down', 'zoom-in-right', 'zoom-in-left', 'zoom-in-up', 'zoom-in-down', 'zoom-out-right', 'zoom-out-left', 'zoom-out-up', 'zoom-out-down', 'flip-right', 'flip-left', 'flip-up', 'flip-down, "my-custom-animation"
+    timingFunction: "ease-in-out", // JOS global timing function | Values :  'ease', 'ease-in', 'ease-out', 'ease-in-out', 'linear', 'step-start', 'step-end', 'steps()', 'cubic-bezier()', 'my-custom-timing-function'
+    threshold: 0, // Set gloabal the threshold for the element to be visible | Values :  0-1
+    delay: 0, // Set global the delay for the animation to start | Values :  0,1,2,3,4,5
+    duration: 0.7, // Set global the duration for the animation playback | Values :  flota : 0-1 & int : 0,1,2,3,4,5
+
+    // rootMargin_top: "0%", // Set by which percent the element should animate out (Recommended value between 10% to -30%)
+    // rootMargin_bottom: "-50%", // Set by which percent the element should animate out (Recommended value between -10% to -60%)
+    // rootMargin: "0% 0% -50% 0%", // Set the root margin for the element to be visible | Values :  _% _% _% _%  (automaticaly set)
+    // intersectionRatio: 0.4, // Set the intersection ratio between which the element should be visible | Values :  0-1 (automaticaly set)
+    // rootMargin: jos_rootMargin_top + " 0% " + jos_rootMargin_bottom + " 0%"; // Set the root margin for the element to be visible | Values :  _% _% _% _%  (automaticaly set)
+
+    // animate_out: false, // Set whether elements should animate out while scrolling past them | Values :  'true', 'false'
+    // debounce: 0, // Set global the debounce time/rate for listening to scroll events | Values :  0-1000
+  });
 </script>
 ```
 
-3. Set <code>JOS</code> class to the element you want to animate :
+1. Set <code>class="jos"</code> to the element you want to animate :
 
 ```html
 <!-- JOS class is required to animate the element -->
 <div class="jos"></div>
 ```
 
-4. Set <code>data-jos</code> attributes to customize the element you want to animate :
+4. Set <code>data-jos</code> \*attributes to customize the element you want to animate :
 
 ```html
-<!-- JOS attributes are optional and can be used to customize the animation of the element -->
+<!-- JOS attributes are optional and will work without them (class="jos" is mandatory). these attributes can be used to customize the animation of the element -->
 <div
   class="jos"
   data-jos_animation="zoom"
@@ -140,7 +155,7 @@ See [JOS Props](#jos-attributes) for full information regarding the animation, a
 1. Create a custom animation by adding the following code to your stylesheet :
 
 ```css
-/* Custom animation class name starts with 'jos-' keyword*/
+/* Custom animation class name starts with 'jos-' keyword followed by the animation name*/
 .jos-my-custom-animation {
   /* Set the initial state of the element */
 }
@@ -193,22 +208,22 @@ function myCustomFunction() {
 
 This triggers the myCustomFunction() function when the element is scrolled into view.
 
-You can use <code>data-jos_invoke_out</code> attribute to trigger the function when the element is scrolled out of view.
+You can use <b><code>data-jos_invoke_out</code></b> attribute to trigger the function when the element is scrolled out of view.
 
 Example : [Custom Function]()
 
 ## JOS Attributes
 
-| Attribute                | Type    | Default | Description                                                                                                                                                                                                                                                                                                     |
-| ------------------------ | ------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| data-jos_animation       | string  | fade    | Set the animation type for the element. <br> Values : <br> fade, slide, zoom, flip, fade-right, fade-left, fade-up, fade-down, zoom-in-right, zoom-in-left, zoom-in-up, zoom-in-down, zoom-out-right, zoom-out-left, zoom-out-up, zoom-out-down, flip-right, flip-left, flip-up, flip-down, my-custom-animation |
-| data-jos_once            | boolean | false   | Set whether the element should animate only once. <br> Values : <br> true, false                                                                                                                                                                                                                                |
-| data-jos_delay           | int     | 0       | Set the delay for the animation to start. <br> Values : <br> 0,1,2,3,4,5                                                                                                                                                                                                                                        |
-| data-jos_duration        | float   | 0.4     | Set the duration for the animation playback. <br> Values : <br> float : 0-1 & int : 0,1,2,3,4,5                                                                                                                                                                                                                 |
-| data-jos_timing-function | string  | ease    | Set the timing function for the animation playback. <br> Values : <br> ease, ease-in, ease-out, ease-in-out, linear, step-start, step-end, steps(1, start), steps(1, end), cubic-bezier(0.1, 0.7, 1.0, 0.1), my-custom-timingFunc                                                                               |
-| data-jos_invoke          | string  | null    | Set the function to be invoked when the element is scrolled into view. <br> Values : <br> myCustomFunction                                                                                                                                                                                                      |
-| data-jos_invoke_out      | string  | null    | Set the function to be invoked when the element is scrolled out of view. <br> Values : <br> myCustomFunction                                                                                                                                                                                                    |
-| data-once                | boolean | false   | Set whether the element should animate only once. <br> Values : <br> true, false                                                                                                                                                                                                                                |
+| Attribute                | Type    | Default | Description                                                              | values                                                                                                                                                                                                                                                            |
+| ------------------------ | ------- | ------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| data-jos_animation       | string  | fade    | Set the animation type for the element.                                  | <code>fade, slide, zoom, flip, fade-right, fade-left, fade-up, fade-down, zoom-in-right, zoom-in-left, zoom-in-up, zoom-in-down, zoom-out-right, zoom-out-left, zoom-out-up, zoom-out-down, flip-right, flip-left, flip-up, flip-down, my-custom-animation</code> |
+| data-jos_once            | boolean | false   | Set whether the element should animate only once.                        | <code>true, false <code>                                                                                                                                                                                                                                          |
+| data-jos_delay           | int     | 0       | Set the delay for the animation to start.                                | <code> (float : 0-1) & (int : 0,1,2,3,4,5) </code>                                                                                                                                                                                                                |
+| data-jos_duration        | float   | 0.4     | Set the duration for the animation playback.                             | <code> (float : 0-1) & (int : 0,1,2,3,4,5) </code>                                                                                                                                                                                                                |     |
+| data-jos_timing-function | string  | ease    | Set the timing function for the animation playback.                      | <code> ease, ease-in, ease-out, ease-in-out, linear, step-start, step-end, steps(1, start), steps(1, end), cubic-bezier(0.1, 0.7, 1.0, 0.1), my-custom-timingFunc </code>                                                                                         |
+| data-jos_invoke          | string  | null    | Set the function to be invoked when the element is scrolled into view.   | <code> function, myCustomFunction</code>                                                                                                                                                                                                                          |
+| data-jos_invoke_out      | string  | null    | Set the function to be invoked when the element is scrolled out of view. | <code> function, myCustomFunction </code>                                                                                                                                                                                                                         |
+| data-once                | boolean | false   | Set whether the element should animate only once.                        | <code>true, false</code>                                                                                                                                                                                                                                          |
 
 <!-- ## JOS OPTIONS
 
@@ -253,15 +268,15 @@ Example : [Custom Function]()
 
 ## Bugs and Issues
 
-- ~~JOS Methods do not work as of now.~~
+- ~~JOS Methods do not work as of now.~~ (fixed in v0.3 upstream)
 - attribute names are not consistent.
-- .~~attribute <code>delay</code> is not working as of now..~~
-- ~~init method is not working as of now. (need to be set manually as var in html inline script)~~
-- debounce is not working as of now.
-- ~~Requires both js & css cdn links for JOS v0.3 & below.~~
-- .~~JOS disable attribute is not working as of now..~~
-- ~~should move from function workaround to class based approach~~
-- **Bug** where the element is not animating when the page is loaded and the element is already in view.
+- .~~attribute <code>delay</code> is not working as of now..~~ (added in v0.5)
+- ~~<code>init</code> method is not working as of now. (need to be set manually as var in html inline script)~~ (added in v0.5)
+- <code>bebounce</code> is not working as of now.
+- requires both js & css cdn links for JOS v0.5 & below.
+- .~~JOS <code>disable</code> attribute is not working as of now..~~ (fixed in v0.3 upstream)
+- ~~should move from function workaround to class based approach~~ (added in v0.5)
+- bug where the element is not animating when the page is loaded and the element is already in view.
 
 <!-- status
 critical
@@ -299,13 +314,18 @@ temporary
 
 ## Contributing
 
-- Fork it from main branch
-- Add your useful feature
+- Fork it from [main branch](https://github.com/jesvijonathan/JOS-Animation-Library)
+- Add your useful feature or fix a bug
 - Create a pull request
 
 ## License
 
 - [JOS]() is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+
+## Used By
+
+- [CIT Takshashila 23](https://www.cittakshashila.in/)
+- [JOS Demo](https://jesvijonathan.github.io/JOS-Animation-Library/)
 
 ## Credits
 

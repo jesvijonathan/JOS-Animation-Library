@@ -1,4 +1,5 @@
 class jos {
+  // JOS global parameter
   default_once = false;
   default_animation = "fade";
   default_timingFunction = "ease-in-out";
@@ -8,22 +9,21 @@ class jos {
   default_intersectionRatio = 0;
   default_rootMargin = "-10% 0% -40% 0%";
   default_passive = true;
-
+  debug = false;
+  disable = false;
+  // Package Info
   version = "0.5 (Beta)";
   author = "Jesvi Jonathan";
   github = "https://github.com/jesvijonathan/JOS-Animation-Library";
-  debug = false;
-  disable = false;
+  // Read DOM
   jos_stylesheet = document.getElementById("jos-stylesheet").sheet;
-
   boxes = document.querySelectorAll(".jos");
 
   constructor() {
     // will be completed later
   }
 
-  // refer tmp.js
-
+  //Init Debugger
   debugLogger(type = 0) {
     if (type == 0 || type == 1) {
       console.info(
@@ -66,22 +66,14 @@ class jos {
     );
   }
 
-  // animationInvoker(target, state) {
-  //   let target_jos_animation = target.dataset.jos_animation;
-  //   console.log("jos-" + target_jos_animation);
-
-  //   if (state) {
-  //   } else {
-  //   }
-  // }
-
   callbackRouter = (entries, observer) => {
     if (this.disable == true) {
       return;
     }
+    // target/entry being observed
     let entry = entries[0];
     let target = entry.target;
-    // debug info
+    // debug variable
     let text_once = "";
     let text_invoke = "";
     let state = "";
@@ -90,28 +82,29 @@ class jos {
     let text_timingFunction = "";
     let text_delay = "";
     let text_iterationCount = "";
-
-    // console.log(target);
     let target_jos_animation = target.dataset.jos_animation;
 
+    // Check for viewport intersection
     if (entry.intersectionRatio > this.default_intersectionRatio) {
       state = "Enter";
-      // console.log("jos-" + target_jos_animation);
+      // add to element counter
       if (target.dataset.jos_counter != undefined) {
         let counter_value = parseInt(target.dataset.jos_counter);
         counter_value++;
         target.dataset.jos_counter = counter_value;
         text_iterationCount = "\n    | Counter : " + counter_value;
       }
+      // start animation
       if (target_jos_animation) {
-        // console.log("Animation-Triggered");
         target.classList.remove("jos-" + target_jos_animation);
 
+        // check for element invoke function
         if (target.dataset.jos_invoke != undefined) {
           window[target.dataset.jos_invoke](target);
           text_invoke = "\n    | Invoked : " + target.dataset.jos_invoke;
         }
 
+        // once or n times on viewport logic
         if (
           target.dataset.jos_once != undefined ||
           target.dataset.jos_once != "false"
@@ -133,10 +126,11 @@ class jos {
 
       // iiterate the counter for the element
     } else {
+      // revert animation
       state = "Exit";
-      // console.log("Animation-Removed");
       target.classList.add("jos-" + target_jos_animation);
 
+      // check for element invoke function
       if (target.dataset.jos_invoke_out != undefined) {
         window[target.dataset.jos_invoke_out](target);
         text_invoke = "\n    | Invoked : " + target.dataset.jos_invoke_out;
@@ -144,6 +138,7 @@ class jos {
       // console.log("jos-" + target_jos_animation);
     }
 
+    // debug info
     if (target.id != "") {
       text_target = "\n    | ID : " + target.id;
     }
@@ -159,6 +154,7 @@ class jos {
     if (target.dataset.jos_delay != undefined) {
       text_delay = "\n    | Delay : " + target.dataset.jos_delay + "s";
     }
+    // debug info
     if (this.debug == true) {
       console.debug(
         "JOS " +
@@ -187,11 +183,12 @@ class jos {
     }
   };
 
+  // initialize the observer
   animationInit() {
     let log_text = "";
     this.boxes.forEach((box) => {
       // observer.observe(box);;
-
+      // check for default values
       let object_default_once = box.dataset.jos_once;
       let object_default_itterationCount = box.dataset.jos_count;
       let object_default_animation = box.dataset.jos_animation;
@@ -199,6 +196,7 @@ class jos {
       let object_default_duration = box.dataset.jos_duration;
       let object_default_delay = box.dataset.jos_delay;
 
+      // set element attribute values
       if (object_default_once != undefined && object_default_once != "false") {
         //object_default_once = this.default_once;
         if (object_default_once == "true") {
@@ -249,7 +247,7 @@ class jos {
       box.setAttribute("data-jos_counter", "0");
       box.classList.add("jos-" + object_default_animation);
 
-      //refresh the dom to apply the re insert the elements in the body
+      // refresh the dom to apply the re insert the elements in the body
 
       this.observer = new IntersectionObserver(this.callbackRouter, {
         rootMargin: this.default_rootMargin,
@@ -257,8 +255,10 @@ class jos {
         passive: this.default_passive,
       });
 
+      // add observer for element
       this.observer.observe(box);
     });
+    // debug info
     if (this.debug == true) {
       console.log(
         "JOS " +
@@ -283,6 +283,7 @@ class jos {
     }
   }
 
+  // initialize JOS class
   init(options) {
     // apply options if value is not undefined
 
@@ -337,12 +338,13 @@ class jos {
             " 0%";
         }
       }
+      // debug info for debug mode
       if (options.debugMode == true) {
         this.debug = true;
         this.debugLogger();
       }
     }
-
+    // add global css for jos
     this.jos_stylesheet.insertRule(
       ".jos {" +
         // ("transition-timing-function: " +
@@ -371,17 +373,22 @@ class jos {
       this.animationInit();
     }
   }
-
+  // reset common function
   rst = (type = 0) => {
+    // 0 resets to initial state (opacity 0 all elements)
     this.boxes.forEach((box) => {
+      // reset to initial state
       if (type == 0) {
         box.classList.remove("jos-" + box.dataset.jos_animation);
       } else {
+        // reset to final state
         box.classList.add("jos-" + box.dataset.jos_animation);
       }
+      // unobserve element
       this.observer.unobserve(box);
     });
 
+    // reset jos css class
     this.jos_stylesheet.insertRule(
       ".jos {" +
         ("transition: " +
@@ -393,9 +400,11 @@ class jos {
     );
   };
 
+  // start the animation class
   start() {
     this.disable = false;
   }
+  // reset the animation class
   reset(type = 0) {
     // 0 resets to initial state (opacity 0 all elements)
     // 1 resets to final state (opacity 1 all elements)
@@ -422,11 +431,13 @@ class jos {
 
     this.disable = false;
     // return this;
+    // debug info
     if (this.debug == true) {
       console.info("JOS [" + Date.now() + "] [STATUS]\n    : " + returnString);
     }
     return true;
   }
+  // stop the animation class
   stop(type = 0) {
     // -1 = disable and reset to initial state (opacity 0)
     // 0  or any = disable and reset to final state (opacity 1)
@@ -452,14 +463,16 @@ class jos {
     return true;
     // return this;
   }
+  // destroy the animation class
   destroy() {
     this.rst();
     this.boxes.forEach((box) => {
+      // remove jos class from all element
       box.classList.remove("jos");
       box.classList.remove("jos-" + box.dataset.jos_animation);
     });
     // console.log("JOS Destroyed");
-
+    // debug info
     if (this.debug == true) {
       console.info("JOS [" + Date.now() + "] [DEBUG]\n    : Destroyed");
     }
@@ -469,5 +482,4 @@ class jos {
 }
 
 // Create an JOS object
-
 const JOS = new jos();
