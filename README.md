@@ -79,7 +79,7 @@ Feel free to report an issue or request a feature in this repository :)
 ```html
 <script
   defer
-  src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.js"
+  src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.min.js"
 ></script>
 ```
 
