@@ -83,10 +83,7 @@ Feel free to report an issue or request a feature in this repository :)
 2. Add the <code>[\<script>](https://github.com/jesvijonathan/Jesvi-Bot/releases)</code> right after the <code>\<body></code> tag :
 
 ```html
-<script
-  defer
-  src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.min.js"
-></script>
+<script src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.min.js"></script>
 ```
 
 You can add minified version of the script by replacing <code>jos.js</code> with <code>jos.min.js</code> in the above script tag.
