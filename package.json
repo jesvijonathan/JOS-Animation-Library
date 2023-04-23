@@ -1,0 +1,34 @@
+{
+  "name": "jos",
+  "version": "0.6.0",
+  "description": "JOS is an animation library package to instantly add beautiful/professional looking animation to your website",
+  "main": "jos.debug.js",
+  "scripts": {
+    "test": "node ./dist/jos.debug.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesvijonathan/JOS-Animation-Library.git"
+  },
+  "keywords": [
+    "jos",
+    "on-scroll",
+    "animation",
+    "library",
+    "package",
+    "jesvi",
+    "uikit",
+    "javascript",
+    "lightweight",
+    "performance",
+    "scroll",
+    "event",
+    "css"
+  ],
+  "author": "Jesvi Jonathan",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/jesvijonathan/JOS-Animation-Library/issues"
+  },
+  "homepage": "https://github.com/jesvijonathan/JOS-Animation-Library#readme"
+}
