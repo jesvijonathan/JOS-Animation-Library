@@ -156,7 +156,7 @@ JOS = new (class jos {
           this.default_delay +
           "s !important;}"
       ),
-      1 == options.disable ? this.rst() : this.animationInit();
+      1 == this.disable ? this.rst() : this.animationInit();
   }
   rst = (type = 0) => {
     this.boxes.forEach((box) => {
