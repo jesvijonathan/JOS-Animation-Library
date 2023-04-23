@@ -42,7 +42,7 @@
 
 ## About This Project
 
-JOS is a simple & easy to use animation library package to instantly add professional animation to your website. It was built to make my life easier while developing websites & comes with tons of features and is fully customizable. It is lightweight & has a very small footprint. The best part of all is that it has no toll on performance.
+JOS is a simple & easy to use animation library package to instantly add professional animation to your website. It was built to make my life easier while developing websites & comes with tons of features and is fully customizable. It is lightweight & has a very small footprint. The best part of all is that it has No/Min toll on performance.
 
 - Open source, no download or install, just add a script tag (Embed).
 - Includes Preset and expert custom animation options.
@@ -54,6 +54,8 @@ JOS is a simple & easy to use animation library package to instantly add profess
 
 This project is currently being developed by me & the dev community, So you can expect more features and updates quite often..
 
+Was inpired by GSAP, AOS libraries. I wanted something easier to use, with great performance and wanted to make the implementation better. So I worked on it from scratch.
+
 Feel free to report an issue or request a feature in this repository :)
 & for more information, Check out the [JOS Webpage](https://jesvijonathan.github.io/JOS-Animation-Library).
 
@@ -64,7 +66,7 @@ Feel free to report an issue or request a feature in this repository :)
 
 ## Installation
 
-1. Add the <code>[\<link>](https://github.com/jesvijonathan/Jesvi-Bot/releases)</code> inside the closing <code>\<head></code> tag :
+1. Add the <code>[\<link>](https://github.com/jesvijonathan/Jesvi-Bot/releases)</code> inside the <code>\<head></code> tag :
 
 ```html
 <link
@@ -84,6 +86,12 @@ Feel free to report an issue or request a feature in this repository :)
 ```
 
 You can add minified version of the script by replacing <code>jos.js</code> with <code>jos.min.js</code> in the above script tag.
+Use <code>defer</code> attribute in script tag to make sure the script is loaded after the DOM is loaded.
+
+- <code>jos.js</code> for basic.
+- <code>jos.min.js</code> for production use.
+- <b><code>jos.debug.js</code></b> for prettier <b>debugging</b> along with some other function.
+- <code>jos.debug.min.js</code> for debugging along in minified version.
 
 ## Setup :
 
@@ -215,7 +223,7 @@ Example : [Custom Function]()
 ## JOS Attributes
 
 | Attribute                | Type    | Default | Description                                                              | values                                                                                                                                                                                                                                                            |
-| ------------------------ | ------- | ------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ------------------------ | ------- | ------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
 | data-jos_animation       | string  | fade    | Set the animation type for the element.                                  | <code>fade, slide, zoom, flip, fade-right, fade-left, fade-up, fade-down, zoom-in-right, zoom-in-left, zoom-in-up, zoom-in-down, zoom-out-right, zoom-out-left, zoom-out-up, zoom-out-down, flip-right, flip-left, flip-up, flip-down, my-custom-animation</code> |
 | data-jos_once            | boolean | false   | Set whether the element should animate only once.                        | <code>true, false <code>                                                                                                                                                                                                                                          |
 | data-jos_delay           | int     | 0       | Set the delay for the animation to start.                                | <code> (float : 0-1) & (int : 0,1,2,3,4,5) </code>                                                                                                                                                                                                                |
@@ -322,10 +330,18 @@ temporary
 
 - [JOS]() is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
-## Used By
+## Used In
 
 - [CIT Takshashila 23](https://www.cittakshashila.in/)
 - [JOS Demo](https://jesvijonathan.github.io/JOS-Animation-Library/)
+
+### Why use JOS ?
+
+- For <b>Performance</b>, JOS has a different implementation and it's sellingpoint is obviously performance.
+- <b>Easy to use</b>, you can use it in your projects with very minimal effort.
+- JOS is lightweight
+- Customizable with own attributes and animation.
+- Open sourced and free to use
 
 ## Credits
 
