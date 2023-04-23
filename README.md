@@ -1,8 +1,11 @@
-<!-- PROJECT LOGO -->
+<!--
+JOS : Animation Library
+By Jesvi Jonathan
+ -->
 <br />
 <p align="center">
   <a href="https://github.com/jesvijonathan/JOS-Animation-Library">
-    <img src="./resource/logo.jpg" alt="Logo" height="200">
+    <img src="./res/logo.jpg" alt="JOS Logo" height="200">
   </a>
 
   <h3 align="center">JOS : Animation Library</h3>
@@ -42,7 +45,7 @@
 
 ## About This Project
 
-JOS is a simple & easy to use animation library package to instantly add professional animation to your website. It was built to make my life easier while developing websites & comes with tons of features and is fully customizable. It is lightweight & has a very small footprint. The best part of all is that it has No/Min toll on performance.
+JOS is a simple & easy to use animation library package to instantly add professional animation to your website. It was built to make my life easier while developing websites & comes with tons of features and is fully customizable. It is lightweight & has a very small footprint. The best part of all is that it has no (\*minimum) toll on performance.
 
 - Open source, no download or install, just add a script tag (Embed).
 - Includes Preset and expert custom animation options.
@@ -134,14 +137,14 @@ Use <code>defer</code> attribute in script tag to make sure the script is loaded
 </script>
 ```
 
-1. Set <code>class="jos"</code> to the element you want to animate :
+3. Set <code>class="jos"</code> to the element you want to animate :
 
 ```html
 <!-- JOS class is required to animate the element -->
 <div class="jos"></div>
 ```
 
-4. Set <code>data-jos</code> \*attributes to customize the element you want to animate :
+1. Set <code>data-jos</code> \*attributes to customize the element you want to animate,<br>(although these attributes are optional and will work without them) :
 
 ```html
 <!-- JOS attributes are optional and will work without them (class="jos" is mandatory). these attributes can be used to customize the animation of the element -->
@@ -224,11 +227,11 @@ Example : [Custom Function]()
 ## JOS Attributes
 
 | Attribute                | Type    | Default | Description                                                              | values                                                                                                                                                                                                                                                            |
-| ------------------------ | ------- | ------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| ------------------------ | ------- | ------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | data-jos_animation       | string  | fade    | Set the animation type for the element.                                  | <code>fade, slide, zoom, flip, fade-right, fade-left, fade-up, fade-down, zoom-in-right, zoom-in-left, zoom-in-up, zoom-in-down, zoom-out-right, zoom-out-left, zoom-out-up, zoom-out-down, flip-right, flip-left, flip-up, flip-down, my-custom-animation</code> |
 | data-jos_once            | boolean | false   | Set whether the element should animate only once.                        | <code>true, false <code>                                                                                                                                                                                                                                          |
 | data-jos_delay           | int     | 0       | Set the delay for the animation to start.                                | <code> (float : 0-1) & (int : 0,1,2,3,4,5) </code>                                                                                                                                                                                                                |
-| data-jos_duration        | float   | 0.4     | Set the duration for the animation playback.                             | <code> (float : 0-1) & (int : 0,1,2,3,4,5) </code>                                                                                                                                                                                                                |     |
+| data-jos_duration        | float   | 0.4     | Set the duration for the animation playback.                             | <code> (float : 0-1) & (int : 0,1,2,3,4,5) </code>                                                                                                                                                                                                                |
 | data-jos_timing-function | string  | ease    | Set the timing function for the animation playback.                      | <code> ease, ease-in, ease-out, ease-in-out, linear, step-start, step-end, steps(1, start), steps(1, end), cubic-bezier(0.1, 0.7, 1.0, 0.1), my-custom-timingFunc </code>                                                                                         |
 | data-jos_invoke          | string  | null    | Set the function to be invoked when the element is scrolled into view.   | <code> function, myCustomFunction</code>                                                                                                                                                                                                                          |
 | data-jos_invoke_out      | string  | null    | Set the function to be invoked when the element is scrolled out of view. | <code> function, myCustomFunction </code>                                                                                                                                                                                                                         |
@@ -339,7 +342,7 @@ temporary
 
 ### Why use JOS ?
 
-- For <b>Performance</b>, JOS has a different implementation and it's sellingpoint is obviously performance.
+- <b>Performance</b>, JOS has a implementation, different from others.
 - <b>Easy to use</b>, you can use it in your projects with very minimal effort.
 - JOS is lightweight
 - Customizable with own attributes and animation.
@@ -347,4 +350,8 @@ temporary
 
 ## Credits
 
-- ##### [Jesvi Jonathan](https://jesvi.pythonanywhere.com)
+<div align="center">
+
+#### <i><u>This project was solely developed by</i> [Jesvi Jonathan](https://jesvi.pythonanywhere.com)</u>
+
+</div>

@@ -1,4 +1,4 @@
-JOS = new (class jos {
+const JOS = new (class jos {
   default_once = !1;
   default_animation = "fade";
   default_timingFunction = "ease-in-out";
@@ -209,3 +209,4 @@ JOS = new (class jos {
     );
   }
 })();
+// By Jesvi Jonathan
