@@ -284,7 +284,7 @@ class jos {
   }
 
   // initialize JOS class
-  init(options) {
+  init(options = {}) {
     // apply options if value is not undefined
 
     if (options) {

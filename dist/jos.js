@@ -117,7 +117,7 @@ const JOS = new (class jos {
         this.observer.observe(box);
     });
   }
-  init(options) {
+  init(options={}) {
     options &&
       (null != options.once && (this.default_once = options.once),
       null != options.animation && (this.default_animation = options.animation),
