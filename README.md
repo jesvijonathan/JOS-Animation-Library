@@ -223,7 +223,7 @@ Example : [Custom Function]()
 ## JOS Attributes
 
 | Attribute                | Type    | Default | Description                                                              | values                                                                                                                                                                                                                                                            |
-| ------------------------ | ------- | ------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | 
+| ------------------------ | ------- | ------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
 | data-jos_animation       | string  | fade    | Set the animation type for the element.                                  | <code>fade, slide, zoom, flip, fade-right, fade-left, fade-up, fade-down, zoom-in-right, zoom-in-left, zoom-in-up, zoom-in-down, zoom-out-right, zoom-out-left, zoom-out-up, zoom-out-down, flip-right, flip-left, flip-up, flip-down, my-custom-animation</code> |
 | data-jos_once            | boolean | false   | Set whether the element should animate only once.                        | <code>true, false <code>                                                                                                                                                                                                                                          |
 | data-jos_delay           | int     | 0       | Set the delay for the animation to start.                                | <code> (float : 0-1) & (int : 0,1,2,3,4,5) </code>                                                                                                                                                                                                                |
@@ -284,6 +284,7 @@ Example : [Custom Function]()
 - requires both js & css cdn links for JOS v0.5 & below.
 - .~~JOS <code>disable</code> attribute is not working as of now..~~ (fixed in v0.3 upstream)
 - ~~should move from function workaround to class based approach~~ (added in v0.5)
+- ~~Need to add minified and other versions of JOS package~~ (updated in v0.6)
 - bug where the element is not animating when the page is loaded and the element is already in view.
 
 <!-- status
