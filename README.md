@@ -54,7 +54,7 @@ JOS is a simple & easy to use animation library package to instantly add profess
 
 This project is currently being developed by me & the dev community, So you can expect more features and updates quite often..
 
-Was inpired by GSAP, AOS libraries. I wanted something easier to use, with great performance and wanted to make the implementation better. So I worked on it from scratch.
+Was inpired by GSAP, AOS libraries. I wanted something easier to use, with great performance and wanted to make the implementation better. So I worked on this project from scratch.
 
 Feel free to report an issue or request a feature in this repository :)
 & for more information, Check out the [JOS Webpage](https://jesvijonathan.github.io/JOS-Animation-Library).
@@ -345,4 +345,4 @@ temporary
 
 ## Credits
 
-- ###### [Jesvi Jonathan](https://jesvi.pythonanywhere.com)
+- ##### [Jesvi Jonathan](https://jesvi.pythonanywhere.com)
