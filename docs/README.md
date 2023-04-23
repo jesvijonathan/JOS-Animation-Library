@@ -73,6 +73,7 @@ Feel free to report an issue or request a feature in this repository :)
   id="jos-stylesheet"
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.css"
+  crossorigin="anonymous"
 />
 ```
 
