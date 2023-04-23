@@ -320,6 +320,9 @@ class jos {
       if (options.delay != undefined) {
         this.default_delay = options.delay;
       }
+      if (options.disable != undefined) {
+        this.default_disable = options.disable;
+      }
       if (options.rootMargin != undefined) {
         this.default_rootMargin = options.rootMargin;
       } else {
@@ -361,7 +364,7 @@ class jos {
           "s !important;") +
         "}"
     );
-    if (options.disable == true) {
+    if (this.default_disable == true) {
       this.rst();
       if (this.debug == true) {
         console.info("JOS [" + Date.now() + "] [DEBUG]\n    : Disbaled");

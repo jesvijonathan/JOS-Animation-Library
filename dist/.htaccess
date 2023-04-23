@@ -1,7 +1,0 @@
-RewriteEngine On
-RewriteBase /site/
-
-RewriteCond %{REQUEST_FILENAME} !/(admin|css|fonts|ico|include|js)/
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.+?)/?$ index.php?page=$1 [L,QSA]
