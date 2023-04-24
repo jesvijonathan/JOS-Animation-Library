@@ -330,7 +330,7 @@ temporary
 
 ## License
 
-- [JOS]() is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+- [JOS](https://github.com/jesvijonathan/JOS-Animation-Library/blob/master/LICENSE.md) is licensed under the [GPL-3.0 License](https://github.com/jesvijonathan/JOS-Animation-Library/blob/master/LICENSE.md).
 
 ## Used In
 
