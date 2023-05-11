@@ -7,6 +7,11 @@
   transition: 0.5s;
   transition-timing-function: ease-in-out;
 }
+.jos-anchor {
+  opacity: 0;
+  transition: 0.5s;
+  transition-timing-function: ease-in-out;
+}
 .jos-fade-default {
   opacity: 0;
   transform: (0);
@@ -35,43 +40,52 @@
 }
 
 .jos-zoom,
-.jos-zoom-out {
+.jos-grow .jos-zoom-out {
   opacity: 0;
   transform: scale(0.8);
 }
-.jos-zoom-out-left {
+.jos-zoom-out-left,
+.jos-grow-left {
   opacity: 0;
   transform: scale(0.8) translate3d(100px, 0px, -100px);
 }
-.jos-zoom-out-down {
+.jos-zoom-out-down,
+.jos-grow-down {
   opacity: 0;
   transform: scale(0.8) translate3d(0px, -100px, 0px);
 }
-.jos-zoom-out-up {
+.jos-zoom-out-up,
+.jos-grow-up {
   opacity: 0;
   transform: scale(0.8) translate3d(0px, 100px, 0px);
 }
-.jos-zoom-out-right {
+.jos-zoom-out-right,
+.jos-grow-right {
   opacity: 0;
   transform: scale(0.8) translate3d(-100px, 0px, -100px);
 }
-.jos-zoom-in {
+.jos-zoom-in,
+.jos-shrink {
   opacity: 0;
   transform: scale(1.1);
 }
-.jos-zoom-in-down {
+.jos-zoom-in-down,
+.jos-shrink-down {
   opacity: 0;
   transform: scale(1.1) translate3d(0px, -100px, 0px);
 }
-.jos-zoom-in-up {
+.jos-zoom-in-up,
+.jos-shrink-up {
   opacity: 0;
   transform: scale(1.1) translate3d(0px, 100px, 0px);
 }
-.jos-zoom-in-right {
+.jos-zoom-in-right,
+.jos-shrink-right {
   opacity: 0;
   transform: scale(1.1) translate3d(-100px, 0px, -100px);
 }
-.jos-zoom-in-left {
+.jos-zoom-in-left,
+.jos-shrink-left {
   opacity: 0;
   transform: scale(1.1) translate3d(100px, 0px, -100px);
 }
@@ -84,11 +98,15 @@
   transform: translateX(100px) scale(0);
 } */
 
-.jos-zoom-up {
+.jos-zoom-up,
+.jos-zoom-out-up,
+.jos-grow-up {
   opacity: 0;
   transform: translateY(50px) scale(0);
 }
-.jos-zoom-down {
+.jos-zoom-down,
+.jos-zoom-out-down,
+.jos-grow-down {
   opacity: 0;
   transform: translateY(-50px) scale(0);
 }
@@ -109,6 +127,42 @@
 .jos-flip-down {
   opacity: 0;
   transform: perspective(2500px) rotateX(100deg);
+}
+.jos-rotate,
+.jos-rotate-left {
+  opacity: 0;
+  transform: rotate(180deg);
+}
+.jos-rotate-right {
+  opacity: 0;
+  transform: rotate(-180deg);
+}
+.jos-spin,
+.jos-spin-left {
+  opacity: 0;
+  transform: rotate(180deg) scale(0);
+}
+.jos-spin-right {
+  opacity: 0;
+  transform: rotate(-180deg) scale(0);
+}
+
+.jos-revolve,
+.jos-revolve-left {
+  opacity: 0;
+  transform: rotate(360deg) scale(0);
+}
+.jos-revolve-right {
+  opacity: 0;
+  transform: rotate(-360deg) scale(0);
+}
+.jos-stretch {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.jos-stretch-vertical {
+  opacity: 0;
+  transform: scaleY(0);
 }
 [data-jos_pow="0.1"] {
   transform: rotateY(calc(0.1 * 360deg));

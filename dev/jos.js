@@ -65,6 +65,65 @@ class jos {
         "\n"
     );
   }
+  callbackRouter_anchor = (entries, observer) => {
+    let entry = entries[0];
+    let parentTarget = entry.target;
+    console.log(parentTarget);
+
+    let elem = document.querySelectorAll(
+      "[data-jos_anchor=" + parentTarget.id + "]"
+    );
+    elem.forEach((target) => {
+      console.log(target);
+
+      let text_once = "";
+      let text_invoke = "";
+      let state = "";
+      let text_target = "";
+      let text_duration = "";
+      let text_timingFunction = "";
+      let text_delay = "";
+      let text_iterationCount = "";
+      let target_jos_animation = target.dataset.jos_animation;
+
+      state = "Enter";
+
+      // if (element.dataset.jos_counter != undefined) {
+      //   let counter_value = parseInt(element.dataset.jos_counter);
+      //   counter_value++;
+      //   element.dataset.jos_counter = counter_value;
+      //   text_iterationCount = "\n    | Counter : " + counter_value;
+      // }
+      //   if (target_jos_animation) {
+      //     target.classList.remove("jos-" + target_jos_animation);
+
+      //     // check for element invoke function
+      //     if (target.dataset.jos_invoke != undefined) {
+      //       window[target.dataset.jos_invoke](target);
+      //       text_invoke = "\n    | Invoked : " + target.dataset.jos_invoke;
+      //     }
+
+      //     // once or n times on viewport logic
+      //     if (
+      //       target.dataset.jos_once != undefined ||
+      //       target.dataset.jos_once != "false"
+      //     ) {
+      //       // target.classList.remove("jos");
+      //       // console.log("Removed-Observer");
+      //       if (target.dataset.jos_once == "true") {
+      //         observer.unobserve(target);
+      //         text_once = "\n    | Once :  Removed Observer (1)";
+      //       } else if (target.dataset.jos_counter >= target.dataset.jos_once) {
+      //         observer.unobserve(target);
+      //         text_once =
+      //           "\n    | Once :  Removed Observer (" +
+      //           target.dataset.jos_once +
+      //           ")";
+      //       }
+      //     }
+      //   }
+    });
+  };
 
   callbackRouter = (entries, observer) => {
     if (this.disable == true) {
@@ -88,6 +147,7 @@ class jos {
     if (entry.intersectionRatio > this.default_intersectionRatio) {
       state = "Enter";
       // add to element counter
+
       if (target.dataset.jos_counter != undefined) {
         let counter_value = parseInt(target.dataset.jos_counter);
         counter_value++;
@@ -124,6 +184,9 @@ class jos {
         }
       }
 
+      document.getElementsByName("jos_anchor").forEach((element) => {
+        element.classList.remove("jos-anchor");
+      });
       // iiterate the counter for the element
     } else {
       // revert animation
@@ -249,14 +312,23 @@ class jos {
 
       // refresh the dom to apply the re insert the elements in the body
 
-      this.observer = new IntersectionObserver(this.callbackRouter, {
-        rootMargin: this.default_rootMargin,
-        threshold: this.default_threshold,
-        passive: this.default_passive,
-      });
+      if (box.dataset.jos_anchor != undefined) {
+        this.observer = new IntersectionObserver(this.callbackRouter_anchor, {
+          rootMargin: this.default_rootMargin,
+          threshold: this.default_threshold,
+          passive: this.default_passive,
+        });
+        this.observer.observe(document.getElementById(box.dataset.jos_anchor));
+      } else {
+        this.observer = new IntersectionObserver(this.callbackRouter, {
+          rootMargin: this.default_rootMargin,
+          threshold: this.default_threshold,
+          passive: this.default_passive,
+        });
+        this.observer.observe(box);
+      }
 
       // add observer for element
-      this.observer.observe(box);
     });
     // debug info
     if (this.debug == true) {

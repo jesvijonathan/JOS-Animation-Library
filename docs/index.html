@@ -44,12 +44,12 @@ About Jesvi Jonathan: https://jesvi.pythonanywhere.com
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
 
     <link rel="stylesheet" href="style.css" />
-    <link
+    <!-- <link
       id="jos-stylesheet"
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.css"
       crossorigin="anonymous"
-    />
+    /> -->
     <link
       rel="icon"
       href="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/res/favicon.ico"
@@ -57,7 +57,7 @@ About Jesvi Jonathan: https://jesvi.pythonanywhere.com
     />
 
     <!-- <script defer src="../dist/jos.js"></script> -->
-    <!-- <link rel="stylesheet" href="../dist/jos.css" id="jos-stylesheet" /> -->
+    <link rel="stylesheet" href="../dev/jos.css" id="jos-stylesheet" />
 
     <!-- https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library -->
     <!-- <base
@@ -78,8 +78,22 @@ About Jesvi Jonathan: https://jesvi.pythonanywhere.com
         >
         | <u>Debug Mode</u>)
       </h3>
-    </section>
 
+      <div class="fix">
+        <div
+          id="notmyelem"
+          class="fix-element jos"
+          data-jos_animation="spin"
+          data-jos_anchor="myelem"
+        ></div>
+      </div>
+    </section>
+    <script>
+      function example() {
+        console.log("example");
+        alert("example");
+      }
+    </script>
     <section>
       <div class="demo-container jos" data-jos_once="4">
         <div class="demo-name">
@@ -98,13 +112,11 @@ About Jesvi Jonathan: https://jesvi.pythonanywhere.com
           </div>
         </div>
       </div>
-
-      <div
-        class="demo-container jos"
-        data-jos_duration="0.3"
-        data-jos_timing-function="ease-in-out"
-        data-jos_animation="fade-right"
-      >
+      <!-- class="demo-container jos"
+      data-jos_duration="0.3"
+      data-jos_timing-function="ease-in-out"
+      data-jos_animation="fade-right" -->
+      <div id="myelem" data-jos_test="asdasd">
         <div class="demo-name">
           <div class="demo-text">Fade [Right]</div>
 
@@ -459,14 +471,122 @@ About Jesvi Jonathan: https://jesvi.pythonanywhere.com
           </div>
         </div>
       </div>
+
+      <div class="demo-container jos" data-jos_animation="rotate">
+        <div class="demo-name">
+          <div class="demo-text">Rotate</div>
+
+          <div class="demo-code">
+            <pre>
+&lt;div
+class="demo-container jos"    
+data-jos_animation="rotate" >
+
+  Rotate
+
+&lt;/div&gt;</pre
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-container jos" data-jos_animation="rotate-right">
+        <div class="demo-name">
+          <div class="demo-text">Rotate [right]</div>
+
+          <div class="demo-code">
+            <pre>
+&lt;div
+class="demo-container jos"    
+data-jos_animation="rotate-right" >
+
+  Rotate
+
+&lt;/div&gt;</pre
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-container jos" data-jos_animation="spin">
+        <div class="demo-name">
+          <div class="demo-text">Spin</div>
+
+          <div class="demo-code">
+            <pre>
+&lt;div
+class="demo-container jos"    
+data-jos_animation="spin" >
+
+  Spin
+
+&lt;/div&gt;</pre
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-container jos" data-jos_animation="spin-right">
+        <div class="demo-name">
+          <div class="demo-text">Spin [right]</div>
+
+          <div class="demo-code">
+            <pre>
+&lt;div
+class="demo-container jos"    
+data-jos_animation="spin-right" >
+
+  Spin [right]
+
+&lt;/div&gt;</pre
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-container jos" data-jos_animation="stretch">
+        <div class="demo-name">
+          <div class="demo-text">Stretch</div>
+
+          <div class="demo-code">
+            <pre>
+&lt;div
+class="demo-container jos"    
+data-jos_animation="stretch" >
+
+Stretch
+
+&lt;/div&gt;</pre
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-container jos" data-jos_animation="stretch-vertical">
+        <div class="demo-name">
+          <div class="demo-text">Stretch [vertical]</div>
+
+          <div class="demo-code">
+            <pre>
+&lt;div
+class="demo-container jos"    
+data-jos_animation="stretch-vertical" >
+
+Stretch [vertical]
+
+&lt;/div&gt;</pre
+            >
+          </div>
+        </div>
+      </div>
     </section>
 
     <footer>JOS | 2023 | By Jesvi Jonathan</footer>
   </body>
 </html>
 
-<!-- <script src="../dist/jos.debug.min.js"></script> -->
-<script src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.debug.min.js"></script>
+<script src="../dev/jos.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.debug.min.js"></script> -->
 
 <script>
   // Global Options
