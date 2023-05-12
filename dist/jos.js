@@ -16,7 +16,11 @@ const JOS = new (class jos {
   jos_stylesheet = document.getElementById("jos-stylesheet").sheet;
   boxes = document.querySelectorAll(".jos");
   constructor() {}
-  debugLogger(t = 0) {}
+  debugLogger(t = 0) {
+    console.warn(
+      "JOS | This version of JOS package does not support debug mode, Please use jos.debug.js for debugging."
+    );
+  }
   callbackRouter_anchor = (t, e) => {
     let s = t[0],
       a = s.target;

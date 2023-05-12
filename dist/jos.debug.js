@@ -13,7 +13,7 @@ const JOS = new (class jos {
   debug = !1;
   disable = !1;
   // Package Info
-  version = "0.7 (Development)";
+  version = "0.7 (Debug)";
   author = "Jesvi Jonathan";
   github = "https://github.com/jesvijonathan/JOS-Animation-Library";
   // Read DOM
