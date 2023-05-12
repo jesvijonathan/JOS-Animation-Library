@@ -61,6 +61,11 @@ Was inpired by GSAP, AOS libraries. I wanted something easier to use, with great
 
 Feel free to report an issue or request a feature in this repository :)
 & for more information, Check out the [JOS Webpage](https://jesvijonathan.github.io/JOS-Animation-Library).
+<br>
+
+### v0.6.2
+
+<br>
 
 ### Built With
 
@@ -87,7 +92,8 @@ Feel free to report an issue or request a feature in this repository :)
 ```
 
 You can add minified version of the script by replacing <code>jos.js</code> with <code>jos.min.js</code> in the above script tag.
-Use <code>defer</code> attribute in script tag to make sure the script is loaded after the DOM is loaded.
+
+<!-- Use <code>defer</code> attribute in script tag to make sure the script is loaded after the DOM is loaded. -->
 
 - <code>jos.js</code> for basic.
 - <code>jos.min.js</code> for production use.

@@ -12,7 +12,7 @@ class jos {
   debug = false;
   disable = false;
   // Package Info
-  version = "0.6 (Development)";
+  version = "0.6.2 (Development)";
   author = "Jesvi Jonathan";
   github = "https://github.com/jesvijonathan/JOS-Animation-Library";
   // Read DOM
