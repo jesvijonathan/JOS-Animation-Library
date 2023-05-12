@@ -64,7 +64,7 @@ Feel free to report an issue or request a feature in this repository :)
 <br>
 <br>
 
-    v0.7 | 12 May 2023 | Jesvi Jonathan
+Last updated :<code> <i>v0.7 (12 May 2023)</i></code>
 
 <br>
 
@@ -113,8 +113,6 @@ You can add minified version of the script by replacing <code>jos.js</code> with
 ```
 
 2. (<b>Or</b>) Use <code>JOS.init(options);</code> to overide the default settings with your custom settings.
-   - <code>options : Object </code>
-   - <code>Default : {}</code>
 
 ```html
 <!-- Global Parameters -->
@@ -214,7 +212,7 @@ Example : [Custom Timing Function]()
 <div id="myElement"></div>
 ```
 
-2. Create an element that you want to jos animate & add the <code>data-jos_anchor</code> attribute to it :
+1. Create an element that you want to animate & add the <code>data-jos_anchor</code> attribute to it, with the id starting with suffix <code>#</code> :
 
 ```html
 <!-- My animated element -->
