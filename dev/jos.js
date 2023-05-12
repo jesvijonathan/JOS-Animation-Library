@@ -68,13 +68,14 @@ class jos {
   callbackRouter_anchor = (entries, observer) => {
     let entry = entries[0];
     let parentTarget = entry.target;
-    console.log(parentTarget);
+    // console.log(parentTarget);
 
     let elem = document.querySelectorAll(
-      "[data-jos_anchor=" + parentTarget.id + "]"
+      "[data-jos_anchor='#" + parentTarget.id + "']"
     );
+
     elem.forEach((target) => {
-      console.log(target);
+      // console.log(target);
 
       let text_once = "";
       let text_invoke = "";
@@ -115,9 +116,15 @@ class jos {
             // console.log("Removed-Observer");
             if (target.dataset.jos_once == "true") {
               observer.unobserve(target);
+
+              target.dataset.jos_anchor = null;
+
               text_once = "\n    | Once :  Removed Observer (1)";
             } else if (target.dataset.jos_counter >= target.dataset.jos_once) {
               observer.unobserve(target);
+
+              target.dataset.jos_anchor = null;
+
               text_once =
                 "\n    | Once :  Removed Observer (" +
                 target.dataset.jos_once +
@@ -138,6 +145,43 @@ class jos {
           text_invoke = "\n    | Invoked : " + target.dataset.jos_invoke_out;
         }
         // console.log("jos-" + target_jos_animation);
+      }
+
+      if (target.id != "") {
+        text_target = "\n    | ID : " + target.id;
+      }
+      if (target.dataset.jos_duration != undefined) {
+        text_duration =
+          "\n    | Duration : " + target.dataset.jos_duration + "s";
+      }
+
+      if (this.debug == true) {
+        console.debug(
+          "JOS " +
+            ("[" + Date.now() + "] [DEBUG]\n") +
+            "    : On-" +
+            state +
+            " (" +
+            target.tagName +
+            ") Info" +
+            "\n    | Anchor : " +
+            parentTarget.id +
+            text_target +
+            "\n    | Class : (" +
+            target.className +
+            ")\n    | Intersection Ratio : (" +
+            entry.intersectionRatio +
+            " ~ " +
+            this.default_intersectionRatio +
+            ")\n    | Animation : " +
+            target.dataset.jos_animation +
+            text_duration +
+            text_delay +
+            text_timingFunction +
+            text_once +
+            text_iterationCount +
+            text_invoke
+        );
       }
     });
   };
@@ -332,7 +376,9 @@ class jos {
           threshold: this.default_threshold,
           passive: this.default_passive,
         });
-        this.observer.observe(document.getElementById(box.dataset.jos_anchor));
+        this.observer.observe(
+          document.getElementById(box.dataset.jos_anchor.substring(1))
+        );
       } else {
         this.observer = new IntersectionObserver(this.callbackRouter, {
           rootMargin: this.default_rootMargin,

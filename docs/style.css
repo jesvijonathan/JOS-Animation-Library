@@ -197,5 +197,20 @@ pre {
 .fix-element {
   width: 100px;
   height: 100px;
+  background-color: rgb(41, 41, 41);
+  font-size: 7px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px solid white;
+  padding: 1vw;
+}
+
+.fix-ele {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
   background-color: aqua;
 }

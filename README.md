@@ -91,8 +91,8 @@ Use <code>defer</code> attribute in script tag to make sure the script is loaded
 
 - <code>jos.js</code> for basic.
 - <code>jos.min.js</code> for production use.
-- <b><code>jos.debug.js</code></b> for prettier <b>debugging</b> along with some other function.
-- <code>jos.debug.min.js</code> for debugging along in minified version.
+- <b><code>jos.debug.js</code></b> for <b>debugging</b> along with some other function
+  - make sure to enable <u>verbose</u> in debug level settings under the console tab in your browser's developer tools.
 
 ## Setup :
 
@@ -105,7 +105,9 @@ Use <code>defer</code> attribute in script tag to make sure the script is loaded
 </script>
 ```
 
-2. (<b>Or</b>) Use <code>JOS.init({\<options>});</code> to overide the default settings with your custom settings.
+2. (<b>Or</b>) Use <code>JOS.init(options);</code> to overide the default settings with your custom settings.
+   - <code>options : Object </code>
+   - <code>Default : {}</code>
 
 ```html
 <!-- Global Parameters -->
@@ -134,7 +136,7 @@ Use <code>defer</code> attribute in script tag to make sure the script is loaded
 </script>
 ```
 
-3. Set <code>class="jos"</code> to the element you want to animate :
+1. Set <code>class="jos"</code> to the element you want to animate :
 
 ```html
 <!-- JOS class is required to animate the element -->
@@ -154,6 +156,7 @@ Use <code>defer</code> attribute in script tag to make sure the script is loaded
   data-jos_timing-function="ease-in-out"
   data-jos_invoke="myCustomFunction"
   data-jos_invoke_out="myCustomFunction_onExit"
+  data-jos_anchor="#elementID"
 ></div>
 ```
 
@@ -198,6 +201,27 @@ Example : [Custom Animation]()
 
 Example : [Custom Timing Function]()
 
+## Anchors to trigger animation
+
+1. Create an element that you want to use as an anchor & add an <code>id</code> to it :
+
+```html
+<!-- My reference anchor element -->
+<div id="myElement"></div>
+```
+
+2. Create an element that you want to jos animate & add the <code>data-jos_anchor</code> attribute to it :
+
+```html
+<!-- My animated element -->
+<div class="jos" data-jos_anchor="#myElement"></div>
+```
+
+This triggers the animation when the <code>myElement</code> element is scrolled into view.<br>
+This feature is useful especially when you want to animate an element which is in a <b>fixed position</b>.
+
+Example : [Anchor]()
+
 ## Create Custom Function
 
 1. Create a custom function by adding the following code to your script :
@@ -223,16 +247,16 @@ Example : [Custom Function]()
 
 ## JOS Attributes
 
-| Attribute                | Type    | Default | Description                                                              | values                                                                                                                                                                                                                                                            |
-| ------------------------ | ------- | ------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| data-jos_animation       | string  | fade    | Set the animation type for the element.                                  | <code>fade, slide, zoom, flip, fade-right, fade-left, fade-up, fade-down, zoom-in-right, zoom-in-left, zoom-in-up, zoom-in-down, zoom-out-right, zoom-out-left, zoom-out-up, zoom-out-down, flip-right, flip-left, flip-up, flip-down, my-custom-animation</code> |
-| data-jos_once            | boolean | false   | Set whether the element should animate only once.                        | <code>true, false <code>                                                                                                                                                                                                                                          |
-| data-jos_delay           | int     | 0       | Set the delay for the animation to start.                                | <code> (float : 0-1) & (int : 0,1,2,3,4,5) </code>                                                                                                                                                                                                                |
-| data-jos_duration        | float   | 0.4     | Set the duration for the animation playback.                             | <code> (float : 0-1) & (int : 0,1,2,3,4,5) </code>                                                                                                                                                                                                                |
-| data-jos_timing-function | string  | ease    | Set the timing function for the animation playback.                      | <code> ease, ease-in, ease-out, ease-in-out, linear, step-start, step-end, steps(1, start), steps(1, end), cubic-bezier(0.1, 0.7, 1.0, 0.1), my-custom-timingFunc </code>                                                                                         |
-| data-jos_invoke          | string  | null    | Set the function to be invoked when the element is scrolled into view.   | <code> function, myCustomFunction</code>                                                                                                                                                                                                                          |
-| data-jos_invoke_out      | string  | null    | Set the function to be invoked when the element is scrolled out of view. | <code> function, myCustomFunction </code>                                                                                                                                                                                                                         |
-| data-once                | boolean | false   | Set whether the element should animate only once.                        | <code>true, false</code>                                                                                                                                                                                                                                          |
+| Attribute                | Type          | Default | Description                                                              | values                                                                                                                                                                                                                                                                                                                                                       |
+| ------------------------ | ------------- | ------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| data-jos_animation       | string        | fade    | Set the animation type for the element.                                  | <code>fade, slide, zoom, flip, fade-right, fade-left, fade-up, fade-down, zoom-in-right, zoom-in-left, zoom-in-up, zoom-in-down, zoom-out-right, zoom-out-left, zoom-out-up, zoom-out-down, flip-right, flip-left, flip-up, flip-down, rotate, rotate-right, spin, spin-right, revolve, revolve-right, stretch, stretch-vertical, my-custom-animation</code> |
+| data-jos_once            | boolean       | false   | Set whether the element should animate only once.                        | <code>true, false <code>                                                                                                                                                                                                                                                                                                                                     |
+| data-jos_delay           | int           | 0       | Set the delay for the animation to start.                                | <code> (float : 0-1) & (int : 0,1,2,3,4,5) </code>                                                                                                                                                                                                                                                                                                           |
+| data-jos_duration        | float         | 0.4     | Set the duration for the animation playback.                             | <code> (float : 0-1) & (int : 0,1,2,3,4,5) </code>                                                                                                                                                                                                                                                                                                           |
+| data-jos_timing-function | string        | ease    | Set the timing function for the animation playback.                      | <code> ease, ease-in, ease-out, ease-in-out, linear, step-start, step-end, steps(1, start), steps(1, end), cubic-bezier(0.1, 0.7, 1.0, 0.1), my-custom-timingFunc </code>                                                                                                                                                                                    |
+| data-jos_invoke          | string        | null    | Set the function to be invoked when the element is scrolled into view.   | <code> function, myCustomFunction</code>                                                                                                                                                                                                                                                                                                                     |
+| data-jos_invoke_out      | string        | null    | Set the function to be invoked when the element is scrolled out of view. | <code> function, myCustomFunction </code>                                                                                                                                                                                                                                                                                                                    |
+| data-once                | boolean & int | false   | Set whether the element should animate only                              | <code>(boolean : true, false) & (int : 0-infinity)</code>                                                                                                                                                                                                                                                                                                    |
 
 <!-- ## JOS OPTIONS
 
@@ -282,12 +306,12 @@ Example : [Custom Function]()
 - .~~attribute <code>delay</code> is not working as of now..~~ (added in v0.5)
 - ~~<code>init</code> method is not working as of now. (need to be set manually as var in html inline script)~~ (added in v0.5)
 - <code>bebounce</code> is not working as of now.
-- requires both js & css cdn links for JOS v0.5 & below.
+- ~~requires both js & css cdn links for JOS v0.5 & below.~~ (browser rule to require it that way.. )
 - .~~JOS <code>disable</code> attribute is not working as of now..~~ (fixed in v0.3 upstream)
 - ~~should move from function workaround to class based approach~~ (added in v0.5)
 - ~~Need to add minified and other versions of JOS package~~ (updated in v0.6)
 - bug where the element is not animating when the page is loaded and the element is already in view.
-
+- referencing multiple element to a single anchor causes bug storing n-view count (not a big deal).
 <!-- status
 critical
 major

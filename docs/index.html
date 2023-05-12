@@ -44,20 +44,22 @@ About Jesvi Jonathan: https://jesvi.pythonanywhere.com
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
 
     <link rel="stylesheet" href="style.css" />
-    <!-- <link
-      id="jos-stylesheet"
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.css"
-      crossorigin="anonymous"
-    /> -->
+
     <link
       rel="icon"
       href="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/res/favicon.ico"
       type="image/x-icon"
     />
 
+    <link
+      id="jos-stylesheet"
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.css"
+      crossorigin="anonymous"
+    />
+
     <!-- <script defer src="../dist/jos.js"></script> -->
-    <link rel="stylesheet" href="../dev/jos.css" id="jos-stylesheet" />
+    <!-- <link rel="stylesheet" href="../dev/jos.css" id="jos-stylesheet" /> -->
 
     <!-- https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library -->
     <!-- <base
@@ -84,8 +86,16 @@ About Jesvi Jonathan: https://jesvi.pythonanywhere.com
           id="notmyelem"
           class="fix-element jos"
           data-jos_animation="spin"
-          data-jos_anchor="myelem"
-        ></div>
+          data-jos_anchor="#myelem"
+        >
+          Anchored with element <br />
+          <div style="font-size: 7px; margin-top: 2vw">
+            <b><u>Fade [Right]</u></b>
+          </div>
+          <div style="font-size: 5px; margin-top: 2vw">
+            Takes anchored elements rootmargin properties
+          </div>
+        </div>
       </div>
     </section>
     <script>
@@ -112,11 +122,14 @@ About Jesvi Jonathan: https://jesvi.pythonanywhere.com
           </div>
         </div>
       </div>
-      <!-- class="demo-container jos"
-      data-jos_duration="0.3"
-      data-jos_timing-function="ease-in-out"
-      data-jos_animation="fade-right" -->
-      <div id="myelem" data-jos_test="asdasd">
+      <!--  -->
+      <div
+        class="demo-container jos"
+        data-jos_duration="0.3"
+        data-jos_timing-function="ease-in-out"
+        data-jos_animation="fade-right"
+        id="myelem"
+      >
         <div class="demo-name">
           <div class="demo-text">Fade [Right]</div>
 
@@ -585,8 +598,8 @@ Stretch [vertical]
   </body>
 </html>
 
-<script src="../dev/jos.js"></script>
-<!-- <script src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.debug.min.js"></script> -->
+<!-- <script src="../dev/jos.js"></script> -->
+<script src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.debug.min.js"></script>
 
 <script>
   // Global Options
