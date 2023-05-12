@@ -86,46 +86,63 @@ class jos {
       let text_iterationCount = "";
       let target_jos_animation = target.dataset.jos_animation;
 
-      state = "Enter";
+      if (entry.intersectionRatio > this.default_intersectionRatio) {
+        state = "Enter";
+        // add to element counter
 
-      // if (element.dataset.jos_counter != undefined) {
-      //   let counter_value = parseInt(element.dataset.jos_counter);
-      //   counter_value++;
-      //   element.dataset.jos_counter = counter_value;
-      //   text_iterationCount = "\n    | Counter : " + counter_value;
-      // }
-      //   if (target_jos_animation) {
-      //     target.classList.remove("jos-" + target_jos_animation);
+        if (target.dataset.jos_counter != undefined) {
+          let counter_value = parseInt(target.dataset.jos_counter);
+          counter_value++;
+          target.dataset.jos_counter = counter_value;
+          text_iterationCount = "\n    | Counter : " + counter_value;
+        }
+        // start animation
+        if (target_jos_animation) {
+          target.classList.remove("jos-" + target_jos_animation);
 
-      //     // check for element invoke function
-      //     if (target.dataset.jos_invoke != undefined) {
-      //       window[target.dataset.jos_invoke](target);
-      //       text_invoke = "\n    | Invoked : " + target.dataset.jos_invoke;
-      //     }
+          // check for element invoke function
+          if (target.dataset.jos_invoke != undefined) {
+            window[target.dataset.jos_invoke](target);
+            text_invoke = "\n    | Invoked : " + target.dataset.jos_invoke;
+          }
 
-      //     // once or n times on viewport logic
-      //     if (
-      //       target.dataset.jos_once != undefined ||
-      //       target.dataset.jos_once != "false"
-      //     ) {
-      //       // target.classList.remove("jos");
-      //       // console.log("Removed-Observer");
-      //       if (target.dataset.jos_once == "true") {
-      //         observer.unobserve(target);
-      //         text_once = "\n    | Once :  Removed Observer (1)";
-      //       } else if (target.dataset.jos_counter >= target.dataset.jos_once) {
-      //         observer.unobserve(target);
-      //         text_once =
-      //           "\n    | Once :  Removed Observer (" +
-      //           target.dataset.jos_once +
-      //           ")";
-      //       }
-      //     }
-      //   }
+          // once or n times on viewport logic
+          if (
+            target.dataset.jos_once != undefined ||
+            target.dataset.jos_once != "false"
+          ) {
+            // target.classList.remove("jos");
+            // console.log("Removed-Observer");
+            if (target.dataset.jos_once == "true") {
+              observer.unobserve(target);
+              text_once = "\n    | Once :  Removed Observer (1)";
+            } else if (target.dataset.jos_counter >= target.dataset.jos_once) {
+              observer.unobserve(target);
+              text_once =
+                "\n    | Once :  Removed Observer (" +
+                target.dataset.jos_once +
+                ")";
+            }
+          }
+        }
+
+        // iiterate the counter for the element
+      } else {
+        // revert animation
+        state = "Exit";
+        target.classList.add("jos-" + target_jos_animation);
+
+        // check for element invoke function
+        if (target.dataset.jos_invoke_out != undefined) {
+          window[target.dataset.jos_invoke_out](target);
+          text_invoke = "\n    | Invoked : " + target.dataset.jos_invoke_out;
+        }
+        // console.log("jos-" + target_jos_animation);
+      }
     });
   };
 
-  callbackRouter = (entries, observer) => {
+  callbackRouter = (entries, observer, type = 1) => {
     if (this.disable == true) {
       return;
     }
@@ -184,9 +201,6 @@ class jos {
         }
       }
 
-      document.getElementsByName("jos_anchor").forEach((element) => {
-        element.classList.remove("jos-anchor");
-      });
       // iiterate the counter for the element
     } else {
       // revert animation
