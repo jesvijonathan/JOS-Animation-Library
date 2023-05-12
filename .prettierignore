@@ -1,2 +1,5 @@
-dist
+# dist/jos.js
+# dist/jos.debug.js
+dist/jos.min.js
+dist/jos.css
 # development

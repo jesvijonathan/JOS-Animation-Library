@@ -1,6 +1,6 @@
 {
   "name": "jos",
-  "version": "0.6.0",
+  "version": "0.7",
   "description": "JOS is an animation library package to instantly add beautiful/professional looking animation to your website",
   "main": "./dist/jos.debug.js",
   "browser": "./dist/jos.debug.js",

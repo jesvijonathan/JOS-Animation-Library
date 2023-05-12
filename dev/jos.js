@@ -12,7 +12,7 @@ class jos {
   debug = false;
   disable = false;
   // Package Info
-  version = "0.6.2 (Development)";
+  version = "0.7 (Development)";
   author = "Jesvi Jonathan";
   github = "https://github.com/jesvijonathan/JOS-Animation-Library";
   // Read DOM
@@ -65,11 +65,13 @@ class jos {
         "\n"
     );
   }
+  // callback for anchor observer
   callbackRouter_anchor = (entries, observer) => {
     let entry = entries[0];
     let parentTarget = entry.target;
     // console.log(parentTarget);
 
+    // get all elements with the same anchor
     let elem = document.querySelectorAll(
       "[data-jos_anchor='#" + parentTarget.id + "']"
     );

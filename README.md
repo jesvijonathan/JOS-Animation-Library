@@ -62,8 +62,9 @@ Was inpired by GSAP, AOS libraries. I wanted something easier to use, with great
 Feel free to report an issue or request a feature in this repository :)
 & for more information, Check out the [JOS Webpage](https://jesvijonathan.github.io/JOS-Animation-Library).
 <br>
+<br>
 
-### v0.6.2
+    v0.7 | 12 May 2023 | Jesvi Jonathan
 
 <br>
 
@@ -124,7 +125,7 @@ You can add minified version of the script by replacing <code>jos.js</code> with
     passive: false, // Set the passive option for the scroll event listener | Values :  'true', 'false'
 
     once: false, // Disable JOS after first animation | Values :  'true', 'false'
-    animation: "fade", // JOS global animation type | Values :  'fade', 'slide', 'zoom', 'flip', 'fade-right', 'fade-left', 'fade-up', 'fade-down', 'zoom-in-right', 'zoom-in-left', 'zoom-in-up', 'zoom-in-down', 'zoom-out-right', 'zoom-out-left', 'zoom-out-up', 'zoom-out-down', 'flip-right', 'flip-left', 'flip-up', 'flip-down, "my-custom-animation"
+    animation: "fade", // JOS global animation type | Values :  'fade', 'slide', 'zoom', 'flip', 'fade-right', 'fade-left', 'fade-up', 'fade-down', 'zoom-in-right', 'zoom-in-left', 'zoom-in-up', 'zoom-in-down', 'zoom-out-right', 'zoom-out-left', 'zoom-out-up', 'zoom-out-down', 'flip-right', 'flip-left', 'flip-up', 'flip-down, spin, revolve, stretch, "my-custom-animation"
     timingFunction: "ease-in-out", // JOS global timing function | Values :  'ease', 'ease-in', 'ease-out', 'ease-in-out', 'linear', 'step-start', 'step-end', 'steps()', 'cubic-bezier()', 'my-custom-timing-function'
     threshold: 0, // Set gloabal the threshold for the element to be visible | Values :  0-1
     delay: 0, // Set global the delay for the animation to start | Values :  0,1,2,3,4,5
@@ -135,21 +136,18 @@ You can add minified version of the script by replacing <code>jos.js</code> with
     // rootMargin: "0% 0% -50% 0%", // Set the root margin for the element to be visible | Values :  _% _% _% _%  (automaticaly set)
     // intersectionRatio: 0.4, // Set the intersection ratio between which the element should be visible | Values :  0-1 (automaticaly set)
     // rootMargin: jos_rootMargin_top + " 0% " + jos_rootMargin_bottom + " 0%"; // Set the root margin for the element to be visible | Values :  _% _% _% _%  (automaticaly set)
-
-    // animate_out: false, // Set whether elements should animate out while scrolling past them | Values :  'true', 'false'
-    // debounce: 0, // Set global the debounce time/rate for listening to scroll events | Values :  0-1000
   });
 </script>
 ```
 
-1. Set <code>class="jos"</code> to the element you want to animate :
+3. Set <code>class="jos"</code> to the element you want to animate :
 
 ```html
 <!-- JOS class is required to animate the element -->
 <div class="jos"></div>
 ```
 
-1. Set <code>data-jos</code> \*attributes to customize the element you want to animate,<br>(although these attributes are optional and will work without them) :
+4. Set <code>data-jos</code> \*attributes to customize the element you want to animate,<br>(although these attributes are optional and will work without them) :
 
 ```html
 <!-- JOS attributes are optional and will work without them (class="jos" is mandatory). these attributes can be used to customize the animation of the element -->
@@ -317,7 +315,7 @@ Example : [Custom Function]()
 - ~~should move from function workaround to class based approach~~ (added in v0.5)
 - ~~Need to add minified and other versions of JOS package~~ (updated in v0.6)
 - bug where the element is not animating when the page is loaded and the element is already in view.
-- referencing multiple element to a single anchor causes bug storing n-view count (not a big deal).
+- referencing multiple element to a single anchor causes incorrect view count (not a big deal).
 <!-- status
 critical
 major

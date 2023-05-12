@@ -1,7 +1,6 @@
-/* :root{
-  
-} */
-
+/*
+JOS v0.7 By Jesvi Jonathan
+*/
 .jos {
   opacity: 1;
   transition: 0.5s;
@@ -275,5 +274,20 @@
   transition-duration: 4s !important;
 }
 [data-jos_duration="5"] {
+  transition: 5s !important;
+}
+[data-jos_duration="6"] {
+  transition-duration: 1s !important;
+}
+[data-jos_duration="7"] {
+  transition-duration: 2s !important;
+}
+[data-jos_duration="8"] {
+  transition-duration: 3s !important;
+}
+[data-jos_duration="9"] {
+  transition-duration: 4s !important;
+}
+[data-jos_duration="10"] {
   transition: 5s !important;
 }

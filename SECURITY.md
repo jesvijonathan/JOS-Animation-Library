@@ -8,8 +8,8 @@ If a feature is discontinued, it's probably because of vulnerabillities or any o
 | Version | Supported          |
 | ------- | ------------------ |
 | 6.x     | :white_check_mark: |
+| 6.x     | :white_check_mark: |
 | 5.x     | :white_check_mark: |
-| 4.x     | :x:                |
 | < 3.0   | :x:                |
 
 ## Reporting a Vulnerability
