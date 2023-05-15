@@ -13,24 +13,37 @@
     <div class="rootmargin jos" id="rootmarginBorder"></div>
     <center>
       <h1
-        class="jos"
+        class="TIT jos"
         data-jos_invoke_out="disroot2"
         data-jos_invoke="disroot"
-        style="margin-top: 40vh; font-size: 3rem"
       >
         JOS test
       </h1>
-      Scroll Down
+      <div class="TIT2">Scroll Down</div>
     </center>
-    <div class="elements" style="margin-top: 30%">
+    <div
+      class="elements jos"
+      data-jos_animation="stretch"
+      data-jos_duration="0.2"
+    >
       <div class="box jos" id="elem" data-jos_animation="fade"></div>
       <div class="box jos" data-jos_animation="zoom"></div>
       <div class="box jos" data-jos_animation="slide"></div>
       <div class="box jos" data-jos_animation="zoom-in"></div>
       <div class="box jos" data-jos_animation="flip"></div>
+
+      <div class="box jos" data-jos_animation="spin"></div>
       <div class="box jos" data-jos_animation="fade-up"></div>
       <div class="box jos" data-jos_animation="fade-right"></div>
+
+      <div class="box jos" data-jos_animation="stretch"></div>
+
+      <div class="box jos" data-jos_animation="rotate"></div>
       <div class="box jos" data-jos_animation="zoom-in-left"></div>
+
+      <div class="box jos" data-jos_animation="flip-left"></div>
+      <div class="box jos" data-jos_animation="stretch-vertical"></div>
+
       <div class="box jos"></div>
     </div>
   </body>
@@ -91,13 +104,48 @@
     align-items: center;
     gap: 5vw;
     flex-direction: column;
+    margin-top: 30%;
   }
   .box {
     height: 10vw;
     width: 10vw;
-    background: black;
+    background: rgb(0, 0, 0);
+  }
+  .TIT {
+    margin-top: 40vh;
+    font-size: 3rem;
   }
 
   @media screen and (max-width: 1000px) {
+    .TIT {
+      margin-top: 40vh;
+      font-size: 7rem;
+    }
+    .TIT2 {
+      font-size: 3rem;
+    }
+    .rootmargin {
+      border: 2px dashed rgb(43, 43, 43);
+      width: 100%;
+      border-left: 0px;
+      border-right: 0px;
+      left: 0;
+      height: 60%;
+      top: 10%;
+      position: fixed;
+    }
+    .elements {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14vw;
+      flex-direction: column;
+      margin-top: 42%;
+    }
+    .box {
+      height: 30vw;
+      width: 30vw;
+      background: rgb(0, 0, 0);
+    }
   }
 </style>
