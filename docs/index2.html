@@ -10,13 +10,16 @@
     />
   </head>
   <body>
-    <div
-      class="rootmargin jos"
-      data-jos_anchor="#elem"
-      data-jos_once="true"
-    ></div>
+    <div class="rootmargin jos" id="rootmarginBorder"></div>
     <center>
-      <h1 style="margin-top: 40vh; font-size: 3rem">JOS test</h1>
+      <h1
+        class="jos"
+        data-jos_invoke_out="disroot2"
+        data-jos_invoke="disroot"
+        style="margin-top: 40vh; font-size: 3rem"
+      >
+        JOS test
+      </h1>
       Scroll Down
     </center>
     <div class="elements" style="margin-top: 30%">
@@ -36,6 +39,15 @@
 
 <script>
   function mytestfunc2() {}
+
+  function disroot() {
+    let elemm = document.getElementById("rootmarginBorder");
+    elemm.classList.add("jos-fade");
+  }
+  function disroot2() {
+    let elemm = document.getElementById("rootmarginBorder");
+    elemm.classList.remove("jos-fade");
+  }
 </script>
 <!-- Global Parameters -->
 <script>
@@ -84,5 +96,8 @@
     height: 10vw;
     width: 10vw;
     background: black;
+  }
+
+  @media screen and (max-width: 1000px) {
   }
 </style>
