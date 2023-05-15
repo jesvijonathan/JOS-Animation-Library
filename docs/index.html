@@ -1,663 +1,169 @@
-<!-- 
-
-JOS : Animation Library
-
-JOS is an animation library package to instantly add complex animation to your website
-
-Version : 0.7
-Date : 12 May 2023
-Author : Jesvi Jonathan
-
-############################################################
- 
-I made this library to make my life easier while developing websites.
-It's always a pain to add beautiful/professional animations to your website.So, with that in mind I have developed this library to make life easier, 
-I've been using it in my personal web projects & it works like a charm. It has a lot of features & is actively being developed. 
-You can check out its features from the Official JOS demo page linked below which showcases all the animations, usage, documentation, etc. 
-
-Hope you like my work, made with ❤ by Jesvi Jonathan... 
-
-I'm The Best !
-
-############################################################
-FEEL FREE TO CONTRIBUTE TO THIS PROJECT | MIGHT MERGE IT :)
-############################################################
-
-JOS Demo Webpage : https://jesvijonathan.github.io/JOS-Animation-Library
-JOS Source Code : https://github.com/jesvijonathan/JOS-Animation-Library
-About Jesvi Jonathan: https://jesvi.pythonanywhere.com
-
-############################################################
-
--->
-
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JOS: Animation Library</title>
-    <meta
-      name="description"
-      content="JOS is an animation library package to instantly add complex animation to your website "
-    />
-    <meta name="author" content="Jesvi Jonathan" />
-    <meta name="revised" content="JOS: Animation Library, 23/4/2023" />
-    <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
-
-    <link rel="stylesheet" href="style.css" />
-
-    <link
-      rel="icon"
-      href="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/res/favicon.ico"
-      type="image/x-icon"
-    />
-
+    <title>JOS Exmaple</title>
     <link
       id="jos-stylesheet"
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.css"
       crossorigin="anonymous"
     />
-
-    <!-- <link rel="stylesheet" href="../dev/jos.css" id="jos-stylesheet" /> -->
-
-    <!-- <script defer src="../dist/jos.js"></script> -->
-
-    <!-- https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library -->
-    <!-- <base
-      href="https://jesvijonathan.github.io/JOS-Animation-Library/"
-      target="_blank"
-    /> -->
   </head>
   <body>
-    <section>
-      <h1><b>JOS</b> : Javascript On Scroll</h1>
-      <h3>
-        (<u
-          ><a
-            href="https://github.com/jesvijonathan/JOS-Animation-Library"
-            target="_blank"
-            >v0.7</a
-          ></u
-        >
-        | <u>Debug Mode</u>)
-        <br />
-        <a class="nest" href="./index2.html">Next</a>
-      </h3>
-      <style>
-        .nest {
-          top: 10vh;
-          position: relative;
-          color: white;
-          text-decoration: none;
-          text-align: center;
-          border: 2px solid white;
-          padding: 5px 30px;
-          font-size: 1rem;
-          cursor: pointer;
-          z-index: 9999;
-        }
-      </style>
-      <div class="fix" style="z-index: -1">
-        <div
-          id="notmyelem"
-          class="fix-element jos"
-          data-jos_animation="spin"
-          data-jos_anchor="#myelem"
-          style="z-index: -1"
-        >
-          Anchored with element <br />
-          <div style="font-size: 7px; margin-top: 2vw">
-            <b><u>Fade [Right]</u></b>
-          </div>
-          <div style="font-size: 5px; margin-top: 2vw">
-            Takes anchored elements rootmargin properties
-          </div>
-        </div>
-      </div>
-    </section>
-    <script>
-      function example() {
-        console.log("example");
-        alert("example");
+    <div class="rootmargin jos" id="rootmarginBorder"></div>
+    <center>
+      <h1
+        class="TIT jos"
+        data-jos_animation="fade-down"
+        data-jos_duration="0.7"
+        data-jos_invoke_out="disroot2"
+        data-jos_invoke="disroot"
+      >
+        JOS test
+      </h1>
+      <div class="TIT2">Scroll Down</div>
+      <br />
+      <a class="nest" href="./index2.html">Next</a>
+    </center>
+    <style>
+      .nest {
+        top: 10vh;
+        position: relative;
+        color: black;
+        text-decoration: none;
+        text-align: center;
+        border: 2px solid black;
+        padding: 5px 30px;
+        font-size: 1rem;
+        cursor: pointer;
+        z-index: 9999;
       }
-    </script>
-    <section>
-      <div class="demo-container jos" data-jos_once="4">
-        <div class="demo-name">
-          <div class="demo-text">Fade</div>
-
-          <div class="demo-code">
-            <pre>
-  &lt;div
-    class="demo-container jos"    
-    data-jos_animation="fade" >
-  
-      Fade
-  
-  &lt;/div&gt;</pre
-            >
-          </div>
-        </div>
-      </div>
-      <!--  -->
-      <div
-        class="demo-container jos"
-        data-jos_duration="0.3"
-        data-jos_timing-function="ease-in-out"
-        data-jos_animation="fade-right"
-        id="myelem"
-      >
-        <div class="demo-name">
-          <div class="demo-text">Fade [Right]</div>
-
-          <div class="demo-code">
-            <pre>
-  &lt;div
-    class="demo-container jos"    
-    data-jos_animation="fade-right" >
-  
-      Fade [Right]
-  
-  &lt;/div&gt;</pre
-            >
-          </div>
-        </div>
-      </div>
-
-      <!-- <div
-      class="demo-container jos"
-      data-jos_animation="fade-right"
-      data-jos-once="false"
-      data-jos_duration="0.3"
-      data-jos_timing-function="ease-in-out"
-      data-jos_invoke="example"
-      data-jos_invoke_out="example"
+    </style>
+    <div
+      class="elements jos"
+      data-jos_animation="stretch"
+      data-jos_duration="0.2"
     >
-      Fade [Right]
-    </div> -->
+      <div class="box jos" id="elem" data-jos_animation="fade"></div>
+      <div class="box jos" data-jos_animation="zoom"></div>
+      <div class="box jos" data-jos_animation="slide"></div>
+      <div class="box jos" data-jos_animation="zoom-in"></div>
+      <div class="box jos" data-jos_animation="flip"></div>
 
-      <div class="demo-container jos" data-jos_animation="fade-left">
-        <div class="demo-name">
-          <div class="demo-text">Fade [Left]</div>
+      <div class="box jos" data-jos_animation="spin"></div>
+      <div class="box jos" data-jos_animation="fade-up"></div>
+      <div class="box jos" data-jos_animation="fade-right"></div>
 
-          <div class="demo-code">
-            <pre>
-&lt;div
-  class="demo-container jos"    
-  data-jos_animation="fade-left" >
+      <div class="box jos" data-jos_animation="stretch"></div>
 
-    Fade [Left]
+      <div class="box jos" data-jos_animation="rotate"></div>
+      <div class="box jos" data-jos_animation="zoom-in-left"></div>
 
-&lt;/div&gt;</pre
-            >
-          </div>
-        </div>
-      </div>
+      <div class="box jos" data-jos_animation="flip-left"></div>
+      <div class="box jos" data-jos_animation="stretch-vertical"></div>
 
-      <div
-        class="demo-container jos"
-        data-jos_animation="fade-up"
-        data-jos_invoke="arun"
-        data-jos_invoke_out="arun_out"
-      >
-        <div class="demo-name">
-          <div class="demo-text">Fade [Up]</div>
-
-          <div class="demo-code">
-            <pre>
-&lt;div
-  class="demo-container jos"    
-  data-jos_animation="fade-up" >
-
-    Fade [Up]
-
-&lt;/div&gt;</pre
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="demo-container jos" data-jos_animation="fade-down">
-        <div class="demo-name">
-          <div class="demo-text">Fade [Down]</div>
-
-          <div class="demo-code">
-            <pre>
-&lt;div
-  class="demo-container jos"    
-  data-jos_animation="fade-down" >
-
-    Fade [Down]
-
-&lt;/div&gt;</pre
-            >
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="demo-container jos"
-        data-jos_duration="2"
-        data-jos_animation="zoom"
-      >
-        <div class="demo-name">
-          <div class="demo-text">Zoom</div>
-
-          <div class="demo-code">
-            <pre>
-&lt;div
-  class="demo-container jos"    
-  data-jos_animation="zoom" >
-
-    Zoom
-
-&lt;/div&gt;</pre
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="demo-container jos" data-jos_animation="zoom-out-right">
-        <div class="demo-name">
-          <div class="demo-text">Zoom Out [Right]</div>
-
-          <div class="demo-code">
-            <pre>
-&lt;div
-  class="demo-container jos"    
-  data-jos_animation="zoom-out-right" >
-
-    Zoom Out [Right]
-
-&lt;/div&gt;</pre
-            >
-          </div>
-        </div>
-      </div>
-
-      <div
-        id="test_id "
-        class="demo-container jos"
-        data-jos_animation="zoom-out-left"
-      >
-        <div class="demo-name">
-          <div class="demo-text">Zoom Out [Left]</div>
-
-          <div class="demo-code">
-            <pre>
-&lt;div
-  class="demo-container jos"    
-  data-jos_animation="zoom-out-left" >
-
-    Zoom Out [Left]
-
-&lt;/div&gt;</pre
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="demo-container jos" data-jos_animation="zoom-out-down">
-        <div class="demo-name">
-          <div class="demo-text">Zoom Out [Down]</div>
-
-          <div class="demo-code">
-            <pre>
-&lt;div
-  class="demo-container jos"    
-  data-jos_animation="zoom-out-down" >
-
-    Zoom Out [Down]
-
-&lt;/div&gt;</pre
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="demo-container jos" data-jos_animation="zoom-out-up">
-        <div class="demo-name">
-          <div class="demo-text">Zoom Out [Up]</div>
-
-          <div class="demo-code">
-            <pre>
-&lt;div
-  class="demo-container jos"    
-  data-jos_animation="zoom-out-up" >
-
-    Zoom Out [Up]
-
-&lt;/div&gt;</pre
-            >
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="demo-container jos"
-        data-jos_once="true"
-        data-jos_animation="zoom-in"
-      >
-        <div class="demo-name">
-          <div class="demo-text">Zoom In</div>
-
-          <div class="demo-code">
-            <pre>
-&lt;div
-  class="demo-container jos"    
-  data-jos_animation="zoom-in" >
-
-    Zoom In
-
-&lt;/div&gt;</pre
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="demo-container jos" data-jos_animation="zoom-in-right">
-        <div class="demo-name">
-          <div class="demo-text">Zoom in [Right]</div>
-
-          <div class="demo-code">
-            <pre>
-&lt;div
-  class="demo-container jos"    
-  data-jos_animation="zoom-in-right" >
-
-    Zoom in [Right]
-
-&lt;/div&gt;</pre
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="demo-container jos" data-jos_animation="zoom-in-left">
-        <div class="demo-name">
-          <div class="demo-text">Zoom in [Left]</div>
-
-          <div class="demo-code">
-            <pre>
-&lt;div
-  class="demo-container jos"    
-  data-jos_animation="zoom-in-left" >
-
-    Zoom in [Left]
-
-&lt;/div&gt;</pre
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="demo-container jos" data-jos_animation="zoom-in-down">
-        <div class="demo-name">
-          <div class="demo-text">Zoom in [Down]</div>
-
-          <div class="demo-code">
-            <pre>
-&lt;div
-  class="demo-container jos"    
-  data-jos_animation="zoom-in-down" >
-
-    Zoom in [Down]
-
-&lt;/div&gt;</pre
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="demo-container jos" data-jos_animation="zoom-in-up">
-        <div class="demo-name">
-          <div class="demo-text">Zoom in [Up]</div>
-
-          <div class="demo-code">
-            <pre>
-&lt;div
-  class="demo-container jos"    
-  data-jos_animation="zoom-in-up" >
-
-    Zoom in [Up]
-
-&lt;/div&gt;</pre
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="demo-container jos" data-jos_animation="flip">
-        <div class="demo-name">
-          <div class="demo-text">Flip</div>
-
-          <div class="demo-code">
-            <pre>
-&lt;div
-  class="demo-container jos"    
-  data-jos_animation="flip" >
-
-    Flip
-
-&lt;/div&gt;</pre
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="demo-container jos" data-jos_animation="flip-left">
-        <div class="demo-name">
-          <div class="demo-text">Flip [Left]</div>
-
-          <div class="demo-code">
-            <pre>
-&lt;div
-  class="demo-container jos"    
-  data-jos_animation="flip-left" >
-
-    Flip [Left]
-
-&lt;/div&gt;</pre
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="demo-container jos" data-jos_animation="flip-up">
-        <div class="demo-name">
-          <div class="demo-text">Flip [Up]</div>
-
-          <div class="demo-code">
-            <pre>
-&lt;div
-  class="demo-container jos"    
-  data-jos_animation="flip-up" >
-
-    Flip [Up]
-
-&lt;/div&gt;</pre
-            >
-          </div>
-        </div>
-      </div>
-      <div
-        class="demo-container jos"
-        data-jos_delay="0.2"
-        data-jos_animation="flip-down"
-      >
-        <div class="demo-name">
-          <div class="demo-text">Flip [Down]</div>
-
-          <div class="demo-code">
-            <pre>
-&lt;div
-  class="demo-container jos"    
-  data-jos_animation="flip-down" >
-
-    Flip [Down]
-
-&lt;/div&gt;</pre
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="demo-container jos" data-jos_animation="rotate">
-        <div class="demo-name">
-          <div class="demo-text">Rotate</div>
-
-          <div class="demo-code">
-            <pre>
-&lt;div
-class="demo-container jos"    
-data-jos_animation="rotate" >
-
-  Rotate
-
-&lt;/div&gt;</pre
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="demo-container jos" data-jos_animation="rotate-right">
-        <div class="demo-name">
-          <div class="demo-text">Rotate [right]</div>
-
-          <div class="demo-code">
-            <pre>
-&lt;div
-class="demo-container jos"    
-data-jos_animation="rotate-right" >
-
-  Rotate
-
-&lt;/div&gt;</pre
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="demo-container jos" data-jos_animation="spin">
-        <div class="demo-name">
-          <div class="demo-text">Spin</div>
-
-          <div class="demo-code">
-            <pre>
-&lt;div
-class="demo-container jos"    
-data-jos_animation="spin" >
-
-  Spin
-
-&lt;/div&gt;</pre
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="demo-container jos" data-jos_animation="spin-right">
-        <div class="demo-name">
-          <div class="demo-text">Spin [right]</div>
-
-          <div class="demo-code">
-            <pre>
-&lt;div
-class="demo-container jos"    
-data-jos_animation="spin-right" >
-
-  Spin [right]
-
-&lt;/div&gt;</pre
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="demo-container jos" data-jos_animation="stretch">
-        <div class="demo-name">
-          <div class="demo-text">Stretch</div>
-
-          <div class="demo-code">
-            <pre>
-&lt;div
-class="demo-container jos"    
-data-jos_animation="stretch" >
-
-Stretch
-
-&lt;/div&gt;</pre
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="demo-container jos" data-jos_animation="stretch-vertical">
-        <div class="demo-name">
-          <div class="demo-text">Stretch [vertical]</div>
-
-          <div class="demo-code">
-            <pre>
-&lt;div
-class="demo-container jos"    
-data-jos_animation="stretch-vertical" >
-
-Stretch [vertical]
-
-&lt;/div&gt;</pre
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer>JOS | 2023 | By Jesvi Jonathan</footer>
+      <div class="box jos"></div>
+    </div>
   </body>
 </html>
-
-<!-- <script src="../dev/jos.js"></script> -->
-<script src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.debug.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.min.js"></script>
 
 <script>
-  // Global Options
-  options = {
-    //disable: false, // Disable JOS gloabaly | Values :  'true', 'false'
+  function mytestfunc2() {}
+
+  function disroot() {
+    let elemm = document.getElementById("rootmarginBorder");
+    elemm.classList.add("jos-fade");
+  }
+  function disroot2() {
+    let elemm = document.getElementById("rootmarginBorder");
+    elemm.classList.remove("jos-fade");
+  }
+</script>
+<!-- Global Parameters -->
+<script>
+  JOS.init({
+    // disable: false, // Disable JOS gloabaly | Values :  'true', 'false'
     debugMode: true, // Enable JOS debug mode | Values :  'true', 'false'
     passive: false, // Set the passive option for the scroll event listener | Values :  'true', 'false'
 
     once: false, // Disable JOS after first animation | Values :  'true', 'false'
     animation: "fade", // JOS global animation type | Values :  'fade', 'slide', 'zoom', 'flip', 'fade-right', 'fade-left', 'fade-up', 'fade-down', 'zoom-in-right', 'zoom-in-left', 'zoom-in-up', 'zoom-in-down', 'zoom-out-right', 'zoom-out-left', 'zoom-out-up', 'zoom-out-down', 'flip-right', 'flip-left', 'flip-up', 'flip-down, "my-custom-animation"
-    timingFunction: "ease-in-out", // JOS global timing function | Values :  'ease', 'ease-in', 'ease-out', 'ease-in-out', 'linear', 'step-start', 'step-end', 'steps()', 'cubic-bezier()', 'my-custom-timing-function'
+    timingFunction: "ease", // JOS global timing function | Values :  'ease', 'ease-in', 'ease-out', 'ease-in-out', 'linear', 'step-start', 'step-end', 'steps()', 'cubic-bezier()', 'my-custom-timing-function'
     threshold: 0, // Set gloabal the threshold for the element to be visible | Values :  0-1
     delay: 0, // Set global the delay for the animation to start | Values :  0,1,2,3,4,5
-    duration: 0.8, // Set global the duration for the animation playback | Values :  flota : 0-1 & int : 0,1,2,3,4,5
+    duration: 0.5, // Set global the duration for the animation playback | Values :  flota : 0-1 & int : 0,1,2,3,4,5
 
     // rootMargin_top: "0%", // Set by which percent the element should animate out (Recommended value between 10% to -30%)
     // rootMargin_bottom: "-50%", // Set by which percent the element should animate out (Recommended value between -10% to -60%)
-    // rootMargin: "0% 0% -50% 0%", // Set the root margin for the element to be visible | Values :  _% _% _% _%  (automaticaly set)
+    rootMargin: "-10% 0% -30% 0%", // Set the root margin for the element to be visible | Values :  _% _% _% _%  (automaticaly set)
     // intersectionRatio: 0.4, // Set the intersection ratio between which the element should be visible | Values :  0-1 (automaticaly set)
-    // rootMargin: jos_rootMargin_top + " 0% " + jos_rootMargin_bottom + " 0%", // Set the root margin for the element to be visible | Values :  _% _% _% _%  (automaticaly set)
+    // rootMargin: jos_rootMargin_top + " 0% " + jos_rootMargin_bottom + " 0%"; // Set the root margin for the element to be visible | Values :  _% _% _% _%  (automaticaly set)
 
     // animate_out: false, // Set whether elements should animate out while scrolling past them | Values :  'true', 'false'
     // debounce: 0, // Set global the debounce time/rate for listening to scroll events | Values :  0-1000
-  };
-
-  // JOS.init(options);
-  JOS.init(options);
-  //JOS.init();
-  //JOS.start();
-  //JOS.stop();
-  //JOS.destroy();
-  //JOS.restart();
+  });
 </script>
 
-<script>
-  function arun() {
-    console.log("Enter | |hey da you scrolled passed me ;) ");
+<style>
+  .rootmargin {
+    border: 2px dashed rgb(43, 43, 43);
+    width: 100%;
+    border-left: 0px;
+    border-right: 0px;
+    left: 0;
+    height: 60%;
+    top: 10%;
+    position: fixed;
   }
-  function arun_out() {
-    console.log("Exit | hey da you scrolled out ");
+  .elements {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+    flex-direction: column;
+    margin-top: 30%;
   }
-</script>
+  .box {
+    height: 10vw;
+    width: 10vw;
+    background: rgb(0, 0, 0);
+  }
+  .TIT {
+    margin-top: 40vh;
+    font-size: 3rem;
+  }
 
-<!-- By Jesvi Jonathan -->
+  @media screen and (max-width: 1000px) {
+    .TIT {
+      margin-top: 40vh;
+      font-size: 7rem;
+    }
+    .TIT2 {
+      font-size: 3rem;
+    }
+    .rootmargin {
+      border: 2px dashed rgb(43, 43, 43);
+      width: 100%;
+      border-left: 0px;
+      border-right: 0px;
+      left: 0;
+      height: 60%;
+      top: 10%;
+      position: fixed;
+    }
+    .elements {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14vw;
+      flex-direction: column;
+      margin-top: 42%;
+    }
+    .box {
+      height: 30vw;
+      width: 30vw;
+      background: rgb(0, 0, 0);
+    }
+  }
+</style>
