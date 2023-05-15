@@ -19,14 +19,25 @@ JOS v0.7 By Jesvi Jonathan
 .jos-fade {
   opacity: 0;
 }
-.jos-fade-right,
-.jos-slide {
+.jos-fade-right {
   opacity: 0;
   transform: translateX(-100px);
 }
-.jos-fade-left,
-.jos-slide-left {
+.jos-slide,
+.jos-slide-right {
+  transform: translateX(-100px);
+}
+.jos-slide-up {
+  transform: translateY(100px);
+}
+.jos-slide-down {
+  transform: translateY(-100px);
+}
+.jos-fade-left {
   opacity: 0;
+  transform: translateX(100px);
+}
+.jos-slide-left {
   transform: translateX(100px);
 }
 .jos-fade-up {
