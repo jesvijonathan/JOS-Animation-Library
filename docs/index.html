@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JOS Exmaple</title>
+    <title>JOS : Animation Library | Test</title>
     <link
       id="jos-stylesheet"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.css"
+      href="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dev/jos.css"
       crossorigin="anonymous"
     />
+    <!-- <link rel="stylesheet" href="../dev/jos.css" id="jos-stylesheet" /> -->
   </head>
   <body>
-    <div class="rootmargin jos" id="rootmarginBorder"></div>
-    <center class="jos" data-jos_animation="fade-up" data-jos_duration="1">
+    <div class="rootmargin jos" id="rootmarginBorder">
+      <!-- <div style="opacity: 0.8">Out</div>
+      <div style="position: relative; opacity: 0.8; top: 94%">In</div> -->
+    </div>
+    <center
+      class="jos"
+      data-jos_animation="fade-up"
+      title="JOS : Animation Library (v0.7.1)"
+      data-jos_duration="1"
+    >
       <h1
         class="TIT jos"
         data-jos_animation="fade-down"
@@ -24,7 +33,8 @@
       <div
         class="TIT2 jos"
         data-jos_animation="fade-down"
-        data-jos_duration="0.7"
+        data-jos_duration="0.7.1"
+        title="Scroll down to view animations"
       >
         Scroll Down
       </div>
@@ -34,7 +44,8 @@
         data-jos_animation="zoom-out-up"
         data-jos_duration="0.8"
         href="./index2.html"
-        >Next</a
+        title="Check other demos"
+        >Next Demo</a
       >
     </center>
     <div
@@ -42,30 +53,85 @@
       data-jos_animation="stretch"
       data-jos_duration="0.2"
     >
-      <div class="box jos" id="elem" data-jos_animation="fade"></div>
-      <div class="box jos" data-jos_animation="zoom"></div>
-      <div class="box jos" data-jos_animation="slide"></div>
-      <div class="box jos" data-jos_animation="zoom-in"></div>
-      <div class="box jos" data-jos_animation="flip"></div>
+      <div
+        class="box jos"
+        data-jos_animation="slide"
+        title="Animation : slide"
+      ></div>
+      <div
+        class="box jos"
+        id="elem"
+        data-jos_animation="fade"
+        title="Animation : fade"
+      ></div>
+      <div
+        class="box jos"
+        data-jos_animation="zoom"
+        title="Animation : zoom"
+      ></div>
 
-      <div class="box jos" data-jos_animation="spin"></div>
-      <div class="box jos" data-jos_animation="fade-up"></div>
-      <div class="box jos" data-jos_animation="fade-right"></div>
+      <div
+        class="box jos"
+        data-jos_animation="zoom-in"
+        title="Animation : zoom-in"
+      ></div>
+      <div
+        class="box jos"
+        data-jos_animation="flip"
+        title="Animation : flip"
+      ></div>
 
-      <div class="box jos" data-jos_animation="stretch"></div>
+      <div
+        class="box jos"
+        data-jos_animation="spin"
+        title="Animation : spin"
+      ></div>
+      <div
+        class="box jos"
+        data-jos_animation="fade-up"
+        title="Animation : fade-up"
+      ></div>
+      <div
+        class="box jos"
+        data-jos_animation="fade-right"
+        title="Animation : fade-right"
+      ></div>
 
-      <div class="box jos" data-jos_animation="rotate"></div>
-      <div class="box jos" data-jos_animation="zoom-in-left"></div>
+      <div
+        class="box jos"
+        data-jos_animation="stretch"
+        title="Animation : stretch"
+      ></div>
 
-      <div class="box jos" data-jos_animation="flip-left"></div>
-      <div class="box jos" data-jos_animation="stretch-vertical"></div>
+      <div
+        class="box jos"
+        data-jos_animation="rotate"
+        title="Animation : rotate"
+      ></div>
+      <div
+        class="box jos"
+        data-jos_animation="zoom-in-left"
+        title="Animation : zoom-in-left"
+      ></div>
+
+      <div
+        class="box jos"
+        data-jos_animation="flip-left"
+        title="Animation : flip-left"
+      ></div>
+      <div
+        class="box jos"
+        data-jos_animation="stretch-vertical"
+        title="Animation : stretch-vertical"
+      ></div>
 
       <div class="box jos"></div>
     </div>
   </body>
 </html>
-<script src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.min.js"></script> -->
+<!-- <script src="../dev/jos.js"></script> -->
 <script>
   function mytestfunc2() {}
 
@@ -113,7 +179,7 @@
     overflow-x: hidden;
   }
   .rootmargin {
-    border: 2px dashed rgb(43, 43, 43);
+    border: 2px dashed rgba(43, 43, 43, 0.4);
     width: 100%;
     border-left: 0px;
     border-right: 0px;
@@ -121,6 +187,7 @@
     height: 60%;
     top: 10%;
     position: fixed;
+    z-index: -1;
   }
   .elements {
     display: flex;
@@ -131,9 +198,10 @@
     margin-top: 30%;
   }
   .box {
-    height: 10vw;
-    width: 10vw;
+    height: 8vw;
+    width: 8vw;
     background: rgb(0, 0, 0);
+    z-index: 1000;
   }
   .TIT {
     margin-top: 40vh;
@@ -158,9 +226,11 @@
     .TIT {
       margin-top: 40vh;
       font-size: 7rem;
+      z-index: 1000;
     }
     .TIT2 {
       font-size: 3rem;
+      z-index: 1000;
     }
     .rootmargin {
       border: 2px dashed rgb(43, 43, 43);
