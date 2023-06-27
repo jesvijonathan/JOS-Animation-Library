@@ -81,7 +81,7 @@ Feel free to report an issue or request a feature in this repository :)
 <link
   id="jos-stylesheet"
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.css"
+  href="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/v0.7/jos.css"
   crossorigin="anonymous"
 />
 ```
@@ -89,7 +89,7 @@ Feel free to report an issue or request a feature in this repository :)
 2. Add the <code>[\<script>](https://github.com/jesvijonathan/Jesvi-Bot/releases)</code> right after the <code>\<body></code> tag :
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/v0.7/jos.min.js"></script>
 ```
 
 You can add minified version of the script by replacing <code>jos.js</code> with <code>jos.min.js</code> in the above script tag.
@@ -101,13 +101,35 @@ You can add minified version of the script by replacing <code>jos.js</code> with
 - <b><code>jos.debug.js</code></b> for <b>debugging</b> along with some other function
   - make sure to enable <u>verbose</u> in debug level settings under the console tab in your browser's developer tools.
 
-1. Initialize JOS with default settings :
+<!-- 3. Initialize JOS with default settings :
 
 ```html
 <script>
   JOS.init();
 </script>
 ```
+
+By the end of this step, you should have something like this :
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      id="jos-stylesheet"
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.css"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.min.js"></script>
+    <script>
+      JOS.init();
+    </script>
+  </body>
+</html>
+``` -->
 
 ## Setup :
 

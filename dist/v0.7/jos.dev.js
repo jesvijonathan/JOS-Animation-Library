@@ -12,7 +12,7 @@ class jos {
   debug = false;
   disable = false;
   // Package Info
-  version = "0.7.1 (Development)";
+  version = "0.7 (Development)";
   author = "Jesvi Jonathan";
   github = "https://github.com/jesvijonathan/JOS-Animation-Library";
   // Read DOM
@@ -318,7 +318,6 @@ class jos {
       let object_default_timingFunction = box.dataset.jos_timingFunction;
       let object_default_duration = box.dataset.jos_duration;
       let object_default_delay = box.dataset.jos_delay;
-      let object_default_rootMargin = box.dataset.jos_rootmargin;
 
       // set element attribute values
       if (object_default_once != undefined && object_default_once != "false") {
@@ -331,10 +330,6 @@ class jos {
           box.setAttribute("data-jos_once", object_default_once);
         } else {
           box.setAttribute("data-jos_once", "false");
-        }
-      } else {
-        if (this.default_once == true) {
-          box.setAttribute("data-jos_once", "1");
         }
       }
       // if (
@@ -376,39 +371,22 @@ class jos {
       box.classList.add("jos-" + object_default_animation);
 
       // refresh the dom to apply the re insert the elements in the body
-      let rootMargin =
-        object_default_rootMargin ||
-        [
-          box.dataset.jos_rootmargin_top ||
-            this.default_rootMargin.split(" ")[0],
-          this.default_rootMargin.split(" ")[3],
-          box.dataset.jos_rootmargin_bottom ||
-            this.default_rootMargin.split(" ")[2],
-          box.dataset.jos_rootmargin_left ||
-            this.default_rootMargin.split(" ")[1],
-        ].join(" ");
-
-      let box_observer = {
-        rootMargin,
-        threshold: this.default_threshold,
-        passive: this.default_passive,
-      };
-
-      //      console.log(box_observer);
 
       if (box.dataset.jos_anchor != undefined) {
-        this.observer = new IntersectionObserver(
-          this.callbackRouter_anchor,
-          box_observer
-        );
+        this.observer = new IntersectionObserver(this.callbackRouter_anchor, {
+          rootMargin: this.default_rootMargin,
+          threshold: this.default_threshold,
+          passive: this.default_passive,
+        });
         this.observer.observe(
           document.getElementById(box.dataset.jos_anchor.substring(1))
         );
       } else {
-        this.observer = new IntersectionObserver(
-          this.callbackRouter,
-          box_observer
-        );
+        this.observer = new IntersectionObserver(this.callbackRouter, {
+          rootMargin: this.default_rootMargin,
+          threshold: this.default_threshold,
+          passive: this.default_passive,
+        });
         this.observer.observe(box);
       }
 
