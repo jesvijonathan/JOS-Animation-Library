@@ -6,12 +6,12 @@ JOS v0.7.1 By Jesvi Jonathan
 .jos {
   opacity: 1;
   display: block;
-  transition: 0.5s;
+  transition: transform, opacity 0.5s;
   transition-timing-function: ease-in-out;
 }
 .jos-anchor {
   opacity: 0;
-  transition: 0.5s;
+  transition: transform, opacity 0.5s;
   transition-timing-function: ease-in-out;
 }
 
@@ -35,6 +35,22 @@ JOS v0.7.1 By Jesvi Jonathan
   opacity: 0;
   transform: translateY(-50px);
 }
+.jos-fade-right-up {
+  opacity: 0;
+  transform: translateX(-100px) translateY(50px);
+}
+.jos-fade-right-down {
+  opacity: 0;
+  transform: translateX(-100px) translateY(-50px);
+}
+.jos-fade-left-up {
+  opacity: 0;
+  transform: translateX(100px) translateY(50px);
+}
+.jos-fade-left-down {
+  opacity: 0;
+  transform: translateX(100px) translateY(-50px);
+}
 
 /* slide */
 
@@ -50,6 +66,18 @@ JOS v0.7.1 By Jesvi Jonathan
 }
 .jos-slide-down {
   transform: translateY(-100px);
+}
+.jos-slide-right-up {
+  transform: translateX(-100px) translateY(100px);
+}
+.jos-slide-right-down {
+  transform: translateX(-100px) translateY(-100px);
+}
+.jos-slide-left-up {
+  transform: translateX(100px) translateY(100px);
+}
+.jos-slide-left-down {
+  transform: translateX(100px) translateY(-100px);
 }
 
 /* zoom out */
@@ -327,4 +355,48 @@ JOS v0.7.1 By Jesvi Jonathan
 }
 [data-jos_duration="10"] {
   transition: 5s !important;
+}
+
+/* Delay Attribute */
+[data-jos_delay="0.1"] {
+  transition-delay: 0.1s !important;
+}
+[data-jos_delay="0.2"] {
+  transition-delay: 0.2s !important;
+}
+[data-jos_delay="0.3"] {
+  transition-delay: 0.3s !important;
+}
+[data-jos_delay="0.4"] {
+  transition-delay: 0.4s !important;
+}
+[data-jos_delay="0.5"] {
+  transition-delay: 0.5s !important;
+}
+[data-jos_delay="0.6"] {
+  transition-delay: 0.6s !important;
+}
+[data-jos_delay="0.7"] {
+  transition-delay: 0.7s !important;
+}
+[data-jos_delay="0.8"] {
+  transition-delay: 0.8s !important;
+}
+[data-jos_delay="0.9"] {
+  transition-delay: 0.9s !important;
+}
+[data-jos_delay="1"] {
+  transition-delay: 1s !important;
+}
+[data-jos_delay="2"] {
+  transition-delay: 2s !important;
+}
+[data-jos_delay="3"] {
+  transition-delay: 3s !important;
+}
+[data-jos_delay="4"] {
+  transition-delay: 4s !important;
+}
+[data-jos_delay="5"] {
+  transition-delay: 5s !important;
 }

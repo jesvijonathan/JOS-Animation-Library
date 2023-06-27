@@ -331,6 +331,10 @@ class jos {
         } else {
           box.setAttribute("data-jos_once", "false");
         }
+      } else {
+        if (this.default_once == true) {
+          box.setAttribute("data-jos_once", "1");
+        }
       }
       // if (
       //   object_default_itterationCount == undefined ||

@@ -101,6 +101,14 @@ You can add minified version of the script by replacing <code>jos.js</code> with
 - <b><code>jos.debug.js</code></b> for <b>debugging</b> along with some other function
   - make sure to enable <u>verbose</u> in debug level settings under the console tab in your browser's developer tools.
 
+1. Initialize JOS with default settings :
+
+```html
+<script>
+  JOS.init();
+</script>
+```
+
 ## Setup :
 
 1. Use <code>JOS.init();</code> to initialize the library with default settings.
@@ -129,10 +137,10 @@ You can add minified version of the script by replacing <code>jos.js</code> with
     delay: 0, // Set global the delay for the animation to start | Values :  0,1,2,3,4,5
     duration: 0.7, // Set global the duration for the animation playback | Values :  flota : 0-1 & int : 0,1,2,3,4,5
 
+    // intersectionRatio: 0.4, // Set the intersection ratio between which the element should be visible | Values :  0-1 (automaticaly set)
+    // rootMargin: "0% 0% -50% 0%", // Set the root margin for the element to be visible | Values :  _% _% _% _%  (automaticaly set)
     // rootMargin_top: "0%", // Set by which percent the element should animate out (Recommended value between 10% to -30%)
     // rootMargin_bottom: "-50%", // Set by which percent the element should animate out (Recommended value between -10% to -60%)
-    // rootMargin: "0% 0% -50% 0%", // Set the root margin for the element to be visible | Values :  _% _% _% _%  (automaticaly set)
-    // intersectionRatio: 0.4, // Set the intersection ratio between which the element should be visible | Values :  0-1 (automaticaly set)
     // rootMargin: jos_rootMargin_top + " 0% " + jos_rootMargin_bottom + " 0%"; // Set the root margin for the element to be visible | Values :  _% _% _% _%  (automaticaly set)
   });
 </script>
@@ -152,7 +160,7 @@ You can add minified version of the script by replacing <code>jos.js</code> with
 <div
   class="jos"
   data-jos_animation="zoom"
-  data-jos-once="true"
+  data-jos_once="true"
   data-jos_duration="0.5"
   data-jos_delay="0.2"
   data-jos_timing-function="ease-in-out"
@@ -222,7 +230,7 @@ Example : [Custom Timing Function]()
 This triggers the animation when the <code>myElement</code> element is scrolled into view.<br>
 This feature is useful especially when you want to animate an element which is in a <b>fixed position</b>.
 
-Example : [Anchor]()
+Example : [Anchor](https://github.com/jesvijonathan/JOS-Animation-Library/blob/master/dev/index.html?plain=1#L17)
 
 ## Create Custom Function
 
@@ -303,7 +311,9 @@ Example : [Custom Function]()
 
 ## Bugs and Issues
 
-- ~~JOS Methods do not work as of now.~~ (fixed in v0.3 upstream)
+Moved to [issues](https://github.com/jesvijonathan/JOS-Animation-Library/issues)
+
+<!-- - ~~JOS Methods do not work as of now.~~ (fixed in v0.3 upstream)
 - attribute names are not consistent.
 - .~~attribute <code>delay</code> is not working as of now..~~ (added in v0.5)
 - ~~<code>init</code> method is not working as of now. (need to be set manually as var in html inline script)~~ (added in v0.5)
@@ -313,7 +323,7 @@ Example : [Custom Function]()
 - ~~should move from function workaround to class based approach~~ (added in v0.5)
 - ~~Need to add minified and other versions of JOS package~~ (updated in v0.6)
 - bug where the element is not animating when the page is loaded and the element is already in view.
-- referencing multiple element to a single anchor causes incorrect view count (not a big deal).
+- referencing multiple element to a single anchor causes incorrect view count (not a big deal). -->
 <!-- status
 critical
 major

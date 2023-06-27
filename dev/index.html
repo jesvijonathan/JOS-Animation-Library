@@ -11,7 +11,11 @@
     <link rel="stylesheet" href="../dev/jos.css" id="jos-stylesheet" />
   </head>
   <body>
-    <div class="rootmargin jos" id="rootmarginBorder">
+    <div
+      class="rootmargin jos"
+      id="rootmarginBorder"
+      data-jos_anchor="#box_container_main"
+    >
       <!-- <div style="opacity: 0.8">Out</div>
       <div style="position: relative; opacity: 0.8; top: 94%">In</div> -->
     </div>
@@ -25,8 +29,8 @@
         class="TIT jos"
         data-jos_animation="fade-down"
         data-jos_duration="1"
-        data-jos_invoke_out="disroot2"
-        data-jos_invoke="disroot"
+        data-jos_invoke_out="testInvokeExitFunction"
+        data-jos_invoke="testInvokeEnterFunction"
       >
         JOS Demo
       </h1>
@@ -49,6 +53,7 @@
       >
     </center>
     <div
+      id="box_container_main"
       class="elements jos"
       data-jos_animation="stretch"
       data-jos_duration="0.2"
@@ -134,16 +139,21 @@
 
 <script src="../dev/jos.js"></script>
 <script>
-  function mytestfunc2() {}
+  function testInvokeEnterFunction() {
+    console.log("testInvokeEnterFunction Invoked on Enter");
+  }
+  function testInvokeExitFunction() {
+    console.log("testInvokeEnterFunction Invoked on Exit");
+  }
 
-  function disroot() {
-    let elemm = document.getElementById("rootmarginBorder");
-    elemm.classList.add("jos-fade");
-  }
-  function disroot2() {
-    let elemm = document.getElementById("rootmarginBorder");
-    elemm.classList.remove("jos-fade");
-  }
+  // function disroot() {
+  //   let elemm = document.getElementById("rootmarginBorder");
+  //   elemm.classList.add("jos-fade");
+  // }
+  // function disroot2() {
+  //   let elemm = document.getElementById("rootmarginBorder");
+  //   elemm.classList.remove("jos-fade");
+  // }
 </script>
 <!-- Global Parameters -->
 <script>
