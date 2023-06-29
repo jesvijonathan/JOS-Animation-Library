@@ -205,11 +205,29 @@ class jos {
     let text_delay = "";
     let text_iterationCount = "";
     let target_jos_animation = target.dataset.jos_animation;
+    let scroll_dir = 1; // 0 - up | 1 - down
 
-    // Check for viewport intersection
-    if (entry.intersectionRatio > this.default_intersectionRatio) {
+    if (entry.boundingClientRect.top < 0) {
+      // console.log(
+      //   "scroll up",
+
+      //   entry.boundingClientRect.top,
+      //   entry.isIntersecting,
+      //   target.dataset.jos_scrolldir
+      // );
+      scroll_dir = 0;
+    } else {
+      // console.log(
+      //   "scroll down",
+      //   entry.boundingClientRect.top,
+      //   entry.isIntersecting,
+      //   target.dataset.jos_scrolldir
+      // );
+      scroll_dir = 1;
+    }
+
+    if (entry.isIntersecting) {
       state = "Enter";
-      // add to element counter
 
       if (target.dataset.jos_counter != undefined) {
         let counter_value = parseInt(target.dataset.jos_counter);
@@ -217,7 +235,7 @@ class jos {
         target.dataset.jos_counter = counter_value;
         text_iterationCount = "\n    | Counter : " + counter_value;
       }
-      // start animation
+
       if (target_jos_animation) {
         target.classList.remove("jos-" + target_jos_animation);
 
@@ -232,8 +250,6 @@ class jos {
           target.dataset.jos_once != undefined ||
           target.dataset.jos_once != "false"
         ) {
-          // target.classList.remove("jos");
-          // console.log("Removed-Observer");
           if (target.dataset.jos_once == "true") {
             observer.unobserve(target);
             text_once = "\n    | Once :  Removed Observer (1)";
@@ -246,20 +262,46 @@ class jos {
           }
         }
       }
-
-      // iiterate the counter for the element
     } else {
       // revert animation
-      state = "Exit";
-      target.classList.add("jos-" + target_jos_animation);
+      if (target.dataset.jos_scrolldir != undefined) {
+        if (
+          (scroll_dir == 1 && target.dataset.jos_scrolldir == "down") ||
+          (scroll_dir == 0 && target.dataset.jos_scrolldir == "up")
+        ) {
+          state = "Exit";
+          target.classList.add("jos-" + target_jos_animation);
 
-      // check for element invoke function
-      if (target.dataset.jos_invoke_out != undefined) {
-        window[target.dataset.jos_invoke_out](target);
-        text_invoke = "\n    | Invoked : " + target.dataset.jos_invoke_out;
+          // check for element invoke function
+          if (target.dataset.jos_invoke_out != undefined) {
+            window[target.dataset.jos_invoke_out](target);
+            text_invoke = "\n    | Invoked : " + target.dataset.jos_invoke_out;
+          }
+        }
+      } else {
+        state = "Exit";
+        target.classList.add("jos-" + target_jos_animation);
+
+        // check for element invoke function
+        if (target.dataset.jos_invoke_out != undefined) {
+          window[target.dataset.jos_invoke_out](target);
+          text_invoke = "\n    | Invoked : " + target.dataset.jos_invoke_out;
+        }
       }
-      // console.log("jos-" + target_jos_animation);
     }
+    // Check for viewport intersection
+
+    // else if (scroll_dir == 1 && target.dataset.jos_scrolldir == "up") {
+    //   state = "Exit";
+    //   target.classList.add("jos-" + target_jos_animation);
+
+    //   // check for element invoke function
+    //   if (target.dataset.jos_invoke_out != undefined) {
+    //     window[target.dataset.jos_invoke_out](target);
+    //     text_invoke = "\n    | Invoked : " + target.dataset.jos_invoke_out;
+    //   }
+    // }
+    // console.log("jos-" + target_jos_animation);
 
     // debug info
     if (target.id != "") {
@@ -279,36 +321,64 @@ class jos {
     }
     // debug info
     if (this.debug == true) {
-      console.debug(
-        "JOS " +
-          ("[" + Date.now() + "] [DEBUG]\n") +
-          "    : On-" +
-          state +
-          " (" +
-          target.tagName +
-          ") Info" +
-          text_target +
-          "\n    | Class : (" +
-          target.className +
-          ")\n    | Intersection Ratio : (" +
-          entry.intersectionRatio +
-          " ~ " +
-          this.default_intersectionRatio +
-          ")\n    | Animation : " +
-          target.dataset.jos_animation +
-          text_duration +
-          text_delay +
-          text_timingFunction +
-          text_once +
-          text_iterationCount +
-          text_invoke
-      );
+      if (target.dataset.jos_target) {
+        console.log(
+          "JOS " +
+            ("[" + Date.now() + "] [DEBUG]\n") +
+            "    : On-" +
+            state +
+            " (" +
+            target.tagName +
+            ") Info" +
+            text_target +
+            "\n    | Class : (" +
+            target.className +
+            ")\n    | Intersection Ratio : (" +
+            entry.intersectionRatio +
+            " ~ " +
+            this.default_intersectionRatio +
+            ")\n    | Animation : " +
+            target.dataset.jos_animation +
+            text_duration +
+            text_delay +
+            text_timingFunction +
+            text_once +
+            text_iterationCount +
+            text_invoke
+        );
+      } else {
+        console.debug(
+          "JOS " +
+            ("[" + Date.now() + "] [DEBUG]\n") +
+            "    : On-" +
+            state +
+            " (" +
+            target.tagName +
+            ") Info" +
+            text_target +
+            "\n    | Class : (" +
+            target.className +
+            ")\n    | Intersection Ratio : (" +
+            entry.intersectionRatio +
+            " ~ " +
+            this.default_intersectionRatio +
+            ")\n    | Animation : " +
+            target.dataset.jos_animation +
+            text_duration +
+            text_delay +
+            text_timingFunction +
+            text_once +
+            text_iterationCount +
+            text_invoke
+        );
+      }
     }
   };
 
   // initialize the observer
   animationInit() {
     let log_text = "";
+    let doit = [];
     this.boxes.forEach((box) => {
       // observer.observe(box);;
       // check for default values
@@ -349,6 +419,7 @@ class jos {
       //   );
       // } else {
       // }
+
       if (object_default_animation != undefined) {
         //object_default_animation = this.default_animation;
         box.setAttribute("data-jos_animation", object_default_animation);
@@ -374,6 +445,12 @@ class jos {
 
       box.setAttribute("data-jos_counter", "0");
       box.classList.add("jos-" + object_default_animation);
+
+      if (box.dataset.jos_startvisible != undefined) {
+        //box.classList.add("jos-" + object_default_animation);
+
+        doit.push(box);
+      }
 
       // refresh the dom to apply the re insert the elements in the body
       let rootMargin =
@@ -437,6 +514,19 @@ class jos {
       //     object_default_animation
       // );
     }
+    //  execute all lines from doit
+
+    setTimeout(function () {
+      doit.forEach((box) => {
+        setTimeout(function () {
+          box.classList.remove("jos-" + box.dataset.jos_animation);
+          console.log(
+            "jos-" + box.dataset.jos_animation,
+            box.dataset.jos_startvisible
+          );
+        }, box.dataset.jos_startvisible);
+      });
+    });
   }
 
   // initialize JOS class

@@ -57,68 +57,82 @@
       class="elements jos"
       data-jos_animation="stretch"
       data-jos_duration="0.2"
+      data-jos_startVisible="10"
     >
       <div
-        class="box jos"
+        class="box jos debug"
         data-jos_animation="slide"
         title="Animation : slide"
+        data-jos_scrollDir="down"
+        data-jos_startVisible="5000"
       ></div>
       <div
-        class="box jos"
+        class="box jos debug"
         id="elem"
         data-jos_animation="fade"
         title="Animation : fade"
+        data-jos_scrollDir="down"
       ></div>
       <div
         class="box jos"
         data-jos_animation="zoom"
         title="Animation : zoom"
+        data-jos_scrollDir="down"
+        data-jos_startVisible="3000"
       ></div>
 
       <div
-        class="box jos"
+        class="box jos debug"
         data-jos_animation="zoom-in"
         title="Animation : zoom-in"
+        data-jos_scrollDir="down"
+        data-jos_startVisible="2000"
       ></div>
       <div
-        class="box jos"
+        class="box jos debug"
         data-jos_animation="flip"
         title="Animation : flip"
+        data-jos_scrollDir="down"
+        data-jos_startVisible="1000"
       ></div>
 
       <div
-        class="box jos"
+        class="box jos debug2"
         data-jos_animation="spin"
         title="Animation : spin"
+        data-jos_scrollDir="up"
       ></div>
       <div
-        class="box jos"
+        class="box jos debug2"
         data-jos_animation="fade-up"
         title="Animation : fade-up"
-      >
-        rootMargin
-      </div>
+        data-jos_scrollDir="up"
+      ></div>
       <div
-        class="box jos"
+        class="box jos debug2"
         data-jos_animation="fade-right"
         title="Animation : fade-right"
+        data-jos_scrollDir="up"
       ></div>
 
       <div
-        class="box jos"
+        class="box jos debug2"
         data-jos_animation="stretch"
         title="Animation : stretch"
+        data-jos_scrollDir="up"
       ></div>
 
       <div
-        class="box jos"
+        class="box jos debug2"
         data-jos_animation="rotate"
         title="Animation : rotate"
+        data-jos_scrollDir="up"
       ></div>
       <div
-        class="box jos"
+        class="box jos debug2"
         data-jos_animation="zoom-in-left"
         title="Animation : zoom-in-left"
+        data-jos_scrollDir="up"
       ></div>
 
       <div
@@ -283,6 +297,12 @@
       width: 30vw;
       background: rgb(0, 0, 0);
     }
+  }
+  .debug {
+    background-color: red;
+  }
+  .debug2 {
+    background-color: blue;
   }
 </style>
 
