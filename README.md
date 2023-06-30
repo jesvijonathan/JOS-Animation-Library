@@ -189,7 +189,7 @@ By the end of this step, you should have something like this :
   data-jos_rootMargin="0% 0% -50% 0%"
   data-jos_rootMargin_top="-10%"
   data-jos_rootMargin_bottom="-50%"
-  data-jos_scrollDir="down"
+  data-jos_scrollDirection="down"
   data-jos_startVisible="true"
   data-jos_invoke="myCustomFunction"
   data-jos_invoke_out="myCustomFunction_onExit"
