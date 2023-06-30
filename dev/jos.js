@@ -12,7 +12,7 @@ class jos {
   debug = false;
   disable = false;
   // Package Info
-  version = "0.7.1 (Development)";
+  version = "0.7.5 (Development)";
   author = "Jesvi Jonathan";
   github = "https://github.com/jesvijonathan/JOS-Animation-Library";
   // Read DOM
@@ -221,7 +221,6 @@ class jos {
       // );
       scroll_dir = 1;
     }
-
     if (entry.isIntersecting) {
       state = "Enter";
 
