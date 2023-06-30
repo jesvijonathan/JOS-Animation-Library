@@ -13,6 +13,7 @@
   <body>
     <div
       class="rootmargin jos"
+      data-jos_animation="fade"
       id="rootmarginBorder"
       data-jos_anchor="#box_container_main"
     >
@@ -79,19 +80,19 @@
         class="box jos debug"
         data-jos_animation="fade-left-down"
         data-jos_scrollDirection="down"
-        title="Animation : zoom-in"
+        title="Animation : zoom-in | Scroll-Directiom : Down"
       ></div>
       <div
         class="box jos debug"
         data-jos_animation="zoom-in"
         data-jos_scrollDirection="down"
-        title="Animation : zoom-in"
+        title="Animation : zoom-in | Scroll-Directiom : Down"
       ></div>
       <div
         class="box jos debug"
         data-jos_scrollDirection="down"
         data-jos_animation="flip"
-        title="Animation : flip"
+        title="Animation : flip | Scroll-Directiom : Down"
       ></div>
 
       <div
@@ -99,21 +100,21 @@
         data-jos_animation="spin"
         data-jos_startVisible="true"
         data-jos_scrollDirection="up"
-        title="Animation : spin"
+        title="Animation : spin | Scroll-Directiom : up  | Start-Visible : true"
       ></div>
       <div
         class="box jos debug2"
         data-jos_animation="fade-up"
         data-jos_startVisible="1000"
         data-jos_scrollDirection="up"
-        title="Animation : fade-up"
+        title="Animation : fade-up | Scroll-Directiom : up | Start-Visible : 1000ms"
       ></div>
       <div
         class="box jos debug2"
         data-jos_animation="fade-right"
         data-jos_startVisible="3000"
         data-jos_scrollDirection="up"
-        title="Animation : fade-right"
+        title="Animation : fade-right | Scroll-Directiom : up | Start-Visible : 3000ms"
       ></div>
 
       <div
@@ -121,26 +122,59 @@
         data-jos_animation="stretch"
         data-jos_startVisible="4000"
         data-jos_scrollDirection="up"
-        title="Animation : stretch"
+        title="Animation : stretch | Scroll-Directiom : up | Start-Visible : 4000ms"
       ></div>
 
       <div
         class="box jos debug3"
-        data-jos_animation="rotate"
-        data-jos_scrollDirection="false"
-        title="Animation : rotate"
+        data-jos_animation="static"
+        data-jos_animationinverse="my-custom-animation"
+        title="Animation : rotate | Delay : 0.3s"
       ></div>
       <div
         class="box jos debug3"
-        data-jos_animation="zoom-in-left"
-        data-jos_scrollDirection="false"
-        ="Animation : zoom-in-left"
+        data-jos_animationinverse="my-custom-animation2"
+        ="Animation : zoom-in-left | Delay : 0.3s"
       ></div>
       <div
         class="box jos debug3"
-        data-jos_animation="flip-left"
-        title="Animation : zoom-in-left"
+        data-jos_animation="fade-down"
+        data-jos_animationInverse="fade-down"
+        title="Animation : zoom-in-left | Delay : 0.3s"
       ></div>
+
+      <style>
+        .jos-my-custom-animation {
+          /* Set the initial state of the element */
+          animation: jos-my-custom-animation 2s linear infinite;
+        }
+        @keyframes jos-my-custom-animation {
+          0% {
+            /* Set the initial state of the element */
+            transform: rotate(0deg);
+          }
+          100% {
+            /* Set the final state of the element */
+            transform: rotate(360deg);
+          }
+        }
+        .jos-my-custom-animation2 {
+          /* Set the initial state of the element */
+          animation: jos-my-custom-animation2 0.7s infinite;
+          border-radius: 0%;
+          transform: rotate(0deg);
+        }
+        @keyframes jos-my-custom-animation2 {
+          0% {
+            /* Set the initial state of the element */
+
+            border-radius: 0%;
+            /* Set the final state of the element */
+            transform: rotate(360deg);
+          }
+        }
+        /* fade-up-custom */
+      </style>
       <div
         class="box jos"
         data-jos_animation="flip-left"
@@ -193,7 +227,7 @@
 
     // rootMargin_top: "0%", // Set by which percent the element should animate out (Recommended value between 10% to -30%)
     // rootMargin_bottom: "-50%", // Set by which percent the element should animate out (Recommended value between -10% to -60%)
-    rootMargin: "-10% 0% -30% 0%", // Set the root margin for the element to be visible | Values :  _% _% _% _%  (automaticaly set)
+    rootMargin: "-20% 0% -20% 0%", // Set the root margin for the element to be visible | Values :  _% _% _% _%  (automaticaly set)
     // intersectionRatio: 0.4, // Set the intersection ratio between which the element should be visible | Values :  0-1 (automaticaly set)
     // rootMargin: jos_rootMargin_top + " 0% " + jos_rootMargin_bottom + " 0%"; // Set the root margin for the element to be visible | Values :  _% _% _% _%  (automaticaly set)
 
@@ -217,7 +251,7 @@
   }
   body {
     background: rgb(255, 255, 255);
-    background: rgb(106, 106, 106);
+
     overflow-x: hidden;
   }
   .rootmargin {
@@ -227,7 +261,8 @@
     border-right: 0px;
     left: 0;
     height: 60%;
-    top: 10%;
+    top: 50%;
+    transform: translate(0, -50%);
     position: fixed;
     z-index: -1;
   }
