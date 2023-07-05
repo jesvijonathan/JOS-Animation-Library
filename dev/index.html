@@ -220,9 +220,9 @@
 <!-- Global Parameters -->
 <script>
   JOS.init({
-    // disable: false, // Disable JOS gloabaly | Values :  'true', 'false'
+    //disable: true, // Disable JOS gloabaly | Values :  'true', 'false'
     debugMode: true, // Enable JOS debug mode | Values :  'true', 'false'
-    passive: false, // Set the passive option for the scroll event listener | Values :  'true', 'false'
+    passive: true, // Set the passive option for the scroll event listener | Values :  'true', 'false'
 
     once: false, // Disable JOS after first animation | Values :  'true', 'false'
     animation: "fade", // JOS global animation type | Values :  'fade', 'slide', 'zoom', 'flip', 'fade-right', 'fade-left', 'fade-up', 'fade-down', 'zoom-in-right', 'zoom-in-left', 'zoom-in-up', 'zoom-in-down', 'zoom-out-right', 'zoom-out-left', 'zoom-out-up', 'zoom-out-down', 'flip-right', 'flip-left', 'flip-up', 'flip-down, "my-custom-animation"
@@ -236,8 +236,8 @@
     rootMargin: "-10% 0% -30% 0%", // Set the root margin for the element to be visible | Values :  _% _% _% _%  (automaticaly set)
     // intersectionRatio: 0.4, // Set the intersection ratio between which the element should be visible | Values :  0-1 (automaticaly set)
     // rootMargin: jos_rootMargin_top + " 0% " + jos_rootMargin_bottom + " 0%"; // Set the root margin for the element to be visible | Values :  _% _% _% _%  (automaticaly set)
-    // startVisible: "true", // Set the time in ms after which the element should be visible | Values in ms : 1000, 2000, || Boolean : true / false
-    //scrollDirection: "up",
+    //startVisible: "3000", // Set the time in ms after which the element should be visible | Values in ms : 1000, 2000, || Boolean : true / false
+    // scrollDirection: "up",
     // animate_out: false, // Set whether elements should animate out while scrolling past them | Values :  'true', 'false'
     // debounce: 0, // Set global the debounce time/rate for listening to scroll events | Values :  0-1000
   });
