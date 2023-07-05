@@ -23,7 +23,7 @@
     <center
       class="jos"
       data-jos_animation="fade-up"
-      title="JOS : Animation Library (v0.7.1)"
+      title="JOS : Animation Library (v0.7.5)"
       data-jos_duration="1"
     >
       <h1
@@ -127,53 +127,59 @@
 
       <div
         class="box jos debug3"
+        data-jos_animation="my-custom-animation"
+        data-jos_animationinverse="static"
+        title="Animation : my-custom-animation | Animation-Inverse : static"
+      ></div>
+      <div
+        class="box jos debug3"
         data-jos_animation="static"
-        data-jos_animationinverse="my-custom-animation"
-        title="Animation : rotate | Delay : 0.3s"
+        data-jos_animationinverse="my-custom-animation-2"
+        ="Animation : static | Animation-Inverse : my-custom-animation-2"
       ></div>
       <div
         class="box jos debug3"
-        data-jos_animationinverse="my-custom-animation2"
-        ="Animation : zoom-in-left | Delay : 0.3s"
-      ></div>
-      <div
-        class="box jos debug3"
-        data-jos_animation="fade-down"
-        data-jos_animationInverse="fade-down"
-        title="Animation : zoom-in-left | Delay : 0.3s"
+        data-jos_animationinverse="disappear-zero"
+        data-jos_animation="static"
+        data-jos_scrollDirection="down"
+        data-jos_rootMargin_top="50%"
+        title="Animation : fade-down | Animation-Inverse : fade-down"
       ></div>
 
+      <!-- My custom Animation Style -->
       <style>
+        /* Custom Animation 1 */
+        .jos-disappear-zero {
+          height: 0 !important;
+          margin-top: -3vw;
+        }
+        /* Custom Playable Animation 1 */
         .jos-my-custom-animation {
-          /* Set the initial state of the element */
-          animation: jos-my-custom-animation 2s linear infinite;
+          transition: 1s;
+          animation: jos-my-custom-animation 1s ease-in-out infinite;
+          transform: translateX(100px);
         }
         @keyframes jos-my-custom-animation {
           0% {
-            /* Set the initial state of the element */
-            transform: rotate(0deg);
+            opacity: 1;
           }
-          100% {
-            /* Set the final state of the element */
-            transform: rotate(360deg);
+
+          50% {
+            transform: translateX(-100px);
           }
         }
-        .jos-my-custom-animation2 {
-          /* Set the initial state of the element */
-          animation: jos-my-custom-animation2 0.7s infinite;
+        /* Custom Playable Animation 2 */
+        .jos-my-custom-animation-2 {
+          animation: jos-my-custom-animation-2 0.7s infinite;
           border-radius: 0%;
           transform: rotate(0deg);
         }
-        @keyframes jos-my-custom-animation2 {
+        @keyframes jos-my-custom-animation-2 {
           0% {
-            /* Set the initial state of the element */
-
             border-radius: 0%;
-            /* Set the final state of the element */
             transform: rotate(360deg);
           }
         }
-        /* fade-up-custom */
       </style>
       <div
         class="box jos"
@@ -230,7 +236,8 @@
     rootMargin: "-10% 0% -30% 0%", // Set the root margin for the element to be visible | Values :  _% _% _% _%  (automaticaly set)
     // intersectionRatio: 0.4, // Set the intersection ratio between which the element should be visible | Values :  0-1 (automaticaly set)
     // rootMargin: jos_rootMargin_top + " 0% " + jos_rootMargin_bottom + " 0%"; // Set the root margin for the element to be visible | Values :  _% _% _% _%  (automaticaly set)
-
+    // startVisible: "true", // Set the time in ms after which the element should be visible | Values in ms : 1000, 2000, || Boolean : true / false
+    //scrollDirection: "up",
     // animate_out: false, // Set whether elements should animate out while scrolling past them | Values :  'true', 'false'
     // debounce: 0, // Set global the debounce time/rate for listening to scroll events | Values :  0-1000
   });
