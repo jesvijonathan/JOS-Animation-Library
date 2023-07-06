@@ -11,15 +11,45 @@ class jos {
   default_startVisible = undefined;
   default_scrolldirection = undefined;
   default_passive = true;
+
   debug = false;
   disable = false;
+
   static version = "0.7.5 (Development)";
   static author = "Jesvi Jonathan";
   static github = "https://github.com/jesvijonathan/JOS-Animation-Library";
+
   jos_stylesheet = undefined;
   boxes = undefined;
   observers = [];
+
   constructor() {}
+
+  debugger() {
+    console.log(`JOS: Javascript On Scroll Animation Library
+- Version: ${jos.version}
+- Author: ${jos.author}
+- Github: ${jos.github}\n`);
+
+    console.log(`JOS Settings:
+- animation: ${this.default_animation}
+- once: ${this.default_once}
+- animationinverse: ${this.default_animationinverse}
+- timingFunction: ${this.default_timingFunction}
+- duration: ${this.default_duration}
+- delay: ${this.default_delay}
+- threshold: ${this.default_threshold}
+- startVisible: ${this.default_startVisible}
+- scrolldirection: ${this.default_scrolldirection}
+- intersectionRatio: ${this.default_intersectionRatio}
+- rootMargin: ${this.default_rootMargin}
+- disable: ${this.disable}
+- debugMode: ${this.debugMode}\n`);
+
+    console.log("JOS Initialized:\n\n");
+    console.log(this.boxes || "No Elements Found");
+  }
+
   callbackRouter_anchor = (entries, observer) => {
     let entry = entries[0];
     let parentTarget = entry.target;
@@ -70,6 +100,7 @@ class jos {
       }
     });
   };
+
   callbackRouter = (entries, observer, type = 1) => {
     if (this.disable == true) {
       return;
@@ -126,6 +157,7 @@ class jos {
       }
     }
   };
+
   animationInit() {
     let doit = [];
     this.boxes.forEach((box) => {
@@ -222,6 +254,22 @@ class jos {
       });
     }, 100);
   }
+
+  animationUnset(state = 0) {
+    if (state != -1) {
+      this.boxes?.forEach((box) => {
+        box.classList.remove("jos");
+        box.classList.add("jos_disabled");
+        if (state == 0) {
+          box.classList.add("jos-" + box.dataset.jos_animation);
+        } else {
+          box.classList.remove("jos-" + box.dataset.jos_animation);
+        }
+      });
+    }
+    this.observers.forEach((observer) => observer.disconnect());
+  }
+
   getstylesheet() {
     if (!this.jos_stylesheet) {
       this.jos_stylesheet = document.getElementById("jos-stylesheet").sheet;
@@ -239,12 +287,14 @@ class jos {
     );
     return this.jos_stylesheet;
   }
+
   getBoxes() {
     if (!this.boxes) {
       this.boxes = document.querySelectorAll(".jos");
     }
     return this.boxes;
   }
+
   getdefault(options = {}) {
     let {
       once,
@@ -296,42 +346,6 @@ class jos {
     }
   }
 
-  debugger() {
-    console.log(`JOS: Javascript On Scroll Animation Library
-  - Version: ${jos.version}
-  - Author: ${jos.author}
-  - Github: ${jos.github}\n`);
-    console.log(`JOS Settings:
-  - animation: ${this.default_animation}
-  - once: ${this.default_once}
-  - animationinverse: ${this.default_animationinverse}
-  - timingFunction: ${this.default_timingFunction}
-  - duration: ${this.default_duration}
-  - delay: ${this.default_delay}
-  - threshold: ${this.default_threshold}
-  - startVisible: ${this.default_startVisible}
-  - scrolldirection: ${this.default_scrolldirection}
-  - intersectionRatio: ${this.default_intersectionRatio}
-  - rootMargin: ${this.default_rootMargin}
-  - disable: ${this.disable}
-  - debugMode: ${this.debugMode}\n`);
-    console.log("JOS Initialized:\n\n");
-    console.log(this.boxes || "No Elements Found");
-  }
-  animationUnset(state = 0) {
-    if (state != -1) {
-      this.boxes?.forEach((box) => {
-        box.classList.remove("jos");
-        box.classList.add("jos_disabled");
-        if (state == 0) {
-          box.classList.add("jos-" + box.dataset.jos_animation);
-        } else {
-          box.classList.remove("jos-" + box.dataset.jos_animation);
-        }
-      });
-    }
-    this.observers.forEach((observer) => observer.disconnect());
-  }
   start(state = 0) {
     // 0 - Normal/Full Start
     // -1 - Resume with current state
@@ -342,6 +356,7 @@ class jos {
     this.disable = false;
     return "Started";
   }
+
   stop(state = 0) {
     state = state === 1 ? 0 : 1;
     // 0 - Stop | final state | opacity 1
@@ -353,6 +368,7 @@ class jos {
     }
     return "Stopped";
   }
+
   reset(state = 0) {
     // 0 - Complete Reset | Init + Start
     // -1 - Refresh without affecting Current state | Un noticed Refresh
@@ -360,6 +376,7 @@ class jos {
     this.init();
     return "Reset";
   }
+
   destroy(state = 0) {
     // 0 - dont remove stylesheet | To preseve state
     // 1 - remove along with stylesheet & jos stylesheet reference
