@@ -405,6 +405,25 @@ class jos {
     this.init();
     return "Reset";
   }
+  destroy(state = 0) {
+    // 0 - dont remove stylesheet
+    // 1 - remove along with stylesheet & jos stylesheet reference
+    this.animationUnset(-1);
+    this.boxes = undefined;
+    this.observers = [];
+    if (state == 1) {
+      this.jos_stylesheet.disabled = true;
+    }
+    this.jos_stylesheet = undefined;
+
+    for (let prop in this) {
+      if (this.hasOwnProperty(prop) && typeof this[prop] !== "function") {
+        this[prop] = undefined;
+      }
+    }
+    Object.setPrototypeOf(this, null);
+    return "Nuked !";
+  }
 }
 
 // Create an JOS object
