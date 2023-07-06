@@ -319,7 +319,7 @@ Example : [Custom Timing Function]()
 This triggers the animation when the <code>myElement</code> element is scrolled into view.<br>
 This feature is useful especially when you want to animate an element which is in a <b>fixed position</b>.
 
-Example : [Anchor](https://github.com/jesvijonathan/JOS-Animation-Library/blob/master/dev/index.html?plain=1#L17)
+Example : [Anchor](https://github.com/jesvijonathan/JOS-Animation-Library/blob/master/dev/index.html?plain=1#L35)
 
 ## Direction Based Animation
 
