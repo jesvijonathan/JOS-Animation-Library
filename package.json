@@ -1,9 +1,9 @@
 {
   "name": "jos",
-  "version": "0.7",
+  "version": "0.8",
   "description": "JOS is an animation library package to instantly add beautiful/professional looking animation to your website",
   "main": "./dist/jos.debug.js",
-  "browser": "./dist/jos.debug.js",
+  "browser": "./dist/jos.js",
   "scripts": {
     "test": "node ./dist/jos.debug.js"
   },
@@ -27,7 +27,7 @@
     "css"
   ],
   "author": "Jesvi Jonathan",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/jesvijonathan/JOS-Animation-Library/issues"
   },
