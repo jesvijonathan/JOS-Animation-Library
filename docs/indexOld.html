@@ -5,33 +5,36 @@
     <link
       id="jos-stylesheet"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.css"
+      href="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dev/jos.css"
       crossorigin="anonymous"
     />
     <!-- <link rel="stylesheet" href="../dev/jos.css" id="jos-stylesheet" /> -->
+
+    <meta
+      name="description"
+      content="JOS is an animation library package to instantly add complex animation to your website "
+    />
+    <meta name="author" content="Jesvi Jonathan" />
+    <meta name="revised" content="JOS: Animation Library, 17/5/2023" />
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
   </head>
   <body>
-    <div
-      class="rootmargin jos"
-      data-jos_animation="fade"
-      id="rootmarginBorder"
-      data-jos_anchor="#box_container_main"
-    >
+    <div class="rootmargin jos" id="rootmarginBorder">
       <!-- <div style="opacity: 0.8">Out</div>
       <div style="position: relative; opacity: 0.8; top: 94%">In</div> -->
     </div>
     <center
       class="jos"
       data-jos_animation="fade-up"
-      title="JOS : Animation Library (v0.8)"
+      title="JOS : Animation Library (v0.7.1)"
       data-jos_duration="1"
     >
       <h1
         class="TIT jos"
         data-jos_animation="fade-down"
         data-jos_duration="1"
-        data-jos_invoke_out="testInvokeExitFunction"
-        data-jos_invoke="testInvokeEnterFunction"
+        data-jos_invoke_out="disroot2"
+        data-jos_invoke="disroot"
       >
         JOS Demo
       </h1>
@@ -54,7 +57,6 @@
       >
     </center>
     <div
-      id="box_container_main"
       class="elements jos"
       data-jos_animation="stretch"
       data-jos_duration="0.2"
@@ -77,110 +79,49 @@
       ></div>
 
       <div
-        class="box jos debug"
-        data-jos_animation="fade-left-down"
-        data-jos_scrollDirection="down"
-        title="Animation : zoom-in | Scroll-Directiom : Down"
-      ></div>
-      <div
-        class="box jos debug"
+        class="box jos"
         data-jos_animation="zoom-in"
-        data-jos_scrollDirection="down"
-        title="Animation : zoom-in | Scroll-Directiom : Down"
+        title="Animation : zoom-in"
       ></div>
       <div
-        class="box jos debug"
-        data-jos_scrollDirection="down"
+        class="box jos"
         data-jos_animation="flip"
-        title="Animation : flip | Scroll-Directiom : Down"
+        title="Animation : flip"
       ></div>
 
       <div
-        class="box jos debug2"
+        class="box jos"
         data-jos_animation="spin"
-        data-jos_startVisible="true"
-        data-jos_scrollDirection="up"
-        title="Animation : spin | Scroll-Directiom : up  | Start-Visible : true"
+        title="Animation : spin"
       ></div>
       <div
-        class="box jos debug2"
+        class="box jos"
         data-jos_animation="fade-up"
-        data-jos_startVisible="1000"
-        data-jos_scrollDirection="up"
-        title="Animation : fade-up | Scroll-Directiom : up | Start-Visible : 1000ms"
+        title="Animation : fade-up"
       ></div>
       <div
-        class="box jos debug2"
+        class="box jos"
         data-jos_animation="fade-right"
-        data-jos_startVisible="3000"
-        data-jos_scrollDirection="up"
-        title="Animation : fade-right | Scroll-Directiom : up | Start-Visible : 3000ms"
+        title="Animation : fade-right"
       ></div>
 
       <div
-        class="box jos debug2"
+        class="box jos"
         data-jos_animation="stretch"
-        data-jos_startVisible="4000"
-        data-jos_scrollDirection="up"
-        title="Animation : stretch | Scroll-Directiom : up | Start-Visible : 4000ms"
+        title="Animation : stretch"
       ></div>
 
       <div
-        class="box jos debug3"
-        data-jos_animation="my-custom-animation"
-        data-jos_animationinverse="static"
-        title="Animation : my-custom-animation | Animation-Inverse : static"
+        class="box jos"
+        data-jos_animation="rotate"
+        title="Animation : rotate"
       ></div>
       <div
-        class="box jos debug3"
-        data-jos_animation="static"
-        data-jos_animationinverse="my-custom-animation-2"
-        ="Animation : static | Animation-Inverse : my-custom-animation-2"
-      ></div>
-      <div
-        class="box jos debug3"
-        data-jos_animationinverse="disappear-zero"
-        data-jos_animation="static"
-        data-jos_scrollDirection="down"
-        data-jos_rootMargin_top="50%"
-        title="Animation : fade-down | Animation-Inverse : fade-down"
+        class="box jos"
+        data-jos_animation="zoom-in-left"
+        title="Animation : zoom-in-left"
       ></div>
 
-      <!-- My custom Animation Style -->
-      <style>
-        /* Custom Animation 1 */
-        .jos-disappear-zero {
-          height: 0 !important;
-          margin-top: -3vw;
-        }
-        /* Custom Playable Animation 1 */
-        .jos-my-custom-animation {
-          transition: 1s;
-          animation: jos-my-custom-animation 1s ease-in-out infinite;
-          transform: translateX(100px);
-        }
-        @keyframes jos-my-custom-animation {
-          0% {
-            opacity: 1;
-          }
-
-          50% {
-            transform: translateX(-100px);
-          }
-        }
-        /* Custom Playable Animation 2 */
-        .jos-my-custom-animation-2 {
-          animation: jos-my-custom-animation-2 0.7s infinite;
-          border-radius: 0%;
-          transform: rotate(0deg);
-        }
-        @keyframes jos-my-custom-animation-2 {
-          0% {
-            border-radius: 0%;
-            transform: rotate(360deg);
-          }
-        }
-      </style>
       <div
         class="box jos"
         data-jos_animation="flip-left"
@@ -197,47 +138,41 @@
   </body>
   <footer>JOS | 2023 | By Jesvi Jonathan</footer>
 </html>
-<script src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dev/jos.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.min.js"></script> -->
 <!-- <script src="../dev/jos.js"></script> -->
 <script>
-  function testInvokeEnterFunction() {
-    console.log("testInvokeEnterFunction Invoked on Enter");
-  }
-  function testInvokeExitFunction() {
-    console.log("testInvokeEnterFunction Invoked on Exit");
-  }
+  function mytestfunc2() {}
 
-  // function disroot() {
-  //   let elemm = document.getElementById("rootmarginBorder");
-  //   elemm.classList.add("jos-fade");
-  // }
-  // function disroot2() {
-  //   let elemm = document.getElementById("rootmarginBorder");
-  //   elemm.classList.remove("jos-fade");
-  // }
+  function disroot() {
+    let elemm = document.getElementById("rootmarginBorder");
+    elemm.classList.add("jos-fade");
+  }
+  function disroot2() {
+    let elemm = document.getElementById("rootmarginBorder");
+    elemm.classList.remove("jos-fade");
+  }
 </script>
 <!-- Global Parameters -->
 <script>
   JOS.init({
-    //disable: true, // Disable JOS gloabaly | Values :  'true', 'false'
+    // disable: false, // Disable JOS gloabaly | Values :  'true', 'false'
     debugMode: true, // Enable JOS debug mode | Values :  'true', 'false'
-    passive: true, // Set the passive option for the scroll event listener | Values :  'true', 'false'
+    passive: false, // Set the passive option for the scroll event listener | Values :  'true', 'false'
 
     once: false, // Disable JOS after first animation | Values :  'true', 'false'
     animation: "fade", // JOS global animation type | Values :  'fade', 'slide', 'zoom', 'flip', 'fade-right', 'fade-left', 'fade-up', 'fade-down', 'zoom-in-right', 'zoom-in-left', 'zoom-in-up', 'zoom-in-down', 'zoom-out-right', 'zoom-out-left', 'zoom-out-up', 'zoom-out-down', 'flip-right', 'flip-left', 'flip-up', 'flip-down, "my-custom-animation"
     timingFunction: "ease", // JOS global timing function | Values :  'ease', 'ease-in', 'ease-out', 'ease-in-out', 'linear', 'step-start', 'step-end', 'steps()', 'cubic-bezier()', 'my-custom-timing-function'
     threshold: 0, // Set gloabal the threshold for the element to be visible | Values :  0-1
     delay: 0, // Set global the delay for the animation to start | Values :  0,1,2,3,4,5
-    duration: 0.3, // Set global the duration for the animation playback | Values :  flota : 0-1 & int : 0,1,2,3,4,5
+    duration: 0.5, // Set global the duration for the animation playback | Values :  flota : 0-1 & int : 0,1,2,3,4,5
 
     // rootMargin_top: "0%", // Set by which percent the element should animate out (Recommended value between 10% to -30%)
     // rootMargin_bottom: "-50%", // Set by which percent the element should animate out (Recommended value between -10% to -60%)
     rootMargin: "-10% 0% -30% 0%", // Set the root margin for the element to be visible | Values :  _% _% _% _%  (automaticaly set)
     // intersectionRatio: 0.4, // Set the intersection ratio between which the element should be visible | Values :  0-1 (automaticaly set)
     // rootMargin: jos_rootMargin_top + " 0% " + jos_rootMargin_bottom + " 0%"; // Set the root margin for the element to be visible | Values :  _% _% _% _%  (automaticaly set)
-    //startVisible: "3000", // Set the time in ms after which the element should be visible | Values in ms : 1000, 2000, || Boolean : true / false
-    // scrollDirection: "up",
+
     // animate_out: false, // Set whether elements should animate out while scrolling past them | Values :  'true', 'false'
     // debounce: 0, // Set global the debounce time/rate for listening to scroll events | Values :  0-1000
   });
@@ -258,7 +193,6 @@
   }
   body {
     background: rgb(255, 255, 255);
-
     overflow-x: hidden;
   }
   .rootmargin {
@@ -285,13 +219,6 @@
     width: 8vw;
     background: rgb(0, 0, 0);
     z-index: 1000;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
   }
   .TIT {
     margin-top: 40vh;
@@ -346,15 +273,6 @@
       background: rgb(0, 0, 0);
     }
   }
-  .debug {
-    background-color: red;
-  }
-  .debug2 {
-    background-color: blue;
-  }
-  .debug3 {
-    background-color: green;
-  }
 </style>
 
 <!-- Google tag (gtag.js) -->
@@ -371,29 +289,3 @@
 
   gtag("config", "G-PNHW4PMZQJ");
 </script>
-
-<!-- 
-// add global startvisivle
-// add global scrolldirection
-// add debugger function
-// remove debugger lines
-optimize code | remove redundancy
-// working init, reset, destroy, start, stop
-// move scroll direction feature to anchor system
-
-document new features with example
-mention WONT FIX bugs at issues thread | framework support
-complete jos atributes table
-
-ETA | auto import for css using javascript on adding inline script
-
-add playable animation presets to jos
-
-convert demo to playground
-tweak variables
-change no. cube
-cube color
-make use of all exmaple
-
-List library for hackathons usage | add to readme
- -->
