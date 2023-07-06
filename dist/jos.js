@@ -19,7 +19,13 @@ class jos {
   jos_stylesheet = undefined;
   boxes = undefined;
   observers = [];
-  constructor() {}
+  constructor() { }
+  version() {
+    console.log(`JOS: Javascript On Scroll Animation Library
+    - Version: ${jos.version}
+    - Author: ${jos.author}
+    - Github: ${jos.github}\n`);
+  } 
   callbackRouter_anchor = (entries, observer) => {
     let entry = entries[0];
     let parentTarget = entry.target;

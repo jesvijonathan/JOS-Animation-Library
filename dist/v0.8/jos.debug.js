@@ -25,7 +25,15 @@ class jos {
 
   constructor() {}
 
+  version() {
+    console.log(`JOS: Javascript On Scroll Animation Library
+    - Version: ${jos.version}
+    - Author: ${jos.author}
+    - Github: ${jos.github}\n`);
+  }
+
   debugger() {
+    this.version;
     console.log(`JOS: Javascript On Scroll Animation Library
 - Version: ${jos.version}
 - Author: ${jos.author}
