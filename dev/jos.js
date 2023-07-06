@@ -19,6 +19,7 @@ class jos {
   static author = "Jesvi Jonathan";
   static github = "https://github.com/jesvijonathan/JOS-Animation-Library";
 
+  options = {};
   jos_stylesheet = undefined;
   boxes = undefined;
   observers = [];
@@ -31,10 +32,11 @@ class jos {
     - Author: ${jos.author}
     - Github: ${jos.github}\n`);
   }
-
-  debugger() {
-    this.version();
-    console.log(`JOS Settings:
+  //debugger = () => null;
+  debugger(type = 0) {
+    if (type == 0 && this.debugMode) {
+      this.version();
+      console.log(`JOS Settings:
 - animation: ${this.default_animation}
 - once: ${this.default_once}
 - animationinverse: ${this.default_animationinverse}
@@ -48,9 +50,11 @@ class jos {
 - rootMargin: ${this.default_rootMargin}
 - disable: ${this.disable}
 - debugMode: ${this.debugMode}\n`);
-
+    }
     console.log("JOS Initialized:\n\n");
-    console.log(this.boxes || "No Elements Found");
+    if ((type == 1 || type == 0) && this.debugMode) {
+      console.log(this.boxes || "No Elements Found");
+    }
   }
 
   callbackRouter_anchor = (entries, observer) => {
@@ -270,7 +274,7 @@ class jos {
         }
       });
     }
-    this.observers.forEach((observer) => observer.disconnect());
+    this.observers?.forEach((observer) => observer.disconnect());
   }
 
   getstylesheet() {
@@ -292,6 +296,8 @@ class jos {
   }
 
   getBoxes() {
+    this.boxes = undefined;
+
     if (!this.boxes) {
       this.boxes = document.querySelectorAll(".jos");
     }
@@ -335,10 +341,11 @@ class jos {
       `${rootMarginTop || "-10%"} 0% ${rootMarginBottom || "-40%"} 0%`;
   }
 
-  init(options = {}) {
+  init(options = this.options) {
+    this.options = options;
+    this.getdefault(options);
     this.getstylesheet();
     this.getBoxes();
-    this.getdefault(options);
     if (this.debugMode) {
       this.debugger();
     }
@@ -361,7 +368,11 @@ class jos {
   }
 
   stop(state = 0) {
-    state = state === 1 ? 0 : 1;
+    if (state == 1) {
+      state = 0;
+    } else if (state == 0) {
+      state = 1;
+    }
     // 0 - Stop | final state | opacity 1
     // 1 - Stop | blank | opacity 0
     // -1 - Pause | final state of elements in viewport
@@ -371,13 +382,13 @@ class jos {
     }
     return "Stopped";
   }
-
-  reset(state = 0) {
-    // 0 - Complete Reset | Init + Start
-    // -1 - Refresh without affecting Current state | Un noticed Refresh
-    this.animationUnset(state);
-    this.init();
-    return "Reset";
+  refresh() {
+    this.animationUnset(-1);
+    this.boxes = undefined;
+    this.getBoxes();
+    this.animationInit();
+    this.debugger(1);
+    return "Refreshed";
   }
 
   destroy(state = 0) {
@@ -401,3 +412,8 @@ class jos {
 }
 const JOS = new jos();
 // By Jesvi Jonathan
+
+// setTimeout(() => {
+//   document.getElementById("box_container_main").innerHTML +=
+//     '<div class="box jos debug" data-jos_animation="zoom-in" data-jos_scrolldirection="down" title="Animation : zoom-in | Scroll-Directiom : Down"></div>';
+// }, 1000);
