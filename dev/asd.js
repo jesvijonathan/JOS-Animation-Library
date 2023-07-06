@@ -13,7 +13,7 @@ class jos {
   default_passive = true;
   debug = false;
   disable = false;
-  static version = "0.8";
+  static version = "0.8 (Development)";
   static author = "Jesvi Jonathan";
   static github = "https://github.com/jesvijonathan/JOS-Animation-Library";
   jos_stylesheet = undefined;

@@ -15,7 +15,7 @@ class jos {
   debug = false;
   disable = false;
 
-  static version = "0.7.5 (Development)";
+  static version = "0.8 (Development)";
   static author = "Jesvi Jonathan";
   static github = "https://github.com/jesvijonathan/JOS-Animation-Library";
 
