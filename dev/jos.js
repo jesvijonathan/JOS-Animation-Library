@@ -411,9 +411,3 @@ class jos {
   }
 }
 const JOS = new jos();
-// By Jesvi Jonathan
-
-// setTimeout(() => {
-//   document.getElementById("box_container_main").innerHTML +=
-//     '<div class="box jos debug" data-jos_animation="zoom-in" data-jos_scrolldirection="down" title="Animation : zoom-in | Scroll-Directiom : Down"></div>';
-// }, 1000);
