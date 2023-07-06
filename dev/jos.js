@@ -355,23 +355,55 @@ class jos {
     // }
     this.start();
   }
-  start() {
-    // this.stop();
-    this.disable = false;
-    this.animationInit();
-  }
-  animationUnset() {
-    this.boxes?.forEach((box) => {
-      box.classList.remove("jos");
-      box.classList.add("jos_disabled");
-      box.classList.remove("jos-" + box.dataset.jos_animation);
-    });
+
+  animationUnset(state = 0) {
+    if (state != -1) {
+      this.boxes?.forEach((box) => {
+        box.classList.remove("jos");
+        box.classList.add("jos_disabled");
+        if (state == 0) {
+          box.classList.add("jos-" + box.dataset.jos_animation);
+        } else {
+          box.classList.remove("jos-" + box.dataset.jos_animation);
+        }
+      });
+    }
     this.observers.forEach((observer) => observer.disconnect());
   }
-  stop() {
-    this.disable = true;
 
-    this.animationUnset();
+  start(state = 0) {
+    // 0 - Normal/Full Start
+    // -1 - Resume with current state
+    if (state != -1) {
+      this.stop();
+      this.animationInit();
+    }
+
+    this.disable = false;
+
+    return "Started";
+  }
+
+  stop(state = 0) {
+    state = state === 1 ? 0 : 1;
+
+    // 0 - Stop | final state | opacity 1
+    // 1 - Stop | blank | opacity 0
+    // -1 - Pause | final state of elements in viewport
+
+    this.disable = true;
+    if (state != -1) {
+      this.animationUnset(state);
+    }
+    return "Stopped";
+  }
+
+  reset(state = 0) {
+    // 0 - Complete Reset | Init + Start
+    // -1 - Refresh without affecting Current state | Un noticed Refresh
+    this.animationUnset(state);
+    this.init();
+    return "Reset";
   }
 }
 
