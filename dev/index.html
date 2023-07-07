@@ -4,13 +4,13 @@
     <title>JOS : Animation Library | Demo</title>
     <!-- description -->
 
-    <link
+    <!-- <link
       id="jos-stylesheet"
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/v0.8/jos.css"
       crossorigin="anonymous"
-    />
-    <!-- <link rel="stylesheet" href="../dev/jos.css" id="jos-stylesheet" /> -->
+    /> -->
+    <link rel="stylesheet" href="../dev/jos.css" id="jos-stylesheet" />
 
     <link
       rel="icon"
@@ -79,6 +79,13 @@
         class="box jos"
         data-jos_animation="slide"
         title="Animation : slide"
+      ></div>
+      <div
+        class="box jos debug777"
+        data-jos_animationinverse="blink-play"
+        data-jos_animation="slide"
+        data-jos_scrollDirection="down"
+        data-jos_rootMargin_top="50%"
       ></div>
       <div
         class="box jos"
@@ -362,6 +369,13 @@
   }
   .debug3 {
     background-color: green;
+  }
+  .debug777 {
+    background-image: linear-gradient(
+      90deg,
+      rgb(111, 21, 163),
+      rgb(22, 91, 145)
+    );
   }
 </style>
 

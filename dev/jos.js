@@ -37,19 +37,19 @@ class jos {
     if (type == 0 && this.debugMode) {
       this.version();
       console.log(`JOS Settings:
-- animation: ${this.default_animation}
-- once: ${this.default_once}
-- animationinverse: ${this.default_animationinverse}
-- timingFunction: ${this.default_timingFunction}
-- duration: ${this.default_duration}
-- delay: ${this.default_delay}
-- threshold: ${this.default_threshold}
-- startVisible: ${this.default_startVisible}
-- scrolldirection: ${this.default_scrolldirection}
-- intersectionRatio: ${this.default_intersectionRatio}
-- rootMargin: ${this.default_rootMargin}
-- disable: ${this.disable}
-- debugMode: ${this.debugMode}\n`);
+    - animation: ${this.default_animation}
+    - once: ${this.default_once}
+    - animationinverse: ${this.default_animationinverse}
+    - timingFunction: ${this.default_timingFunction}
+    - duration: ${this.default_duration}
+    - delay: ${this.default_delay}
+    - threshold: ${this.default_threshold}
+    - startVisible: ${this.default_startVisible}
+    - scrolldirection: ${this.default_scrolldirection}
+    - intersectionRatio: ${this.default_intersectionRatio}
+    - rootMargin: ${this.default_rootMargin}
+    - disable: ${this.disable}
+    - debugMode: ${this.debugMode}\n`);
     }
     console.log("JOS Initialized:\n\n");
     if ((type == 1 || type == 0) && this.debugMode) {
