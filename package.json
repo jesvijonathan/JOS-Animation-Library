@@ -1,16 +1,16 @@
 {
-  "name": "jos",
-  "version": "0.8",
-  "description": "JOS is an animation library package to instantly add beautiful/professional looking animation to your website",
-  "main": "./dist/jos.debug.js",
-  "browser": "./dist/jos.js",
-  "scripts": {
-    "test": "node ./dist/jos.debug.js"
-  },
+  "name": "jos-animation",
+  "version": "0.8.1",
+  "description": "An animation library package to instantly add beautiful/professional looking animation to your website",
+  "author": "Jesvi Jonathan",
+  "main": "./dist/jos.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jesvijonathan/JOS-Animation-Library.git"
   },
+  "files": [
+    "dist/*.{css,js}"
+  ],
   "keywords": [
     "jos",
     "on-scroll",
@@ -26,10 +26,9 @@
     "event",
     "css"
   ],
-  "author": "Jesvi Jonathan",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jesvijonathan/JOS-Animation-Library/issues"
   },
-  "homepage": "https://github.com/jesvijonathan/JOS-Animation-Library#readme"
+  "homepage": "https://jesvijonathan.github.io/JOS-Animation-Library/"
 }

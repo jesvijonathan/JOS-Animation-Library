@@ -77,19 +77,26 @@ Feel free to report an issue or request a feature in this repository :)
 
 1. Add the <code>[\<link>](https://github.com/jesvijonathan/Jesvi-Bot/releases)</code> inside the <code>\<head></code> tag :
 
+<!-- https://unpkg.com/jos-animation@latest/dist/jos.js -->
+<!-- "https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/v0.8/jos.css" -->
+
 ```html
 <link
   id="jos-stylesheet"
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/v0.8/jos.css"
+  href="https://unpkg.com/jos-animation/dist/jos.css"
   crossorigin="anonymous"
 />
 ```
 
 2. Add the <code>[\<script>](https://github.com/jesvijonathan/Jesvi-Bot/releases)</code> right after the <code>\<body></code> tag :
+   <!-- For easier navigation use jsdelivr -->
+   <!-- https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/v0.8/jos.min.js -->
+   <!-- For Stablility use unpkg  -->
+   <!-- https://unpkg.com/jos-animation@latest/dist/jos.js -->
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/v0.8/jos.min.js"></script>
+<script src="https://unpkg.com/jos-animation/dist/jos.min.js"></script>
 ```
 
 You can add minified version of the script by replacing <code>jos.js</code> with <code>jos.min.js</code> in the above script tag.
