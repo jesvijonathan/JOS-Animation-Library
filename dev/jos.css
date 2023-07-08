@@ -9,9 +9,9 @@ JOS v0.8.4 By Jesvi Jonathan
   transition: transform, opacity 0.5s;
   transition-timing-function: ease-in-out;
 }
-.jos:not([class]):not([class*="display"]):not(:has([class*="display"])) {
+/* .jos:not([class]):not([class*="display"]):not(:has([class*="display"])) {
   display: block;
-}
+} */
 
 .jos-anchor {
   opacity: 0;

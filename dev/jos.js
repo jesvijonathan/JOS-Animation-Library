@@ -277,11 +277,12 @@ class jos {
     this.observers?.forEach((observer) => observer.disconnect());
   }
 
-  getstylesheet() {
-    if (!this.jos_stylesheet) {
-      this.jos_stylesheet = document.getElementById("jos-stylesheet").sheet;
-    }
-    this.jos_stylesheet.insertRule(
+  getStylesheet() {
+    const styleElement = document.createElement("style");
+    document.head.appendChild(styleElement);
+
+    const styleSheet = styleElement.sheet;
+    styleSheet.insertRule(
       ".jos {" +
         ("transition: " +
           this.default_duration +
@@ -290,9 +291,10 @@ class jos {
           " " +
           this.default_delay +
           "s !important;") +
+        "display: block;" +
         "}"
     );
-    return this.jos_stylesheet;
+    this.jos_stylesheet = styleSheet;
   }
 
   getBoxes() {
@@ -304,7 +306,7 @@ class jos {
     return this.boxes;
   }
 
-  getdefault(options = {}) {
+  getDefault(options = {}) {
     let {
       once,
       animation,
@@ -343,8 +345,8 @@ class jos {
 
   init(options = this.options) {
     this.options = options;
-    this.getdefault(options);
-    this.getstylesheet();
+    this.getDefault(options);
+    this.getStylesheet();
     this.getBoxes();
     if (this.debugMode) {
       this.debugger();
@@ -411,4 +413,7 @@ class jos {
   }
 }
 const JOS = new jos();
-export default JOS;
+
+if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
+  module.exports = JOS;
+}

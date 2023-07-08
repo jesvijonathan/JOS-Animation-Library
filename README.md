@@ -73,7 +73,7 @@ Feel free to report an issue or request a feature in this repository :)
 - [JavaScript](https://www.w3schools.com/js/)
 - [CSS](https://www.w3schools.com/css/)
 
-## Installation
+### Normal Installation
 
 1. Add the <code>[\<link>](https://github.com/jesvijonathan/Jesvi-Bot/releases)</code> inside the <code>\<head></code> tag :
 
@@ -137,6 +137,25 @@ By the end of this step, you should have something like this :
   </body>
 </html>
 ``` -->
+
+<!-- using npm -->
+
+### Installation using npm
+
+1. You can also Install JOS using npm :
+
+```bash
+npm install jos-animation
+```
+
+2. Import JOS in your project :
+
+```js
+import "jos-animation/dist/jos.css";
+import JOS from "jos-animation";
+
+JOS.init();
+```
 
 ## Setup :
 
