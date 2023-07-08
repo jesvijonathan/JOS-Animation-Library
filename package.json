@@ -1,16 +1,21 @@
 {
   "name": "jos-animation",
-  "version": "0.8.1",
+  "version": "0.8.21-beta.4",
   "description": "An animation library package to instantly add beautiful/professional looking animation to your website",
   "author": "Jesvi Jonathan",
-  "main": "./dist/jos.js",
+  "main": "./scripts/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jesvijonathan/JOS-Animation-Library.git"
   },
   "files": [
-    "dist/*.{css,js}"
+    "dist/*.{css,js}",
+    "dev/*.{css,js}",
+    "scripts/*.{js}"
   ],
+  "scripts": {
+    "postinstall": "node ./scripts/postinstall.js"
+  },
   "keywords": [
     "jos",
     "on-scroll",

@@ -306,4 +306,6 @@ class jos {
   }
 }
 const JOS = new jos();
+export default JOS;
+
 // By Jesvi Jonathan 

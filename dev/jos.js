@@ -411,3 +411,4 @@ class jos {
   }
 }
 const JOS = new jos();
+export default JOS;
