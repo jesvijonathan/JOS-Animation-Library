@@ -101,6 +101,8 @@
 
       <div
         class="box jos debug"
+        id="nom"
+        data-jos_scroll="true"
         data-jos_animation="fade-left-down"
         data-jos_scrollDirection="down"
         title="Animation : zoom-in | Scroll-Directiom : Down"
@@ -112,11 +114,27 @@
         title="Animation : zoom-in | Scroll-Directiom : Down"
       ></div>
       <div
-        class="box jos debug"
-        data-jos_scrollDirection="down"
-        data-jos_animation="flip"
+        id="box"
+        class="box jos debug777"
+        data-jos_scroll="true"
         title="Animation : flip | Scroll-Directiom : Down"
       ></div>
+      <!-- 
+                var box = document.getElementById("box");
+        console.log(box);
+        const rootmargin = " 0% 0% -30% 0%";
+
+        document.onscroll = function () {
+          var scrollPercent =
+            (box.getBoundingClientRect().top / window.innerHeight) * 100;
+          console.log(
+            box.getBoundingClientRect().top,
+            box.getBoundingClientRect().bottom
+          );
+          console.log();
+        };
+       -->
+      <script></script>
 
       <div
         class="box jos debug2"
@@ -155,7 +173,9 @@
         title="Animation : my-custom-animation | Animation-Inverse : static"
       ></div>
       <div
+        id="juice"
         class="box jos debug3"
+        data-jos_scroll="true"
         data-jos_animation="static"
         data-jos_animationinverse="my-custom-animation-2"
         ="Animation : static | Animation-Inverse : my-custom-animation-2"
@@ -243,6 +263,7 @@
 <!-- Global Parameters -->
 <script>
   JOS.init({
+    //mirror: "false",
     //disable: true, // Disable JOS gloabaly | Values :  'true', 'false'
     debugMode: true, // Enable JOS debug mode | Values :  'true', 'false'
     passive: true, // Set the passive option for the scroll event listener | Values :  'true', 'false'

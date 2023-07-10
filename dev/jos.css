@@ -22,6 +22,9 @@ JOS v0.8.4 By Jesvi Jonathan
   transform: translate(0, 0);
   opacity: 1;
 }
+/* .jos-no-mirror {
+  transition: 0s forwards !important;
+} */
 
 /* fade */
 .jos-fade {

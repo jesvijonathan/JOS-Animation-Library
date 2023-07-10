@@ -11,6 +11,7 @@ class jos {
   default_startVisible = undefined;
   default_scrolldirection = undefined;
   default_passive = true;
+  default_mirror = undefined;
 
   debug = false;
   disable = false;
@@ -108,6 +109,26 @@ class jos {
     });
   };
 
+  scrollEnter = [];
+  callbackScroller = (scl) => {
+    // var box = target;
+    // console.log(box);
+    // const rootmargin = " 0% 0% -30% 0%";
+    console.log(scl);
+    document.onscroll = (e) => {
+      scl.forEach((box) => {
+        var scrollPercent =
+          (box.getBoundingClientRect().top / window.innerHeight) * 100;
+        // console.log(
+        //   box.id,
+        //   box.getBoundingClientRect().top,
+        //   box.getBoundingClientRect().bottom
+        // );
+        console.log(box.id, scrollPercent);
+      });
+    };
+  };
+
   callbackRouter = (entries, observer, type = 1) => {
     if (this.disable == true) {
       return;
@@ -116,17 +137,27 @@ class jos {
     let target = entry.target;
     let target_jos_animation = target.dataset.jos_animation;
     let target_jos_animationinverse = target.dataset.jos_animationinverse;
+
     let scroll_dir = 1;
     if (entry.boundingClientRect.top < 0) {
       scroll_dir = 0;
     } else {
       scroll_dir = 1;
     }
+
     if (entry.isIntersecting) {
+      if (target.dataset.jos_scroll == "true") {
+        // map/add target to scrollEnter with a id
+        this.scrollEnter.push(target);
+        this.callbackScroller(this.scrollEnter);
+      }
       if (target.dataset.jos_counter != undefined) {
         let counter_value = parseInt(target.dataset.jos_counter);
         counter_value++;
         target.dataset.jos_counter = counter_value;
+      }
+      if (target.dataset.jos_mirror == "false") {
+        target.classList.remove("jos-no-mirror");
       }
       if (target_jos_animation) {
         target.classList.remove("jos-" + target_jos_animation);
@@ -154,6 +185,11 @@ class jos {
         (scroll_dir === 0 && target.dataset.jos_scrolldirection === "up") ||
         target.dataset.jos_scrolldirection === "none"
       ) {
+        target.classList.toggle(
+          "jos-no-mirror",
+          target.dataset.jos_mirror == "false"
+        );
+
         target.classList.add("jos-" + target_jos_animation);
         if (target_jos_animationinverse != undefined) {
           target.classList.remove("jos-" + target_jos_animationinverse);
@@ -161,6 +197,12 @@ class jos {
         if (target.dataset.jos_invoke_out !== undefined) {
           window[target.dataset.jos_invoke_out](target);
         }
+      }
+      if (target.dataset.jos_scroll == "true") {
+        this.scrollEnter = this.scrollEnter.filter(
+          (item) => item.id !== target.id
+        );
+        this.callbackScroller(this.scrollEnter);
       }
     }
   };
@@ -175,6 +217,7 @@ class jos {
       let object_default_timingFunction = box.dataset.jos_timingFunction;
       let object_default_duration = box.dataset.jos_duration;
       let object_default_delay = box.dataset.jos_delay;
+      let object_default_mirror = box.dataset.jos_mirror || this.default_mirror;
       if (box.classList.contains("jos_disabled")) {
         box.classList.remove("jos_disabled");
         box.classList.add("jos");
@@ -199,6 +242,10 @@ class jos {
           "data-jos_timingFunction",
           object_default_timingFunction
         );
+      }
+
+      if (object_default_mirror == "false") {
+        box.setAttribute("data-jos_mirror", object_default_mirror);
       }
       if (object_default_duration) {
         box.setAttribute("data-jos_duration", object_default_duration);
@@ -283,6 +330,9 @@ class jos {
 
     const styleSheet = styleElement.sheet;
     styleSheet.insertRule(
+      ".jos-no-mirror" + " {    transition: 0s forwards !important;}"
+    );
+    styleSheet.insertRule(
       ".jos {" +
         ("transition: " +
           this.default_duration +
@@ -294,6 +344,7 @@ class jos {
         "display: block;" +
         "}"
     );
+
     this.jos_stylesheet = styleSheet;
   }
 
@@ -317,6 +368,7 @@ class jos {
       scrollDirection,
       intersectionRatio,
       duration,
+      mirror,
       delay,
       debugMode,
       disable,
@@ -341,6 +393,7 @@ class jos {
     this.default_rootMargin =
       rootMargin ||
       `${rootMarginTop || "-10%"} 0% ${rootMarginBottom || "-40%"} 0%`;
+    this.default_mirror = mirror || this.default_mirror;
   }
 
   init(options = this.options) {
