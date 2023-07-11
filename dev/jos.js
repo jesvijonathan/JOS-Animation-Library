@@ -24,6 +24,7 @@ class jos {
   jos_stylesheet = undefined;
   boxes = undefined;
   observers = [];
+  scrollEnter = [];
 
   constructor() {}
 
@@ -109,26 +110,62 @@ class jos {
     });
   };
 
-  scrollEnter = [];
+  // var box = target;
+  // console.log(box);
+  // const rootmargin = " 0% 0% -30% 0%";
   callbackScroller = (scl) => {
-    // var box = target;
-    // console.log(box);
-    // const rootmargin = " 0% 0% -30% 0%";
-    console.log(scl);
+    const defaultRootMargin = this.default_rootMargin;
+    let wh = window.innerHeight;
+
+    const updateBox = (box) => {
+      const rootMargin = box.dataset.jos_rootmargin || defaultRootMargin;
+      const rootMarginValues = rootMargin.split(" ").map(parseFloat);
+      const topMargin = (wh * rootMarginValues[0]) / 100;
+      const bottomMargin = (wh * rootMarginValues[2]) / 100;
+
+      box.jos = {
+        rootMargin,
+        rootMarginValues,
+        topMargin,
+        bottomMargin,
+      };
+      const elementRect = box.getBoundingClientRect();
+      const elementTop = elementRect.top - box.jos.topMargin;
+      const elementBottom = elementRect.bottom - box.jos.bottomMargin;
+
+      const windowScrollPercent = elementRect.top / wh;
+
+      const rootScrollPercent =
+        elementTop / (wh - box.jos.topMargin - box.jos.bottomMargin);
+
+      let scroll = 0;
+
+      if (rootScrollPercent < 0) {
+        scroll = 0;
+      } else if (rootScrollPercent > 100) {
+        scroll = 1;
+      } else {
+        scroll = rootScrollPercent;
+      }
+
+      box.jos = {
+        elementRect,
+        elementTop,
+        elementBottom,
+        windowScrollPercent,
+        rootScrollPercent,
+        scroll: scroll,
+      };
+
+      window[box.dataset.jos_scroll](box);
+    };
+
     document.onscroll = (e) => {
-      scl.forEach((box) => {
-        var scrollPercent =
-          (box.getBoundingClientRect().top / window.innerHeight) * 100;
-        // console.log(
-        //   box.id,
-        //   box.getBoundingClientRect().top,
-        //   box.getBoundingClientRect().bottom
-        // );
-        console.log(box.id, scrollPercent);
-      });
+      scl.forEach(updateBox);
     };
   };
 
+  // window["jos_scroll_" + box.id](obj);
   callbackRouter = (entries, observer, type = 1) => {
     if (this.disable == true) {
       return;
@@ -146,11 +183,14 @@ class jos {
     }
 
     if (entry.isIntersecting) {
-      if (target.dataset.jos_scroll == "true") {
-        // map/add target to scrollEnter with a id
+      if (
+        target.dataset.jos_scroll != "false" &&
+        target.dataset.jos_scroll != undefined
+      ) {
         this.scrollEnter.push(target);
         this.callbackScroller(this.scrollEnter);
       }
+
       if (target.dataset.jos_counter != undefined) {
         let counter_value = parseInt(target.dataset.jos_counter);
         counter_value++;
@@ -198,7 +238,10 @@ class jos {
           window[target.dataset.jos_invoke_out](target);
         }
       }
-      if (target.dataset.jos_scroll == "true") {
+      if (
+        target.dataset.jos_scroll != "false" &&
+        target.dataset.jos_scroll != undefined
+      ) {
         this.scrollEnter = this.scrollEnter.filter(
           (item) => item.id !== target.id
         );
@@ -266,13 +309,21 @@ class jos {
       }
       let rootMargin = [
         box.dataset.jos_rootmargin_top || this.default_rootMargin.split(" ")[0],
-        box.dataset.jos_rootmargin_left ||
-          this.default_rootMargin.split(" ")[3],
+        box.dataset.jos_rootmargin_right ||
+          this.default_rootMargin.split(" ")[1],
         box.dataset.jos_rootmargin_bottom ||
           this.default_rootMargin.split(" ")[2],
         box.dataset.jos_rootmargin_left ||
-          this.default_rootMargin.split(" ")[1],
-      ].join(" ");
+          this.default_rootMargin.split(" ")[3],
+      ]
+        .map((value) => {
+          const isNegative = value.startsWith("-");
+          return isNegative ? value.substring(1) : `-${value}`;
+        })
+        .join(" ");
+
+      // let rootMargin = " 10% 0% -30% 0%";
+
       let box_observer = {
         rootMargin,
         threshold: this.default_threshold,
@@ -332,15 +383,18 @@ class jos {
     styleSheet.insertRule(
       ".jos-no-mirror" + " {    transition: 0s forwards !important;}"
     );
+
+    let s =
+      this.default_duration +
+      "s " +
+      this.default_timingFunction +
+      " " +
+      this.default_delay +
+      "s";
+
     styleSheet.insertRule(
       ".jos {" +
-        ("transition: " +
-          this.default_duration +
-          "s " +
-          this.default_timingFunction +
-          " " +
-          this.default_delay +
-          "s !important;") +
+        ("transition: opacity " + s + ", transform " + s) +
         "display: block;" +
         "}"
     );

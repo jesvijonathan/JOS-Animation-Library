@@ -100,10 +100,9 @@
       ></div>
 
       <div
-        class="box jos debug"
+        class="box jos jos-no-transition debug"
         id="nom"
-        data-jos_scroll="true"
-        data-jos_animation="fade-left-down"
+        data-jos_scroll="scroll_opacity"
         data-jos_scrollDirection="down"
         title="Animation : zoom-in | Scroll-Directiom : Down"
       ></div>
@@ -115,8 +114,9 @@
       ></div>
       <div
         id="box"
-        class="box jos debug777"
-        data-jos_scroll="true"
+        class="box jos jos-no-transition debug777"
+        data-jos_scroll="scroll_width"
+        data-jos_animation="fade"
         title="Animation : flip | Scroll-Directiom : Down"
       ></div>
       <!-- 
@@ -134,7 +134,36 @@
           console.log();
         };
        -->
-      <script></script>
+      <script>
+        function scroll_opacity(box) {
+          box.style.opacity = box.jos.scroll;
+          box.innerHTML = box.jos.scroll.toFixed(4);
+        }
+        function scroll_width(box = {}) {
+          scrollValue = box.jos.scroll;
+          // upto two decimal places
+          // deg = 360 * (scrollValue * 100);
+          //perc = box.jos.windowScrollPercent * 100 + "%";
+          //dec = scrollValue * 100;
+          //
+          // console.log(
+          //  box.id,
+          //  box.jos.windowScrollPercent,
+          //   box.jos.rootScrollPercent
+          // );
+          //
+          // box.innerHTML = box.jos.rootScrollPercent;
+          //box.style.opacity = scrollValue;
+          box.style.width = box.jos.scroll * 100 + "%";
+          box.innerHTML = box.jos.scroll.toFixed(4);
+          // box.style.transform = "rotate(" + 360 * (scrollValue / 100) + "deg)";
+        }
+        function scroll_rotate(box) {
+          box.style.transform =
+            "rotate(" + box.jos.rootScrollPercent * 360 * 2 + "deg)";
+          box.innerHTML = box.jos.scroll.toFixed(4);
+        }
+      </script>
 
       <div
         class="box jos debug2"
@@ -168,24 +197,24 @@
 
       <div
         class="box jos debug3"
-        data-jos_animation="my-custom-animation"
-        data-jos_animationinverse="static"
+        data-jos_animation="static"
+        data-jos_animationinverse="my-custom-animation"
         title="Animation : my-custom-animation | Animation-Inverse : static"
       ></div>
       <div
         id="juice"
-        class="box jos debug3"
-        data-jos_scroll="true"
-        data-jos_animation="static"
-        data-jos_animationinverse="my-custom-animation-2"
+        class="box jos jos-no-transition debug3"
+        data-jos_scroll="scroll_rotate"
+        data-jos_duration="0.1"
+        data-jos_timing_function="linear"
         ="Animation : static | Animation-Inverse : my-custom-animation-2"
       ></div>
       <div
         class="box jos debug3"
         data-jos_animationinverse="disappear-zero"
         data-jos_animation="static"
+        data-jos_duration="0.3"
         data-jos_scrollDirection="down"
-        data-jos_rootMargin_top="50%"
         title="Animation : fade-down | Animation-Inverse : fade-down"
       ></div>
 
@@ -195,6 +224,7 @@
         .jos-disappear-zero {
           height: 0 !important;
           margin-top: -3vw;
+          transition: 0.3s;
         }
         /* Custom Playable Animation 1 */
         .jos-my-custom-animation {
@@ -278,7 +308,7 @@
 
     // rootMargin_top: "0%", // Set by which percent the element should animate out (Recommended value between 10% to -30%)
     // rootMargin_bottom: "-50%", // Set by which percent the element should animate out (Recommended value between -10% to -60%)
-    rootMargin: "-10% 0% -30% 0%", // Set the root margin for the element to be visible | Values :  _% _% _% _%  (automaticaly set)
+    rootMargin: "10% 0% 30% 0%", // Set the root margin for the element to be visible | Values :  _% _% _% _%  (automaticaly set)
     // intersectionRatio: 0.4, // Set the intersection ratio between which the element should be visible | Values :  0-1 (automaticaly set)
     // rootMargin: jos_rootMargin_top + " 0% " + jos_rootMargin_bottom + " 0%"; // Set the root margin for the element to be visible | Values :  _% _% _% _%  (automaticaly set)
     //startVisible: "3000", // Set the time in ms after which the element should be visible | Values in ms : 1000, 2000, || Boolean : true / false
@@ -286,6 +316,11 @@
     // animate_out: false, // Set whether elements should animate out while scrolling past them | Values :  'true', 'false'
     // debounce: 0, // Set global the debounce time/rate for listening to scroll events | Values :  0-1000
   });
+
+  function ttt(box, obj) {
+    box.innerHTML = Math.round(obj.scroll);
+    box.style.width = obj.scroll + "%";
+  }
 </script>
 
 <style>
