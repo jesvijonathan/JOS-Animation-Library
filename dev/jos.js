@@ -133,28 +133,28 @@ class jos {
       const elementTop = elementRect.top - box.jos.topMargin;
       const elementBottom = elementRect.bottom - box.jos.bottomMargin;
 
-      const windowScrollPercent = elementRect.top / wh;
+      const windowScrollProgress = elementRect.top / wh;
 
-      const rootScrollPercent =
+      const rootScrollProgress =
         elementTop / (wh - box.jos.topMargin - box.jos.bottomMargin);
 
-      let scroll = 0;
+      let scrollProgress = 0;
 
-      if (rootScrollPercent < 0) {
-        scroll = 0;
-      } else if (rootScrollPercent > 100) {
-        scroll = 1;
+      if (rootScrollProgress < 0) {
+        scrollProgress = 0;
+      } else if (rootScrollProgress > 100) {
+        scrollProgress = 1;
       } else {
-        scroll = rootScrollPercent;
+        scrollProgress = rootScrollProgress;
       }
 
       box.jos = {
         elementRect,
         elementTop,
         elementBottom,
-        windowScrollPercent,
-        rootScrollPercent,
-        scroll: scroll,
+        windowScrollProgress,
+        rootScrollProgress,
+        scrollProgress,
       };
 
       window[box.dataset.jos_scroll](box);

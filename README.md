@@ -73,7 +73,7 @@ Feel free to report an issue or request a feature in this repository :)
 - [JavaScript](https://www.w3schools.com/js/)
 - [CSS](https://www.w3schools.com/css/)
 
-### Normal Installation
+### Installation
 
 1. Add the <code>[\<link>](https://github.com/jesvijonathan/Jesvi-Bot/releases)</code> inside the <code>\<head></code> tag :
 
@@ -140,7 +140,7 @@ By the end of this step, you should have something like this :
 
 <!-- using npm -->
 
-### Installation using npm
+<!-- ### Installation using npm
 
 1. You can also Install JOS using npm :
 
@@ -155,7 +155,7 @@ import "jos-animation/dist/jos.css";
 import JOS from "jos-animation";
 
 JOS.init();
-```
+``` -->
 
 ## Setup :
 
@@ -182,6 +182,7 @@ JOS.init();
     animation: "fade", // JOS global animation type | Values :  'fade', 'slide', 'zoom', 'flip', 'fade-right', 'fade-left', 'fade-up', 'fade-down', 'zoom-in-right', 'zoom-in-left', 'zoom-in-up', 'zoom-in-down', 'zoom-out-right', 'zoom-out-left', 'zoom-out-up', 'zoom-out-down', 'flip-right', 'flip-left', 'flip-up', 'flip-down, spin, revolve, stretch, "my-custom-animation"
     // animationInverse: "static", // Set the animation type for the element when it is scrolled out of view | Values :  'fade', 'slide', 'zoom', 'flip', 'fade-right', 'fade-left', 'fade-up', 'fade-down', 'zoom-in-right', 'zoom-in-left', 'zoom-in-up', 'zoom-in-down', 'zoom-out-right', 'zoom-out-left', 'zoom-out-up', 'zoom-out-down', 'flip-right', 'flip-left', 'flip-up', 'flip-down, spin, revolve, stretch, "my-custom-animation"
     timingFunction: "ease-in-out", // JOS global timing function | Values :  'ease', 'ease-in', 'ease-out', 'ease-in-out', 'linear', 'step-start', 'step-end', 'steps()', 'cubic-bezier()', 'my-custom-timing-function'
+    //mirror : false, // Set whether the element should animate back when scrolled out of view | Values :  'true', 'false'
     threshold: 0, // Set gloabal the threshold for the element to be visible | Values :  0-1
     delay: 0, // Set global the delay for the animation to start | Values :  0,1,2,3,4,5
     duration: 0.7, // Set global the duration for the animation playback | Values :  flota : 0-1 & int : 0,1,2,3,4,5

@@ -116,6 +116,8 @@
         id="box"
         class="box jos jos-no-transition debug777"
         data-jos_scroll="scroll_width"
+        data-jos_duration="0"
+        data-jos_timing_function="linear"
         data-jos_animation="fade"
         title="Animation : flip | Scroll-Directiom : Down"
       ></div>
@@ -135,16 +137,21 @@
         };
        -->
       <script>
-        function scroll_opacity(box) {
-          box.style.opacity = box.jos.scroll;
-          box.innerHTML = box.jos.scroll.toFixed(4);
-        }
-        function scroll_width(box = {}) {
-          scrollValue = box.jos.scroll;
+        // deg = box.jos.rootScrollPercent * 360;
+        // perc = box.jos.windowScrollPercent * 100 + "%";
+        // dec = box.jos.scroll;
+        scroll_opacity = (box) => {
+          box.style.opacity = 1 - box.jos.scrollProgress;
+          box.innerHTML = (1 - box.jos.scrollProgress).toFixed(4);
+        };
+        scroll_rotate = (box) => {
+          box.style.transform =
+            "rotate(" + box.jos.scrollProgress * 360 * 1 + "deg)";
+          box.innerHTML = box.jos.scrollProgress.toFixed(4);
+        };
+        scroll_width = (box) => {
           // upto two decimal places
-          // deg = 360 * (scrollValue * 100);
-          //perc = box.jos.windowScrollPercent * 100 + "%";
-          //dec = scrollValue * 100;
+
           //
           // console.log(
           //  box.id,
@@ -154,15 +161,10 @@
           //
           // box.innerHTML = box.jos.rootScrollPercent;
           //box.style.opacity = scrollValue;
-          box.style.width = box.jos.scroll * 100 + "%";
-          box.innerHTML = box.jos.scroll.toFixed(4);
+          box.style.width = box.jos.scrollProgress * 100 + "%";
+          box.innerHTML = box.jos.scrollProgress.toFixed(4);
           // box.style.transform = "rotate(" + 360 * (scrollValue / 100) + "deg)";
-        }
-        function scroll_rotate(box) {
-          box.style.transform =
-            "rotate(" + box.jos.rootScrollPercent * 360 * 2 + "deg)";
-          box.innerHTML = box.jos.scroll.toFixed(4);
-        }
+        };
       </script>
 
       <div
