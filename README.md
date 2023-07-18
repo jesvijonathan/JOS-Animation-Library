@@ -64,7 +64,7 @@ Feel free to report an issue or request a feature in this repository :)
 <br>
 <br>
 
-<code> <i>JOS</i> </code> <code> <i>v0.8</i> </code> <code><i> 6 July 2023</i></code> <code> <i>Jesvi Jonathan</i> </code>
+<code> <i>JOS</i> </code> <code> <i>v0.8.7</i> </code> <code><i> 18 July 2023</i></code> <code> <i>Jesvi Jonathan</i> </code>
 
 <br>
 

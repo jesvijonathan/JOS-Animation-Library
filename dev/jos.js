@@ -383,20 +383,19 @@ class jos {
     styleSheet.insertRule(
       ".jos-no-mirror" + " {    transition: 0s forwards !important;}"
     );
-
+    //opacity " + s + ", transform
+    let property = "all ";
     let s =
+      property +
       this.default_duration +
       "s " +
       this.default_timingFunction +
       " " +
       this.default_delay +
-      "s";
+      "s ;";
 
     styleSheet.insertRule(
-      ".jos {" +
-        ("transition: opacity " + s + ", transform " + s) +
-        "display: block;" +
-        "}"
+      ".jos {" + ("transition: " + s) + " display: block;" + "}"
     );
 
     this.jos_stylesheet = styleSheet;
