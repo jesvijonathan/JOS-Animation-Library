@@ -64,7 +64,7 @@ Feel free to report an issue or request a feature in this repository :)
 <br>
 <br>
 
-<code> <i>JOS</i> </code> <code> <i>v0.8.7</i> </code> <code><i> 18 July 2023</i></code> <code> <i>Jesvi Jonathan</i> </code>
+<code> <i>JOS</i> </code> <code> <i>v0.8.8</i> </code> <code><i> 18 July 2023</i></code> <code> <i>Jesvi Jonathan</i> </code>
 
 <br>
 
@@ -78,7 +78,7 @@ Feel free to report an issue or request a feature in this repository :)
 1. Add the <code>[\<link>](https://github.com/jesvijonathan/Jesvi-Bot/releases)</code> inside the <code>\<head></code> tag :
 
 <!-- https://unpkg.com/jos-animation@latest/dist/jos.js -->
-<!-- "https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/v0.8.7/jos.css" -->
+<!-- "https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/v0.8.8/jos.css" -->
 
 ```html
 <link
@@ -91,7 +91,7 @@ Feel free to report an issue or request a feature in this repository :)
 
 2. Add the <code>[\<script>](https://github.com/jesvijonathan/Jesvi-Bot/releases)</code> right after the <code>\<body></code> tag :
    <!-- For easier navigation use jsdelivr -->
-   <!-- https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/v0.8.7/jos.min.js -->
+   <!-- https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/v0.8.8/jos.min.js -->
    <!-- For Stablility use unpkg  -->
    <!-- https://unpkg.com/jos-animation@latest/dist/jos.js -->
 

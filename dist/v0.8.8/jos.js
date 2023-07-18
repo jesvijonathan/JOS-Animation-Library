@@ -14,7 +14,7 @@ class jos {
   default_mirror = void 0;
   debug = !1;
   disable = !1;
-  static version = "0.8.7";
+  static version = "0.8.8";
   static author = "Jesvi Jonathan";
   static github = "https://github.com/jesvijonathan/JOS-Animation-Library";
   options = {};
