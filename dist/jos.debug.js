@@ -395,7 +395,7 @@ class jos {
       "s ;";
 
     styleSheet.insertRule(
-      ".jos {" + ("transition: " + s) + " display: block;" + "}"
+      ".jos {" + ("transition: " + s) + ";}"
     );
 
     this.jos_stylesheet = styleSheet;

@@ -1,14 +1,13 @@
 /*
-JOS v0.8.4 By Jesvi Jonathan
+JOS v0.8.7 By Jesvi Jonathan
 */
 
 /* jos default */
 .jos {
-  /* opacity: 1;
-  display: block; */
-
+  /* opacity: 1;*/
   /* transition: opacity 0.4s, transform 0.4s; */
   transition: all 0.4s ease-in-out;
+  display: block;
   /* transition-timing-function: ease-in-out; 
   transition-property: all;
   transition-delay: 0;

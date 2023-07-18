@@ -286,7 +286,7 @@ class jos {
       " " +
       this.default_delay +
       "s ;";
-    styleSheet.insertRule(".jos {transition: " + s + " display: block;}"),
+    styleSheet.insertRule(".jos {transition: " + s + ";}"),
       (this.jos_stylesheet = styleSheet);
   }
   getBoxes() {
