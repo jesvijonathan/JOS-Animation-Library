@@ -468,7 +468,7 @@ Moved to [issues](https://github.com/jesvijonathan/JOS-Animation-Library/issues)
 
 - <b>Performance</b>, JOS has a implementation, different from others.
 - <b>Easy to use</b>, you can use it in your projects with very minimal effort.
-- JOS is lightweight
+- JOS is lightweight (<2kb)
 - Customizable with own attributes and animation.
 - Open sourced and free to use
 
