@@ -14,6 +14,7 @@ class jos {
   default_mirror = undefined;
 
   debug = false;
+  scrollProgressDisable = undefined;
   disable = false;
 
   static version = "0.8.8 (Development)";
@@ -116,7 +117,7 @@ class jos {
   // console.log(box);
   // const rootmargin = " 0% 0% -30% 0%";
   callbackScroller = (scl) => {
-    if (this.disable) return;
+    if (this.disable || this.scrollProgressDisable) return;
 
     const defaultRootMargin = this.default_rootMargin;
     let wh = window.innerHeight;
@@ -165,7 +166,7 @@ class jos {
     };
 
     document.onscroll = (e) => {
-      if (this.disable) return;
+      if (this.disable || this.scrollProgressDisable) return;
       scl.forEach(updateBox);
     };
   };
@@ -427,6 +428,7 @@ class jos {
       delay,
       debugMode,
       disable,
+      scrollProgressDisable,
       rootMargin,
       rootMarginTop,
       rootMarginBottom,
@@ -445,9 +447,12 @@ class jos {
     this.default_delay = delay || this.default_delay;
     this.debugMode = debugMode || this.debugMode;
 
-    if (options.disable != undefined) {
-      this.disable = options.disable;
+    if (disable != undefined) {
+      this.disable = disable;
     }
+    this.scrollProgressDisable =
+      scrollProgressDisable || this.scrollProgressDisable;
+
     this.default_rootMargin =
       rootMargin ||
       `${rootMarginTop || "-10%"} 0% ${rootMarginBottom || "-40%"} 0%`;

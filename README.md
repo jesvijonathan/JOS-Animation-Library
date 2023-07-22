@@ -245,6 +245,7 @@ JOS.init();
 
     // startVisible: "true", // Set whether the element should animate when the page is loaded | Values :  'true', 'false' || MS : 0-10000
     // scrollDirection: "down", // Set the scroll direction for the element to be visible | Values :  'up', 'down', 'none'
+    //scrollProgressDisable: true // disable or enable scroll callback function | Values :  'true', 'false'
     // intersectionRatio: 0.4, // Set the intersection ratio between which the element should be visible | Values :  0-1 (automaticaly set)
     // rootMargin_top: "0%", // Set by which percent the element should animate out (Recommended value between 10% to -30%)
     // rootMargin_bottom: "-50%", // Set by which percent the element should animate out (Recommended value between -10% to -60%)
