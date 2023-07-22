@@ -516,6 +516,7 @@ Moved to [issues](https://github.com/jesvijonathan/JOS-Animation-Library/issues)
 - [CIT Takshashila 23](https://www.cittakshashila.in/)
 - [JOS Demo](https://jesvijonathan.github.io/JOS-Animation-Library/)
 - [JSheet](https://https://jesvijonathan.github.io/JSheet/)
+- [CSC](https://jesvijonathan.github.io/christhava-sangam-church-website/)
 
 (<i>Ping Me If you have a demo</i>)
 
@@ -523,7 +524,7 @@ Moved to [issues](https://github.com/jesvijonathan/JOS-Animation-Library/issues)
 
 - <b>Performance</b>, JOS has a implementation, different from others.
 - <b>Easy to use</b>, you can use it in your projects with very minimal effort.
-- JOS is lightweight
+- JOS is lightweight (<2kb)
 - Customizable with own attributes and animation.
 - Open sourced and free to use
 
