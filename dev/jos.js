@@ -446,13 +446,11 @@ class jos {
     this.default_duration = duration || this.default_duration;
     this.default_delay = delay || this.default_delay;
     this.debugMode = debugMode || this.debugMode;
-
     if (disable != undefined) {
       this.disable = disable;
     }
     this.scrollProgressDisable =
       scrollProgressDisable || this.scrollProgressDisable;
-
     this.default_rootMargin =
       rootMargin ||
       `${rootMarginTop || "-10%"} 0% ${rootMarginBottom || "-40%"} 0%`;
