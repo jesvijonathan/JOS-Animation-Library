@@ -60,6 +60,8 @@ class jos {
   }
 
   callbackRouter_anchor = (entries, observer) => {
+    if (this.disable) return;
+
     let entry = entries[0];
     let parentTarget = entry.target;
     let elem = document.querySelectorAll(
@@ -114,6 +116,8 @@ class jos {
   // console.log(box);
   // const rootmargin = " 0% 0% -30% 0%";
   callbackScroller = (scl) => {
+    if (this.disable) return;
+
     const defaultRootMargin = this.default_rootMargin;
     let wh = window.innerHeight;
 
@@ -161,15 +165,15 @@ class jos {
     };
 
     document.onscroll = (e) => {
+      if (this.disable) return;
       scl.forEach(updateBox);
     };
   };
 
   // window["jos_scroll_" + box.id](obj);
   callbackRouter = (entries, observer, type = 1) => {
-    if (this.disable == true) {
-      return;
-    }
+    if (this.disable) return;
+
     let entry = entries[0];
     let target = entry.target;
     let target_jos_animation = target.dataset.jos_animation;
@@ -440,7 +444,10 @@ class jos {
     this.default_duration = duration || this.default_duration;
     this.default_delay = delay || this.default_delay;
     this.debugMode = debugMode || this.debugMode;
-    this.disable = disable || this.disable;
+
+    if (options.disable != undefined) {
+      this.disable = options.disable;
+    }
     this.default_rootMargin =
       rootMargin ||
       `${rootMarginTop || "-10%"} 0% ${rootMarginBottom || "-40%"} 0%`;
@@ -451,15 +458,15 @@ class jos {
     this.options = options;
     this.getDefault(options);
     this.getStylesheet();
+
+    if (this.disable) return;
+
     this.getBoxes();
     if (this.debugMode) {
       this.debugger();
     }
-    if (this.disable) {
-      this.stop();
-    } else {
-      this.start();
-    }
+
+    this.start();
   }
 
   start(state = 0) {
