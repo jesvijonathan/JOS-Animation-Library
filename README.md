@@ -6,7 +6,7 @@ By Jesvi Jonathan
 <br/>
 <p align="center">
   <a target="\_blank" rel="noopener noreferrer nofollow" href="https://github.com/jesvijonathan/JOS-Animation-Library">
-    <img src="./res/logo/jos_full_white.svg" alt="JOS-Animation" style="max-width: 100%;" height="200"/>
+    <img src="https://cdn.jsdelivr.net/gh/jesvijonathan/resJOS-Animation-Library//logo/jos_full_white.svg" alt="JOS-Animation" style="max-width: 100%;" height="200"/>
   </a>
 
   <h3 align="center">JOS : Animation Library</h3>
@@ -15,7 +15,7 @@ By Jesvi Jonathan
     A simple & easy to use animation library for web developers
     <br />
     <br /> 
-    <a target="_blank" rel="noopener noreferrer nofollow" href="https://github.com/jesvijonathan/JOS-Animation-Library"><img src="./res/badge/jos_github%20default_black.svg" alt="JOS-Animation" style="max-width: 100%;"></a>
+    <a target="_blank" rel="noopener noreferrer nofollow" href="https://github.com/jesvijonathan/JOS-Animation-Library"><img src="https://cdn.jsdelivr.net/gh/jesvijonathan/resJOS-Animation-Library//badge/jos_github%20default_black.svg" alt="JOS-Animation" style="max-width: 100%;"></a>
     <br />
     <br />
     <a href="https://jesvijonathan.github.io/JOS-Animation-Library">Git Pages</a>
@@ -70,8 +70,8 @@ Badges
 
 <br>
 
-![jos-animation-Badge](./res/badge/jos_github%20default.svg)
-![jos-animation-Badge](./res/badge/jos_github%20default_black.svg)
+![jos-animation-Badge](https://cdn.jsdelivr.net/gh/jesvijonathan/resJOS-Animation-Library//badge/jos_github%20default.svg)
+![jos-animation-Badge](https://cdn.jsdelivr.net/gh/jesvijonathan/resJOS-Animation-Library//badge/jos_github%20default_black.svg)
 
 ```html
 <a
@@ -80,31 +80,31 @@ Badges
   href="https://github.com/jesvijonathan/JOS-Animation-Library"
 >
   <img
-    src="./res/badge/jos_github%20default.svg"
+    src="https://cdn.jsdelivr.net/gh/jesvijonathan/resJOS-Animation-Library//badge/jos_github%20default.svg"
     alt="JOS-Animation"
     style="max-width: 100%;"
 /></a>
 ```
 
-![jos-animation-Badge](./res/badge/jos_black_inverse.svg)
-![jos-animation-Badge](./res/badge/jos_white_inverse.svg)
+![jos-animation-Badge](https://cdn.jsdelivr.net/gh/jesvijonathan/resJOS-Animation-Library//badge/jos_black_inverse.svg)
+![jos-animation-Badge](https://cdn.jsdelivr.net/gh/jesvijonathan/resJOS-Animation-Library//badge/jos_white_inverse.svg)
 
-![jos-animation-Badge](./res/badge/jos_inside_logo_white.svg)
-![jos-animation-Badge](./res/badge/jos_inside_logo_black.svg)
+![jos-animation-Badge](https://cdn.jsdelivr.net/gh/jesvijonathan/resJOS-Animation-Library//badge/jos_inside_logo_white.svg)
+![jos-animation-Badge](https://cdn.jsdelivr.net/gh/jesvijonathan/resJOS-Animation-Library//badge/jos_inside_logo_black.svg)
 
-![jos-animation-Badge](./res/badge/jos_plain_black.svg)
-![jos-animation-Badge](./res/badge/jos_plain_white.svg)
+![jos-animation-Badge](https://cdn.jsdelivr.net/gh/jesvijonathan/resJOS-Animation-Library//badge/jos_plain_black.svg)
+![jos-animation-Badge](https://cdn.jsdelivr.net/gh/jesvijonathan/resJOS-Animation-Library//badge/jos_plain_white.svg)
 
-![jos-animation-logo](./res/logo/jos_black.svg)
-![jos-animation-logo](./res/logo/jos_white.svg)
+![jos-animation-logo](https://cdn.jsdelivr.net/gh/jesvijonathan/resJOS-Animation-Library//logo/jos_black.svg)
+![jos-animation-logo](https://cdn.jsdelivr.net/gh/jesvijonathan/resJOS-Animation-Library//logo/jos_white.svg)
 
-![jos-animation-logo](./res/logo/jos_default_white.svg)
-![jos-animation-logo](./res/logo/jos_default_black.svg)
-![jos-animation-logo](./res/logo/jos_default_transparent.svg)
-![jos-animation-logo](./res/logo/jos_default_transparent_black.svg)
+![jos-animation-logo](https://cdn.jsdelivr.net/gh/jesvijonathan/resJOS-Animation-Library//logo/jos_default_white.svg)
+![jos-animation-logo](https://cdn.jsdelivr.net/gh/jesvijonathan/resJOS-Animation-Library//logo/jos_default_black.svg)
+![jos-animation-logo](https://cdn.jsdelivr.net/gh/jesvijonathan/resJOS-Animation-Library//logo/jos_default_transparent.svg)
+![jos-animation-logo](https://cdn.jsdelivr.net/gh/jesvijonathan/resJOS-Animation-Library//logo/jos_default_transparent_black.svg)
 
-![jos-animation-image](./res/logo/jos_full_white.svg)
-![jos-animation-image](./res/logo/jos_full_black.svg)
+![jos-animation-image](https://cdn.jsdelivr.net/gh/jesvijonathan/resJOS-Animation-Library//logo/jos_full_white.svg)
+![jos-animation-image](https://cdn.jsdelivr.net/gh/jesvijonathan/resJOS-Animation-Library//logo/jos_full_black.svg)
 
 </details>
 <details>
