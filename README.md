@@ -1,11 +1,12 @@
 <!--
 JOS : Animation Library
 By Jesvi Jonathan
- -->
-<br />
+-->
+
+<br/>
 <p align="center">
-  <a href="https://github.com/jesvijonathan/JOS-Animation-Library">
-    <img src="./res/logo.jpg" alt="JOS Logo" height="200">
+  <a target="\_blank" rel="noopener noreferrer nofollow" href="https://github.com/jesvijonathan/JOS-Animation-Library">
+    <img src="./res/logo/jos_full_white.svg" alt="JOS-Animation" style="max-width: 100%;" height="200"/>
   </a>
 
   <h3 align="center">JOS : Animation Library</h3>
@@ -13,15 +14,16 @@ By Jesvi Jonathan
   <p align="center">
     A simple & easy to use animation library for web developers
     <br />
+    <br /> 
+    <a target="_blank" rel="noopener noreferrer nofollow" href="https://github.com/jesvijonathan/JOS-Animation-Library"><img src="./res/badge/jos_github%20default_black.svg" alt="JOS-Animation" style="max-width: 100%;"></a>
     <br />
-    <a href="https://jesvijonathan.github.io/JOS-Animation-Library"><strong>Git Pages</strong></a>
     <br />
-    <br />
-    <a href="https://jesvijonathan.github.io/JOS-Animation-Library">View Demo</a>
+    <a href="https://jesvijonathan.github.io/JOS-Animation-Library">Git Pages</a>
     ·
     <a href="https://github.com/jesvijonathan/JOS-Animation-Library/issues">Report Bug</a>
     ·
     <a href="https://github.com/jesvijonathan/JOS-Animation-Library/issues">Request Feature</a>
+
   </p>
 </p>
 
@@ -38,8 +40,6 @@ By Jesvi Jonathan
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
-
-
 
 <!-- ABOUT THE PROJECT -->
 
@@ -62,6 +62,62 @@ Was inpired by GSAP, AOS libraries. I wanted something easier to use, with great
 Feel free to report an issue or request a feature in this repository :)
 & for more information, Check out the [JOS Webpage](https://jesvijonathan.github.io/JOS-Animation-Library).
 <br>
+
+<details>
+<summary>
+Badges
+</summary>
+
+<br>
+
+![jos-animation-Badge](./res/badge/jos_github%20default.svg)
+![jos-animation-Badge](./res/badge/jos_github%20default_black.svg)
+
+```html
+<a
+  target="\_blank"
+  rel="noopener noreferrer nofollow"
+  href="https://github.com/jesvijonathan/JOS-Animation-Library"
+>
+  <img
+    src="./res/badge/jos_github%20default.svg"
+    alt="JOS-Animation"
+    style="max-width: 100%;"
+/></a>
+```
+
+![jos-animation-Badge](./res/badge/jos_black_inverse.svg)
+![jos-animation-Badge](./res/badge/jos_white_inverse.svg)
+
+![jos-animation-Badge](./res/badge/jos_inside_logo_white.svg)
+![jos-animation-Badge](./res/badge/jos_inside_logo_black.svg)
+
+![jos-animation-Badge](./res/badge/jos_plain_black.svg)
+![jos-animation-Badge](./res/badge/jos_plain_white.svg)
+
+![jos-animation-logo](./res/logo/jos_black.svg)
+![jos-animation-logo](./res/logo/jos_white.svg)
+
+![jos-animation-logo](./res/logo/jos_default_white.svg)
+![jos-animation-logo](./res/logo/jos_default_black.svg)
+![jos-animation-logo](./res/logo/jos_default_transparent.svg)
+![jos-animation-logo](./res/logo/jos_default_transparent_black.svg)
+
+![jos-animation-image](./res/logo/jos_full_white.svg)
+![jos-animation-image](./res/logo/jos_full_black.svg)
+
+</details>
+<details>
+<summary> 
+<b>Video Tutorial</b>
+</summary>
+<center>
+ 
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://www.youtube.com/watch?v=ziR95EKKttc"><img src="https://img.youtube.com/vi/ziR95EKKttc/0.jpg" alt="JOS-Animation v0.6" style="max-width: 100%;"></a>
+JOS V0.6 Cubes <i>(Outdated | [Latest : v0.8.8](https://github.com/jesvijonathan/JOS-Animation-Library/releases/tag/v0.8.8))</i> 
+</center>
+</details>
+
 <br>
 
 <code> <i>JOS</i> </code> <code> <i>v0.8.8</i> </code> <code><i> 18 July 2023</i></code> <code> <i>Jesvi Jonathan</i> </code>
@@ -157,7 +213,7 @@ import JOS from "jos-animation";
 JOS.init();
 ``` -->
 
-## Setup :
+## Setup
 
 1. Use <code>JOS.init();</code> to initialize the library with default settings.
 
