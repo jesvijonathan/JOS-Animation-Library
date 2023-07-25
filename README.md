@@ -16,6 +16,7 @@ By Jesvi Jonathan
     <br />
     <br /> 
     <a target="_blank" rel="noopener noreferrer nofollow" href="https://github.com/jesvijonathan/JOS-Animation-Library"><img src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library@master/res/badge/jos_github%20default_black.svg" alt="JOS-Animation" style="max-width: 100%;"></a>
+    <a href="https://badge.fury.io/js/jos-animation"><img src="https://badge.fury.io/js/jos-animation.svg" alt="npm version" height="18"></a>
     <br />
     <br />
     <a href="https://jesvijonathan.github.io/JOS-Animation-Library">Git Pages</a>
