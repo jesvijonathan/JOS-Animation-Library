@@ -5,7 +5,7 @@ By Jesvi Jonathan
 
 <br/>
 <p align="center">
-  <a target="\_blank" rel="noopener noreferrer nofollow" href="https://github.com/jesvijonathan/JOS-Animation-Library">
+  <a target="\_blank" rel="noopener noreferrer nofollow" href="https://jesvijonathan.github.io/JOS-Animation-Playground">
     <img src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library@master/res/logo/jos_full_white.svg" alt="JOS-Animation" style="max-width: 100%;" height="200"/>
   </a>
 
