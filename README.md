@@ -1,5 +1,6 @@
 # Notice :
-  I am working on JOS Animation [playground](https://github.com/jesvijonathan/JOS-Animation-Playground),  docs, etc.<br>
+### (DOCs Under Construction)
+  I am working on JOS Animation's [playground](https://github.com/jesvijonathan/JOS-Animation-Playground),  docs, etc.<br>
   Rn everything related to docs are under construction at the moment (demo, playground, docs & readme).<br/>
   For now, you can ping here in the [discussion](https://github.com/jesvijonathan/JOS-Animation-Library/discussions) tab for any docs/procedure. 
 
