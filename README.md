@@ -1,3 +1,10 @@
+# Notice :
+  I am working on JOS Animation [playground](https://github.com/jesvijonathan/JOS-Animation-Playground),  docs, etc.<br>
+  Rn everything related to docs are under construction at the moment (demo, playground, docs & readme).<br/>
+  For now, you can ping here in the [discussion](https://github.com/jesvijonathan/JOS-Animation-Library/discussions) tab for any docs/procedure. 
+
+  ---
+
 <!--
 JOS : Animation Library
 By Jesvi Jonathan
@@ -46,7 +53,7 @@ By Jesvi Jonathan
 
 ## About This Project
 
-JOS is a simple & easy to use animation library package to instantly add professional animation to your website. It was built to make my life easier while developing websites & comes with tons of features and is fully customizable. It is lightweight & has a very small footprint. The best part of all is that it has no (\*minimum) toll on performance.
+JOS-Animation, Javascript On Scroll Animation library is a simple & easy to use animation library package to instantly add professional animation to your website. It was built to make my life easier while developing websites & comes with tons of features and is fully customizable. It is lightweight & has a very small footprint. The best part of all is that it has no (\*minimum) toll on performance.
 
 - Open source, no download or tiring setup, just add a script tag (Embed).
 - Includes Preset and expert custom animation options.
