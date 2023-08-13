@@ -1,6 +1,6 @@
 # Notice :
 ### (DOCs Under Construction)
-  I am working on JOS Animation's [playground](https://github.com/jesvijonathan/JOS-Animation-Playground),  docs, etc.<br>
+  I am working on JOS Animation's [playground](https://jos-animation.vercel.app),  docs, etc.<br>
   Rn everything related to docs are under construction at the moment (demo, playground, docs & readme).<br/>
   For now, you can ping here in the [discussion](https://github.com/jesvijonathan/JOS-Animation-Library/discussions) tab for any docs/procedure. 
 
@@ -13,7 +13,7 @@ By Jesvi Jonathan
 
 <br/>
 <p align="center">
-  <a target="\_blank" rel="noopener noreferrer nofollow" href="https://jesvijonathan.github.io/JOS-Animation-Playground">
+  <a target="\_blank" rel="noopener noreferrer nofollow" href="https://jos-animation.vercel.app">
     <img src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library@master/res/logo/jos_full_white.svg" alt="JOS-Animation" style="max-width: 100%;" height="200"/>
   </a>
 
@@ -526,6 +526,7 @@ Moved to [issues](https://github.com/jesvijonathan/JOS-Animation-Library/issues)
 
 - [CIT Takshashila 23](https://www.cittakshashila.in/)
 - [JOS Demo](https://jesvijonathan.github.io/JOS-Animation-Library/)
+- [JOS Playground](https://jos-animation.vercel.app)
 - [JSheet](https://https://jesvijonathan.github.io/JSheet/)
 - [CSC](https://jesvijonathan.github.io/christhava-sangam-church-website/)
 
