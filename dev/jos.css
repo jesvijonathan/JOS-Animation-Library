@@ -37,7 +37,8 @@ JOS v0.8.8 By Jesvi Jonathan
 } */
 
 /* fade */
-.jos-fade {
+.jos-fade,
+.jos-stagger-fade * {
   opacity: 0;
 }
 .jos-fade-right {
