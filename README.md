@@ -1,11 +1,3 @@
-# Notice :
-### (DOCs Under Construction)
-  I am working on JOS Animation's [playground](https://jos-animation.vercel.app),  docs, etc.<br>
-  Rn everything related to docs are under construction at the moment (demo, playground, docs & readme).<br/>
-  For now, you can ping here in the [discussion](https://github.com/jesvijonathan/JOS-Animation-Library/discussions) tab for any docs/procedure. 
-
-  ---
-
 <!--
 JOS : Animation Library
 By Jesvi Jonathan
