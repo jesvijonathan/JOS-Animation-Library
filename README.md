@@ -1,3 +1,11 @@
+# Notice :
+### (DOCs Under Construction)
+  I am working on JOS Animation's [playground](https://jos-animation.vercel.app),  docs, etc.<br>
+  Rn everything related to docs are under construction at the moment (demo, playground, docs & readme).<br/>
+  For now, you can ping here in the [discussion](https://github.com/jesvijonathan/JOS-Animation-Library/discussions) tab for any docs/procedure. 
+
+  ---
+
 <!--
 JOS : Animation Library
 By Jesvi Jonathan
@@ -5,7 +13,7 @@ By Jesvi Jonathan
 
 <br/>
 <p align="center">
-  <a target="\_blank" rel="noopener noreferrer nofollow" href="https://github.com/jesvijonathan/JOS-Animation-Library">
+  <a target="\_blank" rel="noopener noreferrer nofollow" href="https://jos-animation.vercel.app">
     <img src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library@master/res/logo/jos_full_white.svg" alt="JOS-Animation" style="max-width: 100%;" height="200"/>
   </a>
 
@@ -16,6 +24,7 @@ By Jesvi Jonathan
     <br />
     <br /> 
     <a target="_blank" rel="noopener noreferrer nofollow" href="https://github.com/jesvijonathan/JOS-Animation-Library"><img src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library@master/res/badge/jos_github%20default_black.svg" alt="JOS-Animation" style="max-width: 100%;"></a>
+    <a href="https://badge.fury.io/js/jos-animation"><img src="https://badge.fury.io/js/jos-animation.svg" alt="npm version" height="18"></a>
     <br />
     <br />
     <a href="https://jesvijonathan.github.io/JOS-Animation-Library">Git Pages</a>
@@ -45,7 +54,7 @@ By Jesvi Jonathan
 
 ## About This Project
 
-JOS is a simple & easy to use animation library package to instantly add professional animation to your website. It was built to make my life easier while developing websites & comes with tons of features and is fully customizable. It is lightweight & has a very small footprint. The best part of all is that it has no (\*minimum) toll on performance.
+JOS-Animation, Javascript On Scroll Animation library is a simple & easy to use animation library package to instantly add professional animation to your website. It was built to make my life easier while developing websites & comes with tons of features and is fully customizable. It is lightweight & has a very small footprint. The best part of all is that it has no (\*minimum) toll on performance.
 
 - Open source, no download or tiring setup, just add a script tag (Embed).
 - Includes Preset and expert custom animation options.
@@ -517,6 +526,7 @@ Moved to [issues](https://github.com/jesvijonathan/JOS-Animation-Library/issues)
 
 - [CIT Takshashila 23](https://www.cittakshashila.in/)
 - [JOS Demo](https://jesvijonathan.github.io/JOS-Animation-Library/)
+- [JOS Playground](https://jos-animation.vercel.app)
 - [JSheet](https://https://jesvijonathan.github.io/JSheet/)
 - [CSC](https://jesvijonathan.github.io/christhava-sangam-church-website/)
 
