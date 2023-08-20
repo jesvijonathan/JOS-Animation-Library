@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<title>Particle Demo</title>
+<link id=jos-stylesheet rel=stylesheet href=https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.css crossorigin=anonymous>
+<meta name=author content="Jesvi Jonathan">
+</head>
+<body>
+<div class=title-container style=z-index:1000>
+<h1>Partciel Demo <br></h1>
+<h2>JOS : animation library</h2>
+<br>
+<center>
+<a class=nest href=./index.html>Next</a>
+</center>
+<style>.nest{top:10vh;position:relative;color:#fff;text-decoration:none;text-align:center;border:2px solid #fff;padding:5px 30px;font-size:1rem;cursor:pointer;z-index:9999}</style>
+</div>
+</body>
+</html>
+<script>var particleContainer=document.createElement("div");particleContainer.className="particle-container",particleContainer.style.zIndex="-1";for(var i=0;i<100;i++){var particleRow=document.createElement("div");particleRow.className="particle-row jos";for(var j=0;j<50;j++){var particle=document.createElement("div");particle.className="particle",particleRow.appendChild(particle)}particleContainer.appendChild(particleRow)}document.body.appendChild(particleContainer)</script>
+<script src=https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.min.js></script>
+<script>JOS.init({debugMode:!1,passive:!1,once:!1,animation:"zoom-in",timingFunction:"linear",threshold:0,delay:0,duration:.2,rootMargin:"0% 0% 0% 0%"})</script>
+<style>@font-face{font-family:nig;src:url("./res/BrunoAceSC-Regular.ttf")}body{background-color:#000;color:#fff;font-family:nig;font-size:1.5em}.title-container{top:50%;left:50%;position:absolute;transform:translate(-50%,-50%)}h1{text-align:center;font-size:2.4rem}h2{text-align:center;font-size:1rem;font-family:nig}.particle-container{transform:scale(1)}@keyframes rotate{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}.particle-row{margin-top:1vw;display:flex;gap:1vw;width:100%}.particle{height:1rem;width:3rem;background-color:#ffffff5e}@media screen and (max-width:1000px){h1{font-size:5rem}h2{font-size:2rem}.particle{width:3vw;height:3vw;background-color:#ffffff5e}}</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PNHW4PMZQJ"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-PNHW4PMZQJ")</script>
