@@ -7,13 +7,14 @@ If a feature is discontinued, it's probably because of vulnerabillities or any o
 
 | Version | Supported          |
 | ------- | ------------------ |
+| 8.x     | :white_check_mark: |
+| 7.x     | :white_check_mark: |
 | 6.x     | :white_check_mark: |
-| 6.x     | :white_check_mark: |
-| 5.x     | :white_check_mark: |
+| 5.x     | :x:                |
 | < 3.0   | :x:                |
 
 ## Reporting a Vulnerability
 
-I fany vulnerability found, please open an issue with critical label and create a pull request if you have the fix for the issue.
+If any vulnerability found, please open an issue with critical label and create a pull request if you have the fix for the issue.
 
 patches and updates regarding security/vulnerabilities are top priority and will be patched as soon as possible from the day the issue is opened

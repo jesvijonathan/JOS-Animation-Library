@@ -61,7 +61,7 @@ This project is currently being developed by me & the dev community, So you can 
 Was inpired by GSAP, AOS libraries. I wanted something easier to use, with great performance and wanted to make the implementation better. So I worked on this project from scratch.
 
 Feel free to report an issue or request a feature in this repository :)
-& for more information, Check out the [JOS Webpage](https://jesvijonathan.github.io/JOS-Animation-Library).
+& for more information, Check out the [JOS Webpage](https://jos-animation.vercel.app).
 <br>
 
 <details>
