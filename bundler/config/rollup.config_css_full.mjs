@@ -4,7 +4,7 @@ import postcss from "rollup-plugin-postcss"; // css
 export default {
   input: "../dev/jos.css", // Path to your input CSS file
   output: {
-    file: "../rollup/export/jos.full.css", // Output path for the minified and optimized CSS file
+    file: "../bundler/export/jos.full.css", // Output path for the minified and optimized CSS file
     //sourcemap: true,
   },
   plugins: [

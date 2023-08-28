@@ -1,11 +1,12 @@
 import terser from "@rollup/plugin-terser";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
+import postcss from "rollup-plugin-postcss"; // css
 
 export default {
-  input: "../dev/jos.js",
+  input: "../dev/jos.full.js",
   output: {
-    file: "../rollup/export/jos.min.js",
+    file: "../bundler/export/jos.full.js",
     format: "umd",
     name: "JOS",
     //sourcemap: true,
@@ -13,16 +14,19 @@ export default {
   plugins: [
     resolve(),
     commonjs(),
+    postcss(),
     terser({
-      compress: {
-        dead_code: true,
-        drop_console: true,
-      },
       format: {
-        //beautify: true,
+        beautify: true,
         comments: false,
       },
-      keep_classnames: true,
+      compress: {
+        dead_code: true,
+        // drop_console: true,
+      },
+      mangle: {
+        keep_classnames: true,
+      },
     }),
   ],
 };

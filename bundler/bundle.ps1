@@ -1,6 +1,6 @@
 # type `./bundle.ps1` to run
 
-cd ./rollup
+cd ./bundler
 
 echo ""
 echo "Rollup Started"

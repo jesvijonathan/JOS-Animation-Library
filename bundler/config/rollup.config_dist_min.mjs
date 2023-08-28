@@ -5,26 +5,24 @@ import commonjs from "@rollup/plugin-commonjs";
 export default {
   input: "../dev/jos.js",
   output: {
-    file: "../rollup/export/jos.js",
+    file: "../bundler/export/jos.min.js",
     format: "umd",
     name: "JOS",
-    // sourcemap: true,
+    //sourcemap: true,
   },
   plugins: [
     resolve(),
     commonjs(),
     terser({
-      format: {
-        beautify: true,
-        comments: false,
-      },
       compress: {
         dead_code: true,
-        // drop_console: true,
+        drop_console: true,
       },
-      mangle: {
-        keep_classnames: true,
+      format: {
+        //beautify: true,
+        comments: false,
       },
+      keep_classnames: true,
     }),
   ],
 };

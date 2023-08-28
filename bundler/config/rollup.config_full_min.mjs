@@ -6,7 +6,7 @@ import postcss from "rollup-plugin-postcss"; // css
 export default {
   input: "../dev/jos.full.js",
   output: {
-    file: "../rollup/export/jos.full.js",
+    file: "../bundler/export/jos.full.min.js",
     format: "umd",
     name: "JOS",
     //sourcemap: true,
@@ -14,19 +14,20 @@ export default {
   plugins: [
     resolve(),
     commonjs(),
-    postcss(),
+    postcss(), // css
     terser({
       format: {
-        beautify: true,
+        beautify: false,
         comments: false,
       },
       compress: {
         dead_code: true,
-        // drop_console: true,
+        drop_console: true,
       },
       mangle: {
         keep_classnames: true,
       },
+      mangle: true,
     }),
   ],
 };
