@@ -531,3 +531,4 @@ const JOS = new jos();
 if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
   module.exports = JOS;
 }
+export default JOS;
