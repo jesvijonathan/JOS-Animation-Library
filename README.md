@@ -21,6 +21,8 @@ By Jesvi Jonathan
     <br />
     <a href="https://jesvijonathan.github.io/JOS-Animation-Library">Git Pages</a>
     ·
+    <a href="https://jos-animation.vercel.app">Playground Demo</a>
+    ·
     <a href="https://github.com/jesvijonathan/JOS-Animation-Library/issues">Report Bug</a>
     ·
     <a href="https://github.com/jesvijonathan/JOS-Animation-Library/issues">Request Feature</a>
