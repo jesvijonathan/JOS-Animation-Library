@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <title>JOS : Animation Library | Demo</title>
@@ -10,7 +10,7 @@
       href="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/v0.8.8/jos.css"
       crossorigin="anonymous"
     /> -->
-    <link rel="stylesheet" href="../dev/jos.css" id="jos-stylesheet" />
+    <link rel="stylesheet" href="./jos.css" id="jos-stylesheet" />
 
     <link
       rel="icon"
@@ -54,7 +54,7 @@
       <div
         class="TIT2 jos"
         data-jos_animation="fade-down"
-        data-jos_duration="0.7.1"
+        data-jos_duration="0.7"
         title="Scroll down to view animations"
       >
         Scroll Down
@@ -73,7 +73,6 @@
       id="box_container_main"
       class="elements jos"
       data-jos_animation="stretch"
-      data-jos_duration="0.2"
     >
       <div
         class="box jos"
@@ -87,9 +86,10 @@
         data-jos_scrollDirection="down"
       ></div>
       <div
-        class="box jos"
+        class="box jos debug777"
         id="elem"
         data-jos_animation="fade"
+        data-jos_duration="4.57"
         title="Animation : fade"
       ></div>
       <div
@@ -274,7 +274,7 @@
 </html>
 <!-- <script src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/v0.8.8/jos.debug.js"></script> -->
 
-<script src="../dev/jos.js"></script>
+<script src="./jos.js"></script>
 <script>
   function testInvokeEnterFunction() {
     console.log("testInvokeEnterFunction Invoked on Enter");

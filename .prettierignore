@@ -5,6 +5,8 @@ dist/jos.css
 dist/*
 dist/
 dist
+dev/jos.min.js
+dev/jos.min.css
 rollup
 rollup/
 rollup/export/*
