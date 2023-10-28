@@ -20,7 +20,7 @@ class jos {
   scrollProgressDisable = undefined;
   disable = false;
 
-  static version = "0.8.8 (Development)";
+  static version = "0.9 (Debug)";
   static author = "Jesvi Jonathan";
   static github = "https://github.com/jesvijonathan/JOS-Animation-Library";
 

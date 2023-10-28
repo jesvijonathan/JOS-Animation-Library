@@ -117,13 +117,13 @@ Badges
 <center>
  
 <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.youtube.com/watch?v=ziR95EKKttc"><img src="https://img.youtube.com/vi/ziR95EKKttc/0.jpg" alt="JOS-Animation v0.6" style="max-width: 100%;"></a>
-JOS V0.6 Cubes <i>(Outdated | [Latest : v0.8.8](https://github.com/jesvijonathan/JOS-Animation-Library/releases/tag/v0.8.8))</i> 
+JOS V0.6 Cubes <i>(Outdated | [Latest : v0.9](https://github.com/jesvijonathan/JOS-Animation-Library/releases/tag/v0.8.8))</i> 
 </center>
 </details>
 
 <br>
 
-<code> <i>JOS</i> </code> <code> <i>v0.8.8</i> </code> <code><i> 18 July 2023</i></code> <code> <i>Jesvi Jonathan</i> </code>
+<code> <i>JOS</i> </code> <code> <i>v0.9</i> </code> <code><i> 28 Oct 2023</i></code> <code> <i>Jesvi Jonathan</i> </code>
 
 <br>
 
@@ -135,6 +135,7 @@ JOS V0.6 Cubes <i>(Outdated | [Latest : v0.8.8](https://github.com/jesvijonathan
 ### Installation
 
 1. Add the <code>[\<link>](https://github.com/jesvijonathan/Jesvi-Bot/releases)</code> inside the <code>\<head></code> tag :
+   (this step is not required from <code>v0.9</code> onwards)
 
 <!-- https://unpkg.com/jos-animation@latest/dist/jos.js -->
 <!-- "https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/v0.8.8/jos.css" -->
@@ -148,7 +149,7 @@ JOS V0.6 Cubes <i>(Outdated | [Latest : v0.8.8](https://github.com/jesvijonathan
 />
 ```
 
-2. Add the <code>[\<script>](https://github.com/jesvijonathan/Jesvi-Bot/releases)</code> right after the <code>\<body></code> tag :
+1. Add the <code>[\<script>](https://github.com/jesvijonathan/Jesvi-Bot/releases)</code> right after the <code>\<body></code> tag :
    <!-- For easier navigation use jsdelivr -->
    <!-- https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/v0.8.8/jos.min.js -->
    <!-- For Stablility use unpkg  -->
@@ -165,6 +166,19 @@ You can add minified version of the script by replacing <code>jos.js</code> with
 - <code>jos.js</code> for basic.
 - <code>jos.min.js</code> for production use.
 - <b><code>jos.debug.js</code></b> for <b>debugging</b> along with some other function
+
+From <code>v0.9</code> onwards, by default <code>jos.js</code> does not require you to add the stylesheet <code>jos.css</code>, it will be exported along with the script. But you can still add the stylesheet if you want to for some reason.
+
+# Version Tags
+
+<!-- https://unpkg.com/jos-animation@0.8.8/dist/jos.js -->
+
+- Latest : <code>jos-animation@latest</code>
+- Stable : <code>jos-animation@0.8.8</code>
+- Beta : <code>jos-animation@0.9-beta.1</code>
+
+So it would be <code>https://unpkg.com/jos-animation/@latest/dist/jos.js</code> (embed) for the latest version. or <code>jos-animation/@0.8.8/dist/jos.js</code> (npm install) for a specific version.
+
   <!-- - make sure to enable <u>verbose</u> in debug level settings under the console tab in your browser's developer tools. -->
 
 <!-- 3. Initialize JOS with default settings :
@@ -468,6 +482,33 @@ This triggers the myCustomFunction() function when the element is scrolled into 
 You can use <b><code>data-jos_invoke_out</code></b> attribute to trigger the function when the element is scrolled out of view.
 
 Example : [Custom Function]()
+
+## Scroll Progress Callback
+
+1. Create an element that you want to animate & add the <code>data-jos_scroll</code> attribute to it :
+
+```html
+<div id="elem1" class="jos" data-jos_scroll="your_callbackFunction">
+  Scroll Trigger Element
+</div>
+```
+
+2. Create a custom function by adding the following code to your script :
+
+```js
+your_callbackFunction = (element) => {
+  // windowScrollProgress : element scroll pixel
+  console.log(element.id, element.jos.windowScrollProgress);
+  // scrollProgress : 0-1
+  element.style.opacity = element.jos.scrollProgress;
+  // rootScrollProgress : +-0 to +-1
+  element.style.innerHTML = element.jos.rootScrollProgress;
+};
+```
+
+This triggers the your_callbackFunction() function when the element is scrolled. This way you can handle the scroll progress of the element.
+
+Example : [Custom Function](https://github.com/jesvijonathan/JOS-Animation-Library/releases/tag/v0.8.8)
 
 ## JOS Attributes
 
