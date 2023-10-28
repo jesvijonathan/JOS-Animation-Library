@@ -297,6 +297,7 @@ JOS.init();
   data-jos_startVisible="false"
   data-jos_invoke="myCustomFunction"
   data-jos_invoke_out="myCustomFunction_onExit"
+  data-jos_scroll="your_callbackFunction"
   data-jos_anchor="#elementID"
 ></div>
 ```
@@ -529,6 +530,7 @@ Example : [Custom Function](https://github.com/jesvijonathan/JOS-Animation-Libra
 | data-jos_scrollDirection   | string        | down            | Sets the direction for an element to animate on ina viewport when scrolled.                              | `(string: "up", "down", "none")`                                                                                                                                                                                                                                                                                                                                                                          |
 | data-jos_startVisible      | boolean & int | false           | Set whether the element should start at the final state when the page is loaded (also works with delay). | `(boolean: true, false)` & `(int: 0-10000 ms)`                                                                                                                                                                                                                                                                                                                                                            |
 | data-jos_anchor            | string        | null            | Sets the anchor element for an element to animate on in a viewport when scrolled.                        | `(string: "#elementID")`                                                                                                                                                                                                                                                                                                                                                                                  |
+| data-jos_scroll            | string        | null            | Sets the callback function for an element to animate on in a viewport when scrolled.                     | `function`, `your_callbackFunction`                                                                                                                                                                                                                                                                                                                                                                       |
 |                            |
 
 <!--create a table for init, refresh, start, stop, destroy -->
@@ -589,8 +591,8 @@ Maybe even [bundle it](#bundling-jos) and test it out before sharing it with the
 - [CIT Takshashila 23](https://www.cittakshashila.in/)
 - [JOS Demo](https://jesvijonathan.github.io/JOS-Animation-Library/)
 - [JOS Playground](https://jos-animation.vercel.app)
-- [JSheet](https://https://jesvijonathan.github.io/JSheet/)
 - [CSC](https://jesvijonathan.github.io/christhava-sangam-church-website/)
+- [Bitspace](https://bitspace-nextjs-jos.vercel.app)
 
 (<i>Ping Me If you have a demo</i>)
 
@@ -609,4 +611,3 @@ Maybe even [bundle it](#bundling-jos) and test it out before sharing it with the
 #### <i><u>This project was solely developed by</i> [Jesvi Jonathan](https://jesvi.pythonanywhere.com)</u>
 
 </div>
-```
