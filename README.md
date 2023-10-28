@@ -117,7 +117,7 @@ Badges
 <center>
  
 <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.youtube.com/watch?v=ziR95EKKttc"><img src="https://img.youtube.com/vi/ziR95EKKttc/0.jpg" alt="JOS-Animation v0.6" style="max-width: 100%;"></a>
-JOS V0.6 Cubes <i>(Outdated | [Latest : v0.9](https://github.com/jesvijonathan/JOS-Animation-Library/releases/tag/v0.8.8))</i> 
+JOS V0.6 Cubes <i>(Outdated | [Latest : v0.9.0](https://github.com/jesvijonathan/JOS-Animation-Library/releases/latest))</i> 
 </center>
 </details>
 
@@ -175,7 +175,7 @@ From <code>v0.9</code> onwards, by default <code>jos.js</code> does not require 
 
 - Latest : <code>jos-animation@latest</code>
 - Stable : <code>jos-animation@0.8.8</code>
-- Beta : <code>jos-animation@0.9-beta.1</code>
+- Beta : <code>jos-animation@0.9.0-beta.1</code>
 
 So it would be <code>https://unpkg.com/jos-animation/@latest/dist/jos.js</code> (embed) for the latest version. or <code>jos-animation/@0.8.8/dist/jos.js</code> (npm install) for a specific version.
 

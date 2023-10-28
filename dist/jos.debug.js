@@ -15,12 +15,13 @@ class jos {
   default_scrolldirection = undefined;
   default_passive = true;
   default_mirror = undefined;
+  setRange = new Set();
 
   debug = false;
   scrollProgressDisable = undefined;
   disable = false;
 
-  static version = "0.9 (Debug)";
+  static version = "0.9.0 (Debug)";
   static author = "Jesvi Jonathan";
   static github = "https://github.com/jesvijonathan/JOS-Animation-Library";
 
@@ -301,11 +302,11 @@ class jos {
       }
       if (object_default_duration) {
         box.setAttribute("data-jos_duration", object_default_duration);
-        set.add(parseFloat(object_default_duration).toFixed(2));
+        this.setRange.add(parseFloat(object_default_duration));
       }
       if (object_default_delay) {
         box.setAttribute("data-jos_delay", object_default_delay);
-        set.add(parseFloat(object_default_delay).toFixed(2));
+        this.setRange.add(parseFloat(object_default_delay));
       }
       box.setAttribute("data-jos_counter", "0");
       box.classList.add("jos-" + object_default_animation);
@@ -369,12 +370,7 @@ class jos {
         }, box_time || this.default_startVisible);
       });
     }, 100);
-
-    for (const value of set) {
-      jos_stylesheet.styleSheet.insertRule(
-        `[data-jos_duration="${value}"]{transition-duration: ${value}s !important;} [data-jos_delay="${value}"]{transition-delay: ${value}s !important;}`
-      );
-    }
+    console.log(this.setRange);
   }
 
   animationUnset(state = 0) {
@@ -412,6 +408,19 @@ class jos {
       "s ;";
 
     styleSheet.insertRule(".jos {" + ("transition: " + s) + ";}");
+
+    for (const value of this.setRange) {
+      styleSheet.insertRule(
+        `[data-jos_duration="${value}"] {
+    transition-duration: ${value}s !important;
+  }`
+      );
+      styleSheet.insertRule(
+        `[data-jos_delay="${value}"] {
+    transition-delay: ${value}s !important;
+  }`
+      );
+    }
 
     this.jos_stylesheet = styleSheet;
   }
@@ -472,7 +481,6 @@ class jos {
   init(options = this.options) {
     this.options = options;
     this.getDefault(options);
-    this.getStylesheet();
 
     if (this.disable) return;
 
@@ -482,6 +490,8 @@ class jos {
     }
 
     this.start();
+
+    this.getStylesheet();
   }
 
   start(state = 0) {

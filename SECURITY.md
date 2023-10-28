@@ -7,11 +7,12 @@ If a feature is discontinued, it's probably because of vulnerabillities or any o
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 8.x     | :white_check_mark: |
-| 7.x     | :white_check_mark: |
-| 6.x     | :white_check_mark: |
-| 5.x     | :x:                |
-| < 3.0   | :x:                |
+| 0.9.x   | :white_check_mark: |
+| 0.8.x   | :white_check_mark: |
+| 0.7.x   | :white_check_mark: |
+| 0.6.x   | :white_check_mark: |
+| 0.5.x   | :x:                |
+| < 0.3.0 | :x:                |
 
 ## Reporting a Vulnerability
 
