@@ -543,6 +543,30 @@ Example : [Custom Function](https://github.com/jesvijonathan/JOS-Animation-Libra
 | start()   | Start/Resume JOS Service | state = (`0` - Normal/Full start, `-1` - Resume from current state)                                     |
 | destroy() | Destroy JOS Instance     | state = (`0` - Destroy JOS instance excluding stylesheet, `1` - Full Destroy along with JOS-stylesheet) |
 
+## Bundling JOS
+
+Once you are done and have finished developing a version of JOS, you can bundle it using the following command from project root :
+
+```bash
+
+# Copy the files from development directory to bundler directory
+# (why ? to avoid fking up the original files)
+cp -r ./dev/jos.js ./bundler/original/jos.js
+cp -r ./dev/jos.css ./bundler/original/jos.css
+cp -r ./dev/jos.min.js ./bundler/original/jos.min.js
+cp -r ./dev/jos.min.js ./bundler/original/jos.min.js
+
+# Move to bundler directory
+cd ./bundler
+
+# Bundle jos.js
+sh bundle.sh
+
+# View the bundled jos.js
+cd ./export
+ls
+```
+
 ## Bugs and Issues
 
 Moved to [issues](https://github.com/jesvijonathan/JOS-Animation-Library/issues)
@@ -551,7 +575,10 @@ Moved to [issues](https://github.com/jesvijonathan/JOS-Animation-Library/issues)
 
 - Fork it from [main branch](https://github.com/jesvijonathan/JOS-Animation-Library)
 - Add your useful feature or fix a bug
+- Commit your changes
 - Create a pull request
+
+Maybe even [bundle it](#bundling-jos) and test it out before sharing it with the world ;
 
 ## License
 
@@ -582,3 +609,4 @@ Moved to [issues](https://github.com/jesvijonathan/JOS-Animation-Library/issues)
 #### <i><u>This project was solely developed by</i> [Jesvi Jonathan](https://jesvi.pythonanywhere.com)</u>
 
 </div>
+```
