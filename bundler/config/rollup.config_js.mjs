@@ -32,6 +32,7 @@ export default {
       },
       mangle: {
         keep_classnames: true,
+        reserved: ["JOS"],
       },
     }),
   ],

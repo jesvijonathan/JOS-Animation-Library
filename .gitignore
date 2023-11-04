@@ -5,9 +5,11 @@ test.js
 tmp_tk_rough_implements
 dd.js
 scripts
-# rollup
-rollup/export/*
-rollup/config/package.js
-rollup/config/package-lock.js 
+# rollup 
+bundler/index.html
+bundler/export/* 
+bundler/original/* 
+bundler/config/package.js
+bundler/config/package-lock.js 
 node_modules
 package-lock.json

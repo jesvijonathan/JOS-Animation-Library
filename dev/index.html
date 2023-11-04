@@ -39,7 +39,7 @@
     <center
       class="jos"
       data-jos_animation="fade-up"
-      title="JOS : Animation Library (v0.9.0)"
+      title="JOS : Animation Library (v0.9.1)"
       data-jos_duration="1"
     >
       <h1
@@ -100,17 +100,28 @@
 
       <div
         class="box jos jos-no-transition debug"
-        id="nom"
         data-jos_scroll="scroll_opacity"
         data-jos_scrollDirection="down"
         title="Animation : zoom-in | Scroll-Directiom : Down"
       ></div>
       <div
         class="box jos debug"
+        id="nom"
         data-jos_animation="zoom-in"
         data-jos_scrollDirection="down"
         title="Animation : zoom-in | Scroll-Directiom : Down"
       ></div>
+
+      <div
+        class="stagger jos"
+        data-jos_animation="grow"
+        data-jos_stagger="spin"
+        data-jos_stagger_seq="0.1"
+      >
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
       <div
         id="box"
         class="box jos debug777"
@@ -327,6 +338,12 @@
 </script>
 
 <style>
+  .stagger {
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+    justify-content: center;
+  }
   footer {
     display: flex;
     flex-direction: column;
@@ -338,6 +355,9 @@
   * {
     left: 0;
     top: 0;
+  }
+  html {
+    mix-blend-mode: difference;
   }
   body {
     background: rgb(255, 255, 255);
@@ -434,6 +454,13 @@
       90deg,
       rgb(111, 21, 163),
       rgb(22, 91, 145)
+    );
+  }
+  .debug888 {
+    background-image: linear-gradient(
+      90deg,
+      rgb(155, 99, 187),
+      rgb(30, 145, 22)
     );
   }
 </style>

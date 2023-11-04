@@ -1,5 +1,5 @@
 /*
-JOS v0.9.0 By Jesvi Jonathan
+JOS v0.9.1 By Jesvi Jonathan
 */
 
 /* jos default */
@@ -7,7 +7,7 @@ JOS v0.9.0 By Jesvi Jonathan
   /* opacity: 1;*/
   /* transition: opacity 0.4s, transform 0.4s; */
   transition: all 0.4s ease-in-out;
-  display: block;
+  /* display: block; */
   /* transition-timing-function: ease-in-out; 
   transition-property: all;
   transition-delay: 0;
@@ -31,14 +31,26 @@ JOS v0.9.0 By Jesvi Jonathan
   transition-timing-function: linear;
   transition-duration: 0s;
 }
+.jos-none {
+}
+.jos-hidden {
+  display: none;
+}
+.jos-visible {
+  display: block;
+  opacity: 1;
+}
+.jos-stagger {
+  /* some cool transition */
+  /* do not nullify this */
+}
 
 /* .jos-no-mirror {
   transition: 0s forwards !important;
 } */
 
 /* fade */
-.jos-fade,
-.jos-stagger-fade * {
+.jos-fade {
   opacity: 0;
 }
 .jos-fade-right {
@@ -245,6 +257,70 @@ JOS v0.9.0 By Jesvi Jonathan
 .jos-stretch-vertical {
   opacity: 0;
   transform: scaleY(0);
+}
+
+/* skew */
+.jos-skew {
+  opacity: 0;
+  transform: skew(20deg, 20deg);
+}
+.jos-skew-right {
+  opacity: 0;
+  transform: skew(20deg, 20deg) translate3d(-100px, 0px, -100px);
+}
+.jos-skew-left {
+  opacity: 0;
+  transform: skew(20deg, 20deg) translate3d(100px, 0px, -100px);
+}
+.jos-skew-down {
+  opacity: 0;
+  transform: skew(20deg, 20deg) translate3d(0px, -100px, 0px);
+}
+.jos-skew-up {
+  opacity: 0;
+  transform: skew(20deg, 20deg) translate3d(0px, 100px, 0px);
+}
+.jos-slant {
+  transform: skew(25deg, 25deg);
+}
+.jos-slant-right {
+  transform: skew(25deg, 0deg);
+}
+.jos-slant-left {
+  transform: skew(0deg, 25deg);
+}
+.jos-bar,
+.jos-bar_vertical {
+  transform: perspective(2500px) rotateY(-100deg);
+}
+.jos-bar_horizontal {
+  transform: perspective(2500px) rotateX(-100deg);
+}
+
+.jos-grey {
+  filter: grayscale(100%);
+}
+.jos-blur {
+  filter: blur(7px);
+}
+.jos-backdrop {
+  backdrop-filter: blur(7px);
+  opacity: 0.8;
+}
+.jos-invert {
+  filter: invert(100%);
+}
+.jos-sepia {
+  filter: sepia(100%);
+}
+.jos-saturate {
+  filter: saturate(100%);
+}
+.jos-hue-rotate {
+  filter: hue-rotate(90deg);
+}
+.jos-brightness {
+  filter: brightness(0.5);
 }
 
 /* timing function attribute */

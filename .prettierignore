@@ -7,7 +7,7 @@ dist/
 dist
 dev/jos.min.js
 dev/jos.min.css
-rollup
-rollup/
-rollup/export/*
+bundler
+bundler/
+bundler/export/*
 # development

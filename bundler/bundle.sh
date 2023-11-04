@@ -86,18 +86,23 @@ cp "original/jos_tmp.js" export/jos.debug.js
 
 echo ""
 echo "- Adding css auto import to jos.js"
-jsFilePath="original/jos_tmp.js"
-outputFilePath="original/jos.js"
+
+jsFilePath1="original/jos_tmp.js"
+outputFilePath1="original/jos.js"
+
+jsFilePath2="original/jos_tmp.min.js"
 outputFilePath2="original/jos.min.js"
-cp "$jsFilePath" "$outputFilePath2"
+
+cp "$jsFilePath2" "$outputFilePath2"
 echo "import \"./jos.min.css\";" >> "$outputFilePath2"
-cp "$jsFilePath" "$outputFilePath"
-echo "import \"./jos.css\";" >> "$outputFilePath"
+
+cp "$jsFilePath1" "$outputFilePath1"
+echo "import \"./jos.css\";" >> "$outputFilePath1"
 
 echo ""
 echo "- jos.js | Minifying to jos.js"
 npx rollup -c config/rollup.config_js.mjs
-cp "original/jos_tmp.min.js" export/jos.js
+cp "original/jos_tmp.js" export/jos.js
 
 mv "original/jos.js" export/jos.js
 mv "original/jos.css" export/jos.css
@@ -109,6 +114,7 @@ echo ""
 echo "- jos.min.js | Minifying to jos.min.js"
 # cp "original/jos.js" original/jos.min.js
 npx rollup -c config/rollup.config_js_min.mjs
+
 cp "original/jos_tmp.min.js" export/jos.min.js
 
 mv "original/jos.min.js" export/jos.min.js

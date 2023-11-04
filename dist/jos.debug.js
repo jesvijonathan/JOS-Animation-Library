@@ -21,8 +21,9 @@ class jos {
   scrollProgressDisable = undefined;
   disable = false;
 
-  static version = "0.9.0 (Debug)";
+  static version = "0.9.1 (Development)";
   static author = "Jesvi Jonathan";
+  static webpage = "https://jos-animation.vercel.app";
   static github = "https://github.com/jesvijonathan/JOS-Animation-Library";
 
   options = {};
@@ -37,6 +38,7 @@ class jos {
     console.log(`JOS: Javascript On Scroll Animation Library
     - Version: ${jos.version}
     - Author: ${jos.author}
+    - Webpage: ${jos.webpage}
     - Github: ${jos.github}\n`);
   }
   //debugger = () => null;
@@ -149,9 +151,9 @@ class jos {
 
       let scrollProgress = 0;
 
-      if (rootScrollProgress < 0) {
+      if (rootScrollProgress <= 0) {
         scrollProgress = 0;
-      } else if (rootScrollProgress > 100) {
+      } else if (rootScrollProgress >= 100) {
         scrollProgress = 1;
       } else {
         scrollProgress = rootScrollProgress;
@@ -240,6 +242,7 @@ class jos {
         );
 
         target.classList.add("jos-" + target_jos_animation);
+
         if (target_jos_animationinverse != undefined) {
           target.classList.remove("jos-" + target_jos_animationinverse);
         }
@@ -262,7 +265,8 @@ class jos {
   animationInit() {
     let doit = [];
     const set = new Set();
-    this.boxes.forEach((box) => {
+
+    let recursive_check = (box) => {
       let object_default_once = box.dataset.jos_once;
       let object_default_animation =
         box.dataset.jos_animation || this.default_animation;
@@ -283,6 +287,123 @@ class jos {
       } else {
         box.setAttribute("data-jos_once", this.default_once ? "1" : "false");
       }
+
+      if (box.dataset.jos_stagger) {
+        const defaultDelay = this.default_delay;
+        const defaultDuration = this.default_duration;
+        const defaultOnce = this.once;
+        const defaultMirror = this.mirror;
+        const defaultScrolldirection = this.scrolldirection;
+        const defaultRootMargin = this.rootMargin;
+
+        if (!box.id) {
+          box.id = Math.random().toString(36).substring(7);
+        }
+
+        Array.from(box.children).forEach((child, i) => {
+          if (!child.classList.contains("jos")) {
+            child.classList.add("jos");
+
+            if (!child.id) {
+              child.id = `${box.id}_${i}`;
+            }
+
+            const stagger = box.dataset.jos_stagger;
+            const stagger_delay = box.dataset.jos_stagger_delay || defaultDelay;
+            const stagger_seq = box.dataset.jos_stagger_seq || 0;
+            const stagger_duration =
+              box.dataset.jos_stagger_duration || defaultDuration;
+            const stagger_once = box.dataset.jos_stagger_once || defaultOnce;
+            const staggerinverse =
+              box.dataset.jos_staggerinverse || defaultMirror;
+            const stagger_mirror =
+              box.dataset.jos_stagger_mirror || defaultMirror;
+            const stagger_visible = box.dataset.jos_stagger_startVisible;
+            const stagger_scrolldirection =
+              box.dataset.jos_stagger_scrolldirection || defaultScrolldirection;
+            const stagger_rootmargin =
+              box.dataset.jos_stagger_rootmargin || defaultRootMargin;
+
+            if (box.dataset.jos_stagger_anchor || child.dataset.jos_anchor) {
+              const anchor =
+                box.dataset.jos_stagger_anchor === "true"
+                  ? "#" + box.id
+                  : box.dataset.jos_stagger_anchor;
+              child.setAttribute("data-jos_anchor", anchor);
+            }
+
+            child.setAttribute("data-jos_animation", stagger);
+
+            staggerinverse
+              ? child.setAttribute("data-jos_animationinverse", staggerinverse)
+              : null;
+
+            child.setAttribute("data-jos_duration", stagger_duration);
+
+            child.setAttribute(
+              "data-jos_delay",
+              parseFloat(stagger_delay) + stagger_seq * i
+            );
+            child.setAttribute("data-jos_once", stagger_once);
+
+            if (stagger_mirror === "false") {
+              child.setAttribute("data-jos_mirror", "false");
+            }
+
+            if (stagger_visible) {
+              doit.push(child);
+            }
+
+            if (stagger_scrolldirection) {
+              child.setAttribute(
+                "data-jos_scrolldirection",
+                stagger_scrolldirection
+              );
+            }
+
+            stagger_rootmargin
+              ? child.setAttribute("data-jos_rootmargin", stagger_rootmargin)
+              : null;
+
+            if (box.dataset.jos_stagger_scroll) {
+              child.setAttribute(
+                "data-jos_scroll",
+                box.dataset.jos_stagger_scroll
+              );
+            }
+
+            if (box.dataset.jos_stagger_timingFunction) {
+              child.setAttribute(
+                "data-jos_timingFunction",
+                box.dataset.jos_stagger_timingFunction
+              );
+            }
+
+            if (box.dataset.jos_stagger_invoke) {
+              child.setAttribute(
+                "data-jos_invoke",
+                box.dataset.jos_stagger_invoke
+              );
+            }
+
+            if (box.dataset.jos_stagger_invoke_out) {
+              child.setAttribute(
+                "data-jos_invoke_out",
+                box.dataset.jos_stagger_invoke_out
+              );
+            }
+
+            this.boxes = [...this.boxes, child];
+            recursive_check(child);
+          }
+        });
+
+        if (!box.dataset.jos_animation) {
+          box.classList.remove("jos");
+          return;
+        }
+      }
+
       box.setAttribute("data-jos_animation", object_default_animation);
       if (object_default_animationinverse) {
         box.setAttribute(
@@ -358,7 +479,12 @@ class jos {
         this.observers.push(observer);
         observer.observe(box);
       }
+    };
+
+    this.boxes.forEach((box) => {
+      recursive_check(box);
     });
+
     setTimeout(() => {
       doit.forEach((box) => {
         let box_time = box.dataset.jos_startvisible;
@@ -370,7 +496,7 @@ class jos {
         }, box_time || this.default_startVisible);
       });
     }, 100);
-    console.log(this.setRange);
+    // console.log(this.setRange);
   }
 
   animationUnset(state = 0) {
@@ -552,5 +678,13 @@ const JOS = new jos();
 
 if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
   module.exports = JOS;
+} else {
+  if (typeof define === "function" && define.amd) {
+    define([], function () {
+      return JOS;
+    });
+  } else {
+    window.JOS = JOS;
+  }
 }
 //export default JOS;
