@@ -340,10 +340,18 @@ class jos {
 
             child.setAttribute("data-jos_duration", stagger_duration);
 
-            child.setAttribute(
-              "data-jos_delay",
-              parseFloat(stagger_delay) + stagger_seq * i
-            );
+            // let delg = parseFloat(stagger_seq, 2);
+            // delg = (delg * i).toFixed(1);
+            // delg = parseFloat(delg);
+            // console.log(delg);
+            // delg = delg + parseFloat(stagger_delay);
+
+            // const delg = parseFloat((parseFloat(stagger_seq, 2) * i).toFixed(1)) + parseFloat(stagger_delay);
+
+            const delg = parseFloat(stagger_seq * i + stagger_delay);
+
+            child.setAttribute("data-jos_delay", delg);
+
             child.setAttribute("data-jos_once", stagger_once);
 
             if (stagger_mirror === "false") {
