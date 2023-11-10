@@ -579,7 +579,7 @@ class jos {
       timingFunction,
       threshold,
       startVisible,
-      scrollDirection,
+      scrolldirection,
       intersectionRatio,
       duration,
       mirror,
@@ -599,7 +599,7 @@ class jos {
     this.default_threshold = threshold || this.default_threshold;
     this.default_startVisible = startVisible || this.default_startVisible;
     this.default_scrolldirection =
-      scrollDirection || this.default_scrolldirection;
+      scrolldirection || this.default_scrolldirection;
     this.default_intersectionRatio =
       intersectionRatio || this.default_threshold;
     this.default_duration = duration || this.default_duration;
