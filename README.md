@@ -116,14 +116,16 @@ Badges
 </summary>
 <center>
  
-<a target="_blank" rel="noopener noreferrer nofollow" href="https://www.youtube.com/watch?v=ziR95EKKttc"><img src="https://img.youtube.com/vi/ziR95EKKttc/0.jpg" alt="JOS-Animation v0.6" style="max-width: 100%;"></a>
-JOS V0.6 Cubes <i>(Outdated | [Latest : v0.9.1](https://github.com/jesvijonathan/JOS-Animation-Library/releases/latest))</i> 
+- <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.youtube.com/watch?v=ziR95EKKttc"><img src="https://img.youtube.com/vi/ziR95EKKttc/0.jpg" alt="JOS-Animation v0.6" style="max-width: 100%;"></a> JOS V0.6 Cubes <i>(Outdated | [Latest : v0.9.1](https://github.com/jesvijonathan/JOS-Animation-Library/releases/latest))</i>
+<br>
+- <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.youtube.com/watch?v=_hlvc5oq9Fw"><img src="https://img.youtube.com/vi/_hlvc5oq9Fw/0.jpg" alt="JOS-Animation v0.8" style="max-width: 100%;"></a>JOS V0.8.8 <i>(Outdated | [Latest : v0.9.1](https://github.com/jesvijonathan/JOS-Animation-Library/releases/latest))</i>
+
 </center>
 </details>
 
 <br>
 
-<code> <i>JOS</i> </code> <code> <i>v0.9.1</i> </code> <code><i> 5 Nov 2023</i></code> <code> <i>Jesvi Jonathan</i> </code>
+<code> <i>JOS</i> </code> <code> <i>v0.9.2</i> </code> <code><i> 11 Nov 2023</i></code> <code> <i>Jesvi Jonathan</i> </code>
 
 <br>
 
@@ -134,7 +136,7 @@ JOS V0.6 Cubes <i>(Outdated | [Latest : v0.9.1](https://github.com/jesvijonathan
 
 ### Installation
 
-1. Add the <code>[\<link>](https://github.com/jesvijonathan/Jesvi-Bot/releases)</code> inside the <code>\<head></code> tag :
+0. Add the <code>[\<link>](https://github.com/jesvijonathan/Jesvi-Bot/releases)</code> inside the <code>\<head></code> tag :
    (this step is not required from <code>v0.9</code> onwards)
 
 <!-- https://unpkg.com/jos-animation@latest/dist/jos.js -->
@@ -295,6 +297,8 @@ JOS.init();
   data-jos_rootMargin_bottom="-50%"
   data-jos_scrollDirection="down"
   data-jos_startVisible="false"
+  data-jos_threshold="0.4"
+  data-jos_passive="false"
   data-jos_invoke="myCustomFunction"
   data-jos_invoke_out="myCustomFunction_onExit"
   data-jos_scroll="your_callbackFunction"
@@ -341,6 +345,8 @@ Example : [Custom Animation]()
 ```
 
 This is especially useful when you want to animate an element when it is **scrolled out of its rootMargin**, this gives more customizability for beautiful animations.
+
+You can also use a combination of both <code>data-jos_animation</code> ("none", "static", no-transition, etc) & <code>data-jos_animationInverse</code> attributes to create a custom animation.
 
 Example : [Custom Inverse Animation]()
 
@@ -517,7 +523,7 @@ Example : [Custom Function](https://github.com/jesvijonathan/JOS-Animation-Libra
 
 ```html
 <div
-  class="jos"
+  class="jos parent_elem"
   id="stagger"
   data-jos_stagger="spin"
   data-jos_staggerinverse="none"
@@ -539,11 +545,11 @@ Example : [Custom Function](https://github.com/jesvijonathan/JOS-Animation-Libra
   <!-- data-jos_stagger_anchor="true" # auto sets parent element's id & uses it as a anchor's -->
 
   <!-- Element 1  -->
-  <div class="elem"></div>
+  <div class="child_elem"></div>
   <!-- Element 2  -->
-  <div class="elem"></div>
+  <div class="child_elem"></div>
   <!-- Element 3  -->
-  <div class="elem"></div>
+  <div class="child_elem"></div>
   <!-- Element n  -->
 </div>
 ```

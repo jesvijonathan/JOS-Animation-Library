@@ -21,7 +21,7 @@ class jos {
   scrollProgressDisable = undefined;
   disable = false;
 
-  static version = "0.9.1 (Development)";
+  static version = "0.9.2 (Development)";
   static author = "Jesvi Jonathan";
   static webpage = "https://jos-animation.vercel.app";
   static github = "https://github.com/jesvijonathan/JOS-Animation-Library";
@@ -43,26 +43,18 @@ class jos {
   }
   //debugger = () => null;
   debugger(type = 0) {
-    if (type == 0 && this.debugMode) {
+    if (type === 0 && this.debugMode) {
       this.version();
-      console.log(`JOS Settings:
-    - animation: ${this.default_animation}
-    - once: ${this.default_once}
-    - animationinverse: ${this.default_animationinverse}
-    - timingFunction: ${this.default_timingFunction}
-    - duration: ${this.default_duration}
-    - delay: ${this.default_delay}
-    - threshold: ${this.default_threshold}
-    - startVisible: ${this.default_startVisible}
-    - scrolldirection: ${this.default_scrolldirection}
-    - intersectionRatio: ${this.default_intersectionRatio}
-    - rootMargin: ${this.default_rootMargin}
-    - disable: ${this.disable}
-    - debugMode: ${this.debugMode}\n`);
-    }
-    console.log("JOS Initialized:\n\n");
-    if ((type == 1 || type == 0) && this.debugMode) {
-      console.log(this.boxes || "No Elements Found");
+
+      const settings = {};
+      for (const key of Object.keys(this)) {
+        if (typeof this[key] !== "function") {
+          settings[key] = this[key];
+        }
+      }
+
+      console.log(`JOS Values:\n`, settings);
+      console.log("JOS Initialized:\n\n");
     }
   }
 
@@ -117,6 +109,16 @@ class jos {
         }
       }
     });
+  };
+
+  rand = (e) => {
+    if (Array.isArray(e)) return e[Math.floor(Math.random() * e.length)];
+
+    if (typeof e === "number") {
+      return e % 1 !== 0 ? Math.random() * e : Math.floor(Math.random() * e);
+    }
+
+    return Math.random();
   };
 
   // var box = target;
@@ -264,16 +266,18 @@ class jos {
 
   animationInit() {
     let doit = [];
-    const set = new Set();
 
     let recursive_check = (box) => {
-      let object_default_once = box.dataset.jos_once;
+      let object_default_once = box.dataset.jos_once || this.default_once;
       let object_default_animation =
         box.dataset.jos_animation || this.default_animation;
-      let object_default_animationinverse = box.dataset.jos_animationinverse;
-      let object_default_timingFunction = box.dataset.jos_timingFunction;
-      let object_default_duration = box.dataset.jos_duration;
-      let object_default_delay = box.dataset.jos_delay;
+      let object_default_animationinverse =
+        box.dataset.jos_animationinverse || this.default_animationinverse;
+      let object_default_timingFunction =
+        box.dataset.jos_timingFunction || this.default_timingFunction;
+      let object_default_duration =
+        box.dataset.jos_duration || this.default_duration;
+      let object_default_delay = box.dataset.jos_delay || this.default_delay;
       let object_default_mirror = box.dataset.jos_mirror || this.default_mirror;
       if (box.classList.contains("jos_disabled")) {
         box.classList.remove("jos_disabled");
@@ -295,7 +299,7 @@ class jos {
         const defaultMirror = this.mirror;
         const defaultScrolldirection = this.scrolldirection;
         const defaultRootMargin = this.rootMargin;
-
+        const defaultAnimationinverse = this.animationinverse;
         if (!box.id) {
           box.id = Math.random().toString(36).substring(7);
         }
@@ -315,7 +319,7 @@ class jos {
               box.dataset.jos_stagger_duration || defaultDuration;
             const stagger_once = box.dataset.jos_stagger_once || defaultOnce;
             const staggerinverse =
-              box.dataset.jos_staggerinverse || defaultMirror;
+              box.dataset.jos_staggerinverse || defaultAnimationinverse;
             const stagger_mirror =
               box.dataset.jos_stagger_mirror || defaultMirror;
             const stagger_visible = box.dataset.jos_stagger_startVisible;
@@ -467,8 +471,8 @@ class jos {
 
       let box_observer = {
         rootMargin,
-        threshold: this.default_threshold,
-        passive: this.default_passive,
+        threshold: box.dataset.jos_threshold || this.default_threshold,
+        passive: box.dataset.jos_passive || this.default_passive,
       };
       if (box.dataset.jos_anchor) {
         const observer = new IntersectionObserver(
@@ -504,7 +508,6 @@ class jos {
         }, box_time || this.default_startVisible);
       });
     }, 100);
-    // console.log(this.setRange);
   }
 
   animationUnset(state = 0) {
@@ -590,7 +593,8 @@ class jos {
     } = options;
     this.default_once = once || this.default_once;
     this.default_animation = animation || this.default_animation;
-    this.default_animationinverse = animationinverse || this.default_animation;
+    this.default_animationinverse =
+      animationinverse || this.default_animationinverse;
     this.default_timingFunction = timingFunction || this.default_timingFunction;
     this.default_threshold = threshold || this.default_threshold;
     this.default_startVisible = startVisible || this.default_startVisible;

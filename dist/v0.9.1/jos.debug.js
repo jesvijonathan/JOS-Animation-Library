@@ -21,7 +21,7 @@ class jos {
   scrollProgressDisable = undefined;
   disable = false;
 
-  static version = "0.9.1 (Development)";
+  static version = "0.9.1 (Debug)";
   static author = "Jesvi Jonathan";
   static webpage = "https://jos-animation.vercel.app";
   static github = "https://github.com/jesvijonathan/JOS-Animation-Library";

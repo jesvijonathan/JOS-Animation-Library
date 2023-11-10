@@ -45,12 +45,12 @@ About Jesvi Jonathan: https://jesvi.pythonanywhere.com
     /> -->
     <!-- <link rel="stylesheet" href="../dev/jos.css" id="jos-stylesheet" /> -->
 
-    <link
+    <!-- <link
       id="jos-stylesheet"
       rel="stylesheet"
-      href="https://unpkg.com/jos-animation@0.8.8/dist/jos.css"
+      href="https://unpkg.com/jos-animation@0.9.1-beta/dist/jos.css"
       crossorigin="anonymous"
-    />
+    /> -->
 
     <link
       rel="icon"
@@ -79,7 +79,7 @@ About Jesvi Jonathan: https://jesvi.pythonanywhere.com
     <center
       class="jos"
       data-jos_animation="fade-up"
-      title="JOS : Animation Library (v0.8.8)"
+      title="JOS : Animation Library (v0.9.1)"
       data-jos_duration="1"
     >
       <h1
@@ -94,7 +94,7 @@ About Jesvi Jonathan: https://jesvi.pythonanywhere.com
       <div
         class="TIT2 jos"
         data-jos_animation="fade-down"
-        data-jos_duration="0.7.1"
+        data-jos_duration="0.7"
         title="Scroll down to view animations"
       >
         Scroll Down
@@ -104,25 +104,15 @@ About Jesvi Jonathan: https://jesvi.pythonanywhere.com
         class="nest jos"
         data-jos_animation="zoom-out-up"
         data-jos_duration="0.8"
-        href="https://jesvijonathan.github.io/JOS-Animation-Library/index2.html"
+        href="./index2.html"
         title="Check other demos"
         >Next Demo</a
-      >
-      <br />
-      <a
-        class="nest jos"
-        data-jos_animation="zoom-out-up"
-        data-jos_duration="0.8"
-        href="https://jos-animation.vercel.app"
-        title="Check other demos"
-        >Main Webpage</a
       >
     </center>
     <div
       id="box_container_main"
       class="elements jos"
       data-jos_animation="stretch"
-      data-jos_duration="0.2"
     >
       <div
         class="box jos"
@@ -134,12 +124,12 @@ About Jesvi Jonathan: https://jesvi.pythonanywhere.com
         data-jos_animationinverse="fade-play"
         data-jos_animation="slide"
         data-jos_scrollDirection="down"
-        data-jos_rootMargin_top="50%"
       ></div>
       <div
-        class="box jos"
+        class="box jos debug777"
         id="elem"
         data-jos_animation="fade"
+        data-jos_duration="4.57"
         title="Animation : fade"
       ></div>
       <div
@@ -150,21 +140,33 @@ About Jesvi Jonathan: https://jesvi.pythonanywhere.com
 
       <div
         class="box jos jos-no-transition debug"
-        id="nom"
         data-jos_scroll="scroll_opacity"
         data-jos_scrollDirection="down"
         title="Animation : zoom-in | Scroll-Directiom : Down"
       ></div>
       <div
         class="box jos debug"
+        id="nom"
         data-jos_animation="zoom-in"
         data-jos_scrollDirection="down"
         title="Animation : zoom-in | Scroll-Directiom : Down"
       ></div>
+
+      <div
+        class="stagger jos"
+        data-jos_animation="grow"
+        data-jos_stagger="spin"
+        data-jos_stagger_seq="0.1"
+      >
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
       <div
         id="box"
-        class="box jos jos-no-transition debug777"
+        class="box jos debug777"
         data-jos_scroll="scroll_width"
+        data-mirror="false"
         data-jos_duration="0"
         data-jos_timing_function="linear"
         data-jos_animation="fade"
@@ -230,6 +232,7 @@ About Jesvi Jonathan: https://jesvi.pythonanywhere.com
         data-jos_scrollDirection="up"
         title="Animation : fade-up | Scroll-Directiom : up | Start-Visible : 1000ms"
       ></div>
+
       <div
         class="box jos debug2"
         data-jos_animation="fade-right"
@@ -324,7 +327,7 @@ About Jesvi Jonathan: https://jesvi.pythonanywhere.com
 <!-- <script src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/v0.8.8/jos.debug.js"></script> -->
 
 <!-- <script src="../dev/jos.js"></script> -->
-<script src="https://unpkg.com/jos-animation@0.8.8/dist/jos.js"></script>
+<script src="https://unpkg.com/jos-animation@0.9.1-beta/dist/jos.js"></script>
 <script>
   function testInvokeEnterFunction() {
     console.log("testInvokeEnterFunction Invoked on Enter");
@@ -376,6 +379,12 @@ About Jesvi Jonathan: https://jesvi.pythonanywhere.com
 </script>
 
 <style>
+  .stagger {
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+    justify-content: center;
+  }
   footer {
     display: flex;
     flex-direction: column;
@@ -387,6 +396,9 @@ About Jesvi Jonathan: https://jesvi.pythonanywhere.com
   * {
     left: 0;
     top: 0;
+  }
+  html {
+    mix-blend-mode: none;
   }
   body {
     background: rgb(255, 255, 255);
@@ -438,10 +450,9 @@ About Jesvi Jonathan: https://jesvi.pythonanywhere.com
     text-decoration: none;
     text-align: center;
     border: 2px solid black;
+    padding: 5px 30px;
     font-size: 1rem;
     cursor: pointer;
-    min-width: 20vw;
-    padding: 1vw;
     z-index: 9999;
     left: unset;
   }
@@ -484,6 +495,13 @@ About Jesvi Jonathan: https://jesvi.pythonanywhere.com
       90deg,
       rgb(111, 21, 163),
       rgb(22, 91, 145)
+    );
+  }
+  .debug888 {
+    background-image: linear-gradient(
+      90deg,
+      rgb(155, 99, 187),
+      rgb(30, 145, 22)
     );
   }
 </style>
