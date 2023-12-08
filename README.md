@@ -56,6 +56,7 @@ JOS-Animation, Javascript On Scroll Animation library is a simple & easy to use 
 - Fast, light and small with no/min toll on performance.
 - Simple & easy to setup for both beginners & experts.
 - Customize animation settings and build your own scroll invoked functions
+- [npm](https://www.npmjs.com/package/jos-animation) & [CDNjs](https://cdnjs.com/libraries/jos-animation) approved library for the fastest deliveies 
 - And lots more stuff... explore it yourself.
 
 This project is currently being developed by me & the dev community, So you can expect more features and updates quite often..
@@ -151,6 +152,7 @@ Badges
 />
 ```
 
+
 1. Add the <code>[\<script>](https://github.com/jesvijonathan/Jesvi-Bot/releases)</code> right after the <code>\<body></code> tag :
    <!-- For easier navigation use jsdelivr -->
    <!-- https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/v0.8.8/jos.min.js -->
@@ -159,6 +161,10 @@ Badges
 
 ```html
 <script src="https://unpkg.com/jos-animation/dist/jos.min.js"></script>
+```
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jos-animation/0.9.2/jos.js" integrity="sha512-ZbNmgrMmWwQspNz6WQ1HnqLEPMXE4PyJBVnuc10e4gwJhrycze2IzjDQPx4CxkOBnUyt5wNCekdeTRJOe8J4WA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 ```
 
 You can add minified version of the script by replacing <code>jos.js</code> with <code>jos.min.js</code> in the above script tag.
