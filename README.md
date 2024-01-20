@@ -356,6 +356,8 @@ import JOS from "jos-animation";
 // import JOS from "jos-animation/dist/jos.debug.js";
 ```
 
+<!-- some history here : https://github.com/jesvijonathan/JOS-Animation-Library/issues/15 -->
+
 ### Frameworks
 
 <details>
@@ -936,6 +938,8 @@ Maybe even [bundle it](#bundling-jos) and test it out before sharing it with the
 - [JOS Playground](https://jos-animation.vercel.app)
 - [CSC](https://jesvijonathan.github.io/christhava-sangam-church-website/)
 - [Bitspace](https://bitspace-nextjs-jos.vercel.app)
+- [MS Agency](https://www.ms-agency.org/)
+- [AI Avenue](https://ai-avenue.netlify.app/)
 
 (<i>Ping Me If you have a demo</i>)
 
@@ -954,4 +958,3 @@ Maybe even [bundle it](#bundling-jos) and test it out before sharing it with the
 #### <i><u>This project was solely developed by</i> [Jesvi Jonathan](https://jesvi.pythonanywhere.com)</u>
 
 </div>
-````
