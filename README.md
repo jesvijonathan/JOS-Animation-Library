@@ -57,7 +57,7 @@ JOS-Animation, Javascript On Scroll Animation library is a simple & easy to use 
 - Fast, light and small with no/min toll on performance.
 - Simple & easy to setup for both beginners & experts.
 - Customize animation settings and build your own scroll invoked functions
-- [npm](https://www.npmjs.com/package/jos-animation) & [CDNjs](https://cdnjs.com/libraries/jos-animation) approved library for the fastest deliveies 
+- [npm](https://www.npmjs.com/package/jos-animation) & [CDNjs](https://cdnjs.com/libraries/jos-animation) approved library for the fastest deliveies
 - And lots more stuff... explore it yourself.
 
 This project is currently being developed by me & the dev community, So you can expect more features and updates quite often..
@@ -136,15 +136,17 @@ Badges
 - [JavaScript](https://www.w3schools.com/js/)
 - [CSS](https://www.w3schools.com/css/)
 
-### Installation
+## Installating JOS
 
-0. Add the <code>[\<link>](https://github.com/jesvijonathan/Jesvi-Bot/releases)</code> inside the <code>\<head></code> tag :
-   (this step is not required from <code>v0.9</code> onwards)
+### Embedding JOS
+
+<!-- 0. Add the <code>[\<link>](https://github.com/jesvijonathan/Jesvi-Bot/releases)</code> inside the <code>\<head></code> tag :
+   (this step is not required from <code>v0.9</code> onwards) -->
 
 <!-- https://unpkg.com/jos-animation@latest/dist/jos.js -->
 <!-- "https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/v0.8.8/jos.css" -->
 
-```html
+<!-- ```html
 <link
   id="jos-stylesheet"
   rel="stylesheet"
@@ -153,32 +155,118 @@ Badges
 />
 ```
 
-
 1. Add the <code>[\<script>](https://github.com/jesvijonathan/Jesvi-Bot/releases)</code> right after the <code>\<body></code> tag :
    <!-- For easier navigation use jsdelivr -->
    <!-- https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/v0.8.8/jos.min.js -->
    <!-- For Stablility use unpkg  -->
    <!-- https://unpkg.com/jos-animation@latest/dist/jos.js -->
 
-```html
+<!-- ```html
 <script src="https://unpkg.com/jos-animation/dist/jos.min.js"></script>
 ```
 
 ```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jos-animation/0.9.2/jos.js" integrity="sha512-ZbNmgrMmWwQspNz6WQ1HnqLEPMXE4PyJBVnuc10e4gwJhrycze2IzjDQPx4CxkOBnUyt5wNCekdeTRJOe8J4WA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-```
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jos-animation/0.9.2/jos.js"
+  integrity="sha512-ZbNmgrMmWwQspNz6WQ1HnqLEPMXE4PyJBVnuc10e4gwJhrycze2IzjDQPx4CxkOBnUyt5wNCekdeTRJOe8J4WA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+```  -->
 
-You can add minified version of the script by replacing <code>jos.js</code> with <code>jos.min.js</code> in the above script tag.
+You have the option to use the latest version of JOS from a variety of sources :
+
+- #### [CDNJS](https://cdnjs.com/libraries/jos-animation) - (Recommended)
+
+  <!--   <link
+      id="jos-stylesheet"
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.css"
+      crossorigin="anonymous"
+    /> -->
+
+  ```html
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jos-animation/0.9.2/jos.js"
+    integrity="sha512-ZbNmgrMmWwQspNz6WQ1HnqLEPMXE4PyJBVnuc10e4gwJhrycze2IzjDQPx4CxkOBnUyt5wNCekdeTRJOe8J4WA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  ```
+
+- #### [JSDELIVR](https://www.jsdelivr.com/package/npm/jos-animation)
+
+  <!-- <link
+    id="jos-stylesheet"
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.css"
+    crossorigin="anonymous"
+  /> -->
+
+  ```html
+  <script src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.js"></script>
+  ```
+
+  (or)
+
+  ```html
+  <script src="https://cdn.jsdelivr.net/npm/jos-animation/dist/jos.js"></script>
+  ```
+
+  (or)
+
+  ```html
+  <script src="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/v0.9.2/jos.js"></script>
+  ```
+
+- #### [UNPKG](https://unpkg.com/jos-animation/)
+
+  <!--   <link
+    id="jos-stylesheet"
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.css"
+    crossorigin="anonymous"
+  /> -->
+
+  ```html
+  <script src="https://unpkg.com/jos-animation"></script>
+  ```
+
+  (or)
+
+  ```html
+  <script src="https://unpkg.com/jos-animation@0.9.2/dist/jos.js"></script>
+  ```
+
+- #### [Github](https://raw.githubusercontent.com/jesvijonathan/JOS-Animation-Library/master/dist/jos.js)
+
+  <!--   <link
+      id="jos-stylesheet"
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/jos.css"
+      crossorigin="anonymous"
+    /> -->
+
+  ```html
+  <script src="https://raw.githubusercontent.com/jesvijonathan/JOS-Animation-Library/master/dist/jos.js"></script>
+  ```
+
+<br>
+
+You can add minified version of the script by replacing <code>jos.js</code> with
+<code>jos.min.js</code> in the above script tag.
 
 <!-- Use <code>defer</code> attribute in script tag to make sure the script is loaded after the DOM is loaded. -->
 
-- <code>jos.js</code> for basic.
-- <code>jos.min.js</code> for production use.
-- <b><code>jos.debug.js</code></b> for <b>debugging</b> along with some other function
+- <code>jos.js</code> for basic. - <code>jos.min.js</code> for production use. -
+  <b><code>jos.debug.js</code></b> for <b>debugging</b> along with some other
+  function From <code>v0.9</code> onwards, by default <code>jos.js</code> does not
+  require you to add the stylesheet <code>jos.css</code>, it will be exported
+  along with the script. But you can still add the stylesheet if you want to for
+  some reason. ### Importing JOS 1. Install JOS using npm (yarn or pnpm) : ```bash
+  npm install jos-animation
 
-From <code>v0.9</code> onwards, by default <code>jos.js</code> does not require you to add the stylesheet <code>jos.css</code>, it will be exported along with the script. But you can still add the stylesheet if you want to for some reason.
-
-# Version Tags
+#### Version Tags
 
 <!-- https://unpkg.com/jos-animation@0.8.8/dist/jos.js -->
 
@@ -196,11 +284,11 @@ So it would be <code>https://unpkg.com/jos-animation/@latest/dist/jos.js</code> 
 <script>
   JOS.init();
 </script>
-```
+````
 
 By the end of this step, you should have something like this :
 
-```html
+````html
 <!DOCTYPE html>
 <html>
   <head>
@@ -228,16 +316,184 @@ By the end of this step, you should have something like this :
 
 ```bash
 npm install jos-animation
-```
+````
 
 2. Import JOS in your project :
 
-```js
+````js
 import "jos-animation/dist/jos.css";
 import JOS from "jos-animation";
 
 JOS.init();
 ``` -->
+<br>
+
+### Importing JOS
+
+1. Install JOS using npm (yarn or pnpm) :
+
+```bash
+npm install jos-animation
+```
+
+2. Import JOS in your project :
+
+```js
+// import "jos-animation/dist/jos.css";
+// Above is required only for v0.8.8 & below (or) if you want to overide jos by using style from the stylesheet
+
+import JOS from "jos-animation";
+
+// Other ways to import JOS
+// import JOS from "jos-animation/dist/jos.js";
+// import JOS from "jos-animation/dist/jos.min.js";
+// import JOS from "jos-animation/dist/jos.debug.js";
+```
+
+#### Frameworks
+
+<details>
+<summary>Vue</summary>
+
+```js
+// main.js
+
+import { createApp } from "vue";
+import { watch, nextTick } from "vue";
+
+import JOS from "jos-animation"; // jos-animation/dist/jos.debug.js
+
+import App from "./App.vue";
+
+const app = createApp(App);
+app.mount("#app");
+
+JOS.init();
+//JOS.version();
+
+watch(
+  () => router.currentRoute.value,
+  () => {
+    nextTick(() => {
+      JOS.refresh();
+    });
+  }
+);
+
+// To observe elements after a route change
+```
+
+Used in : [https://jos-animation.vercel.app/](https://github.com/jesvijonathan/JOS-Animation-Playground/blob/main/src/main.js)
+
+</details>
+
+<details>
+<summary>React</summary>
+
+```js
+// index.js
+
+import JOS from "jos-animation/dist/jos.js";
+
+onload = () => {
+  const options = {
+    debugMode: true,
+    animation: "flip",
+    duration: 0.7,
+    rootMargin: "0% 0% 0% 0%",
+  };
+  JOS.init(options);
+  //JOS.version();
+};
+
+function Main() {
+  useEffect(() => {
+    JOS.refresh();
+  }, []);
+  // To observe elements after a route change
+
+  return (
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<Main />);
+```
+
+<!-- Used in : [https://jos-animation.vercel.app/]() -->
+</details>
+
+<details>
+<summary>Next.js</summary>
+
+```js
+// app/layout.tsx
+
+import jos from "jos-animation/dist/jos.js";
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+const jos_options = {
+    debugMode: false,
+    passive: true,
+    animation: "fade",
+    duration: 0.4,
+    rootMargin: "20% 0% 30% 0%",
+  };
+
+  useEffect(() => {
+    jos.init(jos_options);
+  }, []); // Once
+
+  useEffect(() => {
+    jos.refresh();
+  }); // For every update
+
+  return ();
+}
+// To observe elements after a route change
+```
+
+Used in : [https://bitspace-nextjs-jos.vercel.app](https://github.com/jesvijonathan/bitspace-org-in/blob/master/src/app/layout.tsx)
+
+</details>
+
+<details>
+<summary>Angular</summary>
+
+```js
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
+
+import JOS from 'jos-animation';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent implements OnInit, AfterViewChecked {
+
+  ngOnInit(): void {
+    JOS.init(); // Once
+  }
+
+  ngAfterViewChecked(): void {
+    JOS.refresh(); // For every update
+  }
+
+  // ... rest of your code
+
+}
+```
+
+<!-- Used in : [https://jos-animation.vercel.app/]() -->
+
+</details>
 
 ## Setup
 
@@ -691,3 +947,4 @@ Maybe even [bundle it](#bundling-jos) and test it out before sharing it with the
 #### <i><u>This project was solely developed by</i> [Jesvi Jonathan](https://jesvi.pythonanywhere.com)</u>
 
 </div>
+````
