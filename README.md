@@ -176,7 +176,7 @@ Badges
 
 You have the option to use the latest version of JOS from a variety of sources :
 
-- #### [CDNJS](https://cdnjs.com/libraries/jos-animation) - (Recommended)
+##### [CDNJS](https://cdnjs.com/libraries/jos-animation) (Recommended)
 
   <!--   <link
       id="jos-stylesheet"
@@ -185,14 +185,18 @@ You have the option to use the latest version of JOS from a variety of sources :
       crossorigin="anonymous"
     /> -->
 
-  ```html
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/jos-animation/0.9.2/jos.js"
-    integrity="sha512-ZbNmgrMmWwQspNz6WQ1HnqLEPMXE4PyJBVnuc10e4gwJhrycze2IzjDQPx4CxkOBnUyt5wNCekdeTRJOe8J4WA=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  ></script>
-  ```
+```html
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jos-animation/0.9.2/jos.js"
+  integrity="sha512-ZbNmgrMmWwQspNz6WQ1HnqLEPMXE4PyJBVnuc10e4gwJhrycze2IzjDQPx4CxkOBnUyt5wNCekdeTRJOe8J4WA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+```
+
+<br>
+<details>
+<summary><b><i>Other Sources / CDNs</b></i></summary>
 
 - #### [JSDELIVR](https://www.jsdelivr.com/package/npm/jos-animation)
 
@@ -250,6 +254,8 @@ You have the option to use the latest version of JOS from a variety of sources :
   ```html
   <script src="https://raw.githubusercontent.com/jesvijonathan/JOS-Animation-Library/master/dist/jos.js"></script>
   ```
+
+</details>
 
 <br>
 
@@ -328,7 +334,7 @@ JOS.init();
 ``` -->
 <br>
 
-### Importing JOS
+## Importing JOS
 
 1. Install JOS using npm (yarn or pnpm) :
 
@@ -350,7 +356,7 @@ import JOS from "jos-animation";
 // import JOS from "jos-animation/dist/jos.debug.js";
 ```
 
-#### Frameworks
+### Frameworks
 
 <details>
 <summary>Vue</summary>
@@ -494,6 +500,7 @@ export class AppComponent implements OnInit, AfterViewChecked {
 <!-- Used in : [https://jos-animation.vercel.app/]() -->
 
 </details>
+<br>
 
 ## Setup
 
