@@ -176,7 +176,7 @@ Badges
 
 You have the option to use the latest version of JOS from a variety of sources :
 
-##### [CDNJS](https://cdnjs.com/libraries/jos-animation) (Recommended)
+##### [CDNJS](https://cdnjs.com/libraries/jos-animation)
 
   <!--   <link
       id="jos-stylesheet"
@@ -194,9 +194,15 @@ You have the option to use the latest version of JOS from a variety of sources :
 ></script>
 ```
 
+##### (or) [JSDELIVR](https://cdnjs.com/libraries/jos-animation)
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/jos-animation@0.9.2/dist/jos.js"></script>
+```
+
 <br>
 <details>
-<summary><b><i>Other Sources / CDNs</b></i></summary>
+<summary><b>Click here to check out other <u>Sources / CDNs</u></b></summary>
 
 - #### [JSDELIVR](https://www.jsdelivr.com/package/npm/jos-animation)
 
@@ -361,7 +367,7 @@ import JOS from "jos-animation";
 ### Frameworks
 
 <details>
-<summary>Vue</summary>
+<summary>Vue / Nuxt.js</summary>
 
 ```js
 // main.js
@@ -502,6 +508,8 @@ export class AppComponent implements OnInit, AfterViewChecked {
 ```
 
 <!-- Used in : [https://jos-animation.vercel.app/]() -->
+
+You can check this discussion thread for more information : [JOS for Angular](https://github.com/jesvijonathan/JOS-Animation-Library/issues/41#issuecomment-1914803098)
 
 </details>
 <br>
