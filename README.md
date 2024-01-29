@@ -393,6 +393,8 @@ watch(
 
 Used in : [https://jos-animation.vercel.app/](https://github.com/jesvijonathan/JOS-Animation-Playground/blob/main/src/main.js)
 
+This above exmaple for Vue.js is also applicable for Nuxt.js
+
 </details>
 
 <details>
@@ -936,6 +938,7 @@ Maybe even [bundle it](#bundling-jos) and test it out before sharing it with the
 - [CIT Takshashila 23](https://www.cittakshashila.in/)
 - [JOS Demo](https://jesvijonathan.github.io/JOS-Animation-Library/)
 - [JOS Playground](https://jos-animation.vercel.app)
+- [Jesvi Jonathan](https://jesvi.pythonanywhere.com)
 - [CSC](https://jesvijonathan.github.io/christhava-sangam-church-website/)
 - [Bitspace](https://bitspace-nextjs-jos.vercel.app)
 - [MS Agency](https://www.ms-agency.org/)
