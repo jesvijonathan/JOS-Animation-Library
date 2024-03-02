@@ -951,6 +951,9 @@ Maybe even [bundle it](#bundling-jos) and test it out before sharing it with the
 - [Bitspace](https://bitspace-nextjs-jos.vercel.app)
 - [MS Agency](https://www.ms-agency.org/)
 - [AI Avenue](https://ai-avenue.netlify.app/)
+- [portfolio-glasc](https://portfolio-glasc.vercel.app/es/)
+- [resort-maquetacion](https://resort-maquetacion.vercel.app/)
+- [mystep](https://www.mystep-s.com/)
 
 (<i>Ping Me If you have a demo</i>)
 
