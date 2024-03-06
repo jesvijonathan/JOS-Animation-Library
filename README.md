@@ -944,8 +944,8 @@ Maybe even [bundle it](#bundling-jos) and test it out before sharing it with the
 ## Used In
 
 - [CIT Takshashila 23](https://www.cittakshashila.in/)
-- [JOS Demo](https://jesvijonathan.github.io/JOS-Animation-Library/)
 - [JOS Playground](https://jos-animation.vercel.app)
+- [JOS Demo (Old)](https://jesvijonathan.github.io/JOS-Animation-Library/)
 - [Jesvi Jonathan](https://jesvi.pythonanywhere.com)
 - [CSC](https://jesvijonathan.github.io/christhava-sangam-church-website/)
 - [Bitspace](https://bitspace-nextjs-jos.vercel.app)
@@ -954,6 +954,7 @@ Maybe even [bundle it](#bundling-jos) and test it out before sharing it with the
 - [portfolio-glasc](https://portfolio-glasc.vercel.app/es/)
 - [resort-maquetacion](https://resort-maquetacion.vercel.app/)
 - [mystep](https://www.mystep-s.com/)
+- [kazifi-landing](https://kazifi-landing-preview.vercel.app)
 
 (<i>Ping Me If you have a demo</i>)
 
