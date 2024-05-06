@@ -57,12 +57,12 @@ JOS-Animation, Javascript On Scroll Animation library is a simple & easy to use 
 - Fast, light and small with no/min toll on performance.
 - Simple & easy to setup for both beginners & experts.
 - Customize animation settings and build your own scroll invoked functions
-- [npm](https://www.npmjs.com/package/jos-animation) & [CDNjs](https://cdnjs.com/libraries/jos-animation) approved library for the fastest deliveies
+- [npm](https://www.npmjs.com/package/jos-animation) & [CDNjs](https://cdnjs.com/libraries/jos-animation) approved library for the fastest deliveries
 - And lots more stuff... explore it yourself.
 
 This project is currently being developed by me & the dev community, So you can expect more features and updates quite often..
 
-Was inpired by GSAP, AOS libraries. I wanted something easier to use, with great performance and wanted to make the implementation better. So I worked on this project from scratch.
+Was inspired by GSAP, AOS libraries. I wanted something easier to use, with great performance and wanted to make the implementation better. So I worked on this project from scratch.
 
 Feel free to report an issue or request a feature in this repository :)
 & for more information, Check out the [JOS Webpage](https://jos-animation.vercel.app).
@@ -136,7 +136,7 @@ Badges
 - [JavaScript](https://www.w3schools.com/js/)
 - [CSS](https://www.w3schools.com/css/)
 
-## Installating JOS
+## Installing JOS
 
 ### Embedding JOS
 
@@ -158,7 +158,7 @@ Badges
 1. Add the <code>[\<script>](https://github.com/jesvijonathan/Jesvi-Bot/releases)</code> right after the <code>\<body></code> tag :
    <!-- For easier navigation use jsdelivr -->
    <!-- https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library/dist/v0.8.8/jos.min.js -->
-   <!-- For Stablility use unpkg  -->
+   <!-- For Stability use unpkg  -->
    <!-- https://unpkg.com/jos-animation@latest/dist/jos.js -->
 
 <!-- ```html
@@ -399,7 +399,7 @@ watch(
 
 Used in : [https://jos-animation.vercel.app/](https://github.com/jesvijonathan/JOS-Animation-Playground/blob/main/src/main.js)
 
-This above exmaple for Vue.js is also applicable for Nuxt.js
+This above example for Vue.js is also applicable for Nuxt.js
 
 </details>
 
@@ -531,7 +531,7 @@ You can check this discussion thread for more information : [JOS for Angular](ht
 <!-- Global Parameters -->
 <script>
   JOS.init({
-    // disable: false, // Disable JOS gloabaly | Values :  'true', 'false'
+    // disable: false, // Disable JOS globally | Values :  'true', 'false'
     debugMode: true, // Enable JOS debug mode | Values :  'true', 'false'
     passive: false, // Set the passive option for the scroll event listener | Values :  'true', 'false'
 
@@ -540,17 +540,17 @@ You can check this discussion thread for more information : [JOS for Angular](ht
     // animationInverse: "static", // Set the animation type for the element when it is scrolled out of view | Values :  'fade', 'slide', 'zoom', 'flip', 'fade-right', 'fade-left', 'fade-up', 'fade-down', 'zoom-in-right', 'zoom-in-left', 'zoom-in-up', 'zoom-in-down', 'zoom-out-right', 'zoom-out-left', 'zoom-out-up', 'zoom-out-down', 'flip-right', 'flip-left', 'flip-up', 'flip-down, spin, revolve, stretch, "my-custom-animation"
     timingFunction: "ease-in-out", // JOS global timing function | Values :  'ease', 'ease-in', 'ease-out', 'ease-in-out', 'linear', 'step-start', 'step-end', 'steps()', 'cubic-bezier()', 'my-custom-timing-function'
     //mirror : false, // Set whether the element should animate back when scrolled out of view | Values :  'true', 'false'
-    threshold: 0, // Set gloabal the threshold for the element to be visible | Values :  0-1
+    threshold: 0, // Set global the threshold for the element to be visible | Values :  0-1
     delay: 0, // Set global the delay for the animation to start | Values :  0,1,2,3,4,5
     duration: 0.7, // Set global the duration for the animation playback | Values :  flota : 0-1 & int : 0,1,2,3,4,5
 
     // startVisible: "true", // Set whether the element should animate when the page is loaded | Values :  'true', 'false' || MS : 0-10000
     // scrollDirection: "down", // Set the scroll direction for the element to be visible | Values :  'up', 'down', 'none'
     //scrollProgressDisable: true // disable or enable scroll callback function | Values :  'true', 'false'
-    // intersectionRatio: 0.4, // Set the intersection ratio between which the element should be visible | Values :  0-1 (automaticaly set)
+    // intersectionRatio: 0.4, // Set the intersection ratio between which the element should be visible | Values :  0-1 (automatically set)
     // rootMargin_top: "0%", // Set by which percent the element should animate out (Recommended value between 10% to -30%)
     // rootMargin_bottom: "-50%", // Set by which percent the element should animate out (Recommended value between -10% to -60%)
-    // rootMargin: "0% 0% -50% 0%", // Set the root margin for the element to be visible | Values :  _% _% _% _%  (automaticaly set)
+    // rootMargin: "0% 0% -50% 0%", // Set the root margin for the element to be visible | Values :  _% _% _% _%  (automatically set)
   });
 </script>
 ```
@@ -601,7 +601,7 @@ See [JOS Props](#jos-attributes) for full information regarding the animation, a
 }
 ```
 
-2. Use your cutom animation by setting the <code>data-jos_animation</code> attribute to <code>my-custom-animation</code> :
+2. Use your custom animation by setting the <code>data-jos_animation</code> attribute to <code>my-custom-animation</code> :
 
 ```html
 <div class="jos" data-jos_animation="my-custom-animation"></div>
@@ -620,7 +620,7 @@ Example : [Custom Animation]()
 }
 ```
 
-2. Use your cutom inverse animation by setting the <code>data-jos_animationInverse</code> attribute to <code>my-custom-animation-inverse</code> :
+2. Use your custom inverse animation by setting the <code>data-jos_animationInverse</code> attribute to <code>my-custom-animation-inverse</code> :
 
 ```html
 <div class="jos" data-jos_animationInverse="my-custom-animation-inverse"></div>
@@ -683,7 +683,7 @@ Example : [Playable Animation]()
 }
 ```
 
-2. Use your cutom timing function by setting the <code>data-jos_timing-function</code> attribute to <code>my-custom-timing-function</code> :
+2. Use your custom timing function by setting the <code>data-jos_timing-function</code> attribute to <code>my-custom-timing-function</code> :
 
 ```html
 <div class="jos" data-jos_timing-function="myCustom-timingFunc"></div>
@@ -723,7 +723,7 @@ Example : [Anchor](https://github.com/jesvijonathan/JOS-Animation-Library/blob/m
 
 This triggers the animation when the element is scrolled into view from the up to <code>down</code> direction.<br> & you can do the same for down to <code>up</code> direction.
 
-This is partciluarly useful when you want to animate an element when it is **scrolled into view from a particular direction.**
+This is particularly useful when you want to animate an element when it is **scrolled into view from a particular direction.**
 
 Example : [Direction Based Animation]()
 
@@ -736,14 +736,14 @@ Example : [Direction Based Animation]()
 <div class="jos" data-jos_startVisible="true"></div>
 ```
 
-This sets the element to be visivle when the page is loaded. you can add a delay to it by setting the value in <code>ms</code> :
+This sets the element to be visible when the page is loaded. you can add a delay to it by setting the value in <code>ms</code> :
 
 ```html
-<!-- My animated element that is visivle with a given timer/delay in ms-->
+<!-- My animated element that is visible with a given timer/delay in ms-->
 <div class="jos" data-jos_startVisible="3000"></div>
 ```
 
-This sets the element to be visivle when the page is loaded after <code>3000</code>ms or instantly if the value is <code>0</code> (or) <code>true</code>.
+This sets the element to be visible when the page is loaded after <code>3000</code>ms or instantly if the value is <code>0</code> (or) <code>true</code>.
 
 This feature is useful especially when you want an element which is in a <b>fixed position, or is present in the landing page</b> to be at initially in a visible state with no animation .
 
@@ -760,7 +760,7 @@ function myCustomFunction() {
 }
 ```
 
-2. Use your cutom function by setting the <code>data-jos_invoke</code> attribute to <code>myCustomFunction</code> :
+2. Use your custom function by setting the <code>data-jos_invoke</code> attribute to <code>myCustomFunction</code> :
 
 ```html
 <div class="jos" data-jos_invoke="myCustomFunction"></div>
