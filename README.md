@@ -943,7 +943,7 @@ Maybe even [bundle it](#bundling-jos) and test it out before sharing it with the
 
 ## Used In
 
-- [CIT Takshashila 23](https://www.cittakshashila.in/)
+- [CIT Takshashila 23](https://2023.cittakshashila.in)
 - [JOS Playground](https://jos-animation.vercel.app)
 - [JOS Demo (Old)](https://jesvijonathan.github.io/JOS-Animation-Library/)
 - [Jesvi Jonathan](https://jesvi.pythonanywhere.com)
