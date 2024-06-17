@@ -438,7 +438,9 @@ function Main() {
 ReactDOM.createRoot(document.getElementById("root")).render(<Main />);
 ```
 
-<!-- Used in : [https://jos-animation.vercel.app/]() -->
+Used in : [https://azzle.netlify.app](https://azzle.netlify.app/)
+
+This above example is for React.js is also applicable for Next.js & Preact.js
 </details>
 
 <details>
