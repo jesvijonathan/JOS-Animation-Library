@@ -956,7 +956,8 @@ Maybe even [bundle it](#bundling-jos) and test it out before sharing it with the
 - [mystep](https://www.mystep-s.com/)
 - [kazifi-landing](https://kazifi-landing-preview.vercel.app)
 - [npas-technoverse](https://npas-technoverse.vercel.app/)
-
+- [Azzle AI](https://azzle.netlify.app/) 
+  
 (<i>Ping Me If you have a demo ;)</i>)
 
 ### Why use JOS ?
