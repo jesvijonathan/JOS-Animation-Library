@@ -21,7 +21,7 @@ class jos {
   scrollProgressDisable = undefined;
   disable = false;
 
-  static version = "0.9.2 (Development)";
+  static version = "0.9.3 (Development)";
   static author = "Jesvi Jonathan";
   static webpage = "https://jos-animation.vercel.app";
   static github = "https://github.com/jesvijonathan/JOS-Animation-Library";
@@ -81,14 +81,12 @@ class jos {
           if (target.dataset.jos_invoke != undefined) {
             window[target.dataset.jos_invoke](target);
           }
-          if (
-            target.dataset.jos_once != undefined ||
-            target.dataset.jos_once != "false"
-          ) {
-            if (target.dataset.jos_once == "true") {
-              observer.unobserve(target);
-            } else if (target.dataset.jos_counter >= target.dataset.jos_once) {
-              observer.unobserve(target);
+          let parentAnchors = document.querySelectorAll("[data-jos_anchor='#" + parentTarget.id + "']");
+          if (target.dataset.jos_once && (target.dataset.jos_once == "true" || target.dataset.jos_counter >= target.dataset.jos_once)) {
+            if (parentAnchors.length < 2) {
+              observer.unobserve(parentTarget);
+            } else if (parentAnchors.length > 1) {
+              target.removeAttribute("data-jos_anchor");
             }
           }
           if (target_jos_animationinverse != undefined) {
