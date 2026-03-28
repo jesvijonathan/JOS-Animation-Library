@@ -1,7 +1,7 @@
 /**
  * JOS - JavaScript On Scroll Animation Library
  *
- * @version 1.0.0-beta.1
+ * @version 1.0.0-beta.2
  * @author Jesvi Jonathan
  * @license MIT
  * @see https://jos-animation.vercel.app
@@ -16,7 +16,7 @@ import { DebugOverlay } from "./DebugOverlay.js";
 import { queryAll } from "../utils/dom.js";
 
 class JOS {
-  static version = "1.0.0-beta.1";
+  static version = "1.0.0-beta.2";
   static author = "Jesvi Jonathan";
   static webpage = "https://jos-animation.vercel.app";
   static github = "https://github.com/jesvijonathan/JOS-Animation-Library";

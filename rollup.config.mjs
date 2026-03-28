@@ -4,7 +4,7 @@ import terser from "@rollup/plugin-terser";
 import postcss from "rollup-plugin-postcss";
 
 const banner = `/*!
- * JOS Animation Library v1.0.0-beta.1
+ * JOS Animation Library v1.0.0-beta.2
  * https://jos-animation.vercel.app
  * (c) ${new Date().getFullYear()} Jesvi Jonathan
  * Released under the MIT License
