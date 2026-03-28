@@ -42,6 +42,7 @@ jobs:
             dist/jos.full.min.js
           generate_release_notes: true
           prerelease: ${{ contains(github.ref, 'beta') || contains(github.ref, 'alpha') || contains(github.ref, 'rc') }}
+          make_latest: ${{ !contains(github.ref, 'beta') && !contains(github.ref, 'alpha') && !contains(github.ref, 'rc') }}
 
       - name: Publish to npm (beta)
         if: contains(github.ref, 'beta') || contains(github.ref, 'alpha') || contains(github.ref, 'rc')
