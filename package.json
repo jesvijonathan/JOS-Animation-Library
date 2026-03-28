@@ -1,6 +1,6 @@
 {
   "name": "jos-animation",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0",
   "description": "A lightweight, performant scroll animation library for the web",
   "author": "Jesvi Jonathan",
   "license": "MIT",

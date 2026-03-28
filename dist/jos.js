@@ -1,5 +1,5 @@
 /*!
- * JOS Animation Library v1.0.0-beta.1
+ * JOS Animation Library v1.0.0
  * https://jos-animation.vercel.app
  * (c) 2026 Jesvi Jonathan
  * Released under the MIT License
@@ -1183,7 +1183,7 @@
   /**
    * JOS - JavaScript On Scroll Animation Library
    *
-   * @version 1.0.0-beta.1
+   * @version 1.0.0
    * @author Jesvi Jonathan
    * @license MIT
    * @see https://jos-animation.vercel.app
@@ -1191,7 +1191,7 @@
 
 
   class JOS {
-    static version = "1.0.0-beta.1";
+    static version = "1.0.0";
     static author = "Jesvi Jonathan";
     static webpage = "https://jos-animation.vercel.app";
     static github = "https://github.com/jesvijonathan/JOS-Animation-Library";

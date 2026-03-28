@@ -71,7 +71,7 @@ JOS.init();
 
 ```html
 <!-- CDNJS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jos-animation/1.0.0-beta.2/jos.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jos-animation/1.0.0/jos.min.js"></script>
 
 <!-- unpkg -->
 <script src="https://unpkg.com/jos-animation/dist/jos.min.js"></script>
@@ -522,7 +522,7 @@ src/
 Releases are automated via GitHub Actions:
 
 1. Update version in `package.json`
-2. `git tag v1.0.0-beta.2 && git push --tags`
+2. `git tag v1.0.0 && git push --tags`
 3. CI builds, tests, creates GitHub Release, and publishes to npm
 
 ## Used In
