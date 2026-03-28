@@ -7,7 +7,7 @@
 <h3 align="center">JOS Animation Library</h3>
 
 <p align="center">
-  A lightweight, performant scroll animation library for the web.
+  A lightweight, performant scroll animation library for the web
   <br /><br />
   <a href="https://www.npmjs.com/package/jos-animation"><img src="https://img.shields.io/npm/v/jos-animation?color=6366f1&label=npm" alt="npm version"></a>
   <a href="https://www.jsdelivr.com/package/npm/jos-animation"><img src="https://data.jsdelivr.com/v1/package/npm/jos-animation/badge?style=rounded" alt="jsDelivr"></a>
