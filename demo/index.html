@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JOS Animation Library | Demo</title>
+  <meta name="description" content="JOS - A lightweight, performant scroll animation library for the web" />
+  <meta name="author" content="Jesvi Jonathan" />
+  <link rel="icon"
+    href="https://cdn.jsdelivr.net/gh/jesvijonathan/JOS-Animation-Library@master/res/favicon/favicon.ico"
+    type="image/x-icon" />
+
+  <!-- JOS CSS -->
+  <link rel="stylesheet" href="../dist/jos.css" id="jos-stylesheet" />
+
+  <style>
+    :root {
+      --bg: #09090b;
+      --surface: #131316;
+      --surface-raised: #1a1a1f;
+      --border: #27272a;
+      --border-hover: #3f3f46;
+      --text: #fafafa;
+      --text-muted: #71717a;
+      --accent: #6366f1;
+      --accent-soft: rgba(99, 102, 241, 0.12);
+      --radius: 10px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* ── Sticky Nav ── */
+    .topnav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(9, 9, 11, 0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+      height: 52px;
+      font-size: 0.85rem;
+    }
+    .topnav-brand { font-weight: 600; color: var(--text); text-decoration: none; letter-spacing: -0.02em; }
+    .topnav-brand span { color: var(--accent); }
+    .topnav-links { display: flex; gap: 0.25rem; overflow-x: auto; }
+    .topnav-links a {
+      padding: 0.35rem 0.7rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-radius: 6px;
+      white-space: nowrap;
+      transition: color 0.15s, background 0.15s;
+    }
+    .topnav-links a:hover { color: var(--text); background: var(--accent-soft); }
+
+    /* ── Hero ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 5rem 2rem 2rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+    }
+    .hero h1 span { color: var(--accent); }
+    .hero .subtitle {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--text-muted);
+      max-width: 480px;
+      margin-bottom: 2rem;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--accent-soft);
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      padding: 0.2rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+      font-weight: 500;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.4rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .btn-primary { background: var(--accent); color: #fff; border: 1px solid var(--accent); }
+    .btn-primary:hover { background: #4f46e5; }
+    .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+    .btn-ghost:hover { border-color: var(--border-hover); background: var(--surface); }
+    .scroll-hint {
+      margin-top: 4rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      animation: bounce 2s ease-in-out infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    /* ── Section ── */
+    .section {
+      padding: 5rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section + .section { border-top: 1px solid var(--border); }
+    .section-header { text-align: center; margin-bottom: 3rem; }
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+    .section-desc {
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto;
+      font-size: 0.95rem;
+    }
+
+    /* ── Animation Grid ── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 1rem;
+    }
+    .grid-item {
+      aspect-ratio: 1;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-align: center;
+      padding: 0.75rem;
+      transition: border-color 0.2s;
+      word-break: break-word;
+    }
+    .grid-item:hover { border-color: var(--accent); }
+
+    /* ── Wide Cards ── */
+    .card-stack { display: flex; flex-direction: column; gap: 1rem; align-items: center; }
+    .card {
+      width: 100%;
+      max-width: 580px;
+      padding: 1.25rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+    .card code {
+      background: var(--surface-raised);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+
+    /* ── Stagger ── */
+    .stagger-row {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .stagger-item {
+      width: 72px;
+      height: 72px;
+      background: var(--accent);
+      border-radius: var(--radius);
+    }
+
+    /* ── Scroll Progress ── */
+    .progress-box {
+      width: 180px;
+      height: 180px;
+      background: var(--surface);
+      border: 2px solid var(--accent);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      font-variant-numeric: tabular-nums;
+      margin: 0 auto;
+    }
+
+    /* ── Custom animations for inverse demo ── */
+    .jos-custom-bounce { animation: custom-bounce 0.6s ease-in-out infinite alternate; }
+    @keyframes custom-bounce {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-16px); }
+    }
+    .jos-disappear-zero { transform: scaleY(0); opacity: 0; transform-origin: top; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .topnav-links { display: none; }
+      .grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+      .stagger-item { width: 52px; height: 52px; }
+      .section { padding: 3.5rem 1.25rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Nav -->
+  <nav class="topnav">
+    <a href="#" class="topnav-brand"><span>JOS</span> Animation</a>
+    <div class="topnav-links">
+      <a href="#fade">Fade</a>
+      <a href="#slide">Slide</a>
+      <a href="#zoom">Zoom</a>
+      <a href="#flip">Flip &amp; Rotate</a>
+      <a href="#transforms">Transforms</a>
+      <a href="#filters">Filters</a>
+      <a href="#stagger">Stagger</a>
+      <a href="#features">Features</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero" id="top">
+    <div class="jos" data-jos_animation="fade-down" data-jos_duration="0.8" data-jos_startVisible="true">
+      <span class="badge">v1.0.0-beta.1</span>
+      <h1>Scroll animations,<br><span>made simple.</span></h1>
+      <p class="subtitle">A lightweight, performant scroll animation library built with IntersectionObserver.</p>
+      <div class="hero-actions">
+        <a href="https://github.com/jesvijonathan/JOS-Animation-Library" target="_blank" class="btn btn-primary">GitHub</a>
+        <a href="https://www.npmjs.com/package/jos-animation" target="_blank" class="btn btn-ghost">npm</a>
+        <a href="#fade" class="btn btn-ghost">View Demos ↓</a>
+      </div>
+    </div>
+    <div class="scroll-hint jos" data-jos_animation="fade" data-jos_startVisible="2000">↓ Scroll to explore</div>
+    <!-- Debug overlay appears after hero -->
+    <div data-jos-debug-after style="height:1px;"></div>
+  </header>
+
+  <!-- ═══════════════════════ ANIMATIONS ═══════════════════════ -->
+
+  <!-- Fade -->
+  <section id="fade" class="section">
+    <div class="section-header">
+      <h2 class="section-title jos" data-jos_animation="fade-up">Fade</h2>
+      <p class="section-desc jos" data-jos_animation="fade-up" data-jos_delay="0.05">Opacity transitions with optional directional movement.</p>
+    </div>
+    <div class="grid">
+      <div class="grid-item jos" data-jos_animation="fade">fade</div>
+      <div class="grid-item jos" data-jos_animation="fade-up">fade-up</div>
+      <div class="grid-item jos" data-jos_animation="fade-down">fade-down</div>
+      <div class="grid-item jos" data-jos_animation="fade-left">fade-left</div>
+      <div class="grid-item jos" data-jos_animation="fade-right">fade-right</div>
+      <div class="grid-item jos" data-jos_animation="fade-left-up">fade-left-up</div>
+      <div class="grid-item jos" data-jos_animation="fade-left-down">fade-left-down</div>
+      <div class="grid-item jos" data-jos_animation="fade-right-up">fade-right-up</div>
+      <div class="grid-item jos" data-jos_animation="fade-right-down">fade-right-down</div>
+    </div>
+  </section>
+
+  <!-- Slide -->
+  <section id="slide" class="section">
+    <div class="section-header">
+      <h2 class="section-title jos" data-jos_animation="fade-up">Slide</h2>
+      <p class="section-desc jos" data-jos_animation="fade-up" data-jos_delay="0.05">Pure transform slides — no opacity change.</p>
+    </div>
+    <div class="grid">
+      <div class="grid-item jos" data-jos_animation="slide">slide</div>
+      <div class="grid-item jos" data-jos_animation="slide-right">slide-right</div>
+      <div class="grid-item jos" data-jos_animation="slide-left">slide-left</div>
+      <div class="grid-item jos" data-jos_animation="slide-up">slide-up</div>
+      <div class="grid-item jos" data-jos_animation="slide-down">slide-down</div>
+      <div class="grid-item jos" data-jos_animation="slide-right-up">slide-right-up</div>
+      <div class="grid-item jos" data-jos_animation="slide-right-down">slide-right-down</div>
+      <div class="grid-item jos" data-jos_animation="slide-left-up">slide-left-up</div>
+      <div class="grid-item jos" data-jos_animation="slide-left-down">slide-left-down</div>
+    </div>
+  </section>
+
+  <!-- Zoom -->
+  <section id="zoom" class="section">
+    <div class="section-header">
+      <h2 class="section-title jos" data-jos_animation="fade-up">Zoom</h2>
+      <p class="section-desc jos" data-jos_animation="fade-up" data-jos_delay="0.05">Scale-based entrance animations.</p>
+    </div>
+    <div class="grid">
+      <div class="grid-item jos" data-jos_animation="zoom">zoom</div>
+      <div class="grid-item jos" data-jos_animation="zoom-out">zoom-out</div>
+      <div class="grid-item jos" data-jos_animation="zoom-in">zoom-in</div>
+      <div class="grid-item jos" data-jos_animation="zoom-in-up">zoom-in-up</div>
+      <div class="grid-item jos" data-jos_animation="zoom-in-down">zoom-in-down</div>
+      <div class="grid-item jos" data-jos_animation="zoom-in-right">zoom-in-right</div>
+      <div class="grid-item jos" data-jos_animation="zoom-in-left">zoom-in-left</div>
+      <div class="grid-item jos" data-jos_animation="zoom-out-right">zoom-out-right</div>
+      <div class="grid-item jos" data-jos_animation="zoom-out-left">zoom-out-left</div>
+      <div class="grid-item jos" data-jos_animation="zoom-out-up">zoom-out-up</div>
+      <div class="grid-item jos" data-jos_animation="zoom-out-down">zoom-out-down</div>
+    </div>
+  </section>
+
+  <!-- Flip & Rotate -->
+  <section id="flip" class="section">
+    <div class="section-header">
+      <h2 class="section-title jos" data-jos_animation="fade-up">Flip &amp; Rotate</h2>
+      <p class="section-desc jos" data-jos_animation="fade-up" data-jos_delay="0.05">3D perspective flips, rotations, and spins.</p>
+    </div>
+    <div class="grid">
+      <div class="grid-item jos" data-jos_animation="flip">flip</div>
+      <div class="grid-item jos" data-jos_animation="flip-right">flip-right</div>
+      <div class="grid-item jos" data-jos_animation="flip-left">flip-left</div>
+      <div class="grid-item jos" data-jos_animation="flip-up">flip-up</div>
+      <div class="grid-item jos" data-jos_animation="flip-down">flip-down</div>
+      <div class="grid-item jos" data-jos_animation="rotate">rotate</div>
+      <div class="grid-item jos" data-jos_animation="rotate-right">rotate-right</div>
+      <div class="grid-item jos" data-jos_animation="rotate-left">rotate-left</div>
+      <div class="grid-item jos" data-jos_animation="spin">spin</div>
+      <div class="grid-item jos" data-jos_animation="spin-right">spin-right</div>
+      <div class="grid-item jos" data-jos_animation="spin-left">spin-left</div>
+      <div class="grid-item jos" data-jos_animation="revolve">revolve</div>
+      <div class="grid-item jos" data-jos_animation="revolve-right">revolve-right</div>
+      <div class="grid-item jos" data-jos_animation="revolve-left">revolve-left</div>
+    </div>
+  </section>
+
+  <!-- Transforms -->
+  <section id="transforms" class="section">
+    <div class="section-header">
+      <h2 class="section-title jos" data-jos_animation="fade-up">Transforms</h2>
+      <p class="section-desc jos" data-jos_animation="fade-up" data-jos_delay="0.05">Grow, shrink, stretch, skew, and slant.</p>
+    </div>
+    <div class="grid">
+      <div class="grid-item jos" data-jos_animation="grow">grow</div>
+      <div class="grid-item jos" data-jos_animation="grow-right">grow-right</div>
+      <div class="grid-item jos" data-jos_animation="grow-left">grow-left</div>
+      <div class="grid-item jos" data-jos_animation="grow-up">grow-up</div>
+      <div class="grid-item jos" data-jos_animation="grow-down">grow-down</div>
+      <div class="grid-item jos" data-jos_animation="shrink">shrink</div>
+      <div class="grid-item jos" data-jos_animation="shrink-right">shrink-right</div>
+      <div class="grid-item jos" data-jos_animation="shrink-left">shrink-left</div>
+      <div class="grid-item jos" data-jos_animation="shrink-up">shrink-up</div>
+      <div class="grid-item jos" data-jos_animation="shrink-down">shrink-down</div>
+      <div class="grid-item jos" data-jos_animation="stretch">stretch</div>
+      <div class="grid-item jos" data-jos_animation="stretch-vertical">stretch-vertical</div>
+      <div class="grid-item jos" data-jos_animation="skew">skew</div>
+      <div class="grid-item jos" data-jos_animation="skew-right">skew-right</div>
+      <div class="grid-item jos" data-jos_animation="skew-left">skew-left</div>
+      <div class="grid-item jos" data-jos_animation="skew-up">skew-up</div>
+      <div class="grid-item jos" data-jos_animation="skew-down">skew-down</div>
+      <div class="grid-item jos" data-jos_animation="slant">slant</div>
+      <div class="grid-item jos" data-jos_animation="slant-right">slant-right</div>
+      <div class="grid-item jos" data-jos_animation="slant-left">slant-left</div>
+    </div>
+  </section>
+
+  <!-- Filters -->
+  <section id="filters" class="section">
+    <div class="section-header">
+      <h2 class="section-title jos" data-jos_animation="fade-up">Filters</h2>
+      <p class="section-desc jos" data-jos_animation="fade-up" data-jos_delay="0.05">CSS filter-based effects — blur, greyscale, sepia, and more.</p>
+    </div>
+    <div class="grid">
+      <div class="grid-item jos" data-jos_animation="blur">blur</div>
+      <div class="grid-item jos" data-jos_animation="grey">grey</div>
+      <div class="grid-item jos" data-jos_animation="brightness">brightness</div>
+      <div class="grid-item jos" data-jos_animation="invert">invert</div>
+      <div class="grid-item jos" data-jos_animation="sepia">sepia</div>
+      <div class="grid-item jos" data-jos_animation="saturate">saturate</div>
+      <div class="grid-item jos" data-jos_animation="hue-rotate">hue-rotate</div>
+      <div class="grid-item jos" data-jos_animation="backdrop">backdrop</div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ FEATURES ═══════════════════════ -->
+
+  <!-- Stagger -->
+  <section id="stagger" class="section">
+    <div class="section-header">
+      <h2 class="section-title jos" data-jos_animation="fade-up">Stagger</h2>
+      <p class="section-desc jos" data-jos_animation="fade-up" data-jos_delay="0.05">Sequentially animate children with configurable delay.</p>
+    </div>
+
+    <div class="stagger-row jos" data-jos_stagger="fade-up" data-jos_stagger_seq="0.08">
+      <div class="stagger-item"></div>
+      <div class="stagger-item"></div>
+      <div class="stagger-item"></div>
+      <div class="stagger-item"></div>
+      <div class="stagger-item"></div>
+      <div class="stagger-item"></div>
+      <div class="stagger-item"></div>
+      <div class="stagger-item"></div>
+    </div>
+
+    <div style="height: 2.5rem;"></div>
+
+    <div class="stagger-row jos" data-jos_stagger="spin" data-jos_stagger_seq="0.12" data-jos_stagger_duration="0.6">
+      <div class="stagger-item" style="border-radius: 50%;"></div>
+      <div class="stagger-item" style="border-radius: 50%;"></div>
+      <div class="stagger-item" style="border-radius: 50%;"></div>
+      <div class="stagger-item" style="border-radius: 50%;"></div>
+      <div class="stagger-item" style="border-radius: 50%;"></div>
+    </div>
+
+    <div style="height: 2.5rem;"></div>
+
+    <div class="stagger-row jos" data-jos_stagger="zoom-in" data-jos_stagger_seq="0.1" data-jos_stagger_duration="0.5">
+      <div class="stagger-item" style="background: #10b981;"></div>
+      <div class="stagger-item" style="background: #10b981;"></div>
+      <div class="stagger-item" style="background: #10b981;"></div>
+      <div class="stagger-item" style="background: #10b981;"></div>
+      <div class="stagger-item" style="background: #10b981;"></div>
+      <div class="stagger-item" style="background: #10b981;"></div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="section">
+    <div class="section-header">
+      <h2 class="section-title jos" data-jos_animation="fade-up">Features</h2>
+      <p class="section-desc jos" data-jos_animation="fade-up" data-jos_delay="0.05">Advanced controls available on every animation.</p>
+    </div>
+
+    <!-- Scroll Direction -->
+    <h3 class="jos" data-jos_animation="fade-up" style="text-align:center; margin-bottom:1rem; font-size: 1.1rem; color: var(--text-muted);">Scroll Direction</h3>
+    <div class="card-stack" style="margin-bottom: 3rem;">
+      <div class="card jos" data-jos_animation="fade-right" data-jos_scrollDirection="down">
+        Animates on scroll <code>DOWN</code> only
+      </div>
+      <div class="card jos" data-jos_animation="fade-left" data-jos_scrollDirection="up">
+        Animates on scroll <code>UP</code> only
+      </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <h3 class="jos" data-jos_animation="fade-up" style="text-align:center; margin-bottom:1rem; font-size: 1.1rem; color: var(--text-muted);">Scroll Progress</h3>
+    <p class="jos section-desc" data-jos_animation="fade-up" style="margin-bottom:1.5rem;">Element tracks 0-100% as it travels through the viewport. CSS vars <code>--jos_scroll</code> also update live.</p>
+    <div style="margin-bottom: 1.5rem;">
+      <div class="progress-box jos jos-no-transition" data-jos_scroll="scrollProgress" data-jos_animation="fade" id="progress-demo">0%</div>
+    </div>
+
+    <!-- Anchor-to-Anchor Progress -->
+    <h3 class="jos" data-jos_animation="fade-up" style="text-align:center; margin-bottom:1rem; font-size: 1.1rem; color: var(--text-muted);">Anchor-to-Anchor Progress</h3>
+    <p class="jos section-desc" data-jos_animation="fade-up" style="margin-bottom:1.5rem;">Track scroll between two markers. 0% at <code>#start</code>, 100% at <code>#end</code>.</p>
+    <div id="anchor-start" style="text-align:center;color:var(--accent);font:0.8rem monospace;margin-bottom:1rem;">── #anchor-start ──</div>
+    <div style="margin-bottom: 1.5rem;">
+      <div class="progress-box jos jos-no-transition" data-jos_scroll="anchorProgress" data-jos_scroll_start="#anchor-start" data-jos_scroll_end="#anchor-end" data-jos_animation="fade" id="anchor-progress-demo">0%</div>
+    </div>
+    <div style="height:30vh;"></div>
+    <div id="anchor-end" style="text-align:center;color:var(--accent);font:0.8rem monospace;margin-bottom:3rem;">── #anchor-end ──</div>
+
+    <!-- Once & Mirror -->
+    <h3 class="jos" data-jos_animation="fade-up" style="text-align:center; margin-bottom:1rem; font-size: 1.1rem; color: var(--text-muted);">Once &amp; Mirror</h3>
+    <div class="card-stack" style="margin-bottom: 3rem;">
+      <div class="card jos" data-jos_animation="fade-up" data-jos_once="true">
+        <code>once: true</code> — animates a single time
+      </div>
+      <div class="card jos" data-jos_animation="fade-up" data-jos_once="3">
+        <code>once: 3</code> — animates up to 3 times
+      </div>
+      <div class="card jos" data-jos_animation="flip" data-jos_mirror="false">
+        <code>mirror: false</code> — no reverse transition on leave
+      </div>
+    </div>
+
+    <!-- Inverse Animations -->
+    <h3 class="jos" data-jos_animation="fade-up" style="text-align:center; margin-bottom:1rem; font-size: 1.1rem; color: var(--text-muted);">Inverse Animations</h3>
+    <div class="card-stack" style="margin-bottom: 3rem;">
+      <div class="card jos" data-jos_animation="static" data-jos_animationinverse="custom-bounce">
+        Enter: <code>static</code> → Leave: <code>custom-bounce</code>
+      </div>
+      <div class="card jos" data-jos_animation="static" data-jos_animationinverse="disappear-zero" data-jos_scrollDirection="down">
+        Enter: <code>static</code> → Leave: <code>collapse</code> (scroll down)
+      </div>
+    </div>
+
+    <!-- Invoke Callbacks -->
+    <h3 class="jos" data-jos_animation="fade-up" style="text-align:center; margin-bottom:1rem; font-size: 1.1rem; color: var(--text-muted);">Invoke Callbacks</h3>
+    <div class="card-stack">
+      <div class="card jos" data-jos_animation="fade-up" data-jos_invoke="onEnterDemo" data-jos_invoke_out="onExitDemo">
+        Open DevTools console and scroll past this card
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>JOS Animation Library &mdash; <a href="https://github.com/jesvijonathan" target="_blank">Jesvi Jonathan</a></p>
+    <p style="margin-top: 0.4rem;">MIT License &middot; <a href="https://github.com/jesvijonathan/JOS-Animation-Library" target="_blank">Source on GitHub</a></p>
+  </footer>
+
+  <!-- JOS Script (UMD build — works with file:// and http://) -->
+  <script src="../dist/jos.js"></script>
+  <script>
+    // Scroll progress callback — uses the new 0-100% range
+    window.scrollProgress = function (box) {
+      var pct = box.jos.percent;
+      box.innerHTML = pct + "%";
+      box.style.opacity = 0.3 + (pct / 100) * 0.7;
+    };
+
+    // Anchor-to-anchor progress callback
+    window.anchorProgress = function (box) {
+      var pct = box.jos.percent;
+      box.innerHTML = pct + "%";
+      box.style.borderColor = "hsl(" + (pct * 1.2) + ", 70%, 60%)";
+      box.style.color = "hsl(" + (pct * 1.2) + ", 70%, 60%)";
+    };
+
+    // Invoke callbacks
+    window.onEnterDemo = function (el) {
+      console.log("[JOS] Entered viewport:", el);
+    };
+    window.onExitDemo = function (el) {
+      console.log("[JOS] Left viewport:", el);
+    };
+
+    // Init — debug overlay provides draggable trigger lines
+    JOS.init({
+      debugMode: true,
+      animation: "fade",
+      timingFunction: "ease",
+      duration: 0.4,
+      delay: 0,
+      once: false,
+      rootMargin: "10% 0% 30% 0%",
+    });
+  </script>
+
+</body>
+
+</html>

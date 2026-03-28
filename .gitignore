@@ -1,16 +1,31 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build output
+dist/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Legacy / temp files
 changelog.md
 dd.html
 test.js
-.vscode
-tmp_tk_rough_implements
 dd.js
-scripts
-# rollup 
-dev/index2.html
+scripts/
+tmp_tk_rough_implements/
 bundler/index.html
-bundler/export/* 
-bundler/original/* 
 bundler/config/package.js
-bundler/config/package-lock.js 
-node_modules
-package-lock.json
+bundler/config/package-lock.js
